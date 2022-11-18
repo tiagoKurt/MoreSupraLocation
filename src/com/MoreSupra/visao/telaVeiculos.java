@@ -6,6 +6,9 @@ package com.MoreSupra.visao;
 import com.MoreSupra.enumeration.tipoDoVeiculo;
 import com.MoreSupra.enumeration.situacao;
 import com.MoreSupra.enumeration.tipoDeCombustivel;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +22,7 @@ public class telaVeiculos extends javax.swing.JFrame {
      */
     public telaVeiculos() {
         initComponents();
+        carregarComboBox();
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idVeiculos.setEnabled(false);
     }
@@ -44,12 +48,10 @@ public class telaVeiculos extends javax.swing.JFrame {
         jTextField_renavam = new javax.swing.JTextField();
         jTextField_precodeCompra = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        jTextField_anoFabricacao = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jTextField_precoDeVenda = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        jTextField_AnoModelo = new javax.swing.JTextField();
         jComboBox1_combustivel = new javax.swing.JComboBox<>();
         jLabel31 = new javax.swing.JLabel();
         jComboBox1_tipoDoVeiculo = new javax.swing.JComboBox<>();
@@ -61,6 +63,10 @@ public class telaVeiculos extends javax.swing.JFrame {
         jButton1_alterar = new javax.swing.JButton();
         jButton2_incluir = new javax.swing.JButton();
         jButton3_buscar = new javax.swing.JButton();
+        jComboBox1_anoFabricacao = new javax.swing.JComboBox<>();
+        jComboBox1_AnoModelo = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,14 +129,10 @@ public class telaVeiculos extends javax.swing.JFrame {
         jLabel27.setText("PREÇO DE COMPRA");
         jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 40));
 
-        jTextField_anoFabricacao.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jTextField_anoFabricacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_anoFabricacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 230, 40));
-
         jLabel28.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("ANO FABRICAÇÃO");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, 40));
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, -1, 40));
 
         jLabel29.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,11 +146,7 @@ public class telaVeiculos extends javax.swing.JFrame {
         jLabel30.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("ANO MODELO");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, -1, 40));
-
-        jTextField_AnoModelo.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jTextField_AnoModelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 250, 40));
+        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, 40));
 
         jComboBox1_combustivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_combustivel.addActionListener(new java.awt.event.ActionListener() {
@@ -179,11 +177,11 @@ public class telaVeiculos extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("QUILOMETRAGEM");
-        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, 40));
+        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, 40));
 
         jTextField_quilometragem.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_quilometragem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_quilometragem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 230, 40));
+        jPanel1.add(jTextField_quilometragem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 230, 40));
 
         jComboBox1_situacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_situacao.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +231,52 @@ public class telaVeiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 169, -1));
+
+        jComboBox1_anoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
+        jComboBox1_anoFabricacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jComboBox1_anoFabricacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1_anoFabricacaoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1_anoFabricacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 170, 40));
+
+        jComboBox1_AnoModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
+        jComboBox1_AnoModelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jComboBox1_AnoModelo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1_AnoModeloActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 160, 40));
+
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "FABRICAÇÃO", "MODELO", "COMBUSTIVEL", "QUILOMETRAGEM", "TIPO", "SITUAÇÃO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 900, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 790));
@@ -300,6 +344,14 @@ public class telaVeiculos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3_buscarActionPerformed
 
+    private void jComboBox1_anoFabricacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_anoFabricacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1_anoFabricacaoActionPerformed
+
+    private void jComboBox1_AnoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_AnoModeloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1_AnoModeloActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -340,9 +392,11 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar;
-    private javax.swing.JComboBox<String> jComboBox1_combustivel;
-    private javax.swing.JComboBox<String> jComboBox1_situacao;
-    private javax.swing.JComboBox<String> jComboBox1_tipoDoVeiculo;
+    private javax.swing.JComboBox<String> jComboBox1_AnoModelo;
+    private javax.swing.JComboBox<String> jComboBox1_anoFabricacao;
+    private javax.swing.JComboBox<tipoDeCombustivel> jComboBox1_combustivel;
+    private javax.swing.JComboBox<situacao> jComboBox1_situacao;
+    private javax.swing.JComboBox<tipoDoVeiculo> jComboBox1_tipoDoVeiculo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel24;
@@ -358,13 +412,19 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField8_idVeiculos;
-    private javax.swing.JTextField jTextField_AnoModelo;
-    private javax.swing.JTextField jTextField_anoFabricacao;
     private javax.swing.JTextField jTextField_placa;
     private javax.swing.JTextField jTextField_precoDeVenda;
     private javax.swing.JTextField jTextField_precodeCompra;
     private javax.swing.JTextField jTextField_quilometragem;
     private javax.swing.JTextField jTextField_renavam;
     // End of variables declaration//GEN-END:variables
+
+    private void carregarComboBox() {
+        jComboBox1_situacao.setModel(new DefaultComboBoxModel<>(situacao.values()));
+        jComboBox1_tipoDoVeiculo.setModel(new DefaultComboBoxModel<>(tipoDoVeiculo.values()));
+        jComboBox1_combustivel.setModel(new DefaultComboBoxModel<>(tipoDeCombustivel.values()));
+        }
 }

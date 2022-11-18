@@ -339,6 +339,7 @@ public class telaModelos extends javax.swing.JFrame {
             for(int i = 0; i < lista.size(); i++){
                 if(jComboBox1_marca.getSelectedItem().equals(lista.get(i).getDescricao())){
                     modelo.setMarca(lista.get(i));
+                    
                 }
             }
             
@@ -365,8 +366,7 @@ public class telaModelos extends javax.swing.JFrame {
                     modelo.setMarca(lista.get(i));
                 }
             }
-                modeloControle.alterar(modelo);
-                
+                modeloControle.alterar(modelo);              
                 imprimirDados(modeloControle.listagemModelos());
                 jTextField1_Identificador.setText("");
                 jTextField2_descricao.setText("");

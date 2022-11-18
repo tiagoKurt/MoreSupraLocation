@@ -13,4 +13,5 @@ public enum situacao {
     DISPONIVEL,
     MANUTENCAO,
     VENDIDO;
+    
 }
