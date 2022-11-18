@@ -1,4 +1,0 @@
-1;NISSAN;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensMarca\nissan.jpg;
-2;TOYOTA;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensMarca\Toyta.jpg;
-3;HONDA;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensMarca\Honda.png;
-6;MAZDA;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensMarca\Mazda.jpg;

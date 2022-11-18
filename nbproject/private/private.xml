@@ -3,13 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/TelaPrincipal.java</file>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaModelos.java</file>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/arquivoDisco/Modelos.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaPessoaFisica.java</file>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/arquivoDisco/Marca.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/arquivoDisco/idGerado.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaPessoaJuridica.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/persistencia/MarcaMore.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/arquivoDisco/Modelos.txt</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/enumeration/tipoDeCombustivel.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/TelaPrincipal.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/Controle/IModelosControle.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/Controle/MarcasControle.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/persistencia/IModelosMore.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/TelaMarcas.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/modelos/Veiculos.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/modelos/Modelos.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaVeiculos.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/Controle/IMarcasControle.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/persistencia/IMarcaMore.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/modelos/Marca.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaModelos.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/persistencia/ModelosMore.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaPessoaFisica.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/Controle/ModelosControle.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/arquivoDisco/idGerado.txt</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/arquivoDisco/Marca.txt</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/TelaCliente.java</file>
+            <file>file:/C:/Users/Aluno/Documents/NetBeansProjects/MoreSupra/src/com/MoreSupra/visao/telaPessoaJuridica.java</file>
         </group>
     </open-files>
 </project-private>

@@ -21,6 +21,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     public telaPessoaFisica() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        
+        jTextField8_IDFisica.setEnabled(false);
     }
 
     /**
@@ -75,12 +77,12 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jPanel3.add(jButton4_voltar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 610, 169, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 130));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 120));
 
         jLabel10.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("ENDEREÇO");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 170, 40));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 170, 40));
 
         jLabel13.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,45 +92,45 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("NOME");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 100, 40));
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 100, 40));
 
         jLabel15.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("IDENTIDADE");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 190, 40));
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 190, 40));
 
         jLabel16.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("CPF");
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 70, 40));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 70, 40));
 
         jLabel17.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("EMAIL");
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 170, 40));
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 100, 40));
 
         jLabel18.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("TELEFONE");
-        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 170, 40));
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 170, 40));
 
         jTextField1_identidade.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField1_identidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 270, 40));
+        jPanel3.add(jTextField1_identidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 270, 40));
 
         jTextField2_nomeFisica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField2_nomeFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 480, 40));
+        jPanel3.add(jTextField2_nomeFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 360, 40));
 
         jTextField3_enderecoFisica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, 400, 40));
+        jPanel3.add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 400, 40));
 
         jTextField4_cpf.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField4_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 270, 40));
+        jPanel3.add(jTextField4_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 270, 40));
 
         jTextField5_telefoneFisica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField5_telefoneFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 300, 40));
+        jPanel3.add(jTextField5_telefoneFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 300, 40));
 
         jTextField6_emailFIsica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField6_emailFIsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 480, 40));
+        jPanel3.add(jTextField6_emailFIsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 480, 40));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
@@ -140,7 +142,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 200, 169, -1));
+        jPanel3.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 170, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -152,7 +154,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 240, 169, -1));
+        jPanel3.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 210, 169, -1));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -164,22 +166,22 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 280, 169, -1));
+        jPanel3.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 250, 169, -1));
 
         jLabel22_FotoFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel3.add(jLabel22_FotoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 200, 220, 190));
+        jPanel3.add(jLabel22_FotoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, 220, 190));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel25.setText("FOTO");
-        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 150, -1, -1));
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 120, -1, -1));
 
         jTextField8_IDFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel3.add(jTextField8_IDFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 70, 40));
+        jPanel3.add(jTextField8_IDFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 70, 40));
 
         jLabel28.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("ID");
-        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, -1, 40));
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1620, 850));

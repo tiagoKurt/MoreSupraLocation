@@ -133,6 +133,7 @@ public class telaModelos extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifModelos.gif"))); // NOI18N
+        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 320, 570));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
@@ -408,7 +409,19 @@ public class telaModelos extends javax.swing.JFrame {
     private void jComboBox1_marcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_marcaActionPerformed
         // TODO add your handling code here:
         TelaMarcas marcas = new TelaMarcas();
-        
+        try{
+        int macc = 0;
+            Modelos modelo = new Modelos(0, jTextField2_descricao.getText(), jTextField3_url.getText(),
+                    marcaControle.buscar(macc));
+            ArrayList<Marca> lista = marcaControle.listagemDeMarcas();
+            for(int i = 0; i < lista.size(); i++){
+                if(jComboBox1_marca.getSelectedItem().equals(lista.get(i).getDescricao())){
+                    modelo.setMarca(lista.get(i));
+            }
+        }
+        }catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, erro.getMessage());
+        }
     }//GEN-LAST:event_jComboBox1_marcaActionPerformed
 
     private void jTextField2_descricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2_descricaoKeyTyped
