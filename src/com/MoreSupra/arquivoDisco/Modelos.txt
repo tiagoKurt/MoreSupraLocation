@@ -1,4 +1,2 @@
-3;CIVIC;C:\Users\Aluno\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\CIVIC.jpg;1
-4;COROLA;C:\Users\Aluno\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\COROLLA.jpg;2
-6;GTR R34;C:\Users\Aluno\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\GTR R34.jpg;5
-7;SUPRA;C:\Users\Aluno\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\Supra2.jpg;2
+3;CIVIC;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\CIVIC.jpg;1
+4;IMPREZA;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\SUBARU IMPREZ.jpg;2
