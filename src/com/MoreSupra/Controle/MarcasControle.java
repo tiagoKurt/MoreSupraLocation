@@ -5,7 +5,6 @@ import com.MoreSupra.persistencia.MarcaMore;
 import java.util.ArrayList;
 import java.util.Iterator;
 import com.MoreSupra.Controle.IMarcasControle;
-import com.MoreSupra.GeradorID.GeradorIdentificador;
 
 /**
  *
@@ -72,7 +71,7 @@ public class MarcasControle implements IMarcasControle {
 
     @Override
     public ArrayList<Marca> listagemDeMarcas() throws Exception {
-        return marcaPersistencia.listagemDeMarcas(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return marcaPersistencia.listagemDeMarcas();
     }
 
     @Override
