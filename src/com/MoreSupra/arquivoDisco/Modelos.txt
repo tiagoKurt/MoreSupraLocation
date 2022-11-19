@@ -1,2 +1,3 @@
-3;CIVIC;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\CIVIC.jpg;1
-4;IMPREZA;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\SUBARU IMPREZ.jpg;2
+3;CIVIC VTI 1995;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\CIVIC.jpg;1
+4;IMPREZA WRX;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\SUBARU IMPREZ.jpg;1
+6;SKYLINE GTR R34;C:\Users\Pichau\Documents\NetBeansProjects\MoreSupra\src\com\MoreSupra\imagensModelo\GTR R34.jpg;1

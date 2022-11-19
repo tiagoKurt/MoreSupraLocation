@@ -9,7 +9,9 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -59,7 +61,7 @@ public class VeiculosMore implements IVeiculosMore{
     @Override
     public ArrayList<Veiculos> listagemVeiculos() throws Exception {
         try {
-            ArrayList<Veiculos> listaDeModelos = new ArrayList<Veiculos>();
+            ArrayList<Veiculos> listaDeVeiculos = new ArrayList<Veiculos>();
             FileReader fr = new FileReader(nomeArquivoNoDisco);
             BufferedReader br = new BufferedReader(fr);
 
@@ -73,12 +75,13 @@ public class VeiculosMore implements IVeiculosMore{
                 objetoVeiculo.setPlaca(vetorString[1]);
                 objetoVeiculo.setRenavem(Integer.parseInt(vetorString[2]));
                 objetoVeiculo.setPrecoDeCompra(Integer.parseInt(vetorString[3]));
-                int id = Integer.parseInt(vetorString[3]);
-                objetoModelo.setMarca(objetoMarca.buscar(id));
-                listaDeModelos.add(objetoModelo);
+                objetoVeiculo.setPrecoDeVenda(Integer.parseInt(vetorString[4]));
+                
+                
+                listaDeVeiculos.add(objetoVeiculo);
             }
             br.close();
-            return listaDeModelos;     
+            return listaDeVeiculos;     
         } catch (Exception erro) {
             throw erro;
         }

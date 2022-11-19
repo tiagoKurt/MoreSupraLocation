@@ -4,7 +4,7 @@
  */
 package com.MoreSupra.persistencia;
 
-import com.MoreSupra.modelos.Modelos;
+import com.MoreSupra.modelos.Veiculos;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Pichau
  */
 public interface IVeiculosMore {
-    void incluir(Modelos objeto) throws Exception;
-    void alterar(Modelos objeto) throws Exception;
-    ArrayList<Modelos> listagemModelos() throws Exception;
+    void incluir(Veiculos objeto) throws Exception;
+    void alterar(Veiculos objeto) throws Exception;
+    ArrayList<Veiculos> listagemVeiculos() throws Exception;
 }

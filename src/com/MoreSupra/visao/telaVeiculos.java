@@ -6,6 +6,7 @@ package com.MoreSupra.visao;
 import com.MoreSupra.enumeration.tipoDoVeiculo;
 import com.MoreSupra.enumeration.situacao;
 import com.MoreSupra.enumeration.tipoDeCombustivel;
+import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.DefaultComboBoxModel;
@@ -22,7 +23,12 @@ public class telaVeiculos extends javax.swing.JFrame {
      */
     public telaVeiculos() {
         initComponents();
-        carregarComboBox();
+        carregarComboBox();      
+        jTextField_placa.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PLACA));
+        jTextField_renavam.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField_precodeCompra.setDocument(new limitaCaracteres(15, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_precoDeVenda.setDocument(new limitaCaracteres(15, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_quilometragem.setDocument(new limitaCaracteres(10, limitaCaracteres.tipoEntrada.PRECO));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idVeiculos.setEnabled(false);
     }

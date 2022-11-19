@@ -8,6 +8,7 @@ import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import com.MoreSupra.visao.utill.limitaCaracteres;
 
 /**
  *
@@ -21,7 +22,12 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     public telaPessoaFisica() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        
+        jTextField5_telefoneFisica.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField4_cpf.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField1_identidade.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField6_emailFIsica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField2_nomeFisica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.NOME));
+        jTextField3_enderecoFisica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField8_IDFisica.setEnabled(false);
     }
 

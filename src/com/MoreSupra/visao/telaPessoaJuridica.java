@@ -4,6 +4,7 @@
  */
 package com.MoreSupra.visao;
 
+import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -20,6 +21,12 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
      */
     public telaPessoaJuridica() {
         initComponents();
+        jTextField10_telefoneJuri.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField11_cnpj.setDocument(new limitaCaracteres(14, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField11_razaoSocial.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField9_emailJuri.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField8_enderecoJuridica.setDocument(new limitaCaracteres(40, limitaCaracteres.tipoEntrada.ENDERECO));
+        jTextField12_nomeJuridica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.NOME));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idJuridica.setEnabled(false);
     }
@@ -174,7 +181,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jPanel4.add(jTextField8_idJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 70, 40));
 
         jTextField11_razaoSocial.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField11_razaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 210, 40));
+        jPanel4.add(jTextField11_razaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 370, 40));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
