@@ -21,7 +21,8 @@ public class limitaCaracteres extends PlainDocument {
         DATA,
         PLACA,
         ENDERECO,
-        PRECO;
+        PRECO,
+        DESCRICAO;
     };
     private int qtdCaracteres;
     private tipoEntrada tpEntrada;
@@ -60,6 +61,9 @@ public class limitaCaracteres extends PlainDocument {
                 break;
             case PRECO:
                 regex = "[^0-9\\.]";
+                break;
+            case DESCRICAO:
+                regex = "[^\\p{IsLatin}\\ ^0-9]";
                 break;
         }
 

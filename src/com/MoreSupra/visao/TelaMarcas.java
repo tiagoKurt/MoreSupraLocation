@@ -15,6 +15,7 @@ import java.util.Collections;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import com.MoreSupra.Controle.*;
+import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.Image;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +35,7 @@ public class TelaMarcas extends javax.swing.JFrame {
     public TelaMarcas() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        jTextField1_descricao.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.DESCRICAO));
         jTextField1_IDENTIFICADOR.setEnabled(false);
         jTextField2_url.setEnabled(false);
         jTable1.getSelectionModel().setSelectionInterval(WIDTH, WIDTH);

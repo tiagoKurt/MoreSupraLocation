@@ -18,6 +18,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import com.MoreSupra.Controle.*;
 import com.MoreSupra.modelos.Marca;
+import com.MoreSupra.visao.utill.limitaCaracteres;
 //import com.MoreSupra.persistencia.MarcaMore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,6 +41,7 @@ public class telaModelos extends javax.swing.JFrame {
         
         TelaMarcas telaDeMarcas = new TelaMarcas();
         setExtendedState(MAXIMIZED_BOTH);
+        jTextField2_descricao.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.DESCRICAO));
         jTextField3_url.setEnabled(false);
         jTextField1_Identificador.setEnabled(false);
         jTable1_Modelos.getSelectionModel().setSelectionInterval(WIDTH, WIDTH);
