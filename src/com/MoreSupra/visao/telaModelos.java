@@ -41,7 +41,7 @@ public class telaModelos extends javax.swing.JFrame {
         
         TelaMarcas telaDeMarcas = new TelaMarcas();
         setExtendedState(MAXIMIZED_BOTH);
-        jTextField2_descricao.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.DESCRICAO));
+        jTextField2_descricao.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
         jTextField3_url.setEnabled(false);
         jTextField1_Identificador.setEnabled(false);
         jTable1_Modelos.getSelectionModel().setSelectionInterval(WIDTH, WIDTH);

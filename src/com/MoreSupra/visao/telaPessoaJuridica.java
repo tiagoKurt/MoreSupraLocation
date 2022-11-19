@@ -21,12 +21,10 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
      */
     public telaPessoaJuridica() {
         initComponents();
-        jTextField10_telefoneJuri.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        jTextField11_cnpj.setDocument(new limitaCaracteres(14, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        jTextField11_razaoSocial.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.EMAIL));
-        jTextField9_emailJuri.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.EMAIL));
-        jTextField8_enderecoJuridica.setDocument(new limitaCaracteres(40, limitaCaracteres.tipoEntrada.ENDERECO));
-        jTextField12_nomeJuridica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.NOME));
+        jTextField11_razaoSocial.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField9_emailJuri.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField8_enderecoJuridica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
+        jTextField12_nomeJuridica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.NOME));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idJuridica.setEnabled(false);
     }
@@ -52,8 +50,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         jTextField8_enderecoJuridica = new javax.swing.JTextField();
         jTextField9_emailJuri = new javax.swing.JTextField();
-        jTextField10_telefoneJuri = new javax.swing.JTextField();
-        jTextField11_cnpj = new javax.swing.JTextField();
         jTextField12_nomeJuridica = new javax.swing.JTextField();
         jLabel22_FotoFisica1 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -63,6 +59,8 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jTextField8_idJuridica = new javax.swing.JTextField();
         jTextField11_razaoSocial = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
+        jFormattedTextField1_cnpj = new javax.swing.JFormattedTextField();
+        jFormattedTextField1_telefone = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -125,12 +123,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jTextField9_emailJuri.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jPanel4.add(jTextField9_emailJuri, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 490, 40));
 
-        jTextField10_telefoneJuri.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField10_telefoneJuri, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 270, 40));
-
-        jTextField11_cnpj.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField11_cnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 350, 40));
-
         jTextField12_nomeJuridica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jPanel4.add(jTextField12_nomeJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 380, 40));
 
@@ -187,6 +179,24 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("RAZÃO SOCIAL");
         jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 220, 40));
+
+        try {
+            jFormattedTextField1_cnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1_cnpj.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jFormattedTextField1_cnpj.setPreferredSize(new java.awt.Dimension(64, 27));
+        jPanel4.add(jFormattedTextField1_cnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 350, 40));
+
+        try {
+            jFormattedTextField1_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)# ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1_telefone.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jFormattedTextField1_telefone.setPreferredSize(new java.awt.Dimension(64, 27));
+        jPanel4.add(jFormattedTextField1_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 200, 40));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 780));
@@ -284,6 +294,8 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     private javax.swing.JButton jButton2_incluir1;
     private javax.swing.JButton jButton3_buscar1;
     private javax.swing.JButton jButton4_voltar2;
+    private javax.swing.JFormattedTextField jFormattedTextField1_cnpj;
+    private javax.swing.JFormattedTextField jFormattedTextField1_telefone;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
@@ -297,8 +309,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField10_telefoneJuri;
-    private javax.swing.JTextField jTextField11_cnpj;
     private javax.swing.JTextField jTextField11_razaoSocial;
     private javax.swing.JTextField jTextField12_nomeJuridica;
     private javax.swing.JTextField jTextField8_enderecoJuridica;

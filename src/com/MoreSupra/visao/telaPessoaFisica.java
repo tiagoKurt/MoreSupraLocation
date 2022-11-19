@@ -22,12 +22,10 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     public telaPessoaFisica() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        jTextField5_telefoneFisica.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        jTextField4_cpf.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
         jTextField1_identidade.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        jTextField6_emailFIsica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.EMAIL));
-        jTextField2_nomeFisica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.NOME));
-        jTextField3_enderecoFisica.setDocument(new limitaCaracteres(36, limitaCaracteres.tipoEntrada.ENDERECO));
+        jTextField6_emailFIsica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField2_nomeFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.NOME));
+        jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField8_IDFisica.setEnabled(false);
     }
 
@@ -53,8 +51,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jTextField1_identidade = new javax.swing.JTextField();
         jTextField2_nomeFisica = new javax.swing.JTextField();
         jTextField3_enderecoFisica = new javax.swing.JTextField();
-        jTextField4_cpf = new javax.swing.JTextField();
-        jTextField5_telefoneFisica = new javax.swing.JTextField();
         jTextField6_emailFIsica = new javax.swing.JTextField();
         jButton3_buscar = new javax.swing.JButton();
         jButton2_incluir = new javax.swing.JButton();
@@ -63,6 +59,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jTextField8_IDFisica = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
+        jFormattedTextField1_Telefone = new javax.swing.JFormattedTextField();
+        jFormattedTextField1_cpf = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,22 +118,16 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel18.setText("TELEFONE");
         jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 170, 40));
 
-        jTextField1_identidade.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        jTextField1_identidade.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jPanel3.add(jTextField1_identidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 270, 40));
 
-        jTextField2_nomeFisica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        jTextField2_nomeFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jPanel3.add(jTextField2_nomeFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 360, 40));
 
-        jTextField3_enderecoFisica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        jTextField3_enderecoFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jPanel3.add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 400, 40));
 
-        jTextField4_cpf.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField4_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 270, 40));
-
-        jTextField5_telefoneFisica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
-        jPanel3.add(jTextField5_telefoneFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 300, 40));
-
-        jTextField6_emailFIsica.setFont(new java.awt.Font("Arial", 3, 14)); // NOI18N
+        jTextField6_emailFIsica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jPanel3.add(jTextField6_emailFIsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 480, 40));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
@@ -189,6 +181,25 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel28.setText("ID");
         jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 40));
 
+        try {
+            jFormattedTextField1_Telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)# ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1_Telefone.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
+        jFormattedTextField1_Telefone.setPreferredSize(new java.awt.Dimension(64, 27));
+        jPanel3.add(jFormattedTextField1_Telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 270, 40));
+
+        try {
+            jFormattedTextField1_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1_cpf.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
+        jFormattedTextField1_cpf.setPreferredSize(new java.awt.Dimension(64, 27));
+        jPanel3.add(jFormattedTextField1_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 350, 40));
+
+        jLabel4.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1620, 850));
 
@@ -284,6 +295,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar1;
+    private javax.swing.JFormattedTextField jFormattedTextField1_Telefone;
+    private javax.swing.JFormattedTextField jFormattedTextField1_cpf;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -300,8 +313,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1_identidade;
     private javax.swing.JTextField jTextField2_nomeFisica;
     private javax.swing.JTextField jTextField3_enderecoFisica;
-    private javax.swing.JTextField jTextField4_cpf;
-    private javax.swing.JTextField jTextField5_telefoneFisica;
     private javax.swing.JTextField jTextField6_emailFIsica;
     private javax.swing.JTextField jTextField8_IDFisica;
     // End of variables declaration//GEN-END:variables
