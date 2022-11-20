@@ -33,13 +33,31 @@ public class AcessoriosControle implements IAcessoriosControle {
             throw erro;
         }
     }
+    
+    private boolean verificarPreco(float valor) throws Exception {
+        try {
+            ArrayList<Acessorios> listagem = acessoriosPersistencia.listagemDeAcessorios();
+            Iterator<Acessorios> lista = listagem.iterator();
+            while (lista.hasNext()) {
+                Acessorios aux = lista.next();
+                if (aux.getValorDaLocacao()+"" == aux.getValorDaLocacao()+"") {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
+    
+    
 
     @Override
     public void incluir(Acessorios objeto) throws Exception {
         objeto.setDescricao(verificarDescricao(objeto.getDescricao()));
         if(verificarVazio(objeto)) throw new Exception("Alguns campos não foram preenchidos!");
         if(verificarValorNulo(objeto)) throw new Exception("Valor não pode ser < || = 0");
-        if(buscarAcessorio(objeto.getDescricao()) ){
+        if(buscarAcessorio(objeto.getDescricao())){
             throw new Exception("Acessório já cadastrado");
         }
         
@@ -69,7 +87,7 @@ public class AcessoriosControle implements IAcessoriosControle {
 
     @Override
     public void alterar(Acessorios objeto) throws Exception {
-        if (buscarAcessorio(objeto.getDescricao())) {
+        if (buscarAcessorio(objeto.getDescricao()) && verificarPreco(objeto.getValorDaLocacao())) {
             throw new Exception("Acessório já foi cadastrada");
         }
         acessoriosPersistencia.alterar(objeto);

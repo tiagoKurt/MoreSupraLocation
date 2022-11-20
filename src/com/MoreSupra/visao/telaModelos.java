@@ -264,6 +264,7 @@ public class telaModelos extends javax.swing.JFrame {
         });
         jTable1_Modelos.setColumnSelectionAllowed(true);
         jTable1_Modelos.setPreferredSize(new java.awt.Dimension(375, 500));
+        jTable1_Modelos.setRowHeight(60);
         jTable1_Modelos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1_ModelosMouseClicked(evt);

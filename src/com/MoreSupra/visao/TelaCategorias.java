@@ -5,9 +5,9 @@
 package com.MoreSupra.visao;
 
 import ImagensTabela.JTableRenderer;
-import com.MoreSupra.modelos.Acessorios;
-import com.MoreSupra.Controle.AcessoriosControle;
-import com.MoreSupra.Controle.IAcessoriosControle;
+import com.MoreSupra.Controle.CategoriasControle;
+import com.MoreSupra.Controle.ICategoriasControle;
+import com.MoreSupra.modelos.Categoria;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.io.File;
 import java.util.ArrayList;
@@ -23,29 +23,26 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Pichau
  */
-public class TelaAcessorios extends javax.swing.JFrame {
+public class TelaCategorias extends javax.swing.JFrame {
     
-    IAcessoriosControle controle = new AcessoriosControle();
+      ICategoriasControle controle = new CategoriasControle();
 
     /**
-     * Creates new form TelaAcessorios
+     * Creates new form TelaCategorias
      */
-    public TelaAcessorios() {
+    public TelaCategorias() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        jTextField2_uRL.setEnabled(false);
         jTextField1_IDENTIFICADOR.setEnabled(false);
         jTextField2_precoLocacao.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.PRECO));
-        jTextField1_descricao.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.NOME));
+        jTextField1_descricao.setDocument(new limitaCaracteres(22, limitaCaracteres.tipoEntrada.DESCRICAO));
         
         try {
-            imprimirDadosNaGrid(controle.listagemDeAcessorios());
+            imprimirDadosNaGrid(controle.listagemDeCategorias());
         } catch (Exception ex) {
             Logger.getLogger(TelaMarcas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-   }
-   
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,63 +54,68 @@ public class TelaAcessorios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2_precoLocacao = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1_descricao = new javax.swing.JTextField();
         jTextField1_IDENTIFICADOR = new javax.swing.JTextField();
-        jLabel7_FotoAcessorio = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jTextField1_descricao = new javax.swing.JTextField();
+        jTextField2_precoLocacao = new javax.swing.JTextField();
         jButton1_alterar = new javax.swing.JButton();
         jButton2_incluir = new javax.swing.JButton();
         jButton3_buscar = new javax.swing.JButton();
         jButton4_voltar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField2_uRL = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel7_fotoCategoria = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(51, 0, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.setForeground(new java.awt.Color(51, 0, 51));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1194, 733));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 130));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 130));
 
-        jLabel3.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("CADASTRO DE CATEGORIAS");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 510, -1));
+
+        jLabel3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("CADASTRO ACESSÓRIOS");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 450, -1));
-
-        jTextField2_precoLocacao.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jTextField2_precoLocacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTextField2_precoLocacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2_precoLocacaoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField2_precoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 260, 40));
-
-        jLabel5.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("PREÇO LOCAÇÃO");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        jLabel3.setText("IDENTIFICADOR");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DESCRIÇÃO");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("PREÇO LOCAÇÃO");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("ID");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
+        jLabel6.setText("IMAGEM");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
+
+        jTextField1_IDENTIFICADOR.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jTextField1_IDENTIFICADOR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jTextField1_IDENTIFICADOR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_IDENTIFICADORActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTextField1_IDENTIFICADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 75, 37));
 
         jTextField1_descricao.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jTextField1_descricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -128,25 +130,16 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jTextField1_descricaoKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField1_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 260, 40));
+        jPanel1.add(jTextField1_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 320, 35));
 
-        jTextField1_IDENTIFICADOR.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jTextField1_IDENTIFICADOR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTextField1_IDENTIFICADOR.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2_precoLocacao.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jTextField2_precoLocacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jTextField2_precoLocacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1_IDENTIFICADORActionPerformed(evt);
+                jTextField2_precoLocacaoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1_IDENTIFICADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 70, 37));
-
-        jLabel7_FotoAcessorio.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel7_FotoAcessorio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jLabel7_FotoAcessorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 240, 140));
-
-        jLabel7.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("FOTO");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, -1, -1));
+        jPanel1.add(jTextField2_precoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 250, 260, 35));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -158,7 +151,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, 169, -1));
+        jPanel1.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 240, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -170,7 +163,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 190, 169, -1));
+        jPanel1.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 200, 169, -1));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
@@ -182,7 +175,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 150, 169, -1));
+        jPanel1.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 169, -1));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -194,16 +187,25 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 690, 169, -1));
+        jPanel1.add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 640, 169, -1));
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "DESCRIÇÃO", "PREÇO LOCAÇÃO", "ACESSÓRIO"
+                "ID", "DESCRIÇÃO", "URL", "LOGO"
             }
         ) {
             Class[] types = new Class [] {
@@ -221,7 +223,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(45);
+        jTable1.setColumnSelectionAllowed(true);
+        jTable1.setRowHeight(60);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -229,58 +232,47 @@ public class TelaAcessorios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 830, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 1251, 333));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAcessorios.gif"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 280, 340, 190));
+        jLabel7_fotoCategoria.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel7_fotoCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel1.add(jLabel7_fotoCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 240, 140));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/nightDrift.gif"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 480, 340, 180));
-
-        jLabel10.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("URL");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
-
-        jTextField2_uRL.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jTextField2_uRL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jTextField2_uRL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2_uRLActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField2_uRL, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 260, 40));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1470, 780));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, -20, 1530, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1470, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 766, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2_precoLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2_precoLocacaoActionPerformed
+    private void jTextField1_IDENTIFICADORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_IDENTIFICADORActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2_precoLocacaoActionPerformed
+    }//GEN-LAST:event_jTextField1_IDENTIFICADORActionPerformed
 
     private void jTextField1_descricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_descricaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1_descricaoActionPerformed
 
-    private void imprimirDadosNaGrid(ArrayList<Acessorios> listaDeAcessorios) {
+    private void jTextField1_descricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1_descricaoKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField1_descricaoKeyTyped
+
+    private void imprimirDadosNaGrid(ArrayList<Categoria> listaDeMarcas) {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
@@ -288,14 +280,14 @@ public class TelaAcessorios extends javax.swing.JFrame {
 
             //Limpa a tabela 
             model.setNumRows(0);
-            Iterator<Acessorios> lista = listaDeAcessorios.iterator();
+            Iterator<Categoria> lista = listaDeMarcas.iterator();
 
             while (lista.hasNext()) {
                 String[] saida = new String[3];
-                Acessorios aux = lista.next();
+                Categoria aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
-                saida[2] = aux.getValorDaLocacao() + "";
+                saida[2] = aux.getValorLocacao() + "";
                 ImageIcon iconlogo = new ImageIcon();
                 //Incluir nova linha na Tabela
                 Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
@@ -306,25 +298,16 @@ public class TelaAcessorios extends javax.swing.JFrame {
         }
 
     }
-    private void jTextField1_descricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1_descricaoKeyTyped
+    private void jTextField2_precoLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2_precoLocacaoActionPerformed
         // TODO add your handling code here:
-        char c=evt.getKeyChar();
-
-        if(Character.isLowerCase(c)){
-            evt.setKeyChar(Character.toUpperCase(c));
-        }
-    }//GEN-LAST:event_jTextField1_descricaoKeyTyped
-
-    private void jTextField1_IDENTIFICADORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_IDENTIFICADORActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1_IDENTIFICADORActionPerformed
+    }//GEN-LAST:event_jTextField2_precoLocacaoActionPerformed
 
     private void jButton1_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_alterarActionPerformed
         // TODO add your handling code here:
         try {
-            Acessorios acess = new Acessorios(Integer.parseInt(jTextField1_IDENTIFICADOR.getText()), jTextField1_descricao.getText(),
-            Float.parseFloat(jTextField2_precoLocacao.getText()));
-            controle.alterar(acess);
+            Categoria categoria = new Categoria(Integer.parseInt(jTextField1_IDENTIFICADOR.getText()), jTextField1_descricao.getText(), 
+                    Float.parseFloat(jTextField2_precoLocacao.getText()));
+            controle.alterar(categoria);
             if (jTable1.getSelectedRow() != -1) {
                 jTable1.setValueAt(jTextField1_IDENTIFICADOR.getText(), jTable1.getSelectedRow(), 0);
                 jTable1.setValueAt(jTextField1_descricao.getText(), jTable1.getSelectedRow(), 1);
@@ -341,16 +324,16 @@ public class TelaAcessorios extends javax.swing.JFrame {
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         // TODO add your handling code here:
         try {
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Acessorios.txt");
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Categoria.txt");
             arquivo.createNewFile();
-            Acessorios acessorios = new Acessorios(0, jTextField1_descricao.getText() , Float.parseFloat(jTextField2_precoLocacao.getText()));
+            Categoria marca = new Categoria(0, jTextField1_descricao.getText(), Float.parseFloat(jTextField2_precoLocacao.getText()));
 
-            controle.incluir(acessorios);
+            controle.incluir(marca);
             jTextField1_descricao.setText("");
             jTextField1_IDENTIFICADOR.setText("");
             jTextField2_precoLocacao.setText("");
 
-            imprimirDadosNaGrid(controle.listagemDeAcessorios());
+            imprimirDadosNaGrid(controle.listagemDeCategorias());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -359,54 +342,23 @@ public class TelaAcessorios extends javax.swing.JFrame {
     private void jButton3_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_buscarActionPerformed
         // TODO add your handling code here:
         try {
-            JFileChooser fc = new JFileChooser("./src/com/MoreSupra/imagensAcessorios");
-            File buscar = new File(".src/com/MoreSupra/imagensAcessorios");
+            JFileChooser fc = new JFileChooser("./src/com/MoreSupra/imagensCategoria");
+            File buscar = new File(".src/com/MoreSupra/imagensCategoria");
             fc.setCurrentDirectory(buscar);
             fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
             fc.showOpenDialog(this);
             File arquivo = fc.getSelectedFile();
             String nomeDoArquivo = arquivo.getPath();
-            jTextField2_uRL.setText(nomeDoArquivo);
+            
             ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
             iconLogo.setImage(iconLogo.getImage().getScaledInstance(
-                jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
-        jLabel7_FotoAcessorio.setIcon(iconLogo);
+                    jLabel7_fotoCategoria.getWidth(), jLabel7_fotoCategoria.getHeight(), 1));
+            jLabel7_fotoCategoria.setIcon(iconLogo);
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro);
         }
     }//GEN-LAST:event_jButton3_buscarActionPerformed
 
-    public void alterar(ArrayList<Acessorios> listaDeMarcas){
-        try {
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
-
-            //Limpa a tabela 
-            model.setNumRows(0);
-            Iterator<Acessorios> lista = listaDeMarcas.iterator();
-
-            while (lista.hasNext()) {
-                String[] saida = new String[3];
-                Acessorios aux = lista.next();
-                saida[0] = aux.getId() + "";
-                saida[1] = aux.getDescricao();
-                saida[2] = aux.getValorDaLocacao() + "";
-                ImageIcon iconlogo = new ImageIcon();
-                //Incluir nova linha na Tabela
-                if(saida.length != -1){
-                saida[0] = aux.getId() + "";
-                saida[1] = aux.getDescricao();
-                saida[2] = aux.getValorDaLocacao() + "";
-                }
-                Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
-                model.addRow(dados);
-            }
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro.getMessage());
-        }
-    }
-    
     private void jButton4_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_voltarActionPerformed
         // TODO add your handling code here:
         TelaPrincipal principal = new TelaPrincipal();
@@ -421,15 +373,12 @@ public class TelaAcessorios extends javax.swing.JFrame {
             jTextField1_descricao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
             jTextField2_precoLocacao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
             String nomeUrl = jTextField2_precoLocacao.getText();
-    ImageIcon iconLogo = new ImageIcon(nomeUrl);
-    iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
-    jLabel7_FotoAcessorio.setIcon(iconLogo);
+            ImageIcon iconLogo = new ImageIcon(nomeUrl);
+            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabel7_fotoCategoria.getWidth(), jLabel7_fotoCategoria.getHeight(), 1));
+            jLabel7_fotoCategoria.setIcon(iconLogo);
+
         }
     }//GEN-LAST:event_jTable1MouseClicked
-
-    private void jTextField2_uRLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2_uRLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2_uRLActionPerformed
 
     /**
      * @param args the command line arguments
@@ -448,20 +397,20 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaAcessorios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCategorias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaAcessorios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCategorias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaAcessorios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCategorias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaAcessorios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCategorias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaAcessorios().setVisible(true);
+                new TelaCategorias().setVisible(true);
             }
         });
     }
@@ -472,22 +421,18 @@ public class TelaAcessorios extends javax.swing.JFrame {
     private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel7_FotoAcessorio;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel7_fotoCategoria;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1_IDENTIFICADOR;
     private javax.swing.JTextField jTextField1_descricao;
     private javax.swing.JTextField jTextField2_precoLocacao;
-    private javax.swing.JTextField jTextField2_uRL;
     // End of variables declaration//GEN-END:variables
 }
