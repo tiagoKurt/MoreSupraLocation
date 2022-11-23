@@ -9,6 +9,7 @@ import com.MoreSupra.modelos.Acessorios;
 import com.MoreSupra.Controle.AcessoriosControle;
 import com.MoreSupra.Controle.IAcessoriosControle;
 import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -285,7 +286,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
             jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
-
+            
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Acessorios> lista = listaDeAcessorios.iterator();
@@ -296,9 +297,9 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getValorDaLocacao() + "";
-                ImageIcon iconlogo = new ImageIcon();
+                ImageIcon iconlogo = new ImageIcon((aux.getUrl()));
                 //Incluir nova linha na Tabela
-                Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
+                Object[] dados = {saida[0], saida[1], saida[2],iconlogo};
                 model.addRow(dados);
             }
         } catch (Exception erro) {
@@ -323,7 +324,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Acessorios acess = new Acessorios(Integer.parseInt(jTextField1_IDENTIFICADOR.getText()), jTextField1_descricao.getText(),
-            Float.parseFloat(jTextField2_precoLocacao.getText()));
+            Float.parseFloat(jTextField2_precoLocacao.getText()), jTextField2_uRL.getText());
             controle.alterar(acess);
             if (jTable1.getSelectedRow() != -1) {
                 jTable1.setValueAt(jTextField1_IDENTIFICADOR.getText(), jTable1.getSelectedRow(), 0);
@@ -343,12 +344,14 @@ public class TelaAcessorios extends javax.swing.JFrame {
         try {
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Acessorios.txt");
             arquivo.createNewFile();
-            Acessorios acessorios = new Acessorios(0, jTextField1_descricao.getText() , Float.parseFloat(jTextField2_precoLocacao.getText()));
+            Acessorios acessorios = new Acessorios(0, jTextField1_descricao.getText() , Float.parseFloat(jTextField2_precoLocacao.getText()),
+            jTextField2_uRL.getText());
 
             controle.incluir(acessorios);
             jTextField1_descricao.setText("");
             jTextField1_IDENTIFICADOR.setText("");
             jTextField2_precoLocacao.setText("");
+            jTextField2_uRL.setText("");
 
             imprimirDadosNaGrid(controle.listagemDeAcessorios());
         } catch (Exception erro) {
@@ -380,7 +383,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
@@ -420,7 +423,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
             jTextField1_IDENTIFICADOR.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
             jTextField1_descricao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
             jTextField2_precoLocacao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
-            String nomeUrl = jTextField2_precoLocacao.getText();
+            String nomeUrl = jTextField2_uRL.getText();
     ImageIcon iconLogo = new ImageIcon(nomeUrl);
     iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
     jLabel7_FotoAcessorio.setIcon(iconLogo);

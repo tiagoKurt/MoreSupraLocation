@@ -31,9 +31,10 @@ public class AcessoriosMore implements IAcessoriosMore{
                 objetoAcessorios.setId(Integer.parseInt(vetorString[0]));
                 objetoAcessorios.setDescricao(vetorString[1]);
                 objetoAcessorios.setValorDaLocacao(Float.parseFloat(vetorString[2]));
+                objetoAcessorios.setUrl(vetorString[3]);
                 if(objetoAcessorios.getId() == id){
                 br.close();
-                return new Acessorios(Integer.parseInt(vetorString[0]),vetorString[1], Float.parseFloat(vetorString[2]));
+                return new Acessorios(Integer.parseInt(vetorString[0]),vetorString[1], Float.parseFloat(vetorString[2]), vetorString[3]);
                 }
                
             }

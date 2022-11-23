@@ -394,7 +394,7 @@ public class TelaMarcas extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);           
 
             //Limpa a tabela 
             model.setNumRows(0);
