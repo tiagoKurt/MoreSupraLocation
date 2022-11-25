@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.MoreSupra.GeradorID;
-//naosei
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -28,6 +28,10 @@ public class GeradorIdentificador {
         //fecha o arquivo
         bw.close();	
     }
+    
+    public void NaoSei(){
+    }
+    
     public static void seNaoExistirId()throws Exception{
         File id = new File("./src/com/locagyn/arquivosdedados/idGerado.txt");
         if(id.exists() == false){
