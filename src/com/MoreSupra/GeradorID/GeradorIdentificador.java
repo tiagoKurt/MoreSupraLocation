@@ -6,6 +6,7 @@ package com.MoreSupra.GeradorID;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -26,6 +27,19 @@ public class GeradorIdentificador {
         bw.write(saida);
         //fecha o arquivo
         bw.close();	
+    }
+    public static void seNaoExistirId()throws Exception{
+        File id = new File("./src/com/locagyn/arquivosdedados/idGerado.txt");
+        if(id.exists() == false){
+            int idSubstituir = 0;
+        try{
+        FileWriter fwt = new FileWriter(id);
+        BufferedWriter bwt = new BufferedWriter(fwt);
+        bwt.write("" + idSubstituir);
+        bwt.close();
+        }catch(Exception e){
+        }
+        }
     }
     public static int getID()throws FileNotFoundException, IOException{
         String nomeDoArquivo ="./src/com/MoreSupra/arquivoDisco/idGerado.txt";
