@@ -29,9 +29,6 @@ public class GeradorIdentificador {
         bw.close();	
     }
     
-    public void NaoSei(){
-    }
-    
     public static void seNaoExistirId()throws Exception{
         File id = new File("./src/com/locagyn/arquivosdedados/idGerado.txt");
         if(id.exists() == false){
