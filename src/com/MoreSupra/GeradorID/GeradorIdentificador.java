@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.MoreSupra.GeradorID;
-
+//naosei
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
