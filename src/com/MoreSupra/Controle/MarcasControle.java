@@ -33,6 +33,21 @@ public class MarcasControle implements IMarcasControle {
             throw erro;
         }
     }
+    
+    private boolean alterarModelo (String descricao) throws Exception{
+        try {
+            ArrayList<Marca> listagem = marcaPersistencia.listagemDeMarcas();
+            Iterator<Marca> lista = listagem.iterator();
+            while (lista.hasNext()){
+                Marca aux = lista.next();
+                if(aux.getDescricao().equalsIgnoreCase(descricao) && aux.getUrl().equalsIgnoreCase(descricao)){
+                    return true;
+            }
+        }return false;
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
 
     @Override
     public void incluir(Marca objeto) throws Exception {
@@ -63,7 +78,7 @@ public class MarcasControle implements IMarcasControle {
 
     @Override
     public void alterar(Marca objeto) throws Exception {
-        if (buscarMarca(objeto.getDescricao())) {
+        if (buscarMarca(objeto.getDescricao()) && buscarMarca(objeto.getUrl())) {
             throw new Exception("Marca já foi cadastrada");
         }
         marcaPersistencia.alterar(objeto);

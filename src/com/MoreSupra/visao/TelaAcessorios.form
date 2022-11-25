@@ -349,15 +349,21 @@
                   <Font name="Serif" size="16" style="3"/>
                 </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="0">
+                  <Table columnCount="5" rowCount="0">
                     <Column editable="false" title="ID" type="java.lang.String"/>
                     <Column editable="false" title="DESCRI&#xc7;&#xc3;O" type="java.lang.String"/>
                     <Column editable="false" title="PRE&#xc7;O LOCA&#xc7;&#xc3;O" type="java.lang.String"/>
-                    <Column editable="false" title="ACESS&#xd3;RIO" type="java.lang.Object"/>
+                    <Column editable="true" title="URL" type="java.lang.String"/>
+                    <Column editable="true" title="ACESS&#xd3;RIO" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>

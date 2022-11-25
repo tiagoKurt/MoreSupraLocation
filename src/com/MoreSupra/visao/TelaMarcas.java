@@ -331,7 +331,8 @@ public class TelaMarcas extends javax.swing.JFrame {
     private void jButton1_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_alterarActionPerformed
         // TODO add your handling code here:
         try {
-            Marca marca = new Marca(Integer.parseInt(jTextField1_IDENTIFICADOR.getText()), jTextField1_descricao.getText(), jTextField2_url.getText());
+            Marca marca = new Marca(Integer.parseInt(jTextField1_IDENTIFICADOR.getText()), jTextField1_descricao.getText(), 
+                    jTextField2_url.getText());
             controle.alterar(marca);
             if (jTable1.getSelectedRow() != -1) {
                 jTable1.setValueAt(jTextField1_IDENTIFICADOR.getText(), jTable1.getSelectedRow(), 0);

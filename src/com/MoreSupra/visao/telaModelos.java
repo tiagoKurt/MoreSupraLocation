@@ -420,6 +420,9 @@ public class telaModelos extends javax.swing.JFrame {
             for(int i = 0; i < lista.size(); i++){
                 if(jComboBox1_marca.getSelectedItem().equals(lista.get(i).getDescricao())){
                     modelo.setMarca(lista.get(i));
+                    ImageIcon marca = new ImageIcon(lista.get(i).getUrl());
+                marca.setImage(marca.getImage().getScaledInstance(jLabel9_marcaLogo.getWidth(), jLabel9_marcaLogo.getHeight(), 1));
+                jLabel9_marcaLogo.setIcon(marca);
             }
         }
         }catch (Exception erro) {
