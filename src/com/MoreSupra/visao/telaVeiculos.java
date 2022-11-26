@@ -67,7 +67,6 @@ public class telaVeiculos extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jButton1_alterar = new javax.swing.JButton();
         jButton2_incluir = new javax.swing.JButton();
-        jButton3_buscar = new javax.swing.JButton();
         jComboBox1_anoFabricacao = new javax.swing.JComboBox<>();
         jComboBox1_AnoModelo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -210,7 +209,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 420, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -222,19 +221,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 169, -1));
-
-        jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
-        jButton3_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/lupa4.0.png"))); // NOI18N
-        jButton3_buscar.setText("  BUSCAR");
-        jButton3_buscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jButton3_buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3_buscarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 169, -1));
 
         jComboBox1_anoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
         jComboBox1_anoFabricacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -328,15 +315,6 @@ public class telaVeiculos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2_incluirActionPerformed
 
-    private void jButton3_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_buscarActionPerformed
-        // TODO add your handling code here:
-        try {
-            
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
-        }
-    }//GEN-LAST:event_jButton3_buscarActionPerformed
-
     private void jComboBox1_anoFabricacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_anoFabricacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1_anoFabricacaoActionPerformed
@@ -383,7 +361,6 @@ public class telaVeiculos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar;
     private javax.swing.JButton jButton2_incluir;
-    private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JComboBox<String> jComboBox1_AnoModelo;
     private javax.swing.JComboBox<String> jComboBox1_anoFabricacao;

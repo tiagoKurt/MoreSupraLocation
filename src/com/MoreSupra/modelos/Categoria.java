@@ -4,12 +4,14 @@ public class Categoria {
     private int id = 0;
     private String descricao = "";
     private float valorLocacao = 0;
+    private String url = "";
     
     public Categoria(){}
-    public Categoria(int id, String descricao, float valorLocacao){
+    public Categoria(int id, String descricao, float valorLocacao, String url){
         this.id = id;
         this.descricao = descricao;
         this.valorLocacao = valorLocacao;
+        this.url = url;
     }
 
     public int getId() {
@@ -36,8 +38,16 @@ public class Categoria {
         this.valorLocacao = valorLocacao;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+    
     @Override
     public String toString() {
-        return id + ";" + descricao + ";" + valorLocacao + ";";
+        return id + ";" + descricao + ";" + valorLocacao + ";" + url + ";";
     }    
 }

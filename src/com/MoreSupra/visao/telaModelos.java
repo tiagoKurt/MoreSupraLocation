@@ -69,8 +69,7 @@ public class telaModelos extends javax.swing.JFrame {
     public void imprimirDados(ArrayList<Modelos> listaDeModelos){
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1_Modelos.getModel();
-            JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1_Modelos.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
+            JTableRenderer JtableRenderer = new JTableRenderer();           
             jTable1_Modelos.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 

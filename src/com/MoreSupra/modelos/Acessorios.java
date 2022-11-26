@@ -50,8 +50,5 @@ public class Acessorios {
     public String toString() {
         return id + ";" + descricao + ";" + valorDaLocacao + ";" + url + ";";
     }
-
-    public String getUrl(String url) {
-        return url;
-    }          
+         
 }

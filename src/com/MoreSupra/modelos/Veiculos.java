@@ -11,16 +11,16 @@ public class Veiculos {
     private float precoDeCompra = 0;
     private Date anoFabricacao;
     private Date anoModelo;
-    private tipoDeCombustivel combustivel;
+    private tipoDeCombustivel tipoDeCombustivel;
     private int quilometragem = 0;
-    private tipoDoVeiculo tipoVeiculo;
-    private situacao situacaoVeiculo;
+    private tipoDoVeiculo tipoDoVeiculo;
+    private situacao situacao;
     
     public Veiculos(){}
     
     public Veiculos(int id, String placa, int renavem, float precoDeVenda, float precoDeCompra, Date anoFabricacao,
-            Date anoModelo, tipoDeCombustivel combustivel, int quilometragem, tipoDoVeiculo tipoVeiculo, situacao 
-                    situacaoVeiculo){
+            Date anoModelo, tipoDeCombustivel tipoDeCombustivel, int quilometragem, tipoDoVeiculo tipoDoVeiculo, situacao 
+                    situacao){
         this.id = id;
         this.renavem = renavem;
         this.placa = placa;
@@ -28,10 +28,10 @@ public class Veiculos {
         this.precoDeVenda = precoDeVenda;
         this.anoFabricacao = anoFabricacao;
         this.anoModelo = anoModelo;
-        this.combustivel = combustivel;
+        this.tipoDeCombustivel = tipoDeCombustivel;
         this.quilometragem = quilometragem;
-        this.tipoVeiculo = tipoVeiculo;
-        this.situacaoVeiculo = situacaoVeiculo;
+        this.tipoDoVeiculo = tipoDoVeiculo;
+        this.situacao = situacao;
     }
 
     public int getId() {
@@ -91,41 +91,43 @@ public class Veiculos {
     }
 
     public tipoDeCombustivel getCombustivel() {
-        return combustivel;
-    }
-
-    public void setCombustivel(tipoDeCombustivel combustivel) {
-        this.combustivel = combustivel;
-    }
-
-    public int getQuilometragem() {
-        return quilometragem;
+        return tipoDeCombustivel;
     }
 
     public void setQuilometragem(int quilometragem) {
         this.quilometragem = quilometragem;
     }
 
-    public tipoDoVeiculo getTipoVeiculo() {
-        return tipoVeiculo;
+    public tipoDeCombustivel getTipoDeCombustivel() {
+        return tipoDeCombustivel;
     }
 
-    public void setTipoVeiculo(tipoDoVeiculo tipoVeiculo) {
-        this.tipoVeiculo = tipoVeiculo;
+    public void setTipoDeCombustivel(tipoDeCombustivel tipoDeCombustivel) {
+        this.tipoDeCombustivel = tipoDeCombustivel;
     }
 
-    public situacao getSituacaoVeiculo() {
-        return situacaoVeiculo;
+    public tipoDoVeiculo getTipoDoVeiculo() {
+        return tipoDoVeiculo;
     }
 
-    public void setSituacaoVeiculo(situacao situacaoVeiculo) {
-        this.situacaoVeiculo = situacaoVeiculo;
+    public void setTipoDoVeiculo(tipoDoVeiculo tipoDoVeiculo) {
+        this.tipoDoVeiculo = tipoDoVeiculo;
     }
+
+    public situacao getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(situacao situacao) {
+        this.situacao = situacao;
+    }
+    
+
 
     @Override
     public String toString() {
         return id + ";" + placa + ";" + renavem + ";" + precoDeVenda + ";" + precoDeCompra + ";" + anoFabricacao + 
-                ";" + anoModelo + ";" + combustivel + ";" + quilometragem + ";" + tipoVeiculo + ";" + 
-                situacaoVeiculo + ";";
+                ";" + anoModelo + ";" + tipoDeCombustivel + ";" + quilometragem + ";" + tipoDoVeiculo + ";" + 
+                situacao + ";";
     }    
 }

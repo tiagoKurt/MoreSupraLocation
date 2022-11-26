@@ -44,9 +44,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(TelaMarcas.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-   }
-   
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -202,14 +201,14 @@ public class TelaAcessorios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "DESCRIÇÃO", "PREÇO LOCAÇÃO", "ACESSÓRIO"
+                "ID", "DESCRIÇÃO", "PREÇO", "URL", "ACESSÓRIO"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -227,6 +226,9 @@ public class TelaAcessorios extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 830, -1));
 
@@ -265,13 +267,13 @@ public class TelaAcessorios extends javax.swing.JFrame {
     private void jTextField1_descricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_descricaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1_descricaoActionPerformed
-
     
+
     private void jTextField1_descricaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1_descricaoKeyTyped
         // TODO add your handling code here:
-        char c=evt.getKeyChar();
-
-        if(Character.isLowerCase(c)){
+        char c = evt.getKeyChar();
+        
+        if (Character.isLowerCase(c)) {
             evt.setKeyChar(Character.toUpperCase(c));
         }
     }//GEN-LAST:event_jTextField1_descricaoKeyTyped
@@ -284,7 +286,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Acessorios acess = new Acessorios(Integer.parseInt(jTextField1_IDENTIFICADOR.getText()), jTextField1_descricao.getText(),
-            Float.parseFloat(jTextField2_precoLocacao.getText()), jTextField2_uRL.getText());
+                    Float.parseFloat(jTextField2_precoLocacao.getText()), jTextField2_uRL.getText());
             controle.alterar(acess);
             if (jTable1.getSelectedRow() != -1) {
                 jTable1.setValueAt(jTextField1_IDENTIFICADOR.getText(), jTable1.getSelectedRow(), 0);
@@ -305,15 +307,15 @@ public class TelaAcessorios extends javax.swing.JFrame {
         try {
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Acessorios.txt");
             arquivo.createNewFile();
-            Acessorios acessorios = new Acessorios(0, jTextField1_descricao.getText() , Float.parseFloat(jTextField2_precoLocacao.getText()),
-            jTextField2_uRL.getText());
-
+            Acessorios acessorios = new Acessorios(0, jTextField1_descricao.getText(), Float.parseFloat(jTextField2_precoLocacao.getText()),
+                    jTextField2_uRL.getText());
+            
             controle.incluir(acessorios);
             jTextField1_descricao.setText("");
             jTextField1_IDENTIFICADOR.setText("");
             jTextField2_precoLocacao.setText("");
             jTextField2_uRL.setText("");
-
+            
             imprimirDadosNaGrid(controle.listagemDeAcessorios());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
@@ -333,37 +335,39 @@ public class TelaAcessorios extends javax.swing.JFrame {
             jTextField2_uRL.setText(nomeDoArquivo);
             ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
             iconLogo.setImage(iconLogo.getImage().getScaledInstance(
-                jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
-        jLabel7_FotoAcessorio.setIcon(iconLogo);
+                    jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
+            jLabel7_FotoAcessorio.setIcon(iconLogo);
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro);
         }
     }//GEN-LAST:event_jButton3_buscarActionPerformed
-
-    public void alterar(ArrayList<Acessorios> listaDeMarcas){
+    
+    public void alterar(ArrayList<Acessorios> listaDeMarcas) {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Acessorios> lista = listaDeMarcas.iterator();
-
+            
             while (lista.hasNext()) {
                 String[] saida = new String[4];
                 Acessorios aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getValorDaLocacao() + "";
-                ImageIcon iconlogo = new ImageIcon((aux.getUrl()));
+                saida[3] = aux.getUrl();
+                ImageIcon iconlogo = new ImageIcon(aux.getUrl());
                 //Incluir nova linha na Tabela
-                if(saida.length != -1){
-                saida[0] = aux.getId() + "";
-                saida[1] = aux.getDescricao();
-                saida[2] = aux.getValorDaLocacao() + "";
+                if (saida.length != -1) {
+                    saida[0] = aux.getId() + "";
+                    saida[1] = aux.getDescricao();
+                    saida[2] = aux.getValorDaLocacao() + "";
+                    saida[3] = aux.getUrl();
                 }
-                Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
+                Object[] dados = {saida[0], saida[1], saida[2], saida[3], iconlogo};
                 model.addRow(dados);
             }
         } catch (Exception erro) {
@@ -384,10 +388,11 @@ public class TelaAcessorios extends javax.swing.JFrame {
             jTextField1_IDENTIFICADOR.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
             jTextField1_descricao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
             jTextField2_precoLocacao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
+            jTextField2_uRL.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString());
             String nomeUrl = jTextField2_uRL.getText();
-    ImageIcon iconLogo = new ImageIcon(nomeUrl);
-    iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
-    jLabel7_FotoAcessorio.setIcon(iconLogo);
+            ImageIcon iconLogo = new ImageIcon(nomeUrl);
+            iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabel7_FotoAcessorio.getWidth(), jLabel7_FotoAcessorio.getHeight(), 1));
+            jLabel7_FotoAcessorio.setIcon(iconLogo);
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -429,31 +434,33 @@ public class TelaAcessorios extends javax.swing.JFrame {
             }
         });
     }
+
     private void imprimirDadosNaGrid(ArrayList<Acessorios> listaDeAcessorios) {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
-            
+            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
+
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Acessorios> lista = listaDeAcessorios.iterator();
-
+            
             while (lista.hasNext()) {
-                String[] saida = new String[3];
+                String[] saida = new String[4];
                 Acessorios aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getValorDaLocacao() + "";
-                ImageIcon iconlogo = new ImageIcon((aux.getUrl()));
+                saida[3] = aux.getUrl();
+                ImageIcon iconlogo = new ImageIcon(aux.getUrl());
                 //Incluir nova linha na Tabela
-                Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
+                Object[] dados = {saida[0], saida[1], saida[2], saida[3], iconlogo};
                 model.addRow(dados);
             }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
-
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

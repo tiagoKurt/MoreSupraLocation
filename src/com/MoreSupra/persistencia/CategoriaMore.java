@@ -26,9 +26,10 @@ public class CategoriaMore implements ICategoriaMore{
                 objetoCategoria.setId(Integer.parseInt(vetorString[0]));
                 objetoCategoria.setDescricao(vetorString[1]);
                 objetoCategoria.setValorLocacao(Float.parseFloat(vetorString[2]));
+                objetoCategoria.setUrl(vetorString[3]);
                 if(objetoCategoria.getId() == id){
                 br.close();
-                return new Categoria(Integer.parseInt(vetorString[0]),vetorString[1], Float.parseFloat(vetorString[2]));
+                return new Categoria(Integer.parseInt(vetorString[0]),vetorString[1], Float.parseFloat(vetorString[2]), vetorString[3]);
                 }
                
             }
@@ -85,6 +86,7 @@ public class CategoriaMore implements ICategoriaMore{
                 objetoCategoria.setId(Integer.parseInt(vetorString[0]));
                 objetoCategoria.setDescricao(vetorString[1]);
                 objetoCategoria.setValorLocacao(Float.parseFloat(vetorString[2]));
+                objetoCategoria.setUrl(vetorString[3]);
                 listaDeCategorias.add(objetoCategoria);
             }
             br.close();
