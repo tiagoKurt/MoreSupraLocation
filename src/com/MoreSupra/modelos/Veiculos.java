@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.modelos;
 
 import java.util.Date;
 import com.MoreSupra.enumeration.*;
 
-/**
- *
- * @author Aluno
- */
 public class Veiculos {
     private int id = 0;
     private String placa = "";
@@ -135,6 +127,5 @@ public class Veiculos {
         return id + ";" + placa + ";" + renavem + ";" + precoDeVenda + ";" + precoDeCompra + ";" + anoFabricacao + 
                 ";" + anoModelo + ";" + combustivel + ";" + quilometragem + ";" + tipoVeiculo + ";" + 
                 situacaoVeiculo + ";";
-    }
-    
+    }    
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.Controle;
 import com.MoreSupra.GeradorID.GeradorIdentificador;
 import com.MoreSupra.modelos.Modelos;
@@ -10,10 +6,6 @@ import com.MoreSupra.persistencia.ModelosMore;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- *
- * @author Aluno
- */
 public class ModelosControle implements IModelosControle{
     
     IModelosMore modelosPersistencia = null;
@@ -91,7 +83,5 @@ public class ModelosControle implements IModelosControle{
     @Override
     public ArrayList<Modelos> listagemModelos() throws Exception {
         return modelosPersistencia.listagemModelos();
-    }
-
-    
+    }    
 }

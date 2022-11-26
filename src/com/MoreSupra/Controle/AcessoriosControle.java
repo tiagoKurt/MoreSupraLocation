@@ -2,14 +2,9 @@ package com.MoreSupra.Controle;
 import com.MoreSupra.modelos.Acessorios;
 import com.MoreSupra.persistencia.AcessoriosMore;
 import com.MoreSupra.persistencia.IAcessoriosMore;
-import com.MoreSupra.persistencia.VeiculosMore;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- *
- * @author Pichau
- */
 public class AcessoriosControle implements IAcessoriosControle {
     
     IAcessoriosMore acessoriosPersistencia = null;
@@ -48,9 +43,7 @@ public class AcessoriosControle implements IAcessoriosControle {
         } catch (Exception erro) {
             throw erro;
         }
-    }
-    
-    
+    }  
 
     @Override
     public void incluir(Acessorios objeto) throws Exception {
@@ -102,5 +95,4 @@ public class AcessoriosControle implements IAcessoriosControle {
     public Acessorios buscar(int id) throws Exception {
         return acessoriosPersistencia.buscar(id);
     }
-
 }

@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import com.MoreSupra.Controle.IMarcasControle;
 
-/**
- *
- * @author 
- */
 public class MarcasControle implements IMarcasControle {
 
     IMarcaMore marcaPersistencia = null;
@@ -93,5 +89,4 @@ public class MarcasControle implements IMarcasControle {
     public Marca buscar(int id) throws Exception {
         return marcaPersistencia.buscar(id);
     }
-
 }

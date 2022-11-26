@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.persistencia;
 
 import com.MoreSupra.modelos.Veiculos;
@@ -9,16 +5,10 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Pichau
- */
 public class VeiculosMore implements IVeiculosMore{
     
     private String nomeArquivoNoDisco = "";
@@ -85,7 +75,5 @@ public class VeiculosMore implements IVeiculosMore{
         } catch (Exception erro) {
             throw erro;
         }
-    }
-    
-    
+    }    
 }

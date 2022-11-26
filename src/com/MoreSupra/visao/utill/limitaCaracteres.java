@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.visao.utill;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
-/**
- *
- * @author Pichau
- */
 public class limitaCaracteres extends PlainDocument {
 
     public enum tipoEntrada {
@@ -74,7 +66,6 @@ public class limitaCaracteres extends PlainDocument {
         } else {
             String nova = string.substring(0, qtdCaracteres);
             super.insertString(i, nova, a);
-
         }
     }
 }

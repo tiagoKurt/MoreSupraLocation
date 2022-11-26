@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.modelos;
 
-/**
- *
- * @author Pichau
- */
 public class Categoria {
     private int id = 0;
     private String descricao = "";
@@ -47,6 +39,5 @@ public class Categoria {
     @Override
     public String toString() {
         return id + ";" + descricao + ";" + valorLocacao + ";";
-    }
-    
+    }    
 }

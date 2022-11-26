@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.GeradorID;
 
 import java.io.BufferedReader;
@@ -12,10 +8,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- *
- * @author eugeniojulio"
- */
 public class GeradorIdentificador {
     public static void criarArquivoDeID()throws FileNotFoundException, IOException{
         String nomeDoArquivo ="./src/com/MoreSupra/arquivoDisco/idGerado.txt";
@@ -42,6 +34,7 @@ public class GeradorIdentificador {
         }
         }
     }
+    
     public static int getID()throws FileNotFoundException, IOException{
         String nomeDoArquivo ="./src/com/MoreSupra/arquivoDisco/idGerado.txt";
         FileReader fr = new FileReader(nomeDoArquivo);

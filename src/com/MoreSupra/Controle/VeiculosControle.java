@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.Controle;
 
 import com.MoreSupra.GeradorID.GeradorIdentificador;
@@ -10,10 +6,7 @@ import com .MoreSupra.persistencia.IVeiculosMore;
 import com.MoreSupra.persistencia.VeiculosMore;
 import java.util.ArrayList;
 import java.util.Iterator;
-/**
- *
- * @author Pichau
- */
+
 public class VeiculosControle implements IVeiculosControle{
     
     IVeiculosMore veiculosPersistencia = null;

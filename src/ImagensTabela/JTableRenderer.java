@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ImagensTabela;
 
 import java.awt.Component;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 
-/**
- *
- * @author Aluno
- */
 public class JTableRenderer extends DefaultTableCellRenderer{
         JLabel JlabelLogo = new JLabel();
         

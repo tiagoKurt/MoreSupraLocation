@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.MoreSupra.modelos;
 
-/**
- *
- * @author Pichau
- */
 public class Acessorios {
     private int id = 0;
     private String descricao = "";
     private String url = "";
     private float valorDaLocacao;
-    
-    
+        
     public Acessorios(){}
     public Acessorios(int id, String descricao, float valorDaLocacao, String url){
         this.id = id;
@@ -62,6 +53,5 @@ public class Acessorios {
 
     public String getUrl(String url) {
         return url;
-    }
-          
+    }          
 }

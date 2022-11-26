@@ -8,10 +8,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
-/**
- *
- * @author Pichau
- */
 public class AcessoriosMore implements IAcessoriosMore{
     
     private String nomeArquivoNoDisco;

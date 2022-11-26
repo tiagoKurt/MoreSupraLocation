@@ -2,19 +2,12 @@ package com.MoreSupra.persistencia;
 
 import com.MoreSupra.GeradorID.GeradorIdentificador;
 import com.MoreSupra.modelos.Marca;
-import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Aluno
- */
 public class MarcaMore implements IMarcaMore {
 
     private String nomeArquivoNoDisco;
@@ -38,11 +31,9 @@ public class MarcaMore implements IMarcaMore {
                 if(objetoMarca.getId() == id){
                 br.close();
                 return new Marca(Integer.parseInt(vetorString[0]),vetorString[1], vetorString[2]);
-                }
-               
+                }               
             }
-            return null;
-           
+            return null;           
     }
     @Override
     public void incluir(Marca objeto) throws Exception {
@@ -102,6 +93,5 @@ public class MarcaMore implements IMarcaMore {
         } catch (Exception erro) {
             throw erro;
         }
-    }
-    
+    }    
 }
