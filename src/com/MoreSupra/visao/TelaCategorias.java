@@ -205,7 +205,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "ID", "DESCRIÇÃO", "URL", "LOGO"
+                "ID", "DESCRIÇÃO", "PREÇO", "LOGO"
             }
         ) {
             Class[] types = new Class [] {
@@ -231,6 +231,7 @@ public class TelaCategorias extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 1251, 333));
 

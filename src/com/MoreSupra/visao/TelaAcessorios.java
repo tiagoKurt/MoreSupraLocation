@@ -204,14 +204,14 @@ public class TelaAcessorios extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "DESCRIÇÃO", "PREÇO LOCAÇÃO", "URL", "ACESSÓRIO"
+                "ID", "DESCRIÇÃO", "PREÇO LOCAÇÃO", "ACESSÓRIO"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -359,7 +359,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
@@ -371,16 +371,14 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getValorDaLocacao() + "";
-                saida[3] = aux.getUrl(aux.getUrl());
                 ImageIcon iconlogo = new ImageIcon((aux.getUrl()));
                 //Incluir nova linha na Tabela
                 if(saida.length != -1){
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getValorDaLocacao() + "";
-                saida[3] = aux.getUrl();
                 }
-                Object[] dados = {saida[0], saida[1], saida[2],saida[3], iconlogo};
+                Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
                 model.addRow(dados);
             }
         } catch (Exception erro) {
@@ -450,22 +448,21 @@ public class TelaAcessorios extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
             
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Acessorios> lista = listaDeAcessorios.iterator();
 
             while (lista.hasNext()) {
-                String[] saida = new String[4];
+                String[] saida = new String[3];
                 Acessorios aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getDescricao();
                 saida[2] = aux.getValorDaLocacao() + "";
-                saida[3] = aux.getUrl();
                 ImageIcon iconlogo = new ImageIcon((aux.getUrl()));
                 //Incluir nova linha na Tabela
-                Object[] dados = {saida[0], saida[1], saida[2], saida[3], iconlogo};
+                Object[] dados = {saida[0], saida[1], saida[2], iconlogo};
                 model.addRow(dados);
             }
         } catch (Exception erro) {
