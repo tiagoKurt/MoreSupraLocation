@@ -1,4 +1,4 @@
 1;ACURA;C:\Users\Aluno\Documents\NetBeansProjects\MoreSupra\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Acura.jpg;
 5;MAZDA;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Mazda.jpg;
-6;TOYOTA;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Toyta.jpg;
-7;HONDA;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Honda.png;
+6;TOYOTA;C:\Users\Rodrigo\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Subaru.png;
+7;HONDA;C:\Users\Rodrigo\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Honda.png;
