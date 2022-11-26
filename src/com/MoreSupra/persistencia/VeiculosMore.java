@@ -1,6 +1,7 @@
 package com.MoreSupra.persistencia;
 
 import com.MoreSupra.modelos.Veiculos;
+import com.MoreSupra.modelos.suportVeiculos;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -59,13 +60,20 @@ public class VeiculosMore implements IVeiculosMore{
 
             while((linha = br.readLine()) != null){
                 Veiculos objetoVeiculo = new Veiculos();
-                MarcaMore objetoMarca = new MarcaMore();
+                suportVeiculos objetoVei = new suportVeiculos();
                 String vetorString[] = linha.split(";");
                 objetoVeiculo.setId(Integer.parseInt(vetorString[0]));
                 objetoVeiculo.setPlaca(vetorString[1]);
                 objetoVeiculo.setRenavem(Integer.parseInt(vetorString[2]));
                 objetoVeiculo.setPrecoDeCompra(Integer.parseInt(vetorString[3]));
                 objetoVeiculo.setPrecoDeVenda(Integer.parseInt(vetorString[4]));
+                objetoVeiculo.setAnoFabricacao(objetoVeiculo.getAnoFabricacao());
+                objetoVeiculo.setAnoModelo(objetoVeiculo.getAnoModelo());                                
+                objetoVeiculo.setCombustivel(objetoVei.getTipoDeCombustivel());
+                objetoVeiculo.setTipoVeiculo(objetoVei.getTipoDoVeiculo());
+                objetoVeiculo.setQuilometragem(Integer.parseInt(vetorString[5]));
+                objetoVeiculo.setSituacaoVeiculo(objetoVei.getSituacao());
+                
                 
                 
                 listaDeVeiculos.add(objetoVeiculo);

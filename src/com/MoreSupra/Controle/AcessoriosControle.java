@@ -49,7 +49,7 @@ public class AcessoriosControle implements IAcessoriosControle {
     public void incluir(Acessorios objeto) throws Exception {
         objeto.setDescricao(verificarDescricao(objeto.getDescricao()));
         if(verificarVazio(objeto)) throw new Exception("Alguns campos não foram preenchidos!");
-        if(verificarValorNulo(objeto)) throw new Exception("Valor não pode ser < || = 0");
+        if(verificarValorNulo(objeto)) throw new Exception("Valor não pode ser < ou = 0");
         if(buscarAcessorio(objeto.getDescricao())){
             throw new Exception("Acessório já cadastrado");
         }
