@@ -42,7 +42,6 @@ public class telaVeiculos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextField8_idVeiculos = new javax.swing.JTextField();
@@ -76,25 +75,24 @@ public class telaVeiculos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 190, 130));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 190, 130));
 
         jLabel11.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("CADASTRO DE VEÍCULOS");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 440, 40));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 440, 40));
 
         jTextField8_idVeiculos.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField8_idVeiculos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField8_idVeiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 70, 40));
+        getContentPane().add(jTextField8_idVeiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 70, 40));
 
         jLabel24.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("ID");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, 40));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, 40));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -106,53 +104,53 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, 169, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, 169, -1));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("COMBUSTÍVEL");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 40));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 40));
 
         jTextField_placa.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_placa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 230, 40));
+        getContentPane().add(jTextField_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 230, 40));
 
         jLabel26.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("RENAVAM");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, -1, 40));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, -1, 40));
 
         jTextField_renavam.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_renavam.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_renavam, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, 250, 40));
+        getContentPane().add(jTextField_renavam, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, 250, 40));
 
         jTextField_precodeCompra.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_precodeCompra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_precodeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 230, 40));
+        getContentPane().add(jTextField_precodeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 230, 40));
 
         jLabel27.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("PREÇO DE COMPRA");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 40));
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 40));
 
         jLabel28.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("ANO FABRICAÇÃO");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, -1, 40));
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, -1, 40));
 
         jLabel29.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("PREÇO DE VENDA");
-        jPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, 40));
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, 40));
 
         jTextField_precoDeVenda.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_precoDeVenda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_precoDeVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 140, 250, 40));
+        getContentPane().add(jTextField_precoDeVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 140, 250, 40));
 
         jLabel30.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("ANO MODELO");
-        jPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, 40));
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, 40));
 
         jComboBox1_combustivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_combustivel.addActionListener(new java.awt.event.ActionListener() {
@@ -160,12 +158,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_combustivelActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1_combustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 160, 40));
+        getContentPane().add(jComboBox1_combustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 160, 40));
 
         jLabel31.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("PLACA");
-        jPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, 40));
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, 40));
 
         jComboBox1_tipoDoVeiculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_tipoDoVeiculo.addActionListener(new java.awt.event.ActionListener() {
@@ -173,21 +171,21 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_tipoDoVeiculoActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1_tipoDoVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 170, 40));
+        getContentPane().add(jComboBox1_tipoDoVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 170, 40));
 
         jLabel32.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
         jLabel32.setText("TIPO DO VEÍCULO");
-        jPanel1.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, -1, 40));
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, -1, 40));
 
         jLabel33.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("QUILOMETRAGEM");
-        jPanel1.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, 40));
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, 40));
 
         jTextField_quilometragem.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_quilometragem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jTextField_quilometragem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 230, 40));
+        getContentPane().add(jTextField_quilometragem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 230, 40));
 
         jComboBox1_situacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_situacao.addActionListener(new java.awt.event.ActionListener() {
@@ -195,12 +193,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_situacaoActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1_situacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 170, 40));
+        getContentPane().add(jComboBox1_situacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 170, 40));
 
         jLabel34.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("SITUAÇÃO");
-        jPanel1.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, 40));
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, 40));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -212,7 +210,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 420, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 420, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -224,7 +222,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 169, -1));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
@@ -236,7 +234,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 169, -1));
+        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 169, -1));
 
         jComboBox1_anoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
         jComboBox1_anoFabricacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -245,7 +243,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_anoFabricacaoActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1_anoFabricacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 170, 40));
+        getContentPane().add(jComboBox1_anoFabricacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 170, 40));
 
         jComboBox1_AnoModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
         jComboBox1_AnoModelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -254,7 +252,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_AnoModeloActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 160, 40));
+        getContentPane().add(jComboBox1_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 160, 40));
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -282,21 +280,10 @@ public class telaVeiculos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 900, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 900, 320));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 790));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -417,7 +404,6 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField8_idVeiculos;

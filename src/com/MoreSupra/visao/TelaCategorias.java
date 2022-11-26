@@ -55,7 +55,6 @@ public class TelaCategorias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -75,41 +74,35 @@ public class TelaCategorias extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
-
-        jPanel1.setBackground(new java.awt.Color(51, 0, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.setForeground(new java.awt.Color(51, 0, 51));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1194, 733));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 130));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, 130));
 
         jLabel2.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CADASTRO DE CATEGORIAS");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 510, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 510, -1));
 
         jLabel3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("IDENTIFICADOR");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DESCRIÇÃO");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("PREÇO LOCAÇÃO");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("IMAGEM");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
 
         jTextField1_IDENTIFICADOR.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jTextField1_IDENTIFICADOR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -118,7 +111,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jTextField1_IDENTIFICADORActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1_IDENTIFICADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 75, 37));
+        getContentPane().add(jTextField1_IDENTIFICADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 75, 37));
 
         jTextField1_descricao.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jTextField1_descricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -133,7 +126,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jTextField1_descricaoKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField1_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 320, 35));
+        getContentPane().add(jTextField1_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 320, 35));
 
         jTextField2_precoLocacao.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jTextField2_precoLocacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -142,7 +135,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jTextField2_precoLocacaoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField2_precoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 250, 260, 35));
+        getContentPane().add(jTextField2_precoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 250, 260, 35));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -154,7 +147,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 240, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 240, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -166,7 +159,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 200, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 200, 169, -1));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
@@ -178,7 +171,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 169, -1));
+        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 169, -1));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -190,7 +183,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 640, 169, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 640, 169, -1));
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
@@ -236,11 +229,11 @@ public class TelaCategorias extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 1251, 333));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 1251, 333));
 
         jLabel7_fotoCategoria.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7_fotoCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(jLabel7_fotoCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 240, 140));
+        getContentPane().add(jLabel7_fotoCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 240, 140));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel7.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -252,10 +245,7 @@ public class TelaCategorias extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 730));
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1470, 733);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -441,7 +431,6 @@ public class TelaCategorias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel7_fotoCategoria;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1_IDENTIFICADOR;

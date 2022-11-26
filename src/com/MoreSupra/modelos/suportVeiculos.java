@@ -6,20 +6,40 @@ import com.MoreSupra.enumeration.tipoDoVeiculo;
 
 public class suportVeiculos {
     private tipoDeCombustivel tipoDeCombustivel;
-    
+    private tipoDoVeiculo tipoDoVeiculo;
+    private situacao situacao;
     
     public suportVeiculos(){}
 
-    public tipoDoVeiculo getTipoDoVeiculo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public suportVeiculos(tipoDeCombustivel tipoCombustivel, tipoDoVeiculo tipDoVeiculo, situacao situacao){
+        this.situacao = situacao;
+        this.tipoDeCombustivel = tipoDeCombustivel;
+        this.tipoDoVeiculo = tipoDoVeiculo;
     }
 
     public tipoDeCombustivel getTipoDeCombustivel() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return tipoDeCombustivel;
+    }
+
+    public void setTipoDeCombustivel(tipoDeCombustivel tipoDeCombustivel) {
+        this.tipoDeCombustivel = tipoDeCombustivel;
+    }
+
+    public tipoDoVeiculo getTipoDoVeiculo() {
+        return tipoDoVeiculo;
+    }
+
+    public void setTipoDoVeiculo(tipoDoVeiculo tipoDoVeiculo) {
+        this.tipoDoVeiculo = tipoDoVeiculo;
     }
 
     public situacao getSituacao() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return situacao;
     }
+
+    public void setSituacao(situacao situacao) {
+        this.situacao = situacao;
+    }
+    
 
 }
