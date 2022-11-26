@@ -13,16 +13,13 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
-import java.util.Collections;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import com.MoreSupra.Controle.*;
 import com.MoreSupra.modelos.Marca;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 //import com.MoreSupra.persistencia.MarcaMore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
+
 
 /**
  *
@@ -69,7 +66,8 @@ public class telaModelos extends javax.swing.JFrame {
     public void imprimirDados(ArrayList<Modelos> listaDeModelos){
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1_Modelos.getModel();
-            JTableRenderer JtableRenderer = new JTableRenderer();           
+            JTableRenderer JtableRenderer = new JTableRenderer();  
+            jTable1_Modelos.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer);
             jTable1_Modelos.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
@@ -240,11 +238,11 @@ public class telaModelos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "DESCRIÇÃO", "URL", "MARCA", "MODELO"
+                "ID", "DESCRIÇÃO", "URL", "MODELO", "MARCA"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false

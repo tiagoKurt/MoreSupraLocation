@@ -52,6 +52,6 @@ public class Modelos {
     }
     @Override
     public String toString() {
-        return id + ";" + descricao + ";" + url + ";" + marca.getId();
+        return getId() + ";" + getDescricao() + ";" + getUrl() + ";" + getMarca() + ";";
     }
 }

@@ -1,0 +1,2 @@
+3;IS200;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\LEXUS IS200.jpg;2;LEXUS;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Lexus.png;;
+4;SUBARU IMPREZA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\SUBARU IMPREZ.jpg;1;SUBARU;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Subaru.png;;

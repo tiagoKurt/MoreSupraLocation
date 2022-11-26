@@ -1,0 +1,2 @@
+5;KIT NEON;222.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Kit Neon.jpg;
+6;BANDEIRA;541.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Bandeira do Flamengo.jpg;

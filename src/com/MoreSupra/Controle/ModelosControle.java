@@ -5,7 +5,6 @@ import com.MoreSupra.persistencia.IModelosMore;
 import com.MoreSupra.persistencia.ModelosMore;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 public class ModelosControle implements IModelosControle{
     
     IModelosMore modelosPersistencia = null;
