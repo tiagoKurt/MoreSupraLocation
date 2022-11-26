@@ -1,3 +1,0 @@
-3;AROMATIZANTE;8888.0;C:\Users\Rodrigo\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Aromatizante rick and morty.jpg;
-9;CADEIRINHA PARA PET;232.0;;
-10;CADEIRA;250.0;C:\Users\Rodrigo\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Capa para pedal.jpg;
