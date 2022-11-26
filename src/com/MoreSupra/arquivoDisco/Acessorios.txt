@@ -1,1 +1,2 @@
 3;AROMATIZANTE;8888.0;C:\Users\Aluno\Documents\NetBeansProjects\MoreSupra\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Aromatizante rick and morty.jpg;
+9;CADEIRINHA PARA PET;232.0;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\cadeirinhaParaPet.jpg;
