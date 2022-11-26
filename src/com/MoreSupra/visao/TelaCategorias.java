@@ -252,7 +252,7 @@ public class TelaCategorias extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -190, 1560, 840));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1470, 730));
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1470, 733);
