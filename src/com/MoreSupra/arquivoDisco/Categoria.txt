@@ -1,2 +1,0 @@
-11;CUPÊ;13.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\cupê.jpg;
-12;HATCH;42.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\HATCH.jpg;

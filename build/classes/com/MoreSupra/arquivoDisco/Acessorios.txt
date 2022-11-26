@@ -1,2 +1,0 @@
-7;AROMATIZANTE;222.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Aromatizante rick and morty.jpg;
-8;BANDEIRA DO FLAMENGO;3331.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Bandeira do Flamengo.jpg;

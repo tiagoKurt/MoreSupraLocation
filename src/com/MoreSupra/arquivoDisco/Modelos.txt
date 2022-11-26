@@ -1,2 +1,0 @@
-3;SUPRA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\Supra2.jpg;2
-4;GTR R34;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\GTR R34.jpg;1

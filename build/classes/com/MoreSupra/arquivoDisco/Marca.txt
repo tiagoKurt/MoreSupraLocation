@@ -1,2 +1,0 @@
-1;NISSAN;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\nissan.jpg;
-2;TOYOTA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Toyta.jpg;
