@@ -1,2 +1,0 @@
-7;CUPÊ;589.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\cupê.jpg;
-8;SUV;586.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\SUV.jpg;

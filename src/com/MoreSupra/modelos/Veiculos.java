@@ -95,6 +95,10 @@ public class Veiculos {
     public tipoDeCombustivel getCombustivel() {
         return tipoDeCombustivel;
     }
+    
+    public int getQuilometragem() {
+        return renavem;
+    }
 
     public void setQuilometragem(int quilometragem) {
         this.quilometragem = quilometragem;

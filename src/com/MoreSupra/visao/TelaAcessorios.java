@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.MoreSupra.visao;
 
 import ImagensTabela.JTableRenderer;
@@ -224,6 +220,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
             }
         });
         jTable1.setRowHeight(60);
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -231,6 +228,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(1);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
             jTable1.getColumnModel().getColumn(2).setCellRenderer(formatarPrecos1);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
@@ -238,9 +237,11 @@ public class TelaAcessorios extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 830, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAcessorios.gif"))); // NOI18N
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 280, 340, 190));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/nightDrift.gif"))); // NOI18N
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 480, 340, 180));
 
         jLabel10.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N

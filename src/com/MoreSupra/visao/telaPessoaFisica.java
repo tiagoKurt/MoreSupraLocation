@@ -61,6 +61,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jFormattedTextField1_Telefone = new javax.swing.JFormattedTextField();
         jFormattedTextField1_cpf = new javax.swing.JFormattedTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1_cliente = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -119,15 +121,34 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 170, 40));
 
         jTextField1_identidade.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
-        jPanel3.add(jTextField1_identidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 270, 40));
+        jTextField1_identidade.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel3.add(jTextField1_identidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 220, 40));
 
         jTextField2_nomeFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField2_nomeFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField2_nomeFisica.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField2_nomeFisicaKeyTyped(evt);
+            }
+        });
         jPanel3.add(jTextField2_nomeFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 360, 40));
 
         jTextField3_enderecoFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField3_enderecoFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField3_enderecoFisica.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3_enderecoFisicaKeyTyped(evt);
+            }
+        });
         jPanel3.add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 400, 40));
 
         jTextField6_emailFIsica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField6_emailFIsica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField6_emailFIsica.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField6_emailFIsicaKeyTyped(evt);
+            }
+        });
         jPanel3.add(jTextField6_emailFIsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 480, 40));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
@@ -140,7 +161,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 170, 169, -1));
+        jPanel3.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 160, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -152,7 +173,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 210, 169, -1));
+        jPanel3.add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 200, 169, -1));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -164,16 +185,17 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 250, 169, -1));
+        jPanel3.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 240, 169, -1));
 
         jLabel22_FotoFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel3.add(jLabel22_FotoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, 220, 190));
+        jPanel3.add(jLabel22_FotoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 220, 190));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel25.setText("FOTO");
-        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 120, -1, -1));
+        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 110, -1, -1));
 
         jTextField8_IDFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField8_IDFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPanel3.add(jTextField8_IDFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 70, 40));
 
         jLabel28.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
@@ -181,6 +203,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel28.setText("ID");
         jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 40));
 
+        jFormattedTextField1_Telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
             jFormattedTextField1_Telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)# ####-####")));
         } catch (java.text.ParseException ex) {
@@ -188,8 +211,9 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         }
         jFormattedTextField1_Telefone.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jFormattedTextField1_Telefone.setPreferredSize(new java.awt.Dimension(64, 27));
-        jPanel3.add(jFormattedTextField1_Telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 270, 40));
+        jPanel3.add(jFormattedTextField1_Telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 250, 40));
 
+        jFormattedTextField1_cpf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
             jFormattedTextField1_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
@@ -198,6 +222,40 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jFormattedTextField1_cpf.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jFormattedTextField1_cpf.setPreferredSize(new java.awt.Dimension(64, 27));
         jPanel3.add(jFormattedTextField1_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 350, 40));
+
+        jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NOME", "CPF", "IDENTIDADE", "TELFONE", "EMAIL", "ENDEERECO", "FOTO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1_cliente);
+        if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
+            jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
+        }
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 580, 260));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
@@ -211,7 +269,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 867, Short.MAX_VALUE)
         );
 
         pack();
@@ -254,6 +312,30 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_jButton1_alterarActionPerformed
+
+    private void jTextField2_nomeFisicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2_nomeFisicaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField2_nomeFisicaKeyTyped
+
+    private void jTextField6_emailFIsicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6_emailFIsicaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField6_emailFIsicaKeyTyped
+
+    private void jTextField3_enderecoFisicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3_enderecoFisicaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField3_enderecoFisicaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -310,6 +392,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1_cliente;
     private javax.swing.JTextField jTextField1_identidade;
     private javax.swing.JTextField jTextField2_nomeFisica;
     private javax.swing.JTextField jTextField3_enderecoFisica;

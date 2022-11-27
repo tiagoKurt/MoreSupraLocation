@@ -320,26 +320,30 @@ public class telaVeiculos extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();  
-            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(10).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Veiculos> lista = listaDeVeiculos.iterator();
             while(lista.hasNext()){
-                String[] saida= new String[4];
+                String[] saida= new String[10];
                 Veiculos aux = lista.next();
                 saida[0]= aux.getId()+"";
                 saida[1]= aux.getPlaca();
                 saida[2] = aux.getRenavem()+"";
                 saida[3] = aux.getPrecoDeVenda()+"";
                 saida[4] = aux.getPrecoDeCompra()+"";
-                saida[5] = aux.getAnoFabricacao();
-                saida[6] = aux.getAnoModelo();
-                saida[7] = aux.getTipoDeCombustivel();
+                saida[5] = aux.getAnoFabricacao().toString();
+                saida[6] = aux.getAnoModelo().toString();
+                saida[7] = aux.getTipoDeCombustivel().toString();
+                saida[8] = aux.getQuilometragem()+"";
+                saida[9] = aux.getTipoDoVeiculo().toString();
+                saida[10] = aux.getSituacao().toString();
                 
                 //Incluir nova linha na Tabela,saida[0]
                 
-                Object[]dados = {saida[0],saida[1],saida[2],saida[3],};
+                Object[]dados = {saida[0],saida[1],saida[2],saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
+                saida[10]};
                 model.addRow(dados);
             }
         } catch(Exception erro){
@@ -357,7 +361,7 @@ public class telaVeiculos extends javax.swing.JFrame {
             arquivo.createNewFile();
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
                     Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
-                    jComboBox1_anoFabricacao.getSelectedItem(), jComboBox1_AnoModelo.getSelectedItem(),
+                    jComboBox1_anoFabricacao.getSelectedItem().hashCode(), jComboBox1_AnoModelo.getSelectedItem(),
                     jComboBox1_combustivel.getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
                     jComboBox1_tipoDoVeiculo.getSelectedItem(), jComboBox1_situacao.getSelectedItem());
             

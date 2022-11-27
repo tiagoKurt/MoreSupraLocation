@@ -84,4 +84,5 @@ public class VeiculosControle implements IVeiculosControle{
     public ArrayList<Veiculos> listagemVeiculos() throws Exception {
         return veiculosPersistencia.listagemVeiculos();
     }
+
 }

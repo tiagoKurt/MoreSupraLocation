@@ -38,7 +38,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
         jButton4_voltar2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -61,11 +60,12 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jFormattedTextField1_cnpj = new javax.swing.JFormattedTextField();
         jFormattedTextField1_telefone = new javax.swing.JFormattedTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1_cliente = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton4_voltar2.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar2.setForeground(new java.awt.Color(51, 0, 153));
@@ -77,61 +77,79 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton4_voltar2ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton4_voltar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 610, 169, -1));
+        getContentPane().add(jButton4_voltar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 610, 169, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 130));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 130));
 
         jLabel11.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("CADASTRO PESSOA JURÍDICA");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 530, 40));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 530, 40));
 
         jLabel19.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("ENDEREÇO");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 170, 40));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 170, 40));
 
         jLabel20.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("EMAIL");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 100, 40));
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 100, 40));
 
         jLabel21.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("TELEFONE");
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 170, 40));
+        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 170, 40));
 
         jLabel23.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("CNPJ");
-        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 80, 40));
+        getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 80, 40));
 
         jLabel24.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("ID");
-        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, 40));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, 40));
 
         jLabel27.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("NOME");
-        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 100, 40));
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 100, 40));
 
         jTextField8_enderecoJuridica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField8_enderecoJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 430, 40));
+        jTextField8_enderecoJuridica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField8_enderecoJuridica.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField8_enderecoJuridicaKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField8_enderecoJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 430, 40));
 
         jTextField9_emailJuri.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField9_emailJuri, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 320, 490, 40));
+        jTextField9_emailJuri.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField9_emailJuri.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField9_emailJuriKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField9_emailJuri, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 490, 40));
 
         jTextField12_nomeJuridica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField12_nomeJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, 380, 40));
+        jTextField12_nomeJuridica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField12_nomeJuridica.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField12_nomeJuridicaKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField12_nomeJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 380, 40));
 
         jLabel22_FotoFisica1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel4.add(jLabel22_FotoFisica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 170, 220, 190));
+        getContentPane().add(jLabel22_FotoFisica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 150, 220, 190));
 
         jLabel26.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel26.setText("FOTO");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, -1, -1));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 100, -1, -1));
 
         jButton1_alterar1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar1.setForeground(new java.awt.Color(51, 0, 153));
@@ -143,7 +161,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton1_alterar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton1_alterar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 250, 169, -1));
+        getContentPane().add(jButton1_alterar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 230, 169, -1));
 
         jButton2_incluir1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir1.setForeground(new java.awt.Color(51, 0, 153));
@@ -155,7 +173,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton2_incluir1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton2_incluir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 210, 169, -1));
+        getContentPane().add(jButton2_incluir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 190, 169, -1));
 
         jButton3_buscar1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar1.setForeground(new java.awt.Color(51, 0, 153));
@@ -167,19 +185,27 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton3_buscar1ActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton3_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 170, 169, -1));
+        getContentPane().add(jButton3_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 150, 169, -1));
 
         jTextField8_idJuridica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField8_idJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 70, 40));
+        jTextField8_idJuridica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        getContentPane().add(jTextField8_idJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 70, 40));
 
         jTextField11_razaoSocial.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
-        jPanel4.add(jTextField11_razaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 370, 40));
+        jTextField11_razaoSocial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField11_razaoSocial.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField11_razaoSocialKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField11_razaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, 370, 40));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("RAZÃO SOCIAL");
-        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 220, 40));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 220, 40));
 
+        jFormattedTextField1_cnpj.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
             jFormattedTextField1_cnpj.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
         } catch (java.text.ParseException ex) {
@@ -187,8 +213,9 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         }
         jFormattedTextField1_cnpj.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jFormattedTextField1_cnpj.setPreferredSize(new java.awt.Dimension(64, 27));
-        jPanel4.add(jFormattedTextField1_cnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 350, 40));
+        getContentPane().add(jFormattedTextField1_cnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 300, 40));
 
+        jFormattedTextField1_telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
             jFormattedTextField1_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)# ####-####")));
         } catch (java.text.ParseException ex) {
@@ -196,25 +223,44 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         }
         jFormattedTextField1_telefone.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jFormattedTextField1_telefone.setPreferredSize(new java.awt.Dimension(64, 27));
-        jPanel4.add(jFormattedTextField1_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 200, 40));
+        getContentPane().add(jFormattedTextField1_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 200, 40));
+
+        jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NOME", "CNPJ", "RAZÃO S", "TELFONE", "EMAIL", "ENDEERECO", "FOTO"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1_cliente);
+        if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
+            jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 630, 260));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 780));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 1409, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,6 +299,38 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, erro);
         }
     }//GEN-LAST:event_jButton3_buscar1ActionPerformed
+
+    private void jTextField12_nomeJuridicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField12_nomeJuridicaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField12_nomeJuridicaKeyTyped
+
+    private void jTextField11_razaoSocialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField11_razaoSocialKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField11_razaoSocialKeyTyped
+
+    private void jTextField9_emailJuriKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9_emailJuriKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField9_emailJuriKeyTyped
+
+    private void jTextField8_enderecoJuridicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8_enderecoJuridicaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField8_enderecoJuridicaKeyTyped
 
     /**
      * @param args the command line arguments
@@ -308,7 +386,8 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1_cliente;
     private javax.swing.JTextField jTextField11_razaoSocial;
     private javax.swing.JTextField jTextField12_nomeJuridica;
     private javax.swing.JTextField jTextField8_enderecoJuridica;

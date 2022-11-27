@@ -160,7 +160,7 @@ public class telaModelos extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("MODELO");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 90, 130, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, 130, -1));
 
         jLabel9.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -170,7 +170,7 @@ public class telaModelos extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("MARCA");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 90, 110, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 90, 110, -1));
 
         jTextField1_Identificador.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jTextField1_Identificador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -207,7 +207,7 @@ public class telaModelos extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 140, 169, -1));
+        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 140, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -219,7 +219,7 @@ public class telaModelos extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 180, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 180, 169, -1));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -231,7 +231,7 @@ public class telaModelos extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 220, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 220, 169, -1));
 
         jTable1_Modelos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1_Modelos.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
@@ -268,6 +268,10 @@ public class telaModelos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1_Modelos);
         jTable1_Modelos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (jTable1_Modelos.getColumnModel().getColumnCount() > 0) {
+            jTable1_Modelos.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jTable1_Modelos.getColumnModel().getColumn(1).setPreferredWidth(150);
+        }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 300, 980, 340));
 
@@ -281,13 +285,13 @@ public class telaModelos extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 650, 169, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 650, 169, -1));
 
         jLabel9_ModeloImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jLabel9_ModeloImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, 180, 150));
+        getContentPane().add(jLabel9_ModeloImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 130, 210, 150));
 
         jLabel9_marcaLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jLabel9_marcaLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 130, 160, 150));
+        getContentPane().add(jLabel9_marcaLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 130, 180, 150));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -20, 1800, 900));
