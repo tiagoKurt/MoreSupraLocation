@@ -124,11 +124,11 @@
     <Component class="javax.swing.JTextField" name="jTextField1_descricao">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="14" style="0"/>
+          <Font name="Arial Black" size="14" style="3"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder thickness="2"/>
+            <LineBorder thickness="3"/>
           </Border>
         </Property>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -332,7 +332,7 @@
               <Table columnCount="5" rowCount="0">
                 <Column editable="false" title="ID" type="java.lang.String"/>
                 <Column editable="false" title="DESCRI&#xc7;&#xc3;O" type="java.lang.String"/>
-                <Column editable="false" title="PRE&#xc7;O" type="java.lang.String"/>
+                <Column editable="false" title="PRE&#xc7;O" type="java.lang.Float"/>
                 <Column editable="false" title="URL" type="java.lang.String"/>
                 <Column editable="false" title="ACESS&#xd3;RIO" type="java.lang.Object"/>
               </Table>
@@ -352,7 +352,9 @@
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
-                  <Renderer/>
+                  <Renderer editor="org.netbeans.modules.form.ComponentChooserEditor">
+                    <ComponentRef name="formatarPrecos1"/>
+                  </Renderer>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
@@ -420,11 +422,11 @@
     <Component class="javax.swing.JTextField" name="jTextField2_uRL">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Arial Black" size="14" style="0"/>
+          <Font name="Arial Black" size="14" style="3"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-            <LineBorder thickness="2"/>
+            <LineBorder thickness="3"/>
           </Border>
         </Property>
       </Properties>
@@ -452,6 +454,16 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="-30" y="0" width="1800" height="900"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="com.MoreSupra.visao.utill.formatarPrecos" name="formatarPrecos1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="formatarPrecos1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="370" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

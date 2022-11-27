@@ -19,6 +19,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  *
@@ -77,6 +80,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField2_uRL = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        formatarPrecos1 = new com.MoreSupra.visao.utill.formatarPrecos();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,8 +117,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jLabel6.setText("ID");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
-        jTextField1_descricao.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jTextField1_descricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jTextField1_descricao.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField1_descricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTextField1_descricao.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTextField1_descricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -205,7 +209,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -227,6 +231,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(2).setCellRenderer(formatarPrecos1);
             jTable1.getColumnModel().getColumn(4).setResizable(false);
         }
 
@@ -243,8 +248,8 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jLabel10.setText("URL");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, -1, -1));
 
-        jTextField2_uRL.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jTextField2_uRL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jTextField2_uRL.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField2_uRL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTextField2_uRL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2_uRLActionPerformed(evt);
@@ -256,6 +261,9 @@ public class TelaAcessorios extends javax.swing.JFrame {
         jLabel1.setMaximumSize(new java.awt.Dimension(1800, 1200));
         jLabel1.setMinimumSize(new java.awt.Dimension(1800, 1200));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 1800, 900));
+
+        formatarPrecos1.setText("formatarPrecos1");
+        getContentPane().add(formatarPrecos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -464,6 +472,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.MoreSupra.visao.utill.formatarPrecos formatarPrecos1;
     private javax.swing.JButton jButton1_alterar;
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton3_buscar;
