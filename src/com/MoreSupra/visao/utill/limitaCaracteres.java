@@ -55,7 +55,7 @@ public class limitaCaracteres extends PlainDocument {
                 regex = "[^0-9\\.]";
                 break;
             case DESCRICAO:
-                regex = "[^\\p{IsLatin}\\ ^0-9]";
+                regex = "[^\\p{IsLatin}\\ ^0-9\\-]";
                 break;
         }
 

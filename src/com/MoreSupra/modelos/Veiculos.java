@@ -2,6 +2,7 @@ package com.MoreSupra.modelos;
 
 import java.util.Date;
 import com.MoreSupra.enumeration.*;
+import java.text.SimpleDateFormat;
 
 public class Veiculos {
     private int id = 0;
@@ -15,6 +16,7 @@ public class Veiculos {
     private int quilometragem = 0;
     private tipoDoVeiculo tipoDoVeiculo;
     private situacao situacao;
+    SimpleDateFormat formato = new SimpleDateFormat("y");
     
     public Veiculos(){}
     

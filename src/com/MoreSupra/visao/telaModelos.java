@@ -63,6 +63,8 @@ public class telaModelos extends javax.swing.JFrame {
         }
 
     }
+    
+    
     public void imprimirDados(ArrayList<Modelos> listaDeModelos){
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1_Modelos.getModel();

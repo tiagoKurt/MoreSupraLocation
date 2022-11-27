@@ -3,14 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.MoreSupra.visao;
+
+import ImagensTabela.JTableRenderer;
+import com.MoreSupra.Controle.IVeiculosControle;
+import com.MoreSupra.Controle.VeiculosControle;
 import com.MoreSupra.enumeration.tipoDoVeiculo;
 import com.MoreSupra.enumeration.situacao;
 import com.MoreSupra.enumeration.tipoDeCombustivel;
+import com.MoreSupra.modelos.Veiculos;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,12 +29,12 @@ import javax.swing.JOptionPane;
  */
 public class telaVeiculos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form telaVeiculos
-     */
+    
+    IVeiculosControle veiculoscontrole = new VeiculosControle();
+    
     public telaVeiculos() {
         initComponents();
-        carregarComboBox();      
+        carregarComboBox();
         jTextField_placa.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PLACA));
         jTextField_renavam.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
         jTextField_precodeCompra.setDocument(new limitaCaracteres(15, limitaCaracteres.tipoEntrada.PRECO));
@@ -280,12 +291,11 @@ public class telaVeiculos extends javax.swing.JFrame {
         TelaPrincipal princ = new TelaPrincipal();
         princ.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_jButton4_voltarActionPerformed
 
     private void jComboBox1_combustivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_combustivelActionPerformed
         // TODO add your handling code here:
-        
 
     }//GEN-LAST:event_jComboBox1_combustivelActionPerformed
 
@@ -300,16 +310,65 @@ public class telaVeiculos extends javax.swing.JFrame {
     private void jButton1_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_alterarActionPerformed
         // TODO add your handling code here:
         try {
-            
+
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
     }//GEN-LAST:event_jButton1_alterarActionPerformed
 
+    public void imprimirDados(ArrayList<Veiculos> listaDeVeiculos){
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            JTableRenderer JtableRenderer = new JTableRenderer();  
+            jTable1.getColumnModel().getColumn(4).setCellRenderer(JtableRenderer);
+
+            //Limpa a tabela 
+            model.setNumRows(0);
+            Iterator<Veiculos> lista = listaDeVeiculos.iterator();
+            while(lista.hasNext()){
+                String[] saida= new String[4];
+                Veiculos aux = lista.next();
+                saida[0]= aux.getId()+"";
+                saida[1]= aux.getPlaca();
+                saida[2] = aux.getRenavem()+"";
+                saida[3] = aux.getPrecoDeVenda()+"";
+                saida[4] = aux.getPrecoDeCompra()+"";
+                saida[5] = aux.getAnoFabricacao();
+                saida[6] = aux.getAnoModelo();
+                saida[7] = aux.getTipoDeCombustivel();
+                
+                //Incluir nova linha na Tabela,saida[0]
+                
+                Object[]dados = {saida[0],saida[1],saida[2],saida[3],};
+                model.addRow(dados);
+            }
+        } catch(Exception erro){
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+      }
+    
+    }
+    
+    
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         // TODO add your handling code here:
         try {
+            SimpleDateFormat formatador = new SimpleDateFormat("y");
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Veiculos.txt");
+            arquivo.createNewFile();
+            Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
+                    Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
+                    jComboBox1_anoFabricacao.getSelectedItem(), jComboBox1_AnoModelo.getSelectedItem(),
+                    jComboBox1_combustivel.getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
+                    jComboBox1_tipoDoVeiculo.getSelectedItem(), jComboBox1_situacao.getSelectedItem());
             
+            
+            veiculoscontrole.incluir(veiculos);
+            imprimirDados(veiculoscontrole.listagemVeiculos());
+            jTextField_placa.setText("");
+            jTextField_precoDeVenda.setText("");
+            jTextField_precodeCompra.setText("");
+            jTextField_quilometragem.setText("");
+            jTextField_renavam.setText("");
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -395,5 +454,5 @@ public class telaVeiculos extends javax.swing.JFrame {
         jComboBox1_situacao.setModel(new DefaultComboBoxModel<>(situacao.values()));
         jComboBox1_tipoDoVeiculo.setModel(new DefaultComboBoxModel<>(tipoDoVeiculo.values()));
         jComboBox1_combustivel.setModel(new DefaultComboBoxModel<>(tipoDeCombustivel.values()));
-        }
+    }
 }

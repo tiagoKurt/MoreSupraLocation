@@ -90,7 +90,7 @@ public class TelaCategorias extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("IMAGEM");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, -1));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -102,7 +102,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 240, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 240, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -114,7 +114,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 200, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 200, 169, -1));
 
         jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
@@ -126,7 +126,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton3_buscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 160, 169, -1));
+        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 160, 169, -1));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -138,7 +138,7 @@ public class TelaCategorias extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 640, 169, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 640, 169, -1));
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
@@ -184,11 +184,11 @@ public class TelaCategorias extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 1251, 333));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 860, 333));
 
         jLabel7_fotoCategoria.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7_fotoCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jLabel7_fotoCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 240, 140));
+        getContentPane().add(jLabel7_fotoCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 240, 140));
 
         jLabel8.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
