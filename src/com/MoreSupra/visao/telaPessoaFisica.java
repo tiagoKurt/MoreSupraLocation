@@ -328,7 +328,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
 
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         try {
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/PessoaFisica.txt");
+                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/PessoaFisica.txt");
             arquivo.createNewFile();
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
                     jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
@@ -340,7 +340,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             jTextField3_enderecoFisica.setText("");
             jTextField6_emailFIsica.setText("");
             jTextField8_IDFisica.setText("");
-            jFormattedTextField1_cpf.setText("");
             jFormattedTextField1_cpf.setText("");
                     
 
@@ -375,7 +374,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             jTextField6_emailFIsica.setText("");
             jTextField8_IDFisica.setText("");
             jFormattedTextField1_cpf.setText("");
-            jFormattedTextField1_cpf.setText(""); 
             }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
