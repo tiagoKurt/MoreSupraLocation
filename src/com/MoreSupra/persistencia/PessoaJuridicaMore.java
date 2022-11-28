@@ -18,7 +18,7 @@ public class PessoaJuridicaMore implements IPessoaJuridicaMore{
     private String nomeArquivoNoDisco;
     
     public PessoaJuridicaMore(){
-        nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Clientes.txt";
+        nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/PessoaJuridica.txt";
     }
     
     

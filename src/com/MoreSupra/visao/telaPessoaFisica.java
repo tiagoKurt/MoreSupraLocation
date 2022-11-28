@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package com.MoreSupra.visao;
 
 import ImagensTabela.JTableRenderer;
@@ -9,10 +13,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *
+ * @author Aluno
+ */
 public class telaPessoaFisica extends javax.swing.JFrame {
     
     IPessoaFisicaControle controle = new PessoaFisicaControle();
@@ -23,7 +33,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         jTextField1_identidade.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
         jTextField6_emailFIsica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.EMAIL));
-        jTextField2_nomeFisica.setDocument(new limitaCaracteres(31, limitaCaracteres.tipoEntrada.NOME));
+        jTextField2_nomeFisica.setDocument(new limitaCaracteres(32, limitaCaracteres.tipoEntrada.NOME));
         jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField8_IDFisica.setEnabled(false);
         
@@ -318,7 +328,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
 
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         try {
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/PessoaFisica.txt");
             arquivo.createNewFile();
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
                     jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
