@@ -369,7 +369,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 
                 
                 
-                jTextField1_identidade.setText("");
+            jTextField1_identidade.setText("");
             jTextField2_nomeFisica.setText("");
             jTextField3_enderecoFisica.setText("");
             jTextField6_emailFIsica.setText("");
@@ -422,11 +422,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2_nomeFisicaKeyTyped
 
     private void jTextField6_emailFIsicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6_emailFIsicaKeyTyped
-        char c=evt.getKeyChar();
 
-        if(Character.isLowerCase(c)){
-            evt.setKeyChar(Character.toUpperCase(c));
-        }
     }//GEN-LAST:event_jTextField6_emailFIsicaKeyTyped
 
     private void jTextField3_enderecoFisicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3_enderecoFisicaKeyTyped
