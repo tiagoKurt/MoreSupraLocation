@@ -14,13 +14,13 @@ public class PessoaFisica {
     private String cpf;
     private String nome;
     private String identidade;
-    private Telefone telefone;
+    private String telefone;
     private String email;
     private String endereco;
     
     public PessoaFisica(){}
     
-    public PessoaFisica(int id, String cpf, String nome, String identidade, Telefone telefone,
+    public PessoaFisica(int id, String cpf, String nome, String identidade, String telefone,
             String email, String endereco){
         this.id = id;
         this.cpf = cpf;
@@ -63,11 +63,11 @@ public class PessoaFisica {
         this.identidade = identidade;
     }
 
-    public Telefone getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Telefone telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

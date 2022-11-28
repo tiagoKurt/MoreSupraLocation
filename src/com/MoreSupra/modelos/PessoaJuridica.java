@@ -14,14 +14,14 @@ public class PessoaJuridica {
     private String cnpj;
     private String nome;
     private String razaoSocial;
-    private Telefone telefone;
+    private String telefone;
     private String email;
     private String endereco;
     
     public PessoaJuridica(){}
     
     public PessoaJuridica(int id, String cnpj, String nome, String razaoSocial,
-            Telefone telefone, String email, String endereco){
+            String telefone, String email, String endereco){
         this.id = id;
         this.cnpj = cnpj;
         this.nome = nome;
@@ -63,11 +63,11 @@ public class PessoaJuridica {
         this.razaoSocial = razaoSocial;
     }
 
-    public Telefone getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Telefone telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

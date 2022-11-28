@@ -4,11 +4,18 @@
  */
 package com.MoreSupra.visao;
 
+import ImagensTabela.JTableRenderer;
+import com.MoreSupra.Controle.IPessoaJuridicaControle;
+import com.MoreSupra.Controle.PessoaJuridicaControle;
+import com.MoreSupra.modelos.PessoaJuridica;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,17 +23,23 @@ import javax.swing.JOptionPane;
  */
 public class telaPessoaJuridica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form telaPessoaJuridica
-     */
+    IPessoaJuridicaControle controle = new PessoaJuridicaControle();
+    
+    
     public telaPessoaJuridica() {
         initComponents();
-        jTextField11_razaoSocial.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.EMAIL));
+        jTextField11_razaoSocial.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.DESCRICAO));
         jTextField9_emailJuri.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.EMAIL));
         jTextField8_enderecoJuridica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField12_nomeJuridica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.NOME));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idJuridica.setEnabled(false);
+        
+        try {
+            imprimirDadosNaGrid(controle.listagemDePessoas());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }
 
     /**
@@ -77,7 +90,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton4_voltar2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4_voltar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 610, 169, -1));
+        getContentPane().add(jButton4_voltar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 610, 169, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 190, 130));
@@ -161,7 +174,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton1_alterar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_alterar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 230, 169, -1));
+        getContentPane().add(jButton1_alterar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 230, 169, -1));
 
         jButton2_incluir1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir1.setForeground(new java.awt.Color(51, 0, 153));
@@ -173,7 +186,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton2_incluir1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_incluir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 190, 169, -1));
+        getContentPane().add(jButton2_incluir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 190, 169, -1));
 
         jButton3_buscar1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton3_buscar1.setForeground(new java.awt.Color(51, 0, 153));
@@ -185,7 +198,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 jButton3_buscar1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 150, 169, -1));
+        getContentPane().add(jButton3_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 150, 169, -1));
 
         jTextField8_idJuridica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField8_idJuridica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -228,20 +241,20 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOME", "CNPJ", "RAZÃO S", "TELFONE", "EMAIL", "ENDEERECO", "FOTO"
+                "ID", "CNPJ", "NOME", "RAZÃO S", "TELFONE", "EMAIL", "ENDEERECO"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -252,12 +265,18 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1_cliente.setRowHeight(60);
+        jTable1_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1_clienteMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1_cliente);
         if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
             jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 630, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 890, 260));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
@@ -273,11 +292,58 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4_voltar2ActionPerformed
 
     private void jButton1_alterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_alterar1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            PessoaJuridica cliente = new PessoaJuridica(0, jFormattedTextField1_cnpj.getText(), jTextField12_nomeJuridica.getText(), 
+                    jTextField11_razaoSocial.getText(), jFormattedTextField1_telefone.getText(), jTextField9_emailJuri.getText(), 
+                    jTextField8_enderecoJuridica.getText());
+            
+            controle.alterar(cliente);
+            if (jTable1_cliente.getSelectedRow() != -1) {
+                jTable1_cliente.setValueAt(jTextField8_idJuridica.getText(), jTable1_cliente.getSelectedRow(), 0);
+                jTable1_cliente.setValueAt(jFormattedTextField1_cnpj.getText(), jTable1_cliente.getSelectedRow(), 1);
+                jTable1_cliente.setValueAt(jTextField12_nomeJuridica.getText(), jTable1_cliente.getSelectedRow(), 2);
+                jTable1_cliente.setValueAt(jTextField11_razaoSocial.getText(), jTable1_cliente.getSelectedRow(), 3);
+                jTable1_cliente.setValueAt(jFormattedTextField1_telefone.getText(), jTable1_cliente.getSelectedRow(), 4);
+                jTable1_cliente.setValueAt(jTextField9_emailJuri.getText(), jTable1_cliente.getSelectedRow(), 5);
+                jTable1_cliente.setValueAt(jTextField8_enderecoJuridica.getText(), jTable1_cliente.getSelectedRow(), 6);
+                
+                
+                
+            jFormattedTextField1_cnpj.setText("");
+            jTextField12_nomeJuridica.setText("");
+            jTextField11_razaoSocial.setText("");
+            jFormattedTextField1_telefone.setText("");
+            jTextField9_emailJuri.setText("");
+            jTextField8_enderecoJuridica.setText("");
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+        }
     }//GEN-LAST:event_jButton1_alterar1ActionPerformed
 
     private void jButton2_incluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluir1ActionPerformed
-        // TODO add your handling code here:
+        try {
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
+            arquivo.createNewFile();
+            PessoaJuridica cliente = new PessoaJuridica(0, jFormattedTextField1_cnpj.getText(), jTextField12_nomeJuridica.getText(), 
+                    jTextField11_razaoSocial.getText(), jFormattedTextField1_telefone.getText(), jTextField9_emailJuri.getText(), 
+                    jTextField8_enderecoJuridica.getText());
+            
+            controle.incluir(cliente);
+            jFormattedTextField1_cnpj.setText("");
+            jTextField12_nomeJuridica.setText("");
+            jTextField11_razaoSocial.setText("");
+            jFormattedTextField1_telefone.setText("");
+            jTextField9_emailJuri.setText("");
+            jTextField8_enderecoJuridica.setText("");
+                    
+
+            imprimirDadosNaGrid(controle.listagemDePessoas());
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+        }
+        
+        
     }//GEN-LAST:event_jButton2_incluir1ActionPerformed
 
     private void jButton3_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_buscar1ActionPerformed
@@ -300,6 +366,36 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3_buscar1ActionPerformed
 
+    private void imprimirDadosNaGrid(ArrayList<PessoaJuridica> listaDeCliente) {
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1_cliente.getModel();
+            JTableRenderer JtableRenderer = new JTableRenderer();
+            jTable1_cliente.getColumnModel().getColumn(6).setCellRenderer(JtableRenderer); 
+
+            //Limpa a tabela 
+            model.setNumRows(0);
+            Iterator<PessoaJuridica> lista = listaDeCliente.iterator();
+
+            while (lista.hasNext()) {
+                String[] saida = new String[7];
+                PessoaJuridica aux = lista.next();
+                saida[0] = aux.getId() + "";
+                saida[1] = aux.getCnpj();
+                saida[2] = aux.getNome();
+                saida[3] = aux.getRazaoSocial();
+                saida[4] = aux.getTelefone();
+                saida[5] = aux.getEmail();
+                saida[6] = aux.getEndereco();
+                //Incluir nova linha na Tabela
+                Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6]};
+                model.addRow(dados);
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+        }
+
+    }
+    
     private void jTextField12_nomeJuridicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField12_nomeJuridicaKeyTyped
         char c=evt.getKeyChar();
 
@@ -331,6 +427,15 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             evt.setKeyChar(Character.toUpperCase(c));
         }
     }//GEN-LAST:event_jTextField8_enderecoJuridicaKeyTyped
+
+    private void jTable1_clienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_clienteMouseClicked
+        jTable1_cliente.setValueAt(jTextField8_idJuridica.getText(), jTable1_cliente.getSelectedRow(), 0);
+                jTable1_cliente.setValueAt(jFormattedTextField1_cnpj.getText(), jTable1_cliente.getSelectedRow(), 1);
+                jTable1_cliente.setValueAt(jTextField12_nomeJuridica.getText(), jTable1_cliente.getSelectedRow(), 2);
+                jTable1_cliente.setValueAt(jTextField8_idJuridica.getText(), jTable1_cliente.getSelectedRow(), 3);
+                jTable1_cliente.setValueAt(jFormattedTextField1_telefone.getText(), jTable1_cliente.getSelectedRow(), 4);
+                jTable1_cliente.setValueAt(jTextField9_emailJuri.getText(), jTable1_cliente.getSelectedRow(), 5);
+    }//GEN-LAST:event_jTable1_clienteMouseClicked
 
     /**
      * @param args the command line arguments

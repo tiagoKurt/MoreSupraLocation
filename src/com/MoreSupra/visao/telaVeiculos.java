@@ -361,7 +361,7 @@ public class telaVeiculos extends javax.swing.JFrame {
             arquivo.createNewFile();
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
                     Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
-                    jComboBox1_anoFabricacao.getSelectedItem().hashCode(), jComboBox1_AnoModelo.getSelectedItem(),
+                    jComboBox1_anoFabricacao.getSelectedItem(), jComboBox1_AnoModelo.getSelectedItem(),
                     jComboBox1_combustivel.getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
                     jComboBox1_tipoDoVeiculo.getSelectedItem(), jComboBox1_situacao.getSelectedItem());
             
