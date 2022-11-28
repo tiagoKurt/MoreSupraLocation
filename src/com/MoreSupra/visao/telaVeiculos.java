@@ -363,8 +363,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                     Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
                     jComboBox1_anoFabricacao.getSelectedItem(), jComboBox1_AnoModelo.getSelectedItem(),
                     jComboBox1_combustivel.getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
-                    jComboBox1_tipoDoVeiculo.getSelectedItem(), jComboBox1_situacao.getSelectedItem());
-            
+                    jComboBox1_tipoDoVeiculo.getSelectedItem(), jComboBox1_situacao.getSelectedItem());        
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());

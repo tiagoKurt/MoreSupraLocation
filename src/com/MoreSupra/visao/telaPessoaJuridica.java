@@ -323,7 +323,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
 
     private void jButton2_incluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluir1ActionPerformed
         try {
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/PessoaJuridica.txt");
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
             arquivo.createNewFile();
             PessoaJuridica cliente = new PessoaJuridica(0, jFormattedTextField1_cnpj.getText(), jTextField12_nomeJuridica.getText(), 
                     jTextField11_razaoSocial.getText(), jFormattedTextField1_telefone.getText(), jTextField9_emailJuri.getText(), 
@@ -413,11 +413,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField11_razaoSocialKeyTyped
 
     private void jTextField9_emailJuriKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField9_emailJuriKeyTyped
-        char c=evt.getKeyChar();
-
-        if(Character.isLowerCase(c)){
-            evt.setKeyChar(Character.toUpperCase(c));
-        }
+       
     }//GEN-LAST:event_jTextField9_emailJuriKeyTyped
 
     private void jTextField8_enderecoJuridicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField8_enderecoJuridicaKeyTyped
