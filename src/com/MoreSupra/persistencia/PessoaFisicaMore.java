@@ -20,7 +20,7 @@ public class PessoaFisicaMore implements IPessoaFisicaMore{
     private String nomeArquivoNoDisco;
     
     public PessoaFisicaMore(){
-        nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Clientes.txt";
+        nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/PessoaFisica.txt";
     }
     
     
