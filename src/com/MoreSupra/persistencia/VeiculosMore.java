@@ -65,8 +65,8 @@ public class VeiculosMore implements IVeiculosMore{
                 objetoVeiculo.setId(Integer.parseInt(vetorString[0]));
                 objetoVeiculo.setPlaca(vetorString[1]);
                 objetoVeiculo.setRenavem(Integer.parseInt(vetorString[2]));
-                objetoVeiculo.setPrecoDeCompra(Integer.parseInt(vetorString[3]));
-                objetoVeiculo.setPrecoDeVenda(Integer.parseInt(vetorString[4]));
+                objetoVeiculo.setPrecoDeCompra(Float.parseFloat(vetorString[3]));
+                objetoVeiculo.setPrecoDeVenda(Float.parseFloat(vetorString[4]));
                 objetoVeiculo.setAnoFabricacao(vetorString[5]);
                 objetoVeiculo.setAnoModelo(vetorString[6]);                                
                 objetoVeiculo.setTipoDeCombustivel(objetoVei.getTipoDeCombustivel());

@@ -19,6 +19,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -28,6 +30,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Aluno
  */
 public class telaVeiculos extends javax.swing.JFrame {
+    String combustivel;
 
     
     IVeiculosControle veiculoscontrole = new VeiculosControle();
@@ -42,6 +45,12 @@ public class telaVeiculos extends javax.swing.JFrame {
         jTextField_quilometragem.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idVeiculos.setEnabled(false);
+        combustivel = tipoDeCombustivel.GASOLINA + "";
+        try {
+            imprimirDados(veiculoscontrole.listagemVeiculos());
+        } catch (Exception ex) {
+            Logger.getLogger(telaVeiculos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -132,6 +141,11 @@ public class telaVeiculos extends javax.swing.JFrame {
 
         jTextField_renavam.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_renavam.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField_renavam.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextField_renavamMouseClicked(evt);
+            }
+        });
         getContentPane().add(jTextField_renavam, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, 250, 40));
 
         jTextField_precodeCompra.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
@@ -261,16 +275,9 @@ public class telaVeiculos extends javax.swing.JFrame {
                 "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "FABRICAÇÃO", "MODELO", "COMBUSTIVEL", "QUILOMETRAGEM", "TIPO", "SITUAÇÃO"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -326,7 +333,7 @@ public class telaVeiculos extends javax.swing.JFrame {
             model.setNumRows(0);
             Iterator<Veiculos> lista = listaDeVeiculos.iterator();
             while(lista.hasNext()){
-                String[] saida= new String[10];
+                String[] saida= new String[11];
                 Veiculos aux = lista.next();
                 saida[0]= aux.getId()+"";
                 saida[1]= aux.getPlaca();
@@ -360,11 +367,12 @@ public class telaVeiculos extends javax.swing.JFrame {
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Veiculos.txt");
             tipoDeCombustivel tipo = (tipoDeCombustivel) jComboBox1_combustivel.getSelectedItem();
             arquivo.createNewFile();
+            
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
                     Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
                     jComboBox1_anoFabricacao.getSelectedItem().toString(),
-                    (tipoDeCombustivel)jComboBox1_combustivel.getModel().getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
+                    tipoDeCombustivel.valueOf(combustivel), Integer.parseInt(jTextField_quilometragem.getText()),
                     (tipoDoVeiculo)jComboBox1_tipoDoVeiculo.getModel().getSelectedItem(), (situacao)jComboBox1_situacao.getModel().getSelectedItem());        
             
             veiculoscontrole.incluir(veiculos);
@@ -386,6 +394,11 @@ public class telaVeiculos extends javax.swing.JFrame {
     private void jComboBox1_AnoModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_AnoModeloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1_AnoModeloActionPerformed
+
+    private void jTextField_renavamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField_renavamMouseClicked
+        
+        
+    }//GEN-LAST:event_jTextField_renavamMouseClicked
 
     /**
      * @param args the command line arguments
