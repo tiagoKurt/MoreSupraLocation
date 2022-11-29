@@ -37,9 +37,9 @@ public class telaVeiculos extends javax.swing.JFrame {
         carregarComboBox();
         jTextField_placa.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PLACA));
         jTextField_renavam.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        jTextField_precodeCompra.setDocument(new limitaCaracteres(15, limitaCaracteres.tipoEntrada.PRECO));
-        jTextField_precoDeVenda.setDocument(new limitaCaracteres(15, limitaCaracteres.tipoEntrada.PRECO));
-        jTextField_quilometragem.setDocument(new limitaCaracteres(10, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_precodeCompra.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_precoDeVenda.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_quilometragem.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idVeiculos.setEnabled(false);
     }
@@ -262,7 +262,7 @@ public class telaVeiculos extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false, false
@@ -333,8 +333,8 @@ public class telaVeiculos extends javax.swing.JFrame {
                 saida[2] = aux.getRenavem()+"";
                 saida[3] = aux.getPrecoDeVenda()+"";
                 saida[4] = aux.getPrecoDeCompra()+"";
-                saida[5] = aux.getAnoFabricacao().toString();
-                saida[6] = aux.getAnoModelo().toString();
+                saida[5] = aux.getAnoFabricacao();
+                saida[6] = aux.getAnoModelo();
                 saida[7] = aux.getTipoDeCombustivel().toString();
                 saida[8] = aux.getQuilometragem()+"";
                 saida[9] = aux.getTipoDoVeiculo().toString();
@@ -362,8 +362,8 @@ public class telaVeiculos extends javax.swing.JFrame {
             arquivo.createNewFile();
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
                     Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
-                    formatador.parse(jComboBox1_anoFabricacao.getSelectedItem().toString()), 
-                    formatador.parse(jComboBox1_anoFabricacao.getSelectedItem().toString()),
+                    jComboBox1_anoFabricacao.getSelectedItem().toString(), 
+                    jComboBox1_anoFabricacao.getSelectedItem().toString(),
                     (tipoDeCombustivel)jComboBox1_combustivel.getModel().getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
                     (tipoDoVeiculo)jComboBox1_tipoDoVeiculo.getModel().getSelectedItem(), (situacao)jComboBox1_situacao.getModel().getSelectedItem());        
             

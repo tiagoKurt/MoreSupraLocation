@@ -65,7 +65,7 @@ public class VeiculosControle implements IVeiculosControle{
     public void incluir(Veiculos objeto) throws Exception {
         objeto.setPlaca(verificarPlaca(objeto.getPlaca()));    
         if(verificarVazio(objeto)) throw new Exception("Alguns campos não foram preenchidos!");
-        if(buscarVeiculo(objeto.getPlaca()) || buscarVeiculo(String.valueOf(objeto.getRenavem()))){
+        if(buscarVeiculo(objeto.getPlaca())){
             throw new Exception("Veiculo já cadastrado");
         }
         objeto.setId(GeradorIdentificador.getID());
@@ -74,7 +74,7 @@ public class VeiculosControle implements IVeiculosControle{
 
     @Override
     public void alterar(Veiculos objeto) throws Exception {
-        if (alterarVeiculo(objeto.getPlaca()) || alterarVeiculo(String.valueOf(objeto.getRenavem()))) {
+        if (alterarVeiculo(objeto.getPlaca())) {
             throw new Exception("Veículo já foi cadastrada");
         }
         veiculosPersistencia.alterar(objeto);

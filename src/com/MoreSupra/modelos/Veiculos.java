@@ -10,8 +10,8 @@ public class Veiculos {
     private int renavem = 0;
     private float precoDeVenda = 0;
     private float precoDeCompra = 0;
-    private Date anoFabricacao;
-    private Date anoModelo;
+    private String anoFabricacao;
+    private String anoModelo;
     private tipoDeCombustivel tipoDeCombustivel;
     private int quilometragem = 0;
     private tipoDoVeiculo tipoDoVeiculo;
@@ -20,8 +20,8 @@ public class Veiculos {
     
     public Veiculos(){}
     
-    public Veiculos(int id, String placa, int renavem, float precoDeVenda, float precoDeCompra, Date anoFabricacao,
-            Date anoModelo, tipoDeCombustivel tipoDeCombustivel, int quilometragem, tipoDoVeiculo tipoDoVeiculo, situacao 
+    public Veiculos(int id, String placa, int renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
+            String anoModelo, tipoDeCombustivel tipoDeCombustivel, int quilometragem, tipoDoVeiculo tipoDoVeiculo, situacao 
                     situacao){
         this.id = id;
         this.renavem = renavem;
@@ -76,19 +76,19 @@ public class Veiculos {
         this.precoDeCompra = precoDeCompra;
     }
 
-    public Date getAnoFabricacao() {
+    public String getAnoFabricacao() {
         return anoFabricacao;
     }
 
-    public void setAnoFabricacao(Date anoFabricacao) {
+    public void setAnoFabricacao(String anoFabricacao) {
         this.anoFabricacao = anoFabricacao;
     }
 
-    public Date getAnoModelo() {
+    public String getAnoModelo() {
         return anoModelo;
     }
 
-    public void setAnoModelo(Date anoModelo) {
+    public void setAnoModelo(String anoModelo) {
         this.anoModelo = anoModelo;
     }
 
