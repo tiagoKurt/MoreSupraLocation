@@ -36,12 +36,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jTextField2_nomeFisica.setDocument(new limitaCaracteres(32, limitaCaracteres.tipoEntrada.NOME));
         jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField8_IDFisica.setEnabled(false);
-        
-        try {
-            imprimirDadosNaGrid(controle.listagemDePessoas());
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
 
     
     }
@@ -78,8 +72,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jFormattedTextField1_Telefone = new javax.swing.JFormattedTextField();
         jFormattedTextField1_cpf = new javax.swing.JFormattedTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1_cliente = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -240,46 +232,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jFormattedTextField1_cpf.setPreferredSize(new java.awt.Dimension(64, 27));
         jPanel3.add(jFormattedTextField1_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 350, 40));
 
-        jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "CPF", "NOME", "IDENTIDADE", "TELFONE", "EMAIL", "ENDEERECO"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1_cliente.setRowHeight(60);
-        jTable1_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1_clienteMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTable1_cliente);
-        if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
-            jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
-        }
-
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 850, 260));
-
         jLabel4.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1620, 850));
@@ -328,7 +280,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
 
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         try {
-                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/PessoaFisica.txt");
+                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
             arquivo.createNewFile();
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
                     jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
@@ -341,9 +293,9 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             jTextField6_emailFIsica.setText("");
             jTextField8_IDFisica.setText("");
             jFormattedTextField1_cpf.setText("");
+            jFormattedTextField1_Telefone.setText("");
                     
 
-            imprimirDadosNaGrid(controle.listagemDePessoas());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -351,65 +303,11 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2_incluirActionPerformed
 
     private void jButton1_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_alterarActionPerformed
-        try {
-            PessoaFisica cliente = new PessoaFisica(Integer.parseInt(jTextField8_IDFisica.getText()), jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
-                    jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
-                    jTextField3_enderecoFisica.getText());
-            
-            controle.alterar(cliente);
-            if (jTable1_cliente.getSelectedRow() != -1) {
-                jTable1_cliente.setValueAt(jTextField8_IDFisica.getText(), jTable1_cliente.getSelectedRow(), 0);
-                jTable1_cliente.setValueAt(jFormattedTextField1_cpf.getText(), jTable1_cliente.getSelectedRow(), 1);
-                jTable1_cliente.setValueAt(jTextField2_nomeFisica.getText(), jTable1_cliente.getSelectedRow(), 2);
-                jTable1_cliente.setValueAt(jTextField1_identidade.getText(), jTable1_cliente.getSelectedRow(), 3);
-                jTable1_cliente.setValueAt(jFormattedTextField1_Telefone.getText(), jTable1_cliente.getSelectedRow(), 4);
-                jTable1_cliente.setValueAt(jTextField6_emailFIsica.getText(), jTable1_cliente.getSelectedRow(), 5);
-                jTable1_cliente.setValueAt(jTextField3_enderecoFisica.getText(), jTable1_cliente.getSelectedRow(), 6);
-                
-                
-                
-            jTextField1_identidade.setText("");
-            jTextField2_nomeFisica.setText("");
-            jTextField3_enderecoFisica.setText("");
-            jTextField6_emailFIsica.setText("");
-            jTextField8_IDFisica.setText("");
-            jFormattedTextField1_cpf.setText("");
-            }
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro.getMessage());
-        }
+       
 
     }//GEN-LAST:event_jButton1_alterarActionPerformed
 
-    private void imprimirDadosNaGrid(ArrayList<PessoaFisica> listaDeCliente) {
-        try {
-            DefaultTableModel model = (DefaultTableModel) jTable1_cliente.getModel();
-            JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1_cliente.getColumnModel().getColumn(6).setCellRenderer(JtableRenderer); 
-
-            //Limpa a tabela 
-            model.setNumRows(0);
-            Iterator<PessoaFisica> lista = listaDeCliente.iterator();
-
-            while (lista.hasNext()) {
-                String[] saida = new String[7];
-                PessoaFisica aux = lista.next();
-                saida[0] = aux.getId() + "";
-                saida[1] = aux.getCpf();
-                saida[2] = aux.getNome();
-                saida[3] = aux.getIdentidade();
-                saida[4] = aux.getTelefone();
-                saida[5] = aux.getEmail();
-                saida[6] = aux.getEndereco();
-                //Incluir nova linha na Tabela
-                Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6]};
-                model.addRow(dados);
-            }
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro.getMessage());
-        }
-
-    }
+    
     
     private void jTextField2_nomeFisicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2_nomeFisicaKeyTyped
         char c=evt.getKeyChar();
@@ -430,18 +328,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             evt.setKeyChar(Character.toUpperCase(c));
         }
     }//GEN-LAST:event_jTextField3_enderecoFisicaKeyTyped
-
-    private void jTable1_clienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_clienteMouseClicked
-        if (jTable1_cliente.getSelectedRow() != -1) {
-            jTable1_cliente.setValueAt(jTextField8_IDFisica.getText(), jTable1_cliente.getSelectedRow(), 0);
-                jTable1_cliente.setValueAt(jFormattedTextField1_cpf.getText(), jTable1_cliente.getSelectedRow(), 1);
-                jTable1_cliente.setValueAt(jTextField2_nomeFisica.getText(), jTable1_cliente.getSelectedRow(), 2);
-                jTable1_cliente.setValueAt(jTextField1_identidade.getText(), jTable1_cliente.getSelectedRow(), 3);
-                jTable1_cliente.setValueAt(jFormattedTextField1_Telefone.getText(), jTable1_cliente.getSelectedRow(), 4);
-                jTable1_cliente.setValueAt(jTextField6_emailFIsica.getText(), jTable1_cliente.getSelectedRow(), 5);
-                       
-        }
-    }//GEN-LAST:event_jTable1_clienteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -498,8 +384,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1_cliente;
     private javax.swing.JTextField jTextField1_identidade;
     private javax.swing.JTextField jTextField2_nomeFisica;
     private javax.swing.JTextField jTextField3_enderecoFisica;

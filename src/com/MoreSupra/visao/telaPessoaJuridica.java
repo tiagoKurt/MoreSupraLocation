@@ -35,11 +35,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idJuridica.setEnabled(false);
         
-        try {
-            imprimirDadosNaGrid(controle.listagemDePessoas());
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
     }
 
     /**
@@ -73,8 +68,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jFormattedTextField1_cnpj = new javax.swing.JFormattedTextField();
         jFormattedTextField1_telefone = new javax.swing.JFormattedTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1_cliente = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -238,46 +231,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jFormattedTextField1_telefone.setPreferredSize(new java.awt.Dimension(64, 27));
         getContentPane().add(jFormattedTextField1_telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 200, 40));
 
-        jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "CNPJ", "NOME", "RAZÃO S", "TELFONE", "EMAIL", "ENDEERECO"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable1_cliente.setRowHeight(60);
-        jTable1_cliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1_clienteMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTable1_cliente);
-        if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
-            jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
-        }
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 890, 260));
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
 
@@ -292,38 +245,12 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4_voltar2ActionPerformed
 
     private void jButton1_alterar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_alterar1ActionPerformed
-        try {
-            PessoaJuridica cliente = new PessoaJuridica(0, jFormattedTextField1_cnpj.getText(), jTextField12_nomeJuridica.getText(), 
-                    jTextField11_razaoSocial.getText(), jFormattedTextField1_telefone.getText(), jTextField9_emailJuri.getText(), 
-                    jTextField8_enderecoJuridica.getText());
-            
-            controle.alterar(cliente);
-            if (jTable1_cliente.getSelectedRow() != -1) {
-                jTable1_cliente.setValueAt(jTextField8_idJuridica.getText(), jTable1_cliente.getSelectedRow(), 0);
-                jTable1_cliente.setValueAt(jFormattedTextField1_cnpj.getText(), jTable1_cliente.getSelectedRow(), 1);
-                jTable1_cliente.setValueAt(jTextField12_nomeJuridica.getText(), jTable1_cliente.getSelectedRow(), 2);
-                jTable1_cliente.setValueAt(jTextField11_razaoSocial.getText(), jTable1_cliente.getSelectedRow(), 3);
-                jTable1_cliente.setValueAt(jFormattedTextField1_telefone.getText(), jTable1_cliente.getSelectedRow(), 4);
-                jTable1_cliente.setValueAt(jTextField9_emailJuri.getText(), jTable1_cliente.getSelectedRow(), 5);
-                jTable1_cliente.setValueAt(jTextField8_enderecoJuridica.getText(), jTable1_cliente.getSelectedRow(), 6);
-                
-                
-                
-            jFormattedTextField1_cnpj.setText("");
-            jTextField12_nomeJuridica.setText("");
-            jTextField11_razaoSocial.setText("");
-            jFormattedTextField1_telefone.setText("");
-            jTextField9_emailJuri.setText("");
-            jTextField8_enderecoJuridica.setText("");
-            }
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro.getMessage());
-        }
+
     }//GEN-LAST:event_jButton1_alterar1ActionPerformed
 
     private void jButton2_incluir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluir1ActionPerformed
         try {
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/PessoaJuridica.txt");
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
             arquivo.createNewFile();
             PessoaJuridica cliente = new PessoaJuridica(0, jFormattedTextField1_cnpj.getText(), jTextField12_nomeJuridica.getText(), 
                     jTextField11_razaoSocial.getText(), jFormattedTextField1_telefone.getText(), jTextField9_emailJuri.getText(), 
@@ -338,7 +265,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             jTextField8_enderecoJuridica.setText("");
                     
 
-            imprimirDadosNaGrid(controle.listagemDePessoas());
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -366,35 +292,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3_buscar1ActionPerformed
 
-    private void imprimirDadosNaGrid(ArrayList<PessoaJuridica> listaDeCliente) {
-        try {
-            DefaultTableModel model = (DefaultTableModel) jTable1_cliente.getModel();
-            JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1_cliente.getColumnModel().getColumn(6).setCellRenderer(JtableRenderer); 
-
-            //Limpa a tabela 
-            model.setNumRows(0);
-            Iterator<PessoaJuridica> lista = listaDeCliente.iterator();
-
-            while (lista.hasNext()) {
-                String[] saida = new String[7];
-                PessoaJuridica aux = lista.next();
-                saida[0] = aux.getId() + "";
-                saida[1] = aux.getCnpj();
-                saida[2] = aux.getNome();
-                saida[3] = aux.getRazaoSocial();
-                saida[4] = aux.getTelefone();
-                saida[5] = aux.getEmail();
-                saida[6] = aux.getEndereco();
-                //Incluir nova linha na Tabela
-                Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6]};
-                model.addRow(dados);
-            }
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro.getMessage());
-        }
-
-    }
     
     private void jTextField12_nomeJuridicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField12_nomeJuridicaKeyTyped
         char c=evt.getKeyChar();
@@ -427,15 +324,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             evt.setKeyChar(Character.toUpperCase(c));
         }
     }//GEN-LAST:event_jTextField8_enderecoJuridicaKeyTyped
-
-    private void jTable1_clienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_clienteMouseClicked
-        jTable1_cliente.setValueAt(jTextField8_idJuridica.getText(), jTable1_cliente.getSelectedRow(), 0);
-                jTable1_cliente.setValueAt(jFormattedTextField1_cnpj.getText(), jTable1_cliente.getSelectedRow(), 1);
-                jTable1_cliente.setValueAt(jTextField12_nomeJuridica.getText(), jTable1_cliente.getSelectedRow(), 2);
-                jTable1_cliente.setValueAt(jTextField8_idJuridica.getText(), jTable1_cliente.getSelectedRow(), 3);
-                jTable1_cliente.setValueAt(jFormattedTextField1_telefone.getText(), jTable1_cliente.getSelectedRow(), 4);
-                jTable1_cliente.setValueAt(jTextField9_emailJuri.getText(), jTable1_cliente.getSelectedRow(), 5);
-    }//GEN-LAST:event_jTable1_clienteMouseClicked
 
     /**
      * @param args the command line arguments
@@ -491,8 +379,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1_cliente;
     private javax.swing.JTextField jTextField11_razaoSocial;
     private javax.swing.JTextField jTextField12_nomeJuridica;
     private javax.swing.JTextField jTextField8_enderecoJuridica;
