@@ -5,9 +5,4 @@ public enum tipoDeCombustivel {
     DIESEL,
     ELETRICO,
     GNV;    
-
-    public static void main(String[] args){
-        String teste =  tipoDeCombustivel.GASOLINA.toString();
-        System.out.println(teste);
-    }
 }

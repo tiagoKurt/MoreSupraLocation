@@ -358,14 +358,14 @@ public class telaVeiculos extends javax.swing.JFrame {
         try {
             SimpleDateFormat formatador = new SimpleDateFormat("y");
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Veiculos.txt");
+            tipoDeCombustivel tipo = (tipoDeCombustivel) jComboBox1_combustivel.getSelectedItem();
             arquivo.createNewFile();
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
                     Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
                     formatador.parse(jComboBox1_anoFabricacao.getSelectedItem().toString()), 
                     formatador.parse(jComboBox1_anoFabricacao.getSelectedItem().toString()),
-                    jComboBox1_combustivel.getModel().getSelectedItem(), 
-                    Integer.parseInt(jTextField_quilometragem.getText()),
-                    jComboBox1_tipoDoVeiculo.getModel().getSelectedItem(), jComboBox1_situacao.getModel().getSelectedItem());        
+                    (tipoDeCombustivel)jComboBox1_combustivel.getModel().getSelectedItem(), Integer.parseInt(jTextField_quilometragem.getText()),
+                    (tipoDoVeiculo)jComboBox1_tipoDoVeiculo.getModel().getSelectedItem(), (situacao)jComboBox1_situacao.getModel().getSelectedItem());        
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());
