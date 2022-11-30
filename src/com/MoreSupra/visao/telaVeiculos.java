@@ -31,6 +31,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class telaVeiculos extends javax.swing.JFrame {
     String combustivel;
+    String tipoVeiculo;
+    String situacion;
 
     
     IVeiculosControle veiculoscontrole = new VeiculosControle();
@@ -45,7 +47,23 @@ public class telaVeiculos extends javax.swing.JFrame {
         jTextField_quilometragem.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idVeiculos.setEnabled(false);
+        
         combustivel = tipoDeCombustivel.GASOLINA + "";
+        combustivel = tipoDeCombustivel.DIESEL+"";
+        combustivel = tipoDeCombustivel.FLEX+"";
+        combustivel = tipoDeCombustivel.ELETRICO+"";
+        combustivel = tipoDeCombustivel.GNV+"";
+        
+        tipoVeiculo = tipoDoVeiculo.HATCH+"";
+        tipoVeiculo = tipoDoVeiculo.SEDAN+"";
+        tipoVeiculo = tipoDoVeiculo.SUV+"";
+        tipoVeiculo = tipoDoVeiculo.PICKUP+"";
+        
+        situacion = situacao.DISPONIVEL+"";
+        situacion = situacao.LOCADO+"";
+        situacion = situacao.MANUTENCAO+"";
+        situacion = situacao.VENDIDO+"";
+        
         try {
             imprimirDados(veiculoscontrole.listagemVeiculos());
         } catch (Exception ex) {
@@ -368,12 +386,20 @@ public class telaVeiculos extends javax.swing.JFrame {
             tipoDeCombustivel tipo = (tipoDeCombustivel) jComboBox1_combustivel.getSelectedItem();
             arquivo.createNewFile();
             
-            Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Integer.parseInt(jTextField_renavam.getText()),
-                    Float.parseFloat(jTextField_precoDeVenda.getText()), Float.parseFloat(jTextField_precodeCompra.getText()),
+            if(jComboBox1_combustivel.getSelectedIndex() == 0){
+                
+            }
+            
+            Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), 
+                    Integer.parseInt(jTextField_renavam.getText()),
+                    Float.parseFloat(jTextField_precoDeVenda.getText()), 
+                    Float.parseFloat(jTextField_precodeCompra.getText()),
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
-                    jComboBox1_anoFabricacao.getSelectedItem().toString(),
-                    tipoDeCombustivel.valueOf(combustivel), Integer.parseInt(jTextField_quilometragem.getText()),
-                    (tipoDoVeiculo)jComboBox1_tipoDoVeiculo.getModel().getSelectedItem(), (situacao)jComboBox1_situacao.getModel().getSelectedItem());        
+                    jComboBox1_AnoModelo.getSelectedItem().toString(),
+                    tipoDeCombustivel.valueOf(combustivel), 
+                    Integer.parseInt(jTextField_quilometragem.getText()),
+                    tipoDoVeiculo.valueOf(tipoVeiculo), 
+                    situacao.valueOf(situacion));        
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());

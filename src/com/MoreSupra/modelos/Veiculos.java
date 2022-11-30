@@ -91,10 +91,6 @@ public class Veiculos {
     public void setAnoModelo(String anoModelo) {
         this.anoModelo = anoModelo;
     }
-
-    public tipoDeCombustivel getCombustivel() {
-        return tipoDeCombustivel;
-    }
     
     public int getQuilometragem() {
         return renavem;
