@@ -386,8 +386,36 @@ public class telaVeiculos extends javax.swing.JFrame {
             tipoDeCombustivel tipo = (tipoDeCombustivel) jComboBox1_combustivel.getSelectedItem();
             arquivo.createNewFile();
             
-            if(jComboBox1_combustivel.getSelectedIndex() == 0){
-                
+            if (jComboBox1_combustivel.getSelectedIndex() == 0) {
+                combustivel = tipoDeCombustivel.GASOLINA + "";                
+            } else if(jComboBox1_combustivel.getSelectedIndex() == 1){                      
+                combustivel = tipoDeCombustivel.DIESEL+"";     
+            }else if(jComboBox1_combustivel.getSelectedIndex() == 2){
+                combustivel = tipoDeCombustivel.FLEX+"";
+            }else if (jComboBox1_combustivel.getSelectedIndex() == 3){
+                combustivel = tipoDeCombustivel.ELETRICO+"";
+            }else if (jComboBox1_combustivel.getSelectedIndex() == 4){
+                combustivel = tipoDeCombustivel.GNV+"";
+            }
+            
+            if(jComboBox1_situacao.getSelectedIndex() == 0){
+                situacion = situacao.LOCADO+"";
+            }else if(jComboBox1_situacao.getSelectedIndex() == 1){
+                situacion = situacao.DISPONIVEL+"";
+            }else if(jComboBox1_situacao.getSelectedIndex() == 2){
+                situacion = situacao.MANUTENCAO+"";
+            }else if(jComboBox1_situacao.getSelectedIndex() == 3){
+                situacion = situacao.VENDIDO+"";
+            }
+            
+            if(jComboBox1_tipoDoVeiculo.getSelectedIndex() == 0){
+                tipoVeiculo = tipoDoVeiculo.HATCH+"";
+            }else if (jComboBox1_tipoDoVeiculo.getSelectedIndex() == 1){
+                tipoVeiculo = tipoDoVeiculo.SEDAN+"";
+            }else if(jComboBox1_tipoDoVeiculo.getSelectedIndex() == 2){
+                tipoVeiculo = tipoDoVeiculo.SUV+"";
+            }else if(jComboBox1_tipoDoVeiculo.getSelectedIndex() == 3){
+                tipoVeiculo = tipoDoVeiculo.PICKUP+"";
             }
             
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), 
