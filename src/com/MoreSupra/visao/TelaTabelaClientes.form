@@ -52,7 +52,7 @@
                 <Column editable="false" title="IDENTIDADE/RAZ&#xc3;O S" type="java.lang.String"/>
                 <Column editable="false" title="TELFONE" type="java.lang.String"/>
                 <Column editable="false" title="EMAIL" type="java.lang.String"/>
-                <Column editable="false" title="ENDEERECO" type="java.lang.String"/>
+                <Column editable="false" title="ENDERECO" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -67,7 +67,7 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>

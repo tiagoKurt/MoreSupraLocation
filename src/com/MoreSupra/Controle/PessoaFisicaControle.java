@@ -93,9 +93,4 @@ public class PessoaFisicaControle implements IPessoaFisicaControle{
     public ArrayList<PessoaFisica> listagemDePessoas() throws Exception {
         return pessoaFisicaPersistencia.listagemDePessoas();
     }
-
-    @Override
-    public PessoaFisica buscar(int id) throws Exception {
-        return pessoaFisicaPersistencia.buscar(id);
-    }
 }

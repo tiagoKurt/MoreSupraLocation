@@ -7,21 +7,21 @@ import java.text.SimpleDateFormat;
 public class Veiculos {
     private int id = 0;
     private String placa = "";
-    private int renavem = 0;
+    private long renavem = 0;
     private float precoDeVenda = 0;
     private float precoDeCompra = 0;
     private String anoFabricacao;
     private String anoModelo;
     private tipoDeCombustivel tipoDeCombustivel;
-    private int quilometragem = 0;
+    private long quilometragem = 0;
     private tipoDoVeiculo tipoDoVeiculo;
     private situacao situacao;
     SimpleDateFormat formato = new SimpleDateFormat("y");
     
     public Veiculos(){}
     
-    public Veiculos(int id, String placa, int renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
-            String anoModelo, tipoDeCombustivel tipoDeCombustivel, int quilometragem, tipoDoVeiculo tipoDoVeiculo, situacao 
+    public Veiculos(int id, String placa, long renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
+            String anoModelo, tipoDeCombustivel tipoDeCombustivel, long quilometragem, tipoDoVeiculo tipoDoVeiculo, situacao 
                     situacao){
         this.id = id;
         this.renavem = renavem;
@@ -52,11 +52,11 @@ public class Veiculos {
         this.placa = placa;
     }
 
-    public int getRenavem() {
+    public long getRenavem() {
         return renavem;
     }
 
-    public void setRenavem(int renavem) {
+    public void setRenavem(long renavem) {
         this.renavem = renavem;
     }
 
@@ -92,11 +92,11 @@ public class Veiculos {
         this.anoModelo = anoModelo;
     }
     
-    public int getQuilometragem() {
+    public long getQuilometragem() {
         return renavem;
     }
 
-    public void setQuilometragem(int quilometragem) {
+    public void setQuilometragem(long quilometragem) {
         this.quilometragem = quilometragem;
     }
 

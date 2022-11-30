@@ -8,6 +8,7 @@ import ImagensTabela.JTableRenderer;
 import com.MoreSupra.Controle.IPessoaFisicaControle;
 import com.MoreSupra.Controle.PessoaFisicaControle;
 import com.MoreSupra.modelos.PessoaFisica;
+import com.MoreSupra.modelos.Endereco;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
@@ -63,7 +64,7 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "CPF/CNPJ", "NOME", "IDENTIDADE/RAZÃO S", "TELFONE", "EMAIL", "ENDEERECO"
+                "ID", "CPF/CNPJ", "NOME", "IDENTIDADE/RAZÃO S", "TELFONE", "EMAIL", "ENDERECO"
             }
         ) {
             Class[] types = new Class [] {
@@ -91,6 +92,7 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
         if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
             jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
             jTable1_cliente.getColumnModel().getColumn(1).setPreferredWidth(110);
+            jTable1_cliente.getColumnModel().getColumn(2).setPreferredWidth(110);
             jTable1_cliente.getColumnModel().getColumn(3).setPreferredWidth(160);
         }
 
@@ -145,6 +147,8 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
                 saida[4] = aux.getTelefone();
                 saida[5] = aux.getEmail();
                 saida[6] = aux.getEndereco();
+
+                
                 //Incluir nova linha na Tabela
                 Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6]};
                 model.addRow(dados);

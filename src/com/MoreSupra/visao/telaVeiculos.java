@@ -49,20 +49,8 @@ public class telaVeiculos extends javax.swing.JFrame {
         jTextField8_idVeiculos.setEnabled(false);
         
         combustivel = tipoDeCombustivel.GASOLINA + "";
-        combustivel = tipoDeCombustivel.DIESEL+"";
-        combustivel = tipoDeCombustivel.FLEX+"";
-        combustivel = tipoDeCombustivel.ELETRICO+"";
-        combustivel = tipoDeCombustivel.GNV+"";
-        
         tipoVeiculo = tipoDoVeiculo.HATCH+"";
-        tipoVeiculo = tipoDoVeiculo.SEDAN+"";
-        tipoVeiculo = tipoDoVeiculo.SUV+"";
-        tipoVeiculo = tipoDoVeiculo.PICKUP+"";
-        
         situacion = situacao.DISPONIVEL+"";
-        situacion = situacao.LOCADO+"";
-        situacion = situacao.MANUTENCAO+"";
-        situacion = situacao.VENDIDO+"";
         
         try {
             imprimirDados(veiculoscontrole.listagemVeiculos());
@@ -150,6 +138,11 @@ public class telaVeiculos extends javax.swing.JFrame {
 
         jTextField_placa.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_placa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField_placa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_placaKeyTyped(evt);
+            }
+        });
         getContentPane().add(jTextField_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 230, 40));
 
         jLabel26.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
@@ -417,17 +410,16 @@ public class telaVeiculos extends javax.swing.JFrame {
             }else if(jComboBox1_tipoDoVeiculo.getSelectedIndex() == 3){
                 tipoVeiculo = tipoDoVeiculo.PICKUP+"";
             }
-            
-            Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), 
-                    Integer.parseInt(jTextField_renavam.getText()),
+
+            Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Long.parseLong(jTextField_renavam.getText()), 
                     Float.parseFloat(jTextField_precoDeVenda.getText()), 
-                    Float.parseFloat(jTextField_precodeCompra.getText()),
+                    Float.parseFloat(jTextField_precoDeVenda.getText()), 
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
-                    jComboBox1_AnoModelo.getSelectedItem().toString(),
+                    jComboBox1_AnoModelo.getSelectedItem().toString(), 
                     tipoDeCombustivel.valueOf(combustivel), 
-                    Integer.parseInt(jTextField_quilometragem.getText()),
+                    Long.parseLong(jTextField_quilometragem.getText()), 
                     tipoDoVeiculo.valueOf(tipoVeiculo), 
-                    situacao.valueOf(situacion));        
+                    situacao.valueOf(situacion));       
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());
@@ -453,6 +445,14 @@ public class telaVeiculos extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jTextField_renavamMouseClicked
+
+    private void jTextField_placaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_placaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField_placaKeyTyped
 
     /**
      * @param args the command line arguments

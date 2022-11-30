@@ -8,7 +8,7 @@ package com.MoreSupra.modelos;
  *
  * @author Aluno
  */
-public class Endereco {
+public class Endereco{
     private String logradouro;
     private String complemento;
     private int CEP;

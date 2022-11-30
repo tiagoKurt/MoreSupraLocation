@@ -1,7 +1,9 @@
 package com.MoreSupra.persistencia;
 
+import com.MoreSupra.enumeration.situacao;
+import com.MoreSupra.enumeration.tipoDeCombustivel;
+import com.MoreSupra.enumeration.tipoDoVeiculo;
 import com.MoreSupra.modelos.Veiculos;
-import com.MoreSupra.modelos.suportVeiculos;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -60,19 +62,21 @@ public class VeiculosMore implements IVeiculosMore{
 
             while((linha = br.readLine()) != null){
                 Veiculos objetoVeiculo = new Veiculos();
-                suportVeiculos objetoVei = new suportVeiculos();
                 String vetorString[] = linha.split(";");
                 objetoVeiculo.setId(Integer.parseInt(vetorString[0]));
                 objetoVeiculo.setPlaca(vetorString[1]);
-                objetoVeiculo.setRenavem(Integer.parseInt(vetorString[2]));
+                objetoVeiculo.setRenavem(Long.parseLong(vetorString[2]));
                 objetoVeiculo.setPrecoDeCompra(Float.parseFloat(vetorString[3]));
                 objetoVeiculo.setPrecoDeVenda(Float.parseFloat(vetorString[4]));
                 objetoVeiculo.setAnoFabricacao(vetorString[5]);
-                objetoVeiculo.setAnoModelo(vetorString[6]);                                
-                objetoVeiculo.setTipoDeCombustivel(objetoVeiculo.getTipoDeCombustivel());
-                objetoVeiculo.setTipoDoVeiculo(objetoVeiculo.getTipoDoVeiculo());
-                objetoVeiculo.setQuilometragem(Integer.parseInt(vetorString[7]));
-                objetoVeiculo.setSituacao(objetoVeiculo.getSituacao());                
+                objetoVeiculo.setAnoModelo(vetorString[6]);
+                String tipoComb = vetorString[7];
+                objetoVeiculo.setTipoDeCombustivel(tipoDeCombustivel.valueOf(tipoComb));
+                String tipoVeicu = vetorString[8];
+                objetoVeiculo.setTipoDoVeiculo(tipoDoVeiculo.valueOf(vetorString[8]));
+                objetoVeiculo.setQuilometragem(Long.parseLong(vetorString[9]));
+                String situ = vetorString[9];
+                objetoVeiculo.setSituacao(situacao.valueOf(vetorString[9]));                
                 listaDeVeiculos.add(objetoVeiculo);
             }
             br.close();

@@ -1,6 +1,7 @@
 package com.MoreSupra.persistencia;
 
 import com.MoreSupra.GeradorID.GeradorIdentificador;
+import com.MoreSupra.modelos.Endereco;
 import com.MoreSupra.modelos.PessoaFisica;
 import com.MoreSupra.modelos.Telefone;
 import java.io.BufferedReader;
@@ -21,32 +22,6 @@ public class PessoaFisicaMore implements IPessoaFisicaMore{
     
     public PessoaFisicaMore(){
         nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Clientes.txt";
-    }
-    
-    
-    public PessoaFisica buscar(int id) throws Exception{
-       
-        FileReader fr = new FileReader(nomeArquivoNoDisco);
-        BufferedReader br = new BufferedReader(fr);
-           // ArrayList<Marca> lista = listagem();
-            String linha = "";
-            while((linha = br.readLine()) !=null ){
-                PessoaFisica objetoPessoa = new PessoaFisica();
-                String vetorString[] = linha.split(";");
-                objetoPessoa.setId(Integer.parseInt(vetorString[0]));
-                objetoPessoa.setCpf(vetorString[1]);
-                objetoPessoa.setNome(vetorString[2]);
-                objetoPessoa.setIdentidade(vetorString[3]);
-                objetoPessoa.setTelefone(vetorString[4]);
-                objetoPessoa.setEmail(vetorString[5]);
-                objetoPessoa.setEndereco(vetorString[6]);
-                if(objetoPessoa.getId() == id){
-                br.close();
-                return new PessoaFisica(Integer.parseInt(vetorString[0]), vetorString[1], vetorString[2], vetorString[3], 
-                        vetorString[4], vetorString[5], vetorString[6]);
-                }               
-            }
-            return null;           
     }
     
     @Override
@@ -96,6 +71,7 @@ public class PessoaFisicaMore implements IPessoaFisicaMore{
 
             while((linha = br.readLine()) != null){
                 PessoaFisica objetoPessoa = new PessoaFisica();
+                Endereco end = new Endereco();
                 String vetorString[] = linha.split(";");
                 objetoPessoa.setId(Integer.parseInt(vetorString[0]));
                 objetoPessoa.setCpf(vetorString[1]);

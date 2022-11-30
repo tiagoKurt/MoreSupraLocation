@@ -4,12 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/visao/telaVeiculos.java</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/visao/TelaTabelaClientes.java</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/persistencia/PessoaJuridicaMore.java</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/visao/telaPessoaJuridica.java</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Veiculos.txt</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/enumeration/tipoDeCombustivel.java</file>
-            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/Controle/VeiculosControle.java</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/modelos/Endereco.java</file>
+            <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/enumeration/tipoDoVeiculo.java</file>
             <file>file:/C:/Users/Aluno/Documents/GitHub/MoreSupraLocation/src/com/MoreSupra/persistencia/VeiculosMore.java</file>
         </group>
     </open-files>

@@ -8,7 +8,7 @@ package com.MoreSupra.modelos;
  *
  * @author Pichau
  */
-public class PessoaFisica {
+public class PessoaFisica{
     
     private int id = 0;
     private String cpf;

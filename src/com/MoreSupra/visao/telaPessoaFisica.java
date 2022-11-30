@@ -7,6 +7,7 @@ package com.MoreSupra.visao;
 import ImagensTabela.JTableRenderer;
 import com.MoreSupra.Controle.IPessoaFisicaControle;
 import com.MoreSupra.Controle.PessoaFisicaControle;
+import com.MoreSupra.modelos.Endereco;
 import com.MoreSupra.modelos.PessoaFisica;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -27,6 +28,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     
     IPessoaFisicaControle controle = new PessoaFisicaControle();
 
+    String end;
+    
     
     public telaPessoaFisica() {
         initComponents();
@@ -36,8 +39,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jTextField2_nomeFisica.setDocument(new limitaCaracteres(32, limitaCaracteres.tipoEntrada.NOME));
         jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField8_IDFisica.setEnabled(false);
-
-    
+        
     }
 
     /**
@@ -280,6 +282,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
 
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         try {
+            
                 File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
             arquivo.createNewFile();
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
