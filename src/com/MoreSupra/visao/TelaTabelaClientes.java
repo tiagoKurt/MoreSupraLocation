@@ -21,9 +21,6 @@ import javax.swing.table.DefaultTableModel;
 public class TelaTabelaClientes extends javax.swing.JFrame {
     
     IPessoaFisicaControle controle = new PessoaFisicaControle();
-
-    
-    
     
     public TelaTabelaClientes() {
         initComponents();
@@ -148,7 +145,6 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
                 saida[5] = aux.getEmail();
                 saida[6] = aux.getEndereco();
 
-                
                 //Incluir nova linha na Tabela
                 Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6]};
                 model.addRow(dados);
@@ -156,7 +152,6 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
-
     }
     
     private void jTable1_clienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_clienteMouseClicked
@@ -203,7 +198,6 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JLabel jLabel13;
