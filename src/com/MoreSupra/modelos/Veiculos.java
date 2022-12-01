@@ -16,13 +16,14 @@ public class Veiculos {
     private tipoDeCombustivel tipoCombustivel;
     private tipoDoVeiculo tipoVeiculo;
     private situacao situ;
+    private String aj = "";
     SimpleDateFormat formato = new SimpleDateFormat("y");
     
     public Veiculos(){}
     
     public Veiculos(int id, String placa, long renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
             String anoModelo, long quilometragem, String tipoCombustivel, String tipoVeiculo, String 
-                    situ){
+                    situ, String aj){
         this.id = id;
         this.renavem = renavem;
         this.placa = placa;
@@ -93,13 +94,12 @@ public class Veiculos {
     }
     
     public long getQuilometragem() {
-        return renavem;
+        return quilometragem;
     }
 
     public void setQuilometragem(long quilometragem) {
         this.quilometragem = quilometragem;
     }
-
     public tipoDeCombustivel getTipoDeCombustivel() {
         return tipoCombustivel;
     }
@@ -123,13 +123,20 @@ public class Veiculos {
     public void setSituacao(situacao situacao) {
         this.situ = situacao;
     }
-    
+
+    public String getAj() {
+        return aj;
+    }
+
+    public void setAj(String aj) {
+        this.aj = aj;
+    }
 
 
     @Override
     public String toString() {
         return id + ";" + placa + ";" + renavem + ";" + precoDeVenda + ";" + precoDeCompra + ";" + anoFabricacao + 
                 ";" + anoModelo + ";" + quilometragem + ";" + tipoCombustivel + ";" + tipoVeiculo + ";" + 
-                situ + ";";
+                situ + aj +";";
     }    
 }

@@ -283,11 +283,11 @@ public class telaVeiculos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "FABRICAÇÃO", "MODELO", "QUILOMETRAGEM", "COMBUSTÍVEL", "TIPO", "SITUAÇÃO"
+                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "ANO FA", "ANO MO", "KMS", "COMBUSTÍVEL", "TIPO", "SITUAÇÃO", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -299,8 +299,12 @@ public class telaVeiculos extends javax.swing.JFrame {
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(110);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(90);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(90);
             jTable1.getColumnModel().getColumn(7).setPreferredWidth(110);
             jTable1.getColumnModel().getColumn(8).setPreferredWidth(110);
+            jTable1.getColumnModel().getColumn(10).setPreferredWidth(130);
+            jTable1.getColumnModel().getColumn(11).setPreferredWidth(0);
         }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 930, 320));
@@ -345,13 +349,13 @@ public class telaVeiculos extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();  
-            jTable1.getColumnModel().getColumn(10).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(11).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Veiculos> lista = listaDeVeiculos.iterator();
             while(lista.hasNext()){
-                String[] saida= new String[11];
+                String[] saida= new String[12];
                 Veiculos aux = lista.next();
                 saida[0]= aux.getId()+"";
                 saida[1]= aux.getPlaca();
@@ -364,11 +368,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 saida[8] = aux.getTipoDeCombustivel().toString();
                 saida[9] = aux.getTipoDoVeiculo().toString();
                 saida[10] = aux.getSituacao().toString();
+                saida[11] = aux.getAj();
                 
                 //Incluir nova linha na Tabela,saida[0]
                 
                 Object[]dados = {saida[0],saida[1],saida[2],saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
-                saida[10]};
+                saida[10],saida[11]};
                 model.addRow(dados);
             }
         } catch(Exception erro){
@@ -426,7 +431,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                     Long.parseLong(jTextField_quilometragem.getText()),
                     jComboBox1_combustivel.getSelectedItem().toString(),
                     jComboBox1_tipoDoVeiculo.getSelectedItem().toString(),                    
-                    jComboBox1_situacao.getSelectedItem().toString());       
+                    jComboBox1_situacao.getSelectedItem().toString(), "");       
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());
