@@ -12,17 +12,17 @@ public class Veiculos {
     private float precoDeCompra = 0;
     private String anoFabricacao;
     private String anoModelo;
-    private tipoDeCombustivel tipoDeCombustivel;
     private long quilometragem = 0;
-    private tipoDoVeiculo tipoDoVeiculo;
-    private situacao situacao;
+    private tipoDeCombustivel tipoCombustivel;
+    private tipoDoVeiculo tipoVeiculo;
+    private situacao situ;
     SimpleDateFormat formato = new SimpleDateFormat("y");
     
     public Veiculos(){}
     
     public Veiculos(int id, String placa, long renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
-            String anoModelo, tipoDeCombustivel tipoDeCombustivel, long quilometragem, tipoDoVeiculo tipoDoVeiculo, situacao 
-                    situacao){
+            String anoModelo, long quilometragem, String tipoCombustivel, String tipoVeiculo, String 
+                    situ){
         this.id = id;
         this.renavem = renavem;
         this.placa = placa;
@@ -30,10 +30,10 @@ public class Veiculos {
         this.precoDeVenda = precoDeVenda;
         this.anoFabricacao = anoFabricacao;
         this.anoModelo = anoModelo;
-        this.tipoDeCombustivel = tipoDeCombustivel;
         this.quilometragem = quilometragem;
-        this.tipoDoVeiculo = tipoDoVeiculo;
-        this.situacao = situacao;
+        this.tipoCombustivel = tipoDeCombustivel.valueOf(tipoCombustivel);
+        this.tipoVeiculo = tipoDoVeiculo.valueOf(tipoVeiculo);
+        this.situ = situacao.valueOf(situ);
     }
 
     public int getId() {
@@ -101,27 +101,27 @@ public class Veiculos {
     }
 
     public tipoDeCombustivel getTipoDeCombustivel() {
-        return tipoDeCombustivel;
+        return tipoCombustivel;
     }
 
     public void setTipoDeCombustivel(tipoDeCombustivel tipoDeCombustivel) {
-        this.tipoDeCombustivel = tipoDeCombustivel;
+        this.tipoCombustivel = tipoDeCombustivel;
     }
 
     public tipoDoVeiculo getTipoDoVeiculo() {
-        return tipoDoVeiculo;
+        return tipoVeiculo;
     }
 
     public void setTipoDoVeiculo(tipoDoVeiculo tipoDoVeiculo) {
-        this.tipoDoVeiculo = tipoDoVeiculo;
+        this.tipoVeiculo = tipoDoVeiculo;
     }
 
     public situacao getSituacao() {
-        return situacao;
+        return situ;
     }
 
     public void setSituacao(situacao situacao) {
-        this.situacao = situacao;
+        this.situ = situacao;
     }
     
 
@@ -129,7 +129,7 @@ public class Veiculos {
     @Override
     public String toString() {
         return id + ";" + placa + ";" + renavem + ";" + precoDeVenda + ";" + precoDeCompra + ";" + anoFabricacao + 
-                ";" + anoModelo + ";" + tipoDeCombustivel + ";" + quilometragem + ";" + tipoDoVeiculo + ";" + 
-                situacao + ";";
+                ";" + anoModelo + ";" + quilometragem + ";" + tipoCombustivel + ";" + tipoVeiculo + ";" + 
+                situ + ";";
     }    
 }

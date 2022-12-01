@@ -70,13 +70,13 @@ public class VeiculosMore implements IVeiculosMore{
                 objetoVeiculo.setPrecoDeVenda(Float.parseFloat(vetorString[4]));
                 objetoVeiculo.setAnoFabricacao(vetorString[5]);
                 objetoVeiculo.setAnoModelo(vetorString[6]);
-                String tipoComb = vetorString[7];
+                objetoVeiculo.setQuilometragem(Long.parseLong(vetorString[7]));
+                String tipoComb = vetorString[8];
                 objetoVeiculo.setTipoDeCombustivel(tipoDeCombustivel.valueOf(tipoComb));
-                String tipoVeicu = vetorString[8];
-                objetoVeiculo.setTipoDoVeiculo(tipoDoVeiculo.valueOf(vetorString[8]));
-                objetoVeiculo.setQuilometragem(Long.parseLong(vetorString[9]));
-                String situ = vetorString[9];
-                objetoVeiculo.setSituacao(situacao.valueOf(vetorString[9]));                
+                String tipoVeicu = vetorString[9];
+                objetoVeiculo.setTipoDoVeiculo(tipoDoVeiculo.valueOf(tipoVeicu));    
+                String situ = vetorString[10];
+                objetoVeiculo.setSituacao(situacao.valueOf(situ));                
                 listaDeVeiculos.add(objetoVeiculo);
             }
             br.close();

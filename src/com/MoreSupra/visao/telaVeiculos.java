@@ -283,7 +283,7 @@ public class telaVeiculos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "FABRICAÇÃO", "MODELO", "COMBUSTIVEL", "QUILOMETRAGEM", "TIPO", "SITUAÇÃO"
+                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "FABRICAÇÃO", "MODELO", "QUILOMETRAGEM", "COMBUSTÍVEL", "TIPO", "SITUAÇÃO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -294,9 +294,16 @@ public class telaVeiculos extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.setRowHeight(60);
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(110);
+            jTable1.getColumnModel().getColumn(7).setPreferredWidth(110);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(110);
+        }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 900, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 930, 320));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
@@ -353,8 +360,8 @@ public class telaVeiculos extends javax.swing.JFrame {
                 saida[4] = aux.getPrecoDeCompra()+"";
                 saida[5] = aux.getAnoFabricacao();
                 saida[6] = aux.getAnoModelo();
-                saida[7] = aux.getTipoDeCombustivel().toString();
-                saida[8] = aux.getQuilometragem()+"";
+                saida[7] = aux.getQuilometragem()+"";
+                saida[8] = aux.getTipoDeCombustivel().toString();
                 saida[9] = aux.getTipoDoVeiculo().toString();
                 saida[10] = aux.getSituacao().toString();
                 
@@ -416,10 +423,10 @@ public class telaVeiculos extends javax.swing.JFrame {
                     Float.parseFloat(jTextField_precoDeVenda.getText()), 
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
                     jComboBox1_AnoModelo.getSelectedItem().toString(), 
-                    tipoDeCombustivel.valueOf(combustivel), 
-                    Long.parseLong(jTextField_quilometragem.getText()), 
-                    tipoDoVeiculo.valueOf(tipoVeiculo), 
-                    situacao.valueOf(situacion));       
+                    Long.parseLong(jTextField_quilometragem.getText()),
+                    jComboBox1_combustivel.getSelectedItem().toString(),
+                    jComboBox1_tipoDoVeiculo.getSelectedItem().toString(),                    
+                    jComboBox1_situacao.getSelectedItem().toString());       
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());
