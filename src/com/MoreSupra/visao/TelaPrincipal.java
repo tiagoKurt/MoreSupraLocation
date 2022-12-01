@@ -30,11 +30,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -110,6 +110,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem8);
 
+        jMenuBar1.add(jMenu1);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/Gestor.png"))); // NOI18N
+        jMenu3.setText("GESTOR");
+        jMenu3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+
+        jMenuItem9.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
+        jMenuItem9.setText("RELAÇÃO CADASTRO CLIENTES");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem9);
+
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
         jMenu5.setText("CLIENTES");
 
@@ -133,23 +149,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem4);
 
-        jMenu1.add(jMenu5);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/Gestor.png"))); // NOI18N
-        jMenu3.setText("GESTOR");
-        jMenu3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-
-        jMenuItem9.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
-        jMenuItem9.setText("RELAÇÃO CADASTRO CLIENTES");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem9);
+        jMenu3.add(jMenu5);
 
         jMenuBar1.add(jMenu3);
 
