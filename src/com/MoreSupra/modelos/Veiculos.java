@@ -22,7 +22,7 @@ public class Veiculos {
     public Veiculos(){}
     
     public Veiculos(int id, String placa, long renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
-            String anoModelo, long quilometragem, String tipoCombustivel, String tipoVeiculo, String 
+            String anoModelo, long quilometragem, tipoDeCombustivel tipoCombustivel, tipoDoVeiculo tipoVeiculo, situacao 
                     situ, String aj){
         this.id = id;
         this.renavem = renavem;
@@ -32,9 +32,9 @@ public class Veiculos {
         this.anoFabricacao = anoFabricacao;
         this.anoModelo = anoModelo;
         this.quilometragem = quilometragem;
-        this.tipoCombustivel = tipoDeCombustivel.valueOf(tipoCombustivel);
-        this.tipoVeiculo = tipoDoVeiculo.valueOf(tipoVeiculo);
-        this.situ = situacao.valueOf(situ);
+        this.tipoCombustivel = tipoCombustivel;
+        this.tipoVeiculo = tipoVeiculo;
+        this.situ = situ;
     }
 
     public int getId() {

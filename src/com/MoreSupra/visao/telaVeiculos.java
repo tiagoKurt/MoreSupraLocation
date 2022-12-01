@@ -429,9 +429,10 @@ public class telaVeiculos extends javax.swing.JFrame {
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
                     jComboBox1_AnoModelo.getSelectedItem().toString(), 
                     Long.parseLong(jTextField_quilometragem.getText()),
-                    jComboBox1_combustivel.getSelectedItem().toString(),
-                    jComboBox1_tipoDoVeiculo.getSelectedItem().toString(),                    
-                    jComboBox1_situacao.getSelectedItem().toString(), "");       
+                    tipoDeCombustivel.valueOf(combustivel),
+                    tipoDoVeiculo.valueOf(tipoVeiculo),
+                    situacao.valueOf(situacion), "");
+                         
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());
