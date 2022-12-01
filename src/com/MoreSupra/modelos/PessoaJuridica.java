@@ -17,11 +17,13 @@ public class PessoaJuridica {
     private String telefone;
     private String email;
     private String endereco;
+    private String oqe = "JURÍDICO";
+    private String aux = "";
     
     public PessoaJuridica(){}
     
     public PessoaJuridica(int id, String cnpj, String nome, String razaoSocial,
-            String telefone, String email, String endereco){
+            String telefone, String email, String endereco, String oqe, String aux){
         this.id = id;
         this.cnpj = cnpj;
         this.nome = nome;
@@ -87,9 +89,26 @@ public class PessoaJuridica {
         this.endereco = endereco;
     }
 
+    public String getOqe() {
+        return oqe;
+    }
+
+    public void setOqe(String oqe) {
+        this.oqe = oqe;
+    }
+
+    public String getAux() {
+        return aux;
+    }
+
+    public void setAux(String aux) {
+        this.aux = aux;
+    }
+
+    
     @Override
     public String toString() {
-        return id + ";" + cnpj + ";" + nome + ";" + razaoSocial + ";" + telefone + ";" + email + ";" + endereco + ";";
+        return id + ";" + cnpj + ";" + nome + ";" + razaoSocial + ";" + telefone + ";" + email + ";" + endereco + ";" + oqe + aux +";";
     }
     
             

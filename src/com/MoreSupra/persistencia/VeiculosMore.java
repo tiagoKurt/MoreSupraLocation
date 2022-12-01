@@ -54,7 +54,7 @@ public class VeiculosMore implements IVeiculosMore{
     @Override
     public ArrayList<Veiculos> listagemVeiculos() throws Exception {
         try {
-            ArrayList<Veiculos> listaDeVeiculos = new ArrayList<Veiculos>();
+            ArrayList<Veiculos> listaDeVeiculos = new ArrayList<>();
             FileReader fr = new FileReader(nomeArquivoNoDisco);
             BufferedReader br = new BufferedReader(fr);
 

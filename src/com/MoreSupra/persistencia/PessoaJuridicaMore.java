@@ -38,10 +38,12 @@ public class PessoaJuridicaMore implements IPessoaJuridicaMore{
                 objetoPessoa.setTelefone(vetorString[4]);
                 objetoPessoa.setEmail(vetorString[5]);
                 objetoPessoa.setEndereco(vetorString[6]);
+                objetoPessoa.setOqe(vetorString[7]);
+                objetoPessoa.setAux(vetorString[8]);
                 if(objetoPessoa.getId() == id){
                 br.close();
                 return new PessoaJuridica(Integer.parseInt(vetorString[0]), vetorString[1], vetorString[2], vetorString[3], 
-                        vetorString[4], vetorString[5], vetorString[6]);
+                        vetorString[4], vetorString[5], vetorString[6], vetorString[7], vetorString[8]);
                 }               
             }
             return null;           

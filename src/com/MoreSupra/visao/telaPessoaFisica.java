@@ -287,7 +287,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             arquivo.createNewFile();
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
                     jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
-                    jTextField3_enderecoFisica.getText());
+                    jTextField3_enderecoFisica.getText(), "FÍSICO", "");
             
             controle.incluir(cliente);
             jTextField1_identidade.setText("");

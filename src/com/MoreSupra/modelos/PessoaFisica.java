@@ -15,13 +15,15 @@ public class PessoaFisica{
     private String nome;
     private String identidade;
     private String telefone;
-    private String email;
+    private String email;   
     private String endereco;
+    private String oqe = "FÍSICO";
+    private String aux = "";
     
     public PessoaFisica(){}
     
     public PessoaFisica(int id, String cpf, String nome, String identidade, String telefone,
-            String email, String endereco){
+            String email, String endereco, String oqe, String aux){
         this.id = id;
         this.cpf = cpf;
         this.nome = nome;
@@ -87,8 +89,24 @@ public class PessoaFisica{
         this.endereco = endereco;
     }
 
+    public String getOqe() {
+        return oqe;
+    }
+
+    public void setOqe(String oqe) {
+        this.oqe = oqe;
+    }
+
+    public String getAux() {
+        return aux;
+    }
+
+    public void setAux(String aux) {
+        this.aux = aux;
+    }   
+
     @Override
     public String toString() {
-        return id + ";" + cpf + ";" + nome + ";" + identidade + ";" + telefone + ";" + email + ";" + endereco + ";";
+        return id + ";" + cpf + ";" + nome + ";" + identidade + ";" + telefone + ";" + email + ";" + endereco + ";" + oqe + aux + ";";
     }
 }

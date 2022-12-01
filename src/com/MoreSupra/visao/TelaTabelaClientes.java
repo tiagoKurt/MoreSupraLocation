@@ -9,6 +9,7 @@ import com.MoreSupra.Controle.IPessoaFisicaControle;
 import com.MoreSupra.Controle.PessoaFisicaControle;
 import com.MoreSupra.modelos.PessoaFisica;
 import com.MoreSupra.modelos.Endereco;
+import com.MoreSupra.modelos.PessoaJuridica;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
@@ -55,20 +56,20 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
         jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "CPF/CNPJ", "NOME", "IDENTIDADE/RAZÃO S", "TELFONE", "EMAIL", "ENDERECO"
+                "ID", "CPF/CNPJ", "NOME", "IDENTIDADE/RAZÃO S", "TELFONE", "EMAIL", "ENDERECO", "CLIENTE", ""
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -87,10 +88,15 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1_cliente);
         if (jTable1_cliente.getColumnModel().getColumnCount() > 0) {
+            jTable1_cliente.getColumnModel().getColumn(0).setResizable(false);
             jTable1_cliente.getColumnModel().getColumn(0).setPreferredWidth(10);
             jTable1_cliente.getColumnModel().getColumn(1).setPreferredWidth(110);
             jTable1_cliente.getColumnModel().getColumn(2).setPreferredWidth(110);
             jTable1_cliente.getColumnModel().getColumn(3).setPreferredWidth(160);
+            jTable1_cliente.getColumnModel().getColumn(5).setPreferredWidth(180);
+            jTable1_cliente.getColumnModel().getColumn(6).setPreferredWidth(180);
+            jTable1_cliente.getColumnModel().getColumn(7).setPreferredWidth(50);
+            jTable1_cliente.getColumnModel().getColumn(8).setPreferredWidth(0);
         }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 1140, 360));
@@ -128,14 +134,14 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1_cliente.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1_cliente.getColumnModel().getColumn(6).setCellRenderer(JtableRenderer); 
+            jTable1_cliente.getColumnModel().getColumn(8).setCellRenderer(JtableRenderer); 
 
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<PessoaFisica> lista = listaDeCliente.iterator();
 
             while (lista.hasNext()) {
-                String[] saida = new String[7];
+                String[] saida = new String[9];
                 PessoaFisica aux = lista.next();
                 saida[0] = aux.getId() + "";
                 saida[1] = aux.getCpf();
@@ -144,9 +150,11 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
                 saida[4] = aux.getTelefone();
                 saida[5] = aux.getEmail();
                 saida[6] = aux.getEndereco();
+                saida[7] = aux.getOqe();
+                saida[8] = aux.getAux();
 
                 //Incluir nova linha na Tabela
-                Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6]};
+                Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8]};
                 model.addRow(dados);
             }
         } catch (Exception erro) {
