@@ -3,6 +3,7 @@ package com.MoreSupra.persistencia;
 import com.MoreSupra.enumeration.situacao;
 import com.MoreSupra.enumeration.tipoDeCombustivel;
 import com.MoreSupra.enumeration.tipoDoVeiculo;
+import com.MoreSupra.modelos.Modelos;
 import com.MoreSupra.modelos.Veiculos;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -62,6 +63,7 @@ public class VeiculosMore implements IVeiculosMore{
 
             while((linha = br.readLine()) != null){
                 Veiculos objetoVeiculo = new Veiculos();
+                ModelosMore objetoModelo = new ModelosMore();
                 String vetorString[] = linha.split(";");
                 objetoVeiculo.setId(Integer.parseInt(vetorString[0]));
                 objetoVeiculo.setPlaca(vetorString[1]);
@@ -76,7 +78,9 @@ public class VeiculosMore implements IVeiculosMore{
                 String tipoVeicu = vetorString[9];
                 objetoVeiculo.setTipoDoVeiculo(tipoDoVeiculo.valueOf(tipoVeicu));    
                 String situ = vetorString[10];
-                objetoVeiculo.setSituacao(situacao.valueOf(situ));                
+                objetoVeiculo.setSituacao(situacao.valueOf(situ));
+                int id = Integer.parseInt(vetorString[11]);
+                objetoVeiculo.setModelo(objetoModelo.buscar(id));
                 listaDeVeiculos.add(objetoVeiculo);
             }
             br.close();

@@ -5,11 +5,14 @@
 package com.MoreSupra.visao;
 
 import ImagensTabela.JTableRenderer;
+import com.MoreSupra.Controle.IModelosControle;
 import com.MoreSupra.Controle.IVeiculosControle;
+import com.MoreSupra.Controle.ModelosControle;
 import com.MoreSupra.Controle.VeiculosControle;
 import com.MoreSupra.enumeration.tipoDoVeiculo;
 import com.MoreSupra.enumeration.situacao;
 import com.MoreSupra.enumeration.tipoDeCombustivel;
+import com.MoreSupra.modelos.Modelos;
 import com.MoreSupra.modelos.Veiculos;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.event.ItemEvent;
@@ -22,6 +25,7 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,6 +40,7 @@ public class telaVeiculos extends javax.swing.JFrame {
 
     
     IVeiculosControle veiculoscontrole = new VeiculosControle();
+    IModelosControle modeloControle = new ModelosControle();
     
     public telaVeiculos() {
         initComponents();
@@ -51,6 +56,22 @@ public class telaVeiculos extends javax.swing.JFrame {
         combustivel = tipoDeCombustivel.GASOLINA + "";
         tipoVeiculo = tipoDoVeiculo.HATCH+"";
         situacion = situacao.DISPONIVEL+"";
+        
+        
+        try {
+            ArrayList <Modelos> combolista = modeloControle.listagemModelos();
+            int lim = combolista.size();
+            String modelos[] = new String[lim];
+
+            for(int i = 0; i < combolista.size(); i++){
+                modelos[i] = combolista.get(i).getDescricao();
+                jComboBox1_Modelos.addItem(modelos[i]);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
         
         try {
             imprimirDados(veiculoscontrole.listagemVeiculos());
@@ -97,6 +118,9 @@ public class telaVeiculos extends javax.swing.JFrame {
         jComboBox1_AnoModelo = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel35 = new javax.swing.JLabel();
+        jComboBox1_Modelos = new javax.swing.JComboBox<>();
+        jLabel9_ModeloImage = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,12 +136,12 @@ public class telaVeiculos extends javax.swing.JFrame {
 
         jTextField8_idVeiculos.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField8_idVeiculos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jTextField8_idVeiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 70, 40));
+        getContentPane().add(jTextField8_idVeiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 70, 40));
 
         jLabel24.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("ID");
-        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, -1, 40));
+        getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, -1, 40));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -129,12 +153,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 640, 169, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 630, 169, -1));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("COMBUSTÍVEL");
-        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, 40));
+        getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 40));
 
         jTextField_placa.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_placa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -143,12 +167,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jTextField_placaKeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, 230, 40));
+        getContentPane().add(jTextField_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 230, 40));
 
         jLabel26.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("RENAVAM");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 90, -1, 40));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 70, -1, 40));
 
         jTextField_renavam.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_renavam.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -157,35 +181,35 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jTextField_renavamMouseClicked(evt);
             }
         });
-        getContentPane().add(jTextField_renavam, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 90, 250, 40));
+        getContentPane().add(jTextField_renavam, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 70, 250, 40));
 
         jTextField_precodeCompra.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_precodeCompra.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jTextField_precodeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 230, 40));
+        getContentPane().add(jTextField_precodeCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 230, 40));
 
         jLabel27.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("PREÇO DE COMPRA");
-        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, 40));
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, 40));
 
         jLabel28.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("ANO FABRICAÇÃO");
-        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 190, -1, 40));
+        getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, 40));
 
         jLabel29.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("PREÇO DE VENDA");
-        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, -1, 40));
+        getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, -1, 40));
 
         jTextField_precoDeVenda.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_precoDeVenda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jTextField_precoDeVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 140, 250, 40));
+        getContentPane().add(jTextField_precoDeVenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 120, 250, 40));
 
         jLabel30.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("ANO MODELO");
-        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, 40));
+        getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, 40));
 
         jComboBox1_combustivel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_combustivel.addActionListener(new java.awt.event.ActionListener() {
@@ -193,12 +217,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_combustivelActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1_combustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 160, 40));
+        getContentPane().add(jComboBox1_combustivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 160, 40));
 
         jLabel31.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("PLACA");
-        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, -1, 40));
+        getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, 40));
 
         jComboBox1_tipoDoVeiculo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_tipoDoVeiculo.addActionListener(new java.awt.event.ActionListener() {
@@ -206,21 +230,21 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_tipoDoVeiculoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1_tipoDoVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 170, 40));
+        getContentPane().add(jComboBox1_tipoDoVeiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 170, 40));
 
         jLabel32.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("TIPO DO VEÍCULO");
-        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, -1, 40));
+        jLabel32.setText("MODELO");
+        getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, -1, 40));
 
         jLabel33.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("QUILOMETRAGEM");
-        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, 40));
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, -1, 40));
 
         jTextField_quilometragem.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField_quilometragem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jTextField_quilometragem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 230, 40));
+        getContentPane().add(jTextField_quilometragem, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 230, 40));
 
         jComboBox1_situacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jComboBox1_situacao.addActionListener(new java.awt.event.ActionListener() {
@@ -228,12 +252,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_situacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1_situacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 290, 170, 40));
+        getContentPane().add(jComboBox1_situacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 270, 170, 40));
 
         jLabel34.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("SITUAÇÃO");
-        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, 40));
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, -1, 40));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -245,7 +269,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 380, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 410, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -257,7 +281,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 340, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 370, 169, -1));
 
         jComboBox1_anoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
         jComboBox1_anoFabricacao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -266,7 +290,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_anoFabricacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1_anoFabricacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 170, 40));
+        getContentPane().add(jComboBox1_anoFabricacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, 160, 40));
 
         jComboBox1_AnoModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012" }));
         jComboBox1_AnoModelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -275,7 +299,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 jComboBox1_AnoModeloActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 160, 40));
+        getContentPane().add(jComboBox1_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 160, 40));
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -283,11 +307,11 @@ public class telaVeiculos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "ANO FA", "ANO MO", "KMS", "COMBUSTÍVEL", "TIPO", "SITUAÇÃO", ""
+                "ID", "PLACA", "RENAVAM", "COMPRA", "VENDA", "ANO FA", "ANO MO", "KMS", "COMBUSTÍVEL", "TIPO", "SITUAÇÃO", "MODELO", "", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -295,6 +319,11 @@ public class telaVeiculos extends javax.swing.JFrame {
             }
         });
         jTable1.setRowHeight(60);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
@@ -304,10 +333,28 @@ public class telaVeiculos extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(7).setPreferredWidth(110);
             jTable1.getColumnModel().getColumn(8).setPreferredWidth(110);
             jTable1.getColumnModel().getColumn(10).setPreferredWidth(130);
-            jTable1.getColumnModel().getColumn(11).setPreferredWidth(0);
+            jTable1.getColumnModel().getColumn(11).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(12).setPreferredWidth(0);
+            jTable1.getColumnModel().getColumn(13).setPreferredWidth(100);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 930, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 930, 300));
+
+        jLabel35.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("TIPO DO VEÍCULO");
+        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 220, -1, 40));
+
+        jComboBox1_Modelos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jComboBox1_Modelos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1_ModelosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1_Modelos, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 170, 170, 40));
+
+        jLabel9_ModeloImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        getContentPane().add(jLabel9_ModeloImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 220, 210, 140));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
@@ -349,13 +396,13 @@ public class telaVeiculos extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();  
-            jTable1.getColumnModel().getColumn(11).setCellRenderer(JtableRenderer);
+            jTable1.getColumnModel().getColumn(13).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
             Iterator<Veiculos> lista = listaDeVeiculos.iterator();
             while(lista.hasNext()){
-                String[] saida= new String[12];
+                String[] saida= new String[14];
                 Veiculos aux = lista.next();
                 saida[0]= aux.getId()+"";
                 saida[1]= aux.getPlaca();
@@ -368,12 +415,14 @@ public class telaVeiculos extends javax.swing.JFrame {
                 saida[8] = aux.getTipoDeCombustivel().toString();
                 saida[9] = aux.getTipoDoVeiculo().toString();
                 saida[10] = aux.getSituacao().toString();
-                saida[11] = aux.getAj();
+                saida[11] = modeloControle.buscar(aux.getModelo().getId()).getDescricao();
+                saida[12] = modeloControle.buscar(aux.getModelo().getId()).getUrl();
+                saida[13] = aux.getAj();
                 
                 //Incluir nova linha na Tabela,saida[0]
                 
                 Object[]dados = {saida[0],saida[1],saida[2],saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
-                saida[10],saida[11]};
+                saida[10],saida[11], saida[12], saida[13]};
                 model.addRow(dados);
             }
         } catch(Exception erro){
@@ -423,6 +472,7 @@ public class telaVeiculos extends javax.swing.JFrame {
                 tipoVeiculo = tipoDoVeiculo.PICKUP+"";
             }
 
+            int macc = 0;
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Long.parseLong(jTextField_renavam.getText()), 
                     Float.parseFloat(jTextField_precoDeVenda.getText()), 
                     Float.parseFloat(jTextField_precoDeVenda.getText()), 
@@ -431,8 +481,15 @@ public class telaVeiculos extends javax.swing.JFrame {
                     Long.parseLong(jTextField_quilometragem.getText()),
                     tipoDeCombustivel.valueOf(combustivel),
                     tipoDoVeiculo.valueOf(tipoVeiculo),
-                    situacao.valueOf(situacion), "");
+                    situacao.valueOf(situacion), modeloControle.buscar(macc), "");
                          
+            ArrayList<Modelos> lista = modeloControle.listagemModelos();
+            for(int i = 0; i < lista.size(); i++){
+                if(jComboBox1_Modelos.getSelectedItem().equals(lista.get(i).getDescricao())){
+                    veiculos.setModelo(lista.get(i));
+                    
+                }
+            }
             
             veiculoscontrole.incluir(veiculos);
             imprimirDados(veiculoscontrole.listagemVeiculos());
@@ -466,6 +523,53 @@ public class telaVeiculos extends javax.swing.JFrame {
             evt.setKeyChar(Character.toUpperCase(c));
         }
     }//GEN-LAST:event_jTextField_placaKeyTyped
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+            
+            jTextField8_idVeiculos.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
+            jTextField_placa.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
+            jTextField_renavam.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
+            jTextField_precoDeVenda.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString());
+            jTextField_precodeCompra.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 4).toString());
+            jComboBox1_anoFabricacao.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 5).toString());
+            jComboBox1_AnoModelo.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 6).toString());
+            jTextField_quilometragem.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 7).toString());
+            jComboBox1_combustivel.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 8).toString());
+            jComboBox1_tipoDoVeiculo.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 9).toString());
+            jComboBox1_situacao.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 10).toString());
+            
+            Object pog = jTable1.getValueAt(jTable1.getSelectedRow(), 12);
+            ImageIcon marca = new ImageIcon((String) pog);
+            marca.setImage(marca.getImage().getScaledInstance(jLabel9_ModeloImage.getWidth(), 
+            jLabel9_ModeloImage.getHeight(), 1));
+            jLabel9_ModeloImage.setIcon(marca);
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jComboBox1_ModelosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_ModelosActionPerformed
+        try{
+        int macc = 0;
+            Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Long.parseLong(jTextField_renavam.getText()), 
+                    Float.parseFloat(jTextField_precoDeVenda.getText()), 
+                    Float.parseFloat(jTextField_precoDeVenda.getText()), 
+                    jComboBox1_anoFabricacao.getSelectedItem().toString(), 
+                    jComboBox1_AnoModelo.getSelectedItem().toString(), 
+                    Long.parseLong(jTextField_quilometragem.getText()),
+                    tipoDeCombustivel.valueOf(combustivel),
+                    tipoDoVeiculo.valueOf(tipoVeiculo),
+                    situacao.valueOf(situacion), modeloControle.buscar(macc), "");
+            ArrayList<Modelos> lista = modeloControle.listagemModelos();
+            for(int i = 0; i < lista.size(); i++){
+                if(jComboBox1_Modelos.getSelectedItem().equals(lista.get(i).getDescricao())){
+                    veiculos.setModelo(lista.get(i));
+                    ImageIcon marca = new ImageIcon(lista.get(i).getUrl());
+                marca.setImage(marca.getImage().getScaledInstance(jLabel9_ModeloImage.getWidth(), jLabel9_ModeloImage.getHeight(), 1));
+                jLabel9_ModeloImage.setIcon(marca);
+            }
+        }
+        }catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, erro.getMessage());
+        }
+    }//GEN-LAST:event_jComboBox1_ModelosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -507,6 +611,7 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JComboBox<String> jComboBox1_AnoModelo;
+    private javax.swing.JComboBox<String> jComboBox1_Modelos;
     private javax.swing.JComboBox<String> jComboBox1_anoFabricacao;
     private javax.swing.JComboBox<tipoDeCombustivel> jComboBox1_combustivel;
     private javax.swing.JComboBox<situacao> jComboBox1_situacao;
@@ -524,7 +629,9 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel9_ModeloImage;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField8_idVeiculos;

@@ -17,6 +17,29 @@ public class ModelosMore implements IModelosMore {
         nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Modelos.txt";
     }
 
+    public Modelos buscar(int id) throws Exception{
+       
+        FileReader fr = new FileReader(nomeArquivoNoDisco);
+        BufferedReader br = new BufferedReader(fr);
+           // ArrayList<Marca> lista = listagem();
+            String linha = "";
+            while((linha = br.readLine()) !=null ){
+                Modelos objetoModelo = new Modelos();
+                MarcaMore objetoMarca = new MarcaMore();
+                String vetorString[] = linha.split(";");
+                objetoModelo.setId(Integer.parseInt(vetorString[0]));
+                objetoModelo.setDescricao(vetorString[1]);
+                objetoModelo.setUrl(vetorString[2]);
+                int idi = Integer.parseInt(vetorString[3]);
+                objetoModelo.setMarca(objetoMarca.buscar(idi));
+                if(objetoModelo.getId() == id){
+                br.close();
+                return new Modelos(Integer.parseInt(vetorString[0]),vetorString[1], vetorString[2], 
+                        objetoModelo.getMarca());
+                }               
+            }
+            return null;           
+    }
     @Override
     public void incluir(Modelos objeto) throws Exception {
         try {

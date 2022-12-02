@@ -5,6 +5,8 @@ import com.MoreSupra.persistencia.IModelosMore;
 import com.MoreSupra.persistencia.ModelosMore;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+
 public class ModelosControle implements IModelosControle{
     
     IModelosMore modelosPersistencia = null;
@@ -13,6 +15,23 @@ public class ModelosControle implements IModelosControle{
         this.modelosPersistencia = new ModelosMore();
     }
 
+    private boolean buscarMarca(String descricao) throws Exception {
+        try {
+            ArrayList<Modelos> listagem = modelosPersistencia.listagemModelos();
+            Iterator<Modelos> lista = listagem.iterator();
+            while (lista.hasNext()) {
+                Modelos aux = lista.next();
+                if (aux.getDescricao().equalsIgnoreCase(descricao)) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
+    
+    
     private boolean buscarModelo(String descricao) throws Exception {
         try {
             ArrayList<Modelos> listagem = modelosPersistencia.listagemModelos();
@@ -83,4 +102,9 @@ public class ModelosControle implements IModelosControle{
     public ArrayList<Modelos> listagemModelos() throws Exception {
         return modelosPersistencia.listagemModelos();
     }    
+
+    @Override
+    public Modelos buscar(int id) throws Exception {
+        return modelosPersistencia.buscar(id);
+    }
 }

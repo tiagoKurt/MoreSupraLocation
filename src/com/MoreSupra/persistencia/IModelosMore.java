@@ -6,4 +6,5 @@ public interface IModelosMore {
     void incluir(Modelos objeto) throws Exception;
     void alterar(Modelos objeto) throws Exception;
     ArrayList<Modelos> listagemModelos() throws Exception;
+    Modelos buscar(int id)throws Exception;
 }
