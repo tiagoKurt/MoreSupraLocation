@@ -1,6 +1,8 @@
 package com.MoreSupra.visao;
 
 import com.MoreSupra.visao.TelaTabelaClientes;
+import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.awt.Dimension;
 import javax.swing.JOptionPane;
 
 public class TelaLoginGestor extends javax.swing.JFrame {
@@ -11,6 +13,16 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     public TelaLoginGestor() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
+        jTextField2_Senha.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
+        jPasswordField1.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
+        
+        jDialog1.setSize(650, 440);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setTitle("ajudinha");
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog1.setResizable(false);
+        
+        
     }
 
     /**
@@ -22,6 +34,14 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        jLabel2 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jButton2_Confimar1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -32,7 +52,47 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jButton2_Voltar = new javax.swing.JButton();
         jButton_Logar = new javax.swing.JButton();
         jButton2_Ajuda = new javax.swing.JButton();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jButton2_verSenha = new javax.swing.JButton();
+        jButton2_esconderSenha = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        jFrame1.setName("Ajudinha"); // NOI18N
+        jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
+
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Serif", 3, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("DIGITE O LOGIN E A SENHA FORNECIDOS PELOS GESTORES.");
+        jDialog1.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 610, 50));
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAJUDINHA.gif"))); // NOI18N
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog1.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 310, 200));
+
+        jButton2_Confimar1.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton2_Confimar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jButton2_Confimar1.setText(" OK");
+        jButton2_Confimar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jButton2_Confimar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_Confimar1ActionPerformed(evt);
+            }
+        });
+        jDialog1.getContentPane().add(jButton2_Confimar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 100, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
+        jLabel2.setSize(500, 500);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,7 +115,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jLabel7.setText("SENHA");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 110, -1));
 
-        jTextField2_Senha.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jTextField2_Senha.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jTextField2_Senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTextField2_Senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,9 +127,9 @@ public class TelaLoginGestor extends javax.swing.JFrame {
                 jTextField2_SenhaKeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField2_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 270, 40));
+        getContentPane().add(jTextField2_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 0, 0));
 
-        jTextField2_Login.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jTextField2_Login.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jTextField2_Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTextField2_Login.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -82,41 +142,72 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 340, 180));
 
-        jButton2_Voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jButton2_Voltar.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jButton2_Voltar.setForeground(new java.awt.Color(51, 0, 153));
         jButton2_Voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/voltar (1).png"))); // NOI18N
-        jButton2_Voltar.setText("VOLTAR");
+        jButton2_Voltar.setText(" VOLTAR");
         jButton2_Voltar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButton2_Voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2_VoltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 310, 169, -1));
+        getContentPane().add(jButton2_Voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 560, 169, -1));
 
-        jButton_Logar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jButton_Logar.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jButton_Logar.setForeground(new java.awt.Color(51, 0, 153));
         jButton_Logar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoaFisica.png"))); // NOI18N
-        jButton_Logar.setText("LOGAR");
+        jButton_Logar.setText(" LOGAR");
         jButton_Logar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButton_Logar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_LogarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_Logar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 210, 169, -1));
+        getContentPane().add(jButton_Logar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 210, 169, 40));
 
-        jButton2_Ajuda.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jButton2_Ajuda.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jButton2_Ajuda.setForeground(new java.awt.Color(51, 0, 153));
-        jButton2_Ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/incluirIcone.png"))); // NOI18N
-        jButton2_Ajuda.setText("AJUDA");
+        jButton2_Ajuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/ponto-de-interrogacao.png"))); // NOI18N
+        jButton2_Ajuda.setText(" AJUDA");
         jButton2_Ajuda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButton2_Ajuda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2_AjudaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_Ajuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 260, 169, -1));
+        getContentPane().add(jButton2_Ajuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 258, 169, 40));
+
+        jPasswordField1.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 270, 40));
+
+        jButton2_verSenha.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jButton2_verSenha.setForeground(new java.awt.Color(51, 0, 153));
+        jButton2_verSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/visualizarSenha.png"))); // NOI18N
+        jButton2_verSenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2_verSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_verSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2_verSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 40, 40));
+
+        jButton2_esconderSenha.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jButton2_esconderSenha.setForeground(new java.awt.Color(51, 0, 153));
+        jButton2_esconderSenha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/visualiza.png"))); // NOI18N
+        jButton2_esconderSenha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2_esconderSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_esconderSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2_esconderSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 0, 0));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel1.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -146,7 +237,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1AncestorAdded
 
     private void jTextField2_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2_SenhaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField2_SenhaActionPerformed
 
     private void jButton2_VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_VoltarActionPerformed
@@ -158,7 +249,8 @@ public class TelaLoginGestor extends javax.swing.JFrame {
 
     private void jButton_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LogarActionPerformed
         // TODO add your handling code here:
-        if (jTextField2_Login.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345")) {
+        if (jTextField2_Login.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345") || 
+                jPasswordField1.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345")) {
             TelaTabelaClientes tabelaClientes = new TelaTabelaClientes();
             tabelaClientes.setVisible(true);
             this.dispose();
@@ -168,8 +260,32 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_LogarActionPerformed
 
     private void jButton2_AjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_AjudaActionPerformed
-        // TODO add your handling code here:
+        jDialog1.setVisible(true);
     }//GEN-LAST:event_jButton2_AjudaActionPerformed
+
+    private void jButton2_verSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_verSenhaActionPerformed
+        jTextField2_Senha.setText(jPasswordField1.getText());
+        jPasswordField1.setSize(0, 0);
+        jTextField2_Senha.setSize(270, 40);
+        jButton2_verSenha.setSize(0, 0);
+        jButton2_esconderSenha.setSize(40, 40);
+    }//GEN-LAST:event_jButton2_verSenhaActionPerformed
+
+    private void jButton2_esconderSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_esconderSenhaActionPerformed
+        jPasswordField1.setText(jTextField2_Senha.getText());
+        jTextField2_Senha.setSize(0, 0);
+        jPasswordField1.setSize(270, 40);
+        jButton2_esconderSenha.setSize(0, 0);
+        jButton2_verSenha.setSize(40, 40);
+    }//GEN-LAST:event_jButton2_esconderSenhaActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jButton2_Confimar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Confimar1ActionPerformed
+        jDialog1.dispose();
+    }//GEN-LAST:event_jButton2_Confimar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,14 +324,25 @@ public class TelaLoginGestor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2_Ajuda;
+    private javax.swing.JButton jButton2_Confimar1;
     private javax.swing.JButton jButton2_Voltar;
+    private javax.swing.JButton jButton2_esconderSenha;
+    private javax.swing.JButton jButton2_verSenha;
     private javax.swing.JButton jButton_Logar;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField2_Login;
     private javax.swing.JTextField jTextField2_Senha;
     // End of variables declaration//GEN-END:variables

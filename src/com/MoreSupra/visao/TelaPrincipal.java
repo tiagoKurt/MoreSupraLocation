@@ -39,6 +39,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1470, 733));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -1,0 +1,2 @@
+8;PICK-UP;200.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\PICK-UP.jpg;
+13;SEDAN;450.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\SEDAN.jpg;
