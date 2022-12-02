@@ -250,7 +250,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     private void jButton_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LogarActionPerformed
         // TODO add your handling code here:
         if (jTextField2_Login.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345") || 
-                jPasswordField1.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345")) {
+                jPasswordField1.getText().equalsIgnoreCase("12345")) {
             TelaTabelaClientes tabelaClientes = new TelaTabelaClientes();
             tabelaClientes.setVisible(true);
             this.dispose();
