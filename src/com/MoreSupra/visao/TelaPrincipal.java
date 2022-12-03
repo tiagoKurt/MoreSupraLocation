@@ -30,11 +30,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -62,7 +63,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/marca.png"))); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/marcarework.png"))); // NOI18N
         jMenuItem1.setText("MARCA");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/modelo (1).png"))); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/modelorework.png"))); // NOI18N
         jMenuItem2.setText("MODELOS");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +103,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem7);
 
         jMenuItem8.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/categoria.png"))); // NOI18N
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/estrutura-de-dados (1).png"))); // NOI18N
         jMenuItem8.setText("CATEGORIA");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,24 +112,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem8);
 
-        jMenuBar1.add(jMenu1);
-
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/Gestor.png"))); // NOI18N
-        jMenu3.setText("GESTOR");
-        jMenu3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-
-        jMenuItem9.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
-        jMenuItem9.setText("RELAÇÃO CADASTRO CLIENTES");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem9);
-
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
         jMenu5.setText("CLIENTES");
+        jMenu5.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
 
         jMenuItem3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoaFisica.png"))); // NOI18N
@@ -150,7 +136,33 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(jMenuItem4);
 
-        jMenu3.add(jMenu5);
+        jMenu1.add(jMenu5);
+
+        jMenuItem10.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/MOTORISTA.png"))); // NOI18N
+        jMenuItem10.setText("MOTORISTA");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem10);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/Gestor.png"))); // NOI18N
+        jMenu3.setText("GESTOR");
+        jMenu3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+
+        jMenuItem9.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
+        jMenuItem9.setText("RELAÇÃO CADASTRO CLIENTES");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem9);
 
         jMenuBar1.add(jMenu3);
 
@@ -235,6 +247,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        TelaMotorista mot = new TelaMotorista();
+        mot.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -281,6 +299,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

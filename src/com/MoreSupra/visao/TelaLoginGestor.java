@@ -16,7 +16,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jTextField2_Senha.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
         jPasswordField1.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
         
-        jDialog1.setSize(650, 440);
+        jDialog1.setSize(700, 490);
         jDialog1.setLocationRelativeTo(null);
         jDialog1.setTitle("ajudinha");
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -64,34 +64,35 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
 
         jDialog1.setUndecorated(true);
+        jDialog1.setPreferredSize(new java.awt.Dimension(700, 490));
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setFont(new java.awt.Font("Serif", 3, 20)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("DIGITE O LOGIN E A SENHA FORNECIDOS PELOS GESTORES.");
-        jDialog1.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 610, 50));
+        jDialog1.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 660, 50));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
         jDialog1.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAJUDINHA.gif"))); // NOI18N
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
-        jDialog1.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 310, 200));
+        jDialog1.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 310, 200));
 
         jButton2_Confimar1.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jButton2_Confimar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
         jButton2_Confimar1.setText(" OK");
-        jButton2_Confimar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jButton2_Confimar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
         jButton2_Confimar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2_Confimar1ActionPerformed(evt);
             }
         });
-        jDialog1.getContentPane().add(jButton2_Confimar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 100, -1));
+        jDialog1.getContentPane().add(jButton2_Confimar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
-        jDialog1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
+        jDialog1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
         jLabel2.setSize(500, 500);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);

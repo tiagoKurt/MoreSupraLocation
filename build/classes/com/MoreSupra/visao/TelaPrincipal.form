@@ -21,7 +21,7 @@
                   <Font name="Serif" size="16" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/MoreSupra/visao/icons/marca.png"/>
+                  <Image iconType="3" name="/com/MoreSupra/visao/icons/marcarework.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="MARCA"/>
               </Properties>
@@ -35,7 +35,7 @@
                   <Font name="Serif" size="16" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/MoreSupra/visao/icons/modelo (1).png"/>
+                  <Image iconType="3" name="/com/MoreSupra/visao/icons/modelorework.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="MODELOS"/>
               </Properties>
@@ -77,39 +77,12 @@
                   <Font name="Serif" size="16" style="3"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/MoreSupra/visao/icons/categoria.png"/>
+                  <Image iconType="3" name="/com/MoreSupra/visao/icons/estrutura-de-dados (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CATEGORIA"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/MoreSupra/visao/icons/Gestor.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="GESTOR"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Serif" size="16" style="3"/>
-            </Property>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Serif" size="16" style="3"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/com/MoreSupra/visao/icons/pessoas (1).png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="RELA&#xc7;&#xc3;O CADASTRO CLIENTES"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
               </Events>
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu5">
@@ -118,6 +91,9 @@
                   <Image iconType="3" name="/com/MoreSupra/visao/icons/pessoas (1).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="CLIENTES"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="16" style="3"/>
+                </Property>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
@@ -150,6 +126,47 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="16" style="3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/MoreSupra/visao/icons/MOTORISTA.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="MOTORISTA"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem10ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/MoreSupra/visao/icons/Gestor.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="GESTOR"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Serif" size="16" style="3"/>
+            </Property>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Serif" size="16" style="3"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/MoreSupra/visao/icons/pessoas (1).png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="RELA&#xc7;&#xc3;O CADASTRO CLIENTES"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
