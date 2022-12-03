@@ -25,6 +25,7 @@ public class MotoristaMore implements IMotoristaMore{
             String linha = "";
             while((linha = br.readLine()) !=null ){
                 Motorista objetoMotorista = new Motorista();
+                PessoaFisicaMore pessoa = new PessoaFisicaMore();
                 String vetorString[] = linha.split(";");
                 objetoMotorista.setId(Integer.parseInt(vetorString[0]));
                 objetoMotorista.setNome(vetorString[1]);
@@ -32,10 +33,11 @@ public class MotoristaMore implements IMotoristaMore{
                 objetoMotorista.setDataValidade(vetorString[3]);
                 objetoMotorista.setEndereco(vetorString[4]);
                 objetoMotorista.setTelefone(vetorString[5]);
+                objetoMotorista.setTipoMot(vetorString[6]);
                 if(objetoMotorista.getId() == id){
                 br.close();
                 return new Motorista(Integer.parseInt(vetorString[0]), vetorString[1], Integer.parseInt(vetorString[2]), vetorString[3]
-                , vetorString[4], vetorString[5]);
+                , vetorString[4], vetorString[5], vetorString[6]);
                 }               
             }
             return null;           
@@ -85,6 +87,7 @@ public class MotoristaMore implements IMotoristaMore{
             String linha = "";
             while ((linha = br.readLine()) != null) {
                 Motorista objetoMotorista = new Motorista();
+                PessoaFisicaMore pessoa = new PessoaFisicaMore();
                 String vetorString[] = linha.split(";");
                 objetoMotorista.setId(Integer.parseInt(vetorString[0]));
                 objetoMotorista.setNome(vetorString[1]);
@@ -92,6 +95,7 @@ public class MotoristaMore implements IMotoristaMore{
                 objetoMotorista.setDataValidade(vetorString[3]);
                 objetoMotorista.setEndereco(vetorString[4]);
                 objetoMotorista.setTelefone(vetorString[5]);
+                objetoMotorista.setTipoMot(vetorString[6]);
                 listaMotoristas.add(objetoMotorista);
             }
             br.close();

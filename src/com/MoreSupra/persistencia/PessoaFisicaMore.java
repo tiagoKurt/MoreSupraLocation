@@ -19,6 +19,10 @@ import java.util.ArrayList;
 public class PessoaFisicaMore implements IPessoaFisicaMore{
     
     private String nomeArquivoNoDisco;
+
+    public PessoaFisicaMore(String nomeArquivoNoDisco) {
+        this.nomeArquivoNoDisco = nomeArquivoNoDisco;
+    }
     
     public PessoaFisicaMore(){
         nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Clientes.txt";
@@ -115,5 +119,5 @@ public class PessoaFisicaMore implements IPessoaFisicaMore{
         } catch (Exception erro) {
             throw erro;
         }
-    }
+    } 
 }

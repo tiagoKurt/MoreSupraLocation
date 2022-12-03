@@ -39,6 +39,22 @@ public class PessoaFisicaControle implements IPessoaFisicaControle{
         }
     }
     
+    private boolean buscarMarca(String descricao) throws Exception {
+        try {
+            ArrayList<PessoaFisica> listagem = pessoaFisicaPersistencia.listagemDePessoas();
+            Iterator<PessoaFisica> lista = listagem.iterator();
+            while (lista.hasNext()) {
+                PessoaFisica aux = lista.next();
+                if (aux.getNome().equalsIgnoreCase(descricao)) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
+    
     private boolean alterarPessoa (String cpf, String nome, String identidade) throws Exception{
         try {
             ArrayList<PessoaFisica> listagem = pessoaFisicaPersistencia.listagemDePessoas();
@@ -93,4 +109,9 @@ public class PessoaFisicaControle implements IPessoaFisicaControle{
     public ArrayList<PessoaFisica> listagemDePessoas() throws Exception {
         return pessoaFisicaPersistencia.listagemDePessoas();
     }
+
+    @Override
+    public PessoaFisica buscar(int id) throws Exception {
+        return pessoaFisicaPersistencia.buscar(id);
+    }  
 }

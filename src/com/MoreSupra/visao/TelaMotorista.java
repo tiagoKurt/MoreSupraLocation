@@ -4,19 +4,62 @@
  */
 package com.MoreSupra.visao;
 
+import ImagensTabela.JTableRenderer;
+import com.MoreSupra.Controle.IMotoristaControle;
+import com.MoreSupra.Controle.IPessoaFisicaControle;
+import com.MoreSupra.Controle.MotoristaControle;
+import com.MoreSupra.Controle.PessoaFisicaControle;
+import com.MoreSupra.modelos.Motorista;
+import com.MoreSupra.modelos.PessoaFisica;
+import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Iterator;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Pichau
  */
 public class TelaMotorista extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaMotorista
-     */
+    
+    IMotoristaControle motoristaControle = new MotoristaControle();
+    IPessoaFisicaControle pessoaFisicaControle = new PessoaFisicaControle();
+    
+        
+        
     public TelaMotorista() {
         initComponents();
         
         setExtendedState(MAXIMIZED_BOTH);
+        
+        
+        jTextField1_IDENTIFICADOR1.setEnabled(false);
+        jTextField1_NOME1.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.NOME));
+        jTextField1_numeroCNH.setDocument(new limitaCaracteres(9, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
+        
+        jTable1_clientefisico.setVisible(false);
+        jTable1_clientefisico.setBounds(2000, 2000, 200, 200);
+        
+
+        
+
+        
+        try {
+            imprimirDadosNaGrid(pessoaFisicaControle.listagemDePessoas());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        
+        try {
+            imprimirDados(motoristaControle.listagemDeMotorista());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        
     }
 
     /**
@@ -28,19 +71,62 @@ public class TelaMotorista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1_auxiliogeral = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jButton4_voltar = new javax.swing.JButton();
         jButton1_alterar = new javax.swing.JButton();
         jButton2_incluir = new javax.swing.JButton();
-        jButton3_buscar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField1_numeroCNH = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1_IDENTIFICADOR1 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox1_tipo = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1_NOME1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1_clientefisico = new javax.swing.JTable();
+        jLabel9 = new javax.swing.JLabel();
+        jFormattedTextField1_dataDeValidadde = new javax.swing.JFormattedTextField();
+        jFormattedTextField1_Telefone = new javax.swing.JFormattedTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField3_enderecoFisica = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1_CadastroMotoristas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
+        jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTable1_auxiliogeral.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "", "", "", "", "", "", "", "", ""
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1_auxiliogeral);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 160, 200));
+
+        jFrame1.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 380));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1800, 900));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, -10, 220, 200));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, -10, 220, 190));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -78,20 +164,210 @@ public class TelaMotorista extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 180, 169, -1));
 
-        jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
-        jButton3_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/lupa4.0.png"))); // NOI18N
-        jButton3_buscar.setText("  BUSCAR");
-        jButton3_buscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jButton3_buscar.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("DATA DE VALIDADE");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, 40));
+
+        jLabel5.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("CADASTRO DE MOTORISTAS");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 520, 60));
+
+        jTextField1_numeroCNH.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jTextField1_numeroCNH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField1_numeroCNH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3_buscarActionPerformed(evt);
+                jTextField1_numeroCNHActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 140, 169, -1));
+        getContentPane().add(jTextField1_numeroCNH, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 150, 40));
+
+        jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("ID");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, 40));
+
+        jTextField1_IDENTIFICADOR1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jTextField1_IDENTIFICADOR1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField1_IDENTIFICADOR1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_IDENTIFICADOR1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1_IDENTIFICADOR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 70, 40));
+
+        jLabel7.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("NOME");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 90, 40));
+
+        jComboBox1_tipo.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jComboBox1_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JURÍDICO", "FÍSICO" }));
+        jComboBox1_tipo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jComboBox1_tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1_tipoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 140, 40));
+
+        jLabel8.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("TIPO DE CLIENTE");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 240, 40));
+
+        jTextField1_NOME1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jTextField1_NOME1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField1_NOME1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_NOME1ActionPerformed(evt);
+            }
+        });
+        jTextField1_NOME1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1_NOME1KeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField1_NOME1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 330, 40));
+
+        jTable1_clientefisico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1_clientefisico.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jTable1_clientefisico.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "CLIENTE", "TELEFONE", "ENDERECO", ""
+            }
+        ));
+        jTable1_clientefisico.setPreferredSize(new java.awt.Dimension(75, 120));
+        jTable1_clientefisico.setRowHeight(30);
+        jTable1_clientefisico.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1_clientefisicoMouseClicked(evt);
+            }
+        });
+        jTable1_clientefisico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTable1_clientefisicoKeyTyped(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1_clientefisico);
+        if (jTable1_clientefisico.getColumnModel().getColumnCount() > 0) {
+            jTable1_clientefisico.getColumnModel().getColumn(0).setPreferredWidth(200);
+            jTable1_clientefisico.getColumnModel().getColumn(1).setPreferredWidth(150);
+            jTable1_clientefisico.getColumnModel().getColumn(2).setPreferredWidth(150);
+            jTable1_clientefisico.getColumnModel().getColumn(3).setPreferredWidth(0);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(728, 110, -1, 290));
+
+        jLabel9.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("NÚMERO CNH");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 190, 40));
+
+        jFormattedTextField1_dataDeValidadde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        try {
+            jFormattedTextField1_dataDeValidadde.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1_dataDeValidadde.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        getContentPane().add(jFormattedTextField1_dataDeValidadde, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 150, 40));
+
+        jFormattedTextField1_Telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        try {
+            jFormattedTextField1_Telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)# ####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1_Telefone.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
+        jFormattedTextField1_Telefone.setPreferredSize(new java.awt.Dimension(64, 27));
+        getContentPane().add(jFormattedTextField1_Telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 250, 40));
+
+        jLabel18.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("TELEFONE");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 170, 40));
+
+        jLabel10.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("ENDEREÇO");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 170, 40));
+
+        jTextField3_enderecoFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
+        jTextField3_enderecoFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField3_enderecoFisica.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField3_enderecoFisicaKeyTyped(evt);
+            }
+        });
+        getContentPane().add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 330, 40));
+
+        jTable1_CadastroMotoristas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1_CadastroMotoristas.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTable1_CadastroMotoristas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "NOME", "CNH", "VALIDADE", "ENDEREÇO", "TELEFONE", "CLIENTE", ""
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1_CadastroMotoristas.setRowHeight(45);
+        jTable1_CadastroMotoristas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1_CadastroMotoristasMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(jTable1_CadastroMotoristas);
+        if (jTable1_CadastroMotoristas.getColumnModel().getColumnCount() > 0) {
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(0).setPreferredWidth(40);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(1).setPreferredWidth(210);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(2).setPreferredWidth(110);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(3).setPreferredWidth(110);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(4).setPreferredWidth(210);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(5).setPreferredWidth(160);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(6).setPreferredWidth(160);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(7).setPreferredWidth(0);
+        }
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 960, 290));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1800, 900));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1810, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,11 +385,162 @@ public class TelaMotorista extends javax.swing.JFrame {
 
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
 
+        try {
+             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Motorista.txt");  
+            arquivo.createNewFile();
+            Motorista mot = new Motorista(0, jTextField1_NOME1.getText(), Integer.parseInt(jTextField1_numeroCNH.getText()), 
+                    jFormattedTextField1_dataDeValidadde.getText(), 
+                    jTextField3_enderecoFisica.getText(), jFormattedTextField1_Telefone.getText(),
+                    jComboBox1_tipo.getSelectedItem().toString());
+            
+            
+            motoristaControle.incluir(mot);
+            imprimirDados(motoristaControle.listagemDeMotorista());
+            jTextField1_NOME1.setText("");
+            jTextField1_numeroCNH.setText("");
+            jTextField3_enderecoFisica.setText("");
+            jFormattedTextField1_Telefone.setText("");
+            jFormattedTextField1_dataDeValidadde.setText("");
+                    
+
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+        }
+        
     }//GEN-LAST:event_jButton2_incluirActionPerformed
 
-    private void jButton3_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_buscarActionPerformed
+    private void jTextField1_numeroCNHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_numeroCNHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_numeroCNHActionPerformed
 
-    }//GEN-LAST:event_jButton3_buscarActionPerformed
+    private void jTextField1_IDENTIFICADOR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_IDENTIFICADOR1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_IDENTIFICADOR1ActionPerformed
+
+    private void jTextField1_NOME1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_NOME1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_NOME1ActionPerformed
+
+    private void imprimirDadosNaGrid(ArrayList<PessoaFisica> listaDeCliente) {
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1_clientefisico.getModel();
+            JTableRenderer JtableRenderer = new JTableRenderer();
+            jTable1_clientefisico.getColumnModel().getColumn(3).setCellRenderer(JtableRenderer); 
+
+            //Limpa a tabela 
+            model.setNumRows(0);
+            Iterator<PessoaFisica> lista = listaDeCliente.iterator();
+
+            while (lista.hasNext()) {
+                String[] saida = new String[3];
+                PessoaFisica aux = lista.next();
+                
+                saida[0] = aux.getNome();
+                saida[1] = aux.getTelefone();
+                saida[2] = aux.getEndereco();
+
+                //Incluir nova linha na Tabela
+                Object[] dados = {saida[0], saida[1], saida[2]};
+                model.addRow(dados);
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+        }
+    }
+    
+    public void imprimirDados(ArrayList<Motorista> listaDeMotoristas){
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1_CadastroMotoristas.getModel();
+            JTableRenderer JtableRenderer = new JTableRenderer();  
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(7).setCellRenderer(JtableRenderer);
+
+            //Limpa a tabela 
+            model.setNumRows(0);
+            Iterator<Motorista> lista = listaDeMotoristas.iterator();
+            while(lista.hasNext()){
+                String[] saida= new String[7];
+                Motorista aux = lista.next();
+                saida[0]= aux.getId()+"";
+                saida[1]= aux.getNome();
+                saida[2] = aux.getNumeroCNH()+"";
+                saida[3] = aux.getDataValidade();
+                saida[4] = aux.getEndereco();
+                saida[5] = aux.getTelefone();
+                saida[6] = aux.getTipoMot();
+                
+                
+                Object[]dados = {saida[0],saida[1],saida[2],saida[3],saida[4],saida[5], saida[6]};
+                model.addRow(dados);
+            }
+        } catch(Exception erro){
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+      }
+    
+    }
+    
+    private void jTextField1_NOME1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1_NOME1KeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+     
+        evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField1_NOME1KeyTyped
+
+    private void jComboBox1_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1_tipoActionPerformed
+        if(jComboBox1_tipo.getSelectedIndex() == 0){
+            jTable1_clientefisico.setBounds(2000, 2000, 200, 200);
+            
+            jTextField1_NOME1.setEnabled(true);
+            jFormattedTextField1_Telefone.setEnabled(true);
+            jTextField3_enderecoFisica.setEnabled(true);
+            jTable1_clientefisico.setEnabled(false);
+            jTable1_clientefisico.setVisible(false);
+            
+            
+        }else if(jComboBox1_tipo.getSelectedIndex() == 1){
+            jTable1_clientefisico.setBounds(728, 110, 0,0);
+            
+            jTextField1_NOME1.setEnabled(false);
+            jTable1_clientefisico.setVisible(true);
+            jTable1_clientefisico.setEnabled(true);
+            jFormattedTextField1_Telefone.setEnabled(false);
+            jTextField3_enderecoFisica.setEnabled(false);
+            
+        }
+    }//GEN-LAST:event_jComboBox1_tipoActionPerformed
+
+    private void jTable1_clientefisicoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1_clientefisicoKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1_clientefisicoKeyTyped
+
+    private void jTable1_clientefisicoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_clientefisicoMouseClicked
+        if (jTable1_clientefisico.getSelectedRow() != -1) {
+            jTextField1_NOME1.setText(jTable1_clientefisico.getValueAt(jTable1_clientefisico.getSelectedRow(), 0).toString());
+            jFormattedTextField1_Telefone.setText(jTable1_clientefisico.getValueAt(jTable1_clientefisico.getSelectedRow(), 1).toString());
+            jTextField3_enderecoFisica.setText(jTable1_clientefisico.getValueAt(jTable1_clientefisico.getSelectedRow(), 2).toString());
+     
+        }
+    }//GEN-LAST:event_jTable1_clientefisicoMouseClicked
+
+    private void jTextField3_enderecoFisicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3_enderecoFisicaKeyTyped
+        char c=evt.getKeyChar();
+
+        if(Character.isLowerCase(c)){
+            evt.setKeyChar(Character.toUpperCase(c));
+        }
+    }//GEN-LAST:event_jTextField3_enderecoFisicaKeyTyped
+
+    private void jTable1_CadastroMotoristasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_CadastroMotoristasMouseClicked
+            
+            jTextField1_IDENTIFICADOR1.setText(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 0).toString());
+            jTextField1_NOME1.setText(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 1).toString());
+            jTextField1_numeroCNH.setText(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 2).toString());
+            jFormattedTextField1_dataDeValidadde.setText(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 3).toString());
+            jTextField3_enderecoFisica.setText(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 4).toString());
+            jFormattedTextField1_Telefone.setText(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 5).toString());
+            jComboBox1_tipo.setSelectedItem(jTable1_CadastroMotoristas.getValueAt(jTable1_CadastroMotoristas.getSelectedRow(), 6).toString());
+    }//GEN-LAST:event_jTable1_CadastroMotoristasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -153,9 +580,31 @@ public class TelaMotorista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar;
     private javax.swing.JButton jButton2_incluir;
-    private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar;
+    private javax.swing.JComboBox<String> jComboBox1_tipo;
+    private javax.swing.JFormattedTextField jFormattedTextField1_Telefone;
+    private javax.swing.JFormattedTextField jFormattedTextField1_dataDeValidadde;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1_CadastroMotoristas;
+    private javax.swing.JTable jTable1_auxiliogeral;
+    private javax.swing.JTable jTable1_clientefisico;
+    private javax.swing.JTextField jTextField1_IDENTIFICADOR1;
+    private javax.swing.JTextField jTextField1_NOME1;
+    private javax.swing.JTextField jTextField1_numeroCNH;
+    private javax.swing.JTextField jTextField3_enderecoFisica;
     // End of variables declaration//GEN-END:variables
 }

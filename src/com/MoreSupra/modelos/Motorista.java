@@ -15,16 +15,18 @@ public class Motorista {
     private String dataValidade;
     private String endereco;
     private String telefone;
+    private String tipoMot;
     
     public Motorista(){}
     
-    public Motorista(int id, String nome, int numeroCNH, String dataValidade, String endereco, String telefone){
+    public Motorista(int id, String nome, int numeroCNH, String dataValidade, String endereco, String telefone, String tipoMot){
         this.id = id;
         this.nome = nome;
         this.numeroCNH = numeroCNH;
         this.dataValidade = dataValidade;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.tipoMot = tipoMot;
     }
 
     public int getId() {
@@ -75,8 +77,16 @@ public class Motorista {
         this.telefone = telefone;
     }
 
+    public String getTipoMot() {
+        return tipoMot;
+    }
+
+    public void setTipoMot(String tipoMot) {
+        this.tipoMot = tipoMot;
+    }
+
     @Override
     public String toString() {
-        return id + ";" + nome + ";" + numeroCNH + ";"+ dataValidade + ";" + endereco + ";" + telefone + ";";
+        return id + ";" + nome + ";" + numeroCNH + ";"+ dataValidade + ";" + endereco + ";" + telefone + ";" + tipoMot + ";";
     } 
 }

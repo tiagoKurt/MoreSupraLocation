@@ -14,7 +14,7 @@ import java.util.Iterator;
  *
  * @author Pichau
  */
-public class MotoristaControle {
+public class MotoristaControle implements IMotoristaControle{
     
     IMotoristaMore motoristaPersistencia = null;
 
@@ -86,13 +86,12 @@ public class MotoristaControle {
         motoristaPersistencia.alterar(objeto);
     }
 
-    public ArrayList<Motorista> listagemDeMarcas() throws Exception {
+    public ArrayList<Motorista> listagemDeMotorista() throws Exception {
         return motoristaPersistencia.listagemDeMotorista();
     }
 
     public Motorista buscar(int id) throws Exception {
         return motoristaPersistencia.buscar(id);
     }
-    
     
 }
