@@ -114,4 +114,19 @@ public class PessoaFisicaControle implements IPessoaFisicaControle{
     public PessoaFisica buscar(int id) throws Exception {
         return pessoaFisicaPersistencia.buscar(id);
     }  
+
+    @Override
+    public void incluirMotorista(PessoaFisica objeto) throws Exception {
+        pessoaFisicaPersistencia.incluirMotorista(objeto);
+    }
+
+    @Override
+    public ArrayList<PessoaFisica> listagemFisicosMotoristas() throws Exception {
+        return pessoaFisicaPersistencia.listagemFisicosMotoristas();
+    }
+
+    @Override
+    public PessoaFisica buscarFisicosMotoristas(int id) throws Exception {
+        return pessoaFisicaPersistencia.buscar(id);
+    }
 }

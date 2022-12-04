@@ -93,9 +93,10 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
             jTable1_cliente.getColumnModel().getColumn(1).setPreferredWidth(110);
             jTable1_cliente.getColumnModel().getColumn(2).setPreferredWidth(110);
             jTable1_cliente.getColumnModel().getColumn(3).setPreferredWidth(160);
+            jTable1_cliente.getColumnModel().getColumn(4).setPreferredWidth(100);
             jTable1_cliente.getColumnModel().getColumn(5).setPreferredWidth(180);
-            jTable1_cliente.getColumnModel().getColumn(6).setPreferredWidth(180);
-            jTable1_cliente.getColumnModel().getColumn(7).setPreferredWidth(50);
+            jTable1_cliente.getColumnModel().getColumn(6).setPreferredWidth(195);
+            jTable1_cliente.getColumnModel().getColumn(7).setPreferredWidth(70);
             jTable1_cliente.getColumnModel().getColumn(8).setPreferredWidth(0);
         }
 

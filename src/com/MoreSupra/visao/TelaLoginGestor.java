@@ -48,13 +48,13 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jTextField2_Senha = new javax.swing.JTextField();
         jTextField2_Login = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
         jButton2_Voltar = new javax.swing.JButton();
         jButton_Logar = new javax.swing.JButton();
         jButton2_Ajuda = new javax.swing.JButton();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton2_verSenha = new javax.swing.JButton();
         jButton2_esconderSenha = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jFrame1.setName("Ajudinha"); // NOI18N
@@ -64,7 +64,6 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
 
         jDialog1.setUndecorated(true);
-        jDialog1.setPreferredSize(new java.awt.Dimension(700, 490));
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
@@ -109,12 +108,12 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("LOGIN");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, 100, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 100, -1));
 
         jLabel7.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SENHA");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 110, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 110, -1));
 
         jTextField2_Senha.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jTextField2_Senha.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -128,7 +127,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
                 jTextField2_SenhaKeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField2_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 0, 0));
+        getContentPane().add(jTextField2_Senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 0, 0));
 
         jTextField2_Login.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jTextField2_Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -137,11 +136,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
                 jTextField2_LoginKeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField2_Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 260, 270, 40));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gif 1.gif"))); // NOI18N
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204), 3));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 420, 340, 180));
+        getContentPane().add(jTextField2_Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 270, 40));
 
         jButton2_Voltar.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jButton2_Voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -186,7 +181,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 270, 40));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 270, 40));
 
         jButton2_verSenha.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_verSenha.setForeground(new java.awt.Color(51, 0, 153));
@@ -197,7 +192,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
                 jButton2_verSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_verSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 40, 40));
+        getContentPane().add(jButton2_verSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 350, 40, 40));
 
         jButton2_esconderSenha.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_esconderSenha.setForeground(new java.awt.Color(51, 0, 153));
@@ -208,7 +203,11 @@ public class TelaLoginGestor extends javax.swing.JFrame {
                 jButton2_esconderSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_esconderSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, 0, 0));
+        getContentPane().add(jButton2_esconderSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 350, 0, 0));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/GIFLOGIN7777.gif"))); // NOI18N
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 470, 340));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel1.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -340,9 +339,9 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField2_Login;
     private javax.swing.JTextField jTextField2_Senha;

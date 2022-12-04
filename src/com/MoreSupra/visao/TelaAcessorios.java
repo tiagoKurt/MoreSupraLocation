@@ -96,22 +96,22 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jTextField2_precoLocacaoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2_precoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 260, 40));
+        getContentPane().add(jTextField2_precoLocacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 260, 40));
 
         jLabel5.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("PREÇO LOCAÇÃO");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DESCRIÇÃO");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ID");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, -1));
 
         jTextField1_descricao.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField1_descricao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -126,7 +126,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jTextField1_descricaoKeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField1_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 260, 40));
+        getContentPane().add(jTextField1_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 260, 40));
 
         jTextField1_IDENTIFICADOR.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jTextField1_IDENTIFICADOR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -135,7 +135,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jTextField1_IDENTIFICADORActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1_IDENTIFICADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 70, 37));
+        getContentPane().add(jTextField1_IDENTIFICADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 70, 37));
 
         jLabel7_FotoAcessorio.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7_FotoAcessorio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -256,7 +256,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
                 jTextField2_uRLActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2_uRL, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 260, 40));
+        getContentPane().add(jTextField2_uRL, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 260, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(1800, 1200));

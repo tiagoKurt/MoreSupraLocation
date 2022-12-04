@@ -316,10 +316,11 @@ public class telaVeiculos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
             jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(100);
             jTable1.getColumnModel().getColumn(2).setPreferredWidth(110);
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(90);
             jTable1.getColumnModel().getColumn(4).setPreferredWidth(90);
-            jTable1.getColumnModel().getColumn(7).setPreferredWidth(110);
+            jTable1.getColumnModel().getColumn(7).setPreferredWidth(80);
             jTable1.getColumnModel().getColumn(8).setPreferredWidth(110);
             jTable1.getColumnModel().getColumn(10).setPreferredWidth(130);
             jTable1.getColumnModel().getColumn(11).setPreferredWidth(100);

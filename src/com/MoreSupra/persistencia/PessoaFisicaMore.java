@@ -19,13 +19,16 @@ import java.util.ArrayList;
 public class PessoaFisicaMore implements IPessoaFisicaMore{
     
     private String nomeArquivoNoDisco;
+    private String auxiliarFisico;
 
-    public PessoaFisicaMore(String nomeArquivoNoDisco) {
+    public PessoaFisicaMore(String nomeArquivoNoDisco, String auxiliarFisico) {
         this.nomeArquivoNoDisco = nomeArquivoNoDisco;
+        this.auxiliarFisico = auxiliarFisico;
     }
     
     public PessoaFisicaMore(){
         nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Clientes.txt";
+        auxiliarFisico = "./src/com/MoreSupra/arquivoDisco/PessoasFisicas.txt";
     }
     
     public PessoaFisica buscar(int id) throws Exception{
@@ -119,5 +122,74 @@ public class PessoaFisicaMore implements IPessoaFisicaMore{
         } catch (Exception erro) {
             throw erro;
         }
-    } 
+    }
+    
+    public PessoaFisica buscarFisicosMotoristas(int id) throws Exception{
+       
+        FileReader fr = new FileReader(auxiliarFisico);
+        BufferedReader br = new BufferedReader(fr);
+           // ArrayList<Marca> lista = listagem();
+            String linha = "";
+            while((linha = br.readLine()) !=null ){
+                PessoaFisica objetoPessoa = new PessoaFisica();
+                String vetorString[] = linha.split(";");
+                objetoPessoa.setId(Integer.parseInt(vetorString[0]));
+                objetoPessoa.setCpf(vetorString[1]);
+                objetoPessoa.setNome(vetorString[2]);
+                objetoPessoa.setIdentidade(vetorString[3]);
+                objetoPessoa.setTelefone(vetorString[4]);
+                objetoPessoa.setEmail(vetorString[5]);
+                objetoPessoa.setEndereco(vetorString[6]);
+                objetoPessoa.setOqe(vetorString[7]);
+                objetoPessoa.setAux(vetorString[8]);
+                if(objetoPessoa.getId() == id){
+                br.close();
+                return new PessoaFisica(Integer.parseInt(vetorString[0]), vetorString[1], vetorString[2], vetorString[3], 
+                        vetorString[4], vetorString[5], vetorString[6], vetorString[7],vetorString[8]);
+                }               
+            }
+            return null;          
+    }
+    
+    @Override
+    public void incluirMotorista(PessoaFisica objeto) throws Exception {
+        try {
+            FileWriter fw = new FileWriter(auxiliarFisico, true);
+            BufferedWriter bw  = new BufferedWriter(fw);
+            
+            bw.write(objeto.toString() + "\n");            
+            bw.close();
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
+    
+    public ArrayList<PessoaFisica> listagemFisicosMotoristas() throws Exception {
+        try {
+            ArrayList<PessoaFisica> listaDePessoas = new ArrayList<>();
+            FileReader fr = new FileReader(auxiliarFisico);
+            BufferedReader br = new BufferedReader(fr);
+
+            String linha = "";
+
+            while((linha = br.readLine()) != null){
+                PessoaFisica objetoPessoa = new PessoaFisica();
+                Endereco end = new Endereco();
+                String vetorString[] = linha.split(";");
+                objetoPessoa.setId(Integer.parseInt(vetorString[0]));
+                objetoPessoa.setCpf(vetorString[1]);
+                objetoPessoa.setNome(vetorString[2]);
+                objetoPessoa.setIdentidade(vetorString[3]);
+                objetoPessoa.setTelefone(vetorString[4]);
+                objetoPessoa.setEmail(vetorString[5]);
+                objetoPessoa.setEndereco(vetorString[6]);
+                objetoPessoa.setOqe(vetorString[7]);
+                listaDePessoas.add(objetoPessoa);
+            }
+            br.close();
+            return listaDePessoas;     
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
 }

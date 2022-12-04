@@ -13,4 +13,9 @@ public interface IPessoaFisicaMore {
     ArrayList<PessoaFisica> listagemDePessoas() throws Exception;
     PessoaFisica buscar(int id)throws Exception;
     
+    
+    void incluirMotorista(PessoaFisica objeto) throws Exception;
+    ArrayList<PessoaFisica> listagemFisicosMotoristas() throws Exception;
+    PessoaFisica buscarFisicosMotoristas(int id)throws Exception;
+    
 }

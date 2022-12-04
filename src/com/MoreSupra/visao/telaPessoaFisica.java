@@ -27,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
 public class telaPessoaFisica extends javax.swing.JFrame {
     
     IPessoaFisicaControle controle = new PessoaFisicaControle();
+    
 
     String end;
     
@@ -283,14 +284,15 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         try {
             
-                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
-                
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
             arquivo.createNewFile();
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
                     jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
                     jTextField3_enderecoFisica.getText(), "FÍSICO", "");
             
             controle.incluir(cliente);
+            controle.incluirMotorista(cliente);
+            
             jTextField1_identidade.setText("");
             jTextField2_nomeFisica.setText("");
             jTextField3_enderecoFisica.setText("");

@@ -45,9 +45,11 @@ public class TelaMotorista extends javax.swing.JFrame {
         jTextField1_numeroCNH.setDocument(new limitaCaracteres(9, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
         jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         
+        jLabel2_ocuparespacoTabela.setVisible(true);
+        jLabel2_ocuparespacoTabela.setBounds(730, 116, 440, 280);
         
         try {
-            imprimirDadosNaGrid(pessoaFisicaControle.listagemDePessoas());
+            imprimirDadosNaGrid(pessoaFisicaControle.listagemFisicosMotoristas());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
@@ -97,6 +99,7 @@ public class TelaMotorista extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable1_CadastroMotoristas = new javax.swing.JTable();
         jLabel11 = new javax.swing.JLabel();
+        jLabel2_ocuparespacoTabela = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -137,7 +140,7 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 650, 169, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 650, 169, -1));
 
         jButton1_alterar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar.setForeground(new java.awt.Color(51, 0, 153));
@@ -149,7 +152,7 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jButton1_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 220, 169, -1));
+        getContentPane().add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 220, 169, -1));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -161,17 +164,17 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jButton2_incluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 180, 169, -1));
+        getContentPane().add(jButton2_incluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 180, 169, -1));
 
         jLabel4.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("DATA DE VALIDADE");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, -1, 40));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, 40));
 
         jLabel5.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("RELAÇÃO CADASTRO PESSOAS FÍSICAS");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 430, 30));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, 430, 30));
 
         jTextField1_numeroCNH.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jTextField1_numeroCNH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -180,12 +183,12 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jTextField1_numeroCNHActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1_numeroCNH, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 150, 40));
+        getContentPane().add(jTextField1_numeroCNH, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 150, 40));
 
         jLabel6.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("ID");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, -1, 40));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, 40));
 
         jTextField1_IDENTIFICADOR1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jTextField1_IDENTIFICADOR1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -194,12 +197,12 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jTextField1_IDENTIFICADOR1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1_IDENTIFICADOR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 70, 40));
+        getContentPane().add(jTextField1_IDENTIFICADOR1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 70, 40));
 
         jLabel7.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("NOME");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 90, 40));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 90, 40));
 
         jComboBox1_tipo.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jComboBox1_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JURÍDICO", "FÍSICO" }));
@@ -209,12 +212,12 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jComboBox1_tipoActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBox1_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 140, 40));
+        getContentPane().add(jComboBox1_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 140, 40));
 
         jLabel8.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("TIPO DE CLIENTE");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 240, 40));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 240, 40));
 
         jTextField1_NOME1.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jTextField1_NOME1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -228,7 +231,7 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jTextField1_NOME1KeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField1_NOME1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 330, 40));
+        getContentPane().add(jTextField1_NOME1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 330, 40));
 
         jTable1_clientefisico.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1_clientefisico.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
@@ -291,12 +294,12 @@ public class TelaMotorista extends javax.swing.JFrame {
             jTable1_clientefisico.getColumnModel().getColumn(3).setPreferredWidth(0);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(728, 160, 440, 240));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, 440, 240));
 
         jLabel9.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("NÚMERO CNH");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 190, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 190, 40));
 
         jFormattedTextField1_dataDeValidadde.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
@@ -305,7 +308,7 @@ public class TelaMotorista extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFormattedTextField1_dataDeValidadde.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        getContentPane().add(jFormattedTextField1_dataDeValidadde, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 150, 40));
+        getContentPane().add(jFormattedTextField1_dataDeValidadde, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 150, 40));
 
         jFormattedTextField1_Telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
@@ -315,17 +318,17 @@ public class TelaMotorista extends javax.swing.JFrame {
         }
         jFormattedTextField1_Telefone.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jFormattedTextField1_Telefone.setPreferredSize(new java.awt.Dimension(64, 27));
-        getContentPane().add(jFormattedTextField1_Telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 250, 40));
+        getContentPane().add(jFormattedTextField1_Telefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 250, 40));
 
         jLabel18.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("TELEFONE");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 170, 40));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 170, 40));
 
         jLabel10.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("ENDEREÇO");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 170, 40));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 170, 40));
 
         jTextField3_enderecoFisica.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
         jTextField3_enderecoFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -334,7 +337,7 @@ public class TelaMotorista extends javax.swing.JFrame {
                 jTextField3_enderecoFisicaKeyTyped(evt);
             }
         });
-        getContentPane().add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 330, 40));
+        getContentPane().add(jTextField3_enderecoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 330, 40));
 
         jTable1_CadastroMotoristas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1_CadastroMotoristas.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
@@ -369,18 +372,22 @@ public class TelaMotorista extends javax.swing.JFrame {
             jTable1_CadastroMotoristas.getColumnModel().getColumn(1).setPreferredWidth(210);
             jTable1_CadastroMotoristas.getColumnModel().getColumn(2).setPreferredWidth(110);
             jTable1_CadastroMotoristas.getColumnModel().getColumn(3).setPreferredWidth(110);
-            jTable1_CadastroMotoristas.getColumnModel().getColumn(4).setPreferredWidth(210);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(4).setPreferredWidth(240);
             jTable1_CadastroMotoristas.getColumnModel().getColumn(5).setPreferredWidth(160);
-            jTable1_CadastroMotoristas.getColumnModel().getColumn(6).setPreferredWidth(160);
+            jTable1_CadastroMotoristas.getColumnModel().getColumn(6).setPreferredWidth(130);
             jTable1_CadastroMotoristas.getColumnModel().getColumn(7).setPreferredWidth(0);
         }
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 960, 290));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 960, 290));
 
         jLabel11.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("CADASTRO DE MOTORISTAS");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 520, 60));
+
+        jLabel2_ocuparespacoTabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifTabelaCLIENTES2.gif"))); // NOI18N
+        jLabel2_ocuparespacoTabela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        getContentPane().add(jLabel2_ocuparespacoTabela, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 440, 280));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1810, 900));
@@ -512,11 +519,14 @@ public class TelaMotorista extends javax.swing.JFrame {
             
             jLabel5.setVisible(false);
             jTextField1_NOME1.setEnabled(true);
+            jLabel2_ocuparespacoTabela.setVisible(true);
+            jLabel2_ocuparespacoTabela.setBounds(710, 110, 440, 280);
+            jTextField3_enderecoFisica.setEnabled(true);
             jFormattedTextField1_Telefone.setEnabled(true);
-            jTextField3_enderecoFisica.setEnabled(true); 
        
             jTextField1_NOME1.setText("");
             jTextField1_numeroCNH.setText("");
+            jTextField1_IDENTIFICADOR1.setText("");
             jTextField3_enderecoFisica.setText("");
             jFormattedTextField1_Telefone.setText("");
             jFormattedTextField1_dataDeValidadde.setText("");
@@ -528,8 +538,10 @@ public class TelaMotorista extends javax.swing.JFrame {
             
             jLabel5.setVisible(true);
             jTextField1_NOME1.setEnabled(false);
-            jFormattedTextField1_Telefone.setEnabled(false);
+            jLabel2_ocuparespacoTabela.setVisible(false);
             jTextField3_enderecoFisica.setEnabled(false);
+            jFormattedTextField1_Telefone.setEnabled(false);
+            jLabel2_ocuparespacoTabela.setBounds(0, 0, 0, 0);
             
         }
     }//GEN-LAST:event_jComboBox1_tipoActionPerformed
@@ -613,6 +625,7 @@ public class TelaMotorista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2_ocuparespacoTabela;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
