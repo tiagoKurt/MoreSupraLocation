@@ -3,37 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/telaVeiculos.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/IVeiculosMore.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Modelos.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Motorista.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/IMotoristaMore.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/Controle/MarcasControle.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/idGerado.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/Controle/IMarcasControle.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Acessorios.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Categoria.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Categoria.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Veiculos.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaPrincipal.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaMarcas.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/Controle/IMotoristaControle.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaTabelaClientes.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Modelos.txt</file>
             <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaMotorista.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Acessorios.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/Controle/MotoristaControle.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/PessoaFisica.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/IMarcaMore.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/MotoristaMore.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/MarcaMore.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/Controle/IModelosControle.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Marca.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/VeiculosMore.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Clientes.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaLoginGestor.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Veiculos.txt</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/telaModelos.java</file>
         </group>
     </open-files>
 </project-private>
