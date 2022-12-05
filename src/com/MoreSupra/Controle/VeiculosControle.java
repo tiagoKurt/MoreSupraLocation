@@ -15,13 +15,13 @@ public class VeiculosControle implements IVeiculosControle{
         this.veiculosPersistencia = new VeiculosMore();
     }
     
-    private boolean buscarVeiculo(String placa) throws Exception {
+    private boolean buscarVeiculo(String placa, long renavam) throws Exception {
         try {
             ArrayList<Veiculos> listagem = veiculosPersistencia.listagemVeiculos();
             Iterator<Veiculos> lista = listagem.iterator();
             while (lista.hasNext()) {
                 Veiculos aux = lista.next();
-                if (aux.getPlaca().equalsIgnoreCase(placa)) {
+                if (aux.getPlaca().equalsIgnoreCase(placa) || aux.getRenavem() == 0) {
                     return true;
                 }
             }
@@ -31,7 +31,7 @@ public class VeiculosControle implements IVeiculosControle{
         }
     }
     
-     private boolean alterarVeiculo (String placa) throws Exception{
+     private boolean alterarVeiculo (String placa, long renavam) throws Exception{
         try {
             ArrayList<Veiculos> listagem = veiculosPersistencia.listagemVeiculos();
             Iterator<Veiculos> lista = listagem.iterator();
@@ -57,15 +57,15 @@ public class VeiculosControle implements IVeiculosControle{
     }
      
      private boolean verificarVazio(Veiculos objeto){
-        if(objeto.getPlaca().equals("")) return true;
+        if(objeto.getPlaca().equalsIgnoreCase("") || objeto.getRenavem() == 0 || objeto.getPrecoDeCompra() == 0 || objeto.getPrecoDeVenda() ==0
+                || objeto.getQuilometragem() == 0) return true;
         return false;
     }
 
     @Override
-    public void incluir(Veiculos objeto) throws Exception {
-        objeto.setPlaca(verificarPlaca(objeto.getPlaca()));    
+    public void incluir(Veiculos objeto) throws Exception {  
         if(verificarVazio(objeto)) throw new Exception("Alguns campos não foram preenchidos!");
-        if(buscarVeiculo(objeto.getPlaca())){
+        if(buscarVeiculo(objeto.getPlaca(), objeto.getRenavem())){
             throw new Exception("Veiculo já cadastrado");
         }
         objeto.setId(GeradorIdentificador.getID());
@@ -74,7 +74,7 @@ public class VeiculosControle implements IVeiculosControle{
 
     @Override
     public void alterar(Veiculos objeto) throws Exception {
-        if (alterarVeiculo(objeto.getPlaca())) {
+        if (alterarVeiculo(objeto.getPlaca(), objeto.getRenavem())) {
             throw new Exception("Veículo já foi cadastrada");
         }
         veiculosPersistencia.alterar(objeto);
@@ -85,4 +85,8 @@ public class VeiculosControle implements IVeiculosControle{
         return veiculosPersistencia.listagemVeiculos();
     }
 
+    @Override
+    public Veiculos buscarVeiculo(int id) throws Exception {
+        return veiculosPersistencia.buscarVeiculo(id);
+    }
 }

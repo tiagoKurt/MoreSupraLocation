@@ -392,7 +392,7 @@ public class telaVeiculos extends javax.swing.JFrame {
             model.setNumRows(0);
             Iterator<Veiculos> lista = listaDeVeiculos.iterator();
             while(lista.hasNext()){
-                String[] saida= new String[14];
+                String[] saida= new String[13];
                 Veiculos aux = lista.next();
                 saida[0]= aux.getId()+"";
                 saida[1]= aux.getPlaca();
@@ -407,12 +407,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                 saida[10] = aux.getSituacao().toString();
                 saida[11] = modeloControle.buscar(aux.getModelo().getId()).getDescricao();
                 saida[12] = modeloControle.buscar(aux.getModelo().getId()).getUrl();
-                saida[13] = aux.getAj();
+
                 
                 //Incluir nova linha na Tabela,saida[0]
                 
                 Object[]dados = {saida[0],saida[1],saida[2],saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
-                saida[10],saida[11], saida[12], saida[13]};
+                saida[10],saida[11], saida[12]};
                 model.addRow(dados);
             }
         } catch(Exception erro){
@@ -427,7 +427,7 @@ public class telaVeiculos extends javax.swing.JFrame {
         try {
             SimpleDateFormat formatador = new SimpleDateFormat("y");
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Veiculos.txt");
-            tipoDeCombustivel tipo = (tipoDeCombustivel) jComboBox1_combustivel.getSelectedItem();
+            
             arquivo.createNewFile();
             
             if (jComboBox1_combustivel.getSelectedIndex() == 0) {
@@ -464,7 +464,7 @@ public class telaVeiculos extends javax.swing.JFrame {
 
             int macc = 0;
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Long.parseLong(jTextField_renavam.getText()), 
-                    Float.parseFloat(jTextField_precoDeVenda.getText()), 
+                    Float.parseFloat(jTextField_precodeCompra.getText()), 
                     Float.parseFloat(jTextField_precoDeVenda.getText()), 
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
                     jComboBox1_AnoModelo.getSelectedItem().toString(), 
@@ -524,9 +524,10 @@ public class telaVeiculos extends javax.swing.JFrame {
             jComboBox1_anoFabricacao.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 5).toString());
             jComboBox1_AnoModelo.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 6).toString());
             jTextField_quilometragem.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 7).toString());
-            jComboBox1_combustivel.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 8).toString());
+            jComboBox1_combustivel.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 10).toString());
             jComboBox1_tipoDoVeiculo.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 9).toString());
             jComboBox1_situacao.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 10).toString());
+            jComboBox1_Modelos.setSelectedItem(jTable1.getValueAt(jTable1.getSelectedRow(), 11).toString());
             
             Object pog = jTable1.getValueAt(jTable1.getSelectedRow(), 12);
             ImageIcon marca = new ImageIcon((String) pog);

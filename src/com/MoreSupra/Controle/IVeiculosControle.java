@@ -7,4 +7,5 @@ public interface IVeiculosControle {
     void incluir(Veiculos objeto) throws Exception;
     void alterar(Veiculos objeto) throws Exception;
     ArrayList<Veiculos> listagemVeiculos() throws Exception;
+    Veiculos buscarVeiculo(int id)throws Exception;
 }

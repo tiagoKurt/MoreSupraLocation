@@ -383,6 +383,7 @@ public class telaModelos extends javax.swing.JFrame {
             jTextField1_Identificador.setText(jTable1_Modelos.getValueAt(jTable1_Modelos.getSelectedRow(), 0).toString());
             jTextField2_descricao.setText(jTable1_Modelos.getValueAt(jTable1_Modelos.getSelectedRow(), 1).toString());
             jTextField3_url.setText(jTable1_Modelos.getValueAt(jTable1_Modelos.getSelectedRow(), 2).toString());
+
             String nomeUrl = jTextField3_url.getText();
             ImageIcon iconLogo = new ImageIcon(nomeUrl);
             iconLogo.setImage(iconLogo.getImage().getScaledInstance(jLabel9_ModeloImage.getWidth(), 
