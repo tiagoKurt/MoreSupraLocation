@@ -58,7 +58,6 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jLabel5 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jButton2_Confimar1 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
@@ -98,10 +97,7 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jDialog1.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
+        jDialog1.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 140));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAJUDINHA.gif"))); // NOI18N
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
@@ -146,14 +142,14 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
                 jButton2_Confimar2ActionPerformed(evt);
             }
         });
-        jDialog2_cadastroRealizado.getContentPane().add(jButton2_Confimar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
+        jDialog2_cadastroRealizado.getContentPane().add(jButton2_Confimar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 390, 100, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jDialog2_cadastroRealizado.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
+        jDialog2_cadastroRealizado.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 140));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAJUDINHA.gif"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
         jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
-        jDialog2_cadastroRealizado.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 310, 200));
+        jDialog2_cadastroRealizado.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
 
         jLabel20.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -163,7 +159,7 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("CADASTRO REALIZADO COM SUCESSO!!");
-        jDialog2_cadastroRealizado.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 600, 50));
+        jDialog2_cadastroRealizado.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 600, 50));
 
         jLabel23.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
@@ -190,21 +186,21 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
         jDialog3_cadastroInvalido.getContentPane().add(jButton2_Confimar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
-        jDialog3_cadastroInvalido.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
+        jDialog3_cadastroInvalido.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 130));
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifAJUDINHA.gif"))); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
-        jDialog3_cadastroInvalido.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 310, 200));
+        jDialog3_cadastroInvalido.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
 
         jLabel24.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("CADASTRO NÃO REALIZADO!");
-        jDialog3_cadastroInvalido.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 500, 50));
+        jDialog3_cadastroInvalido.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 500, 50));
 
         jLabel25.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("VERIFIQUE AS SENHAS DIGITADAS, OU CAMPOS VAZIOS.");
-        jDialog3_cadastroInvalido.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 630, 50));
+        jDialog3_cadastroInvalido.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 630, 50));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
@@ -381,8 +377,10 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
 
     private void jButton_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LogarActionPerformed
 
+        
         try {
-        if (jTextField2_Senha.getText().equalsIgnoreCase(jTextField2_Senha1.getText())) {
+        if (jTextField2_Login.getText().equalsIgnoreCase(jTextField2_Login.getText())  && jTextField2_Senha.getText().equalsIgnoreCase(jTextField2_Senha1.getText()) ) {
+            
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Cadastro.txt");
             arquivo.createNewFile();
             Cadastro cad = new Cadastro(jTextField2_Login.getText(), jTextField2_Senha.getText());
@@ -391,7 +389,9 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
             jTextField2_Login.setText("");
             jTextField2_Senha.setText("");
             jTextField2_Senha1.setText("");
+       
         } else {
+            
             jDialog3_cadastroInvalido.setVisible(true);
         }   
         } catch (Exception ex) {
@@ -452,6 +452,16 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
             }
         });
     }
+    private String verificarDescricao(String descricao){
+        String str;
+        while(descricao.endsWith(" ")){
+            descricao = descricao.replaceFirst(".$", "");
+        }
+        while(descricao.startsWith(" ")){
+            descricao = descricao.substring(1);
+        }
+        return descricao;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2_Ajuda;
@@ -466,7 +476,6 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog3_cadastroInvalido;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;

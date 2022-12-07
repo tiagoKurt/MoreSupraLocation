@@ -1,15 +1,20 @@
 package com.MoreSupra.visao;
 
+import com.MoreSupra.Controle.CadastroControle;
+import com.MoreSupra.Controle.ICadastroControle;
 import com.MoreSupra.visao.TelaTabelaClientes;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.Dimension;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import javax.swing.JOptionPane;
 
 public class TelaLoginGestor extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaLoginGestor
-     */
+    
+    ICadastroControle controle = new CadastroControle();
+    
+     
     public TelaLoginGestor() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
@@ -21,6 +26,11 @@ public class TelaLoginGestor extends javax.swing.JFrame {
         jDialog1.setTitle("ajudinha");
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         jDialog1.setResizable(false);
+        
+        try {
+            controle.listagemDeCadastro();
+        } catch (Exception ex) {
+        }
         
         
     }
@@ -107,8 +117,8 @@ public class TelaLoginGestor extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("LOGIN GESTOR");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 300, -1));
+        jLabel4.setText("LOGIN");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 120, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 140));
@@ -276,8 +286,8 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     private void jButton_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LogarActionPerformed
         // TODO add your handling code here:
         if (jTextField2_Login.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345") || 
-                jPasswordField1.getText().equalsIgnoreCase("12345")) {
-            TelaTabelaClientes tabelaClientes = new TelaTabelaClientes();
+            jPasswordField1.getText().equalsIgnoreCase("12345")) {
+            TelaPrincipal tabelaClientes = new TelaPrincipal();
             tabelaClientes.setVisible(true);
             this.dispose();
         } else {
