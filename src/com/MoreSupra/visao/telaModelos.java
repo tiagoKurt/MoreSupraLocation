@@ -202,6 +202,7 @@ public class telaModelos extends javax.swing.JFrame {
         jButton3_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/lupa4.0.png"))); // NOI18N
         jButton3_buscar.setText("  BUSCAR");
         jButton3_buscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton3_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3_buscarActionPerformed(evt);
@@ -214,6 +215,7 @@ public class telaModelos extends javax.swing.JFrame {
         jButton2_incluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/incluirIcone.png"))); // NOI18N
         jButton2_incluir.setText("  INCLUIR");
         jButton2_incluir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2_incluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2_incluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2_incluirActionPerformed(evt);
@@ -226,6 +228,7 @@ public class telaModelos extends javax.swing.JFrame {
         jButton1_alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/alterarIcone.png"))); // NOI18N
         jButton1_alterar.setText("  ALTERAR");
         jButton1_alterar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton1_alterar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1_alterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1_alterarActionPerformed(evt);
@@ -280,6 +283,7 @@ public class telaModelos extends javax.swing.JFrame {
         jButton4_voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/voltar (1).png"))); // NOI18N
         jButton4_voltar.setText(" VOLTAR");
         jButton4_voltar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton4_voltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4_voltarActionPerformed(evt);

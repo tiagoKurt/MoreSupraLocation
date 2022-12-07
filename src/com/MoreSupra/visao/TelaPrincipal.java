@@ -60,11 +60,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/cadastro.png"))); // NOI18N
         jMenu1.setText("CADASTRO");
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/marcarework.png"))); // NOI18N
         jMenuItem1.setText("MARCA");
+        jMenuItem1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -75,6 +77,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem2.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/modelorework.png"))); // NOI18N
         jMenuItem2.setText("MODELOS");
+        jMenuItem2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -85,6 +88,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem6.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/veiculos (1).png"))); // NOI18N
         jMenuItem6.setText("VEÍCULOS");
+        jMenuItem6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem6ActionPerformed(evt);
@@ -95,6 +99,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem7.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/acessorios (1).png"))); // NOI18N
         jMenuItem7.setText("ACESSÓRIOS");
+        jMenuItem7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
@@ -105,6 +110,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem8.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/estrutura-de-dados (1).png"))); // NOI18N
         jMenuItem8.setText("CATEGORIA");
+        jMenuItem8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem8ActionPerformed(evt);
@@ -114,11 +120,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
         jMenu5.setText("CLIENTES");
+        jMenu5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu5.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
 
         jMenuItem3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoaFisica.png"))); // NOI18N
         jMenuItem3.setText("PESSOA FÍSICA");
+        jMenuItem3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -129,6 +137,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem4.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/cnpj.png"))); // NOI18N
         jMenuItem4.setText("PESSOA JURÍDICA");
+        jMenuItem4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -141,6 +150,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem10.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/MOTORISTA.png"))); // NOI18N
         jMenuItem10.setText("MOTORISTA");
+        jMenuItem10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem10ActionPerformed(evt);
@@ -152,11 +162,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/Gestor.png"))); // NOI18N
         jMenu3.setText("GESTOR");
+        jMenu3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu3.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
 
         jMenuItem9.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/pessoas (1).png"))); // NOI18N
         jMenuItem9.setText("RELAÇÃO CADASTRO CLIENTES");
+        jMenuItem9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem9ActionPerformed(evt);
@@ -168,11 +180,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/opcoes.png"))); // NOI18N
         jMenu2.setText("OPÇÕES");
+        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenu2.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
 
         jMenuItem5.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/fechar.png"))); // NOI18N
         jMenuItem5.setText("FECHAR");
+        jMenuItem5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);

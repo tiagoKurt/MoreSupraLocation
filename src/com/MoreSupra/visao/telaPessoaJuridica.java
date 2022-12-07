@@ -78,6 +78,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jButton4_voltar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/voltar (1).png"))); // NOI18N
         jButton4_voltar2.setText(" VOLTAR");
         jButton4_voltar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton4_voltar2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4_voltar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4_voltar2ActionPerformed(evt);
@@ -174,6 +175,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jButton2_incluir1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/incluirIcone.png"))); // NOI18N
         jButton2_incluir1.setText("  INCLUIR");
         jButton2_incluir1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2_incluir1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2_incluir1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2_incluir1ActionPerformed(evt);

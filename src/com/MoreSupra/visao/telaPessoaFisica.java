@@ -87,6 +87,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jButton4_voltar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/voltar (1).png"))); // NOI18N
         jButton4_voltar1.setText(" VOLTAR");
         jButton4_voltar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton4_voltar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4_voltar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4_voltar1ActionPerformed(evt);
@@ -180,6 +181,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jButton2_incluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/incluirIcone.png"))); // NOI18N
         jButton2_incluir.setText("  INCLUIR");
         jButton2_incluir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2_incluir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2_incluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2_incluirActionPerformed(evt);
