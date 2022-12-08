@@ -18,6 +18,9 @@ import javax.swing.JFileChooser;
 import com.MoreSupra.Controle.*;
 import com.MoreSupra.modelos.Marca;
 import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 //import com.MoreSupra.persistencia.MarcaMore;
 
 
@@ -61,6 +64,18 @@ public class telaModelos extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
+        
+        jDialog1.setSize(700, 490);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setTitle("cadastroincompleto");
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog1.setResizable(false);
+        
+        jDialog2.setSize(700, 490);
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setTitle("cadastroincompleto");
+        jDialog2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog2.setResizable(false);
 
     }
     
@@ -104,6 +119,21 @@ public class telaModelos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jDialog2 = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel18 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -126,6 +156,75 @@ public class telaModelos extends javax.swing.JFrame {
         jLabel9_ModeloImage = new javax.swing.JLabel();
         jLabel9_marcaLogo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog1.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
+
+        jLabel11.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("CADASTRO REALIZADO COM SUCESSO!!");
+        jDialog1.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 600, 50));
+
+        jLabel12.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("E EXIBIDOS NA TABELA");
+        jDialog1.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 270, 50));
+
+        jLabel13.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("DADOS FORAM CADASTRADOS ");
+        jDialog1.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 340, 50));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 200, 140));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog1.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jDialog2.setUndecorated(true);
+        jDialog2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog2.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 200, 140));
+
+        jLabel37.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("VERIFIQUE INFORMAÇÕES INVÁLIDAS OU CAMPOS VAZIOS");
+        jDialog2.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 690, 50));
+
+        jLabel36.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("CADASTRO NÃO REALIZADO!");
+        jDialog2.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 500, 50));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
+        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
+
+        jToggleButton1.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jToggleButton1.setText(" OK");
+        jToggleButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jDialog2.getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog2.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -326,6 +425,7 @@ public class telaModelos extends javax.swing.JFrame {
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         // TODO add your handling code here:
         try {
+            if(!jTextField2_descricao.getText().isEmpty() && !jTextField3_url.getText().isEmpty()){
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Modelos.txt");
             arquivo.createNewFile();
             int macc = 0;
@@ -335,6 +435,7 @@ public class telaModelos extends javax.swing.JFrame {
             for(int i = 0; i < lista.size(); i++){
                 if(jComboBox1_marca.getSelectedItem().equals(lista.get(i).getDescricao())){
                     modelo.setMarca(lista.get(i));
+                   
                     
                 }
             }
@@ -344,6 +445,20 @@ public class telaModelos extends javax.swing.JFrame {
             jTextField2_descricao.setText("");
             jTextField3_url.setText("");
             jTextField1_Identificador.setText("");
+            
+            Timer timer = new Timer(2900, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog1.setVisible(false);
+                    jDialog1.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog1.setVisible(true);
+                 
+            }else{
+                jDialog2.setVisible(true);
+            }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -407,7 +522,7 @@ public class telaModelos extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaMarcas marcas = new TelaMarcas();
         try{
-        int macc = 0;
+            int macc = 0;
             Modelos modelo = new Modelos(0, jTextField2_descricao.getText(), jTextField3_url.getText(),
                     marcaControle.buscar(macc));
             ArrayList<Marca> lista = marcaControle.listagemDeMarcas();
@@ -431,8 +546,12 @@ public class telaModelos extends javax.swing.JFrame {
         if(Character.isLowerCase(c)){
             evt.setKeyChar(Character.toUpperCase(c));
     }//GEN-LAST:event_jTextField2_descricaoKeyTyped
+    }
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        jDialog2.dispose();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-}
+
     /**
      * @param args the command line arguments
      */
@@ -475,10 +594,24 @@ public class telaModelos extends javax.swing.JFrame {
     private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JComboBox<String> jComboBox1_marca;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -492,6 +625,7 @@ public class telaModelos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1_Identificador;
     private javax.swing.JTextField jTextField2_descricao;
     private javax.swing.JTextField jTextField3_url;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
 

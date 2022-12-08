@@ -14,10 +14,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.Iterator;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -41,6 +44,19 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jTextField3_enderecoFisica.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.ENDERECO));
         jTextField8_IDFisica.setEnabled(false);
         
+        
+        jDialog1.setSize(700, 490);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setTitle("cadastroincompleto");
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog1.setResizable(false);
+        
+        jDialog2.setSize(700, 490);
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setTitle("cadastroincompleto");
+        jDialog2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog2.setResizable(false);
+        
     }
 
     /**
@@ -52,6 +68,20 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog2 = new javax.swing.JDialog();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2_Confimar3 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton4_voltar1 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -73,6 +103,71 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jFormattedTextField1_Telefone = new javax.swing.JFormattedTextField();
         jFormattedTextField1_cpf = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
+
+        jDialog2.setUndecorated(true);
+        jDialog2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
+
+        jLabel12.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("CADASTRO REALIZADO COM SUCESSO!!");
+        jDialog2.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 600, 50));
+
+        jLabel19.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("E ARMAZENADOS");
+        jDialog2.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 270, 50));
+
+        jLabel20.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("DADOS FORAM CADASTRADOS ");
+        jDialog2.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 340, 50));
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog2.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 200, 140));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog2.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("CADASTRO NÃO REALIZADO!");
+        jDialog1.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 500, 50));
+
+        jLabel37.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("VERIFIQUE INFORMAÇÕES INVÁLIDAS OU CAMPOS VAZIOS");
+        jDialog1.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 690, 50));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 130));
+
+        jButton2_Confimar3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton2_Confimar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jButton2_Confimar3.setText(" OK");
+        jButton2_Confimar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jButton2_Confimar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2_Confimar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_Confimar3ActionPerformed(evt);
+            }
+        });
+        jDialog1.getContentPane().add(jButton2_Confimar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
+        jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog1.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog1.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -246,6 +341,12 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Clientes.txt");
             arquivo.createNewFile();
+            
+            if(!jTextField2_nomeFisica.getText().isEmpty() && !jTextField3_enderecoFisica.getText().isEmpty() && 
+                    !jTextField6_emailFIsica.getText().isEmpty() && !jFormattedTextField1_cpf.getText().isEmpty() &&
+                    !jTextField1_identidade.getText().isEmpty() &&!jFormattedTextField1_Telefone.getText().isEmpty() ){
+            
+            
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
                     jTextField1_identidade.getText(), jFormattedTextField1_Telefone.getText(), jTextField6_emailFIsica.getText(), 
                     jTextField3_enderecoFisica.getText(), "FÍSICO", "");
@@ -260,6 +361,20 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             jTextField8_IDFisica.setText("");
             jFormattedTextField1_cpf.setText("");
             jFormattedTextField1_Telefone.setText("");
+            
+             Timer timer = new Timer(5900, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog2.setVisible(false);
+                    jDialog2.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog2.setVisible(true);
+            
+            }else{
+                jDialog1.setVisible(true);
+            }
                     
 
         } catch (Exception erro) {
@@ -294,6 +409,10 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             evt.setKeyChar(Character.toUpperCase(c));
         }
     }//GEN-LAST:event_jTextField3_enderecoFisicaKeyTyped
+
+    private void jButton2_Confimar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Confimar3ActionPerformed
+        jDialog1.dispose();
+    }//GEN-LAST:event_jButton2_Confimar3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,18 +451,32 @@ public class telaPessoaFisica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar;
+    private javax.swing.JButton jButton2_Confimar3;
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton4_voltar1;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JFormattedTextField jFormattedTextField1_Telefone;
     private javax.swing.JFormattedTextField jFormattedTextField1_cpf;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel3;

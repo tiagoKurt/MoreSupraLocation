@@ -18,9 +18,12 @@ import javax.swing.JFileChooser;
 import com.MoreSupra.Controle.*;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
+import javax.swing.Timer;
 
 /**
  *
@@ -46,6 +49,18 @@ public class TelaMarcas extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(TelaMarcas.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        jDialog1.setSize(700, 490);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setTitle("cadastroincompleto");
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog1.setResizable(false);
+        
+        jDialog2.setSize(700, 490);
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setTitle("cadastroincompleto");
+        jDialog2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog2.setResizable(false);
 
     }
 
@@ -58,6 +73,20 @@ public class TelaMarcas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jButton2_Confimar3 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jDialog2 = new javax.swing.JDialog();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -75,6 +104,71 @@ public class TelaMarcas extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel7_logo = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2_Confimar3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton2_Confimar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jButton2_Confimar3.setText(" OK");
+        jButton2_Confimar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jButton2_Confimar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2_Confimar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_Confimar3ActionPerformed(evt);
+            }
+        });
+        jDialog1.getContentPane().add(jButton2_Confimar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 130));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog1.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
+
+        jLabel36.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("CADASTRO NÃO REALIZADO!");
+        jDialog1.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 500, 50));
+
+        jLabel37.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("VERIFIQUE INFORMAÇÕES INVÁLIDAS OU CAMPOS VAZIOS");
+        jDialog1.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 690, 50));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog1.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jDialog2.setUndecorated(true);
+        jDialog2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog2.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 140));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
+
+        jLabel20.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("E EXIBIDOS NA TABELA");
+        jDialog2.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 270, 50));
+
+        jLabel21.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("CADASTRO REALIZADO COM SUCESSO!!");
+        jDialog2.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 600, 50));
+
+        jLabel23.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("DADOS FORAM CADASTRADOS ");
+        jDialog2.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 340, 50));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog2.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -276,6 +370,7 @@ public class TelaMarcas extends javax.swing.JFrame {
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         // TODO add your handling code here:
         try {
+            if(!jTextField1_descricao.getText().isEmpty() && !jTextField2_url.getText().isEmpty()){
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Marca.txt");
             arquivo.createNewFile();
             Marca marca = new Marca(0, jTextField1_descricao.getText(), jTextField2_url.getText());
@@ -284,8 +379,21 @@ public class TelaMarcas extends javax.swing.JFrame {
             jTextField1_descricao.setText("");
             jTextField1_IDENTIFICADOR.setText("");
             jTextField2_url.setText("");
-
             imprimirDadosNaGrid(controle.listagemDeMarcas());
+            
+            Timer timer = new Timer(2900, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog2.setVisible(false);
+                    jDialog2.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog2.setVisible(true);
+            
+            }else{
+                jDialog1.setVisible(true);
+            }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -384,6 +492,10 @@ public class TelaMarcas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField1_descricaoKeyTyped
 
+    private void jButton2_Confimar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Confimar3ActionPerformed
+        jDialog1.dispose();
+    }//GEN-LAST:event_jButton2_Confimar3ActionPerformed
+
     private void imprimirDadosNaGrid(ArrayList<Marca> listaDeMarcas) {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -448,17 +560,31 @@ public class TelaMarcas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar;
+    private javax.swing.JButton jButton2_Confimar3;
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel7_logo;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1_IDENTIFICADOR;
