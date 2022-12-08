@@ -20,6 +20,9 @@ public class VeiculosMore implements IVeiculosMore{
     public VeiculosMore(){
         nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Veiculos.txt";
     }
+    
+    
+    
 
     public void incluir(Veiculos objeto) throws Exception {
         try {
@@ -116,13 +119,12 @@ public class VeiculosMore implements IVeiculosMore{
                 objetoVeiculo.setSituacao(situacao.valueOf(situ));
                 int idi = Integer.parseInt(vetorString[11]);
                 objetoVeiculo.setModelo(objetoModelo.buscar(idi));
-                objetoVeiculo.setAj(vetorString[12]);
                 if(objetoVeiculo.getId() == id){
                 br.close();
                 return new Veiculos(Integer.parseInt(vetorString[0]),vetorString[1], Long.parseLong(vetorString[2]),
                         Float.parseFloat(vetorString[3]), Float.parseFloat(vetorString[4]), 
                         vetorString[5], vetorString[6], Long.parseLong(vetorString[7]),objetoVeiculo.getTipoDeCombustivel(),
-                        objetoVeiculo.getTipoDoVeiculo(), objetoVeiculo.getSituacao(), objetoVeiculo.getModelo(), vetorString[12]);
+                        objetoVeiculo.getTipoDoVeiculo(), objetoVeiculo.getSituacao(), objetoVeiculo.getModelo());
                 }               
             }
             return null; 

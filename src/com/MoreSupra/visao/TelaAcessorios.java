@@ -35,7 +35,7 @@ public class TelaAcessorios extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         jTextField2_uRL.setEnabled(false);
         jTextField1_IDENTIFICADOR.setEnabled(false);
-        jTextField2_precoLocacao.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField2_precoLocacao.setDocument(new limitaCaracteres(8, limitaCaracteres.tipoEntrada.PRECO));
         jTextField1_descricao.setDocument(new limitaCaracteres(28, limitaCaracteres.tipoEntrada.NOME));
         
         try {

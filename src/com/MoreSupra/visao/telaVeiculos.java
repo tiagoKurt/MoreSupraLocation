@@ -11,15 +11,18 @@ import com.MoreSupra.enumeration.tipoDeCombustivel;
 import com.MoreSupra.modelos.Modelos;
 import com.MoreSupra.modelos.Veiculos;
 import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Action;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
 public class telaVeiculos extends javax.swing.JFrame {
@@ -67,6 +70,19 @@ public class telaVeiculos extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(telaVeiculos.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        jDialog1.setSize(700, 490);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setTitle("cadastroincompleto");
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog1.setResizable(false);
+        
+        jDialog2_confirmacao.setSize(700, 490);
+        jDialog2_confirmacao.setLocationRelativeTo(null);
+        jDialog2_confirmacao.setTitle("cadastroincompleto");
+        jDialog2_confirmacao.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog2_confirmacao.setResizable(false);
+        
     }
 
     /**
@@ -78,6 +94,20 @@ public class telaVeiculos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jButton2_Confimar3 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jDialog2_confirmacao = new javax.swing.JDialog();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jTextField8_idVeiculos = new javax.swing.JTextField();
@@ -111,6 +141,71 @@ public class telaVeiculos extends javax.swing.JFrame {
         jComboBox1_Modelos = new javax.swing.JComboBox<>();
         jLabel9_ModeloImage = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2_Confimar3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton2_Confimar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jButton2_Confimar3.setText(" OK");
+        jButton2_Confimar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jButton2_Confimar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2_Confimar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_Confimar3ActionPerformed(evt);
+            }
+        });
+        jDialog1.getContentPane().add(jButton2_Confimar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 130));
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog1.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
+
+        jLabel36.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("CADASTRO NÃO REALIZADO!");
+        jDialog1.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 500, 50));
+
+        jLabel37.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("VERIFIQUE INFORMAÇÕES INVÁLIDAS OU CAMPOS VAZIOS");
+        jDialog1.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 690, 50));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog1.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jDialog2_confirmacao.setUndecorated(true);
+        jDialog2_confirmacao.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog2_confirmacao.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 140));
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2_confirmacao.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
+
+        jLabel20.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("E EXIBIDOS NA TABELA");
+        jDialog2_confirmacao.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 270, 50));
+
+        jLabel21.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("CADASTRO REALIZADO COM SUCESSO!!");
+        jDialog2_confirmacao.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 600, 50));
+
+        jLabel23.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("DADOS FORAM CADASTRADOS ");
+        jDialog2_confirmacao.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 340, 50));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog2_confirmacao.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -463,6 +558,8 @@ public class telaVeiculos extends javax.swing.JFrame {
                 tipoVeiculo = tipoDoVeiculo.PICKUP+"";
             }
 
+            if(!jTextField_placa.getText().isEmpty() && !jTextField_renavam.getText().isEmpty() && !jTextField_precodeCompra.getText().isEmpty() &&
+                    !jTextField_precoDeVenda.getText().isEmpty() && !jTextField_quilometragem.getText().isEmpty()){   
             int macc = 0;
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Long.parseLong(jTextField_renavam.getText()), 
                     Float.parseFloat(jTextField_precodeCompra.getText()), 
@@ -472,13 +569,12 @@ public class telaVeiculos extends javax.swing.JFrame {
                     Long.parseLong(jTextField_quilometragem.getText()),
                     tipoDeCombustivel.valueOf(combustivel),
                     tipoDoVeiculo.valueOf(tipoVeiculo),
-                    situacao.valueOf(situacion), modeloControle.buscar(macc), "");
+                    situacao.valueOf(situacion), modeloControle.buscar(macc));
                          
             ArrayList<Modelos> lista = modeloControle.listagemModelos();
             for(int i = 0; i < lista.size(); i++){
                 if(jComboBox1_Modelos.getSelectedItem().equals(lista.get(i).getDescricao())){
-                    veiculos.setModelo(lista.get(i));
-                    
+                    veiculos.setModelo(lista.get(i)); 
                 }
             }
             
@@ -489,6 +585,19 @@ public class telaVeiculos extends javax.swing.JFrame {
             jTextField_precodeCompra.setText("");
             jTextField_quilometragem.setText("");
             jTextField_renavam.setText("");
+            
+            Timer timer = new Timer(5900, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog2_confirmacao.setVisible(false);
+                    jDialog2_confirmacao.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog2_confirmacao.setVisible(true);
+            }else{
+                jDialog1.setVisible(true);
+            }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
@@ -541,14 +650,15 @@ public class telaVeiculos extends javax.swing.JFrame {
         try{
         int macc = 0;
             Veiculos veiculos = new Veiculos(0, jTextField_placa.getText(), Long.parseLong(jTextField_renavam.getText()), 
-                    Float.parseFloat(jTextField_precoDeVenda.getText()), 
+                    Float.parseFloat(jTextField_precodeCompra.getText()), 
                     Float.parseFloat(jTextField_precoDeVenda.getText()), 
                     jComboBox1_anoFabricacao.getSelectedItem().toString(), 
                     jComboBox1_AnoModelo.getSelectedItem().toString(), 
                     Long.parseLong(jTextField_quilometragem.getText()),
                     tipoDeCombustivel.valueOf(combustivel),
                     tipoDoVeiculo.valueOf(tipoVeiculo),
-                    situacao.valueOf(situacion), modeloControle.buscar(macc), "");
+                    situacao.valueOf(situacion), modeloControle.buscar(macc));
+           
             ArrayList<Modelos> lista = modeloControle.listagemModelos();
             for(int i = 0; i < lista.size(); i++){
                 if(jComboBox1_Modelos.getSelectedItem().equals(lista.get(i).getDescricao())){
@@ -559,9 +669,13 @@ public class telaVeiculos extends javax.swing.JFrame {
             }
         }
         }catch (Exception erro) {
-                JOptionPane.showMessageDialog(null, erro.getMessage());
+                
         }
     }//GEN-LAST:event_jComboBox1_ModelosActionPerformed
+
+    private void jButton2_Confimar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Confimar3ActionPerformed
+        jDialog1.dispose();
+    }//GEN-LAST:event_jButton2_Confimar3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -600,6 +714,7 @@ public class telaVeiculos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar;
+    private javax.swing.JButton jButton2_Confimar3;
     private javax.swing.JButton jButton2_incluir;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JComboBox<String> jComboBox1_AnoModelo;
@@ -608,8 +723,18 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JComboBox<tipoDeCombustivel> jComboBox1_combustivel;
     private javax.swing.JComboBox<situacao> jComboBox1_situacao;
     private javax.swing.JComboBox<tipoDoVeiculo> jComboBox1_tipoDoVeiculo;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2_confirmacao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -622,7 +747,10 @@ public class telaVeiculos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9_ModeloImage;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

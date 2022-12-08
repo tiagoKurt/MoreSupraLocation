@@ -24,7 +24,7 @@ public class Veiculos {
     
     public Veiculos(int id, String placa, long renavem, float precoDeVenda, float precoDeCompra, String anoFabricacao,
             String anoModelo, long quilometragem, tipoDeCombustivel tipoCombustivel, tipoDoVeiculo tipoVeiculo, situacao 
-                    situ, Modelos modelo ,String aj){
+                    situ, Modelos modelo){
         this.id = id;
         this.renavem = renavem;
         this.placa = placa;
@@ -147,6 +147,6 @@ public class Veiculos {
     public String toString() {
         return id + ";" + placa + ";" + renavem + ";" + precoDeVenda + ";" + precoDeCompra + ";" + anoFabricacao + 
                 ";" + anoModelo + ";" + quilometragem + ";" + tipoCombustivel + ";" + tipoVeiculo + ";" + 
-                situ + ";" +getModelo()+ aj +";";
+                situ + ";" +getModelo();
     }    
 }

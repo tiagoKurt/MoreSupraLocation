@@ -1,0 +1,1 @@
+24;SUV;345.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\SUV.jpg;

@@ -58,11 +58,8 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jTextField8_enderecoJuridica = new javax.swing.JTextField();
         jTextField9_emailJuri = new javax.swing.JTextField();
         jTextField12_nomeJuridica = new javax.swing.JTextField();
-        jLabel22_FotoFisica1 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
         jButton1_alterar1 = new javax.swing.JButton();
         jButton2_incluir1 = new javax.swing.JButton();
-        jButton3_buscar1 = new javax.swing.JButton();
         jTextField8_idJuridica = new javax.swing.JTextField();
         jTextField11_razaoSocial = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
@@ -151,13 +148,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField12_nomeJuridica, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 380, 40));
 
-        jLabel22_FotoFisica1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jLabel22_FotoFisica1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 150, 220, 190));
-
-        jLabel26.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
-        jLabel26.setText("FOTO");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 100, -1, -1));
-
         jButton1_alterar1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton1_alterar1.setForeground(new java.awt.Color(51, 0, 153));
         jButton1_alterar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/alterarIcone.png"))); // NOI18N
@@ -182,18 +172,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2_incluir1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 190, 169, -1));
-
-        jButton3_buscar1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jButton3_buscar1.setForeground(new java.awt.Color(51, 0, 153));
-        jButton3_buscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/lupa4.0.png"))); // NOI18N
-        jButton3_buscar1.setText("  BUSCAR");
-        jButton3_buscar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jButton3_buscar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3_buscar1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 150, 169, -1));
 
         jTextField8_idJuridica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField8_idJuridica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -221,7 +199,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         }
         jFormattedTextField1_cnpj.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jFormattedTextField1_cnpj.setPreferredSize(new java.awt.Dimension(64, 27));
-        getContentPane().add(jFormattedTextField1_cnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 300, 40));
+        getContentPane().add(jFormattedTextField1_cnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 280, 40));
 
         jFormattedTextField1_telefone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         try {
@@ -273,26 +251,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton2_incluir1ActionPerformed
-
-    private void jButton3_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_buscar1ActionPerformed
-        // TODO add your handling code here:
-        try {
-            JFileChooser fc = new JFileChooser("./src/com/MoreSupra/imagensClientes");
-            File buscar = new File(".src/com/MoreSupra/imagensClientes");
-            fc.setCurrentDirectory(buscar);
-            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            fc.showOpenDialog(this);
-            File arquivo = fc.getSelectedFile();
-            String nomeDoArquivo = arquivo.getPath();
-            jLabel22_FotoFisica1.setText(nomeDoArquivo);
-            ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(
-                jLabel22_FotoFisica1.getWidth(), jLabel22_FotoFisica1.getHeight(), 1));
-        jLabel22_FotoFisica1.setIcon(iconLogo);
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
-        }
-    }//GEN-LAST:event_jButton3_buscar1ActionPerformed
 
     
     private void jTextField12_nomeJuridicaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField12_nomeJuridicaKeyTyped
@@ -361,7 +319,6 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar1;
     private javax.swing.JButton jButton2_incluir1;
-    private javax.swing.JButton jButton3_buscar1;
     private javax.swing.JButton jButton4_voltar2;
     private javax.swing.JFormattedTextField jFormattedTextField1_cnpj;
     private javax.swing.JFormattedTextField jFormattedTextField1_telefone;
@@ -369,11 +326,9 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22_FotoFisica1;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

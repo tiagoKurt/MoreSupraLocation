@@ -32,7 +32,7 @@ public class TelaCategorias extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         jTextField1_IDENTIFICADOR.setEnabled(false);
-        jTextField2_precoLocacao.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField2_precoLocacao.setDocument(new limitaCaracteres(8, limitaCaracteres.tipoEntrada.PRECO));
         jTextField1_descricao.setDocument(new limitaCaracteres(22, limitaCaracteres.tipoEntrada.DESCRICAO));
         jTextField2_uRL.setEnabled(false);
         

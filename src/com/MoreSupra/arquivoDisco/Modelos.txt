@@ -1,4 +1,3 @@
-3;350Z;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensModelo\NISSAN 350Z.jpg;1;NISSAN;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\nissan.jpg;;
-4;IS200;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensModelo\LEXUS IS200.jpg;2;LEXUS;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Lexus.png;;
-5;SC300;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensModelo\LEXUS SC300.jpg;2;LEXUS;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Lexus.png;;
-6;D21;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensModelo\NISSAN D-21 DIESEL.jpg;1;NISSAN;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\nissan.jpg;;
+18;SUPRA MK4;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\Supra2.jpg;16;TOYOTA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Toyta.jpg;;
+19;350Z;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\NISSAN 350Z.jpg;15;NISSAN;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\nissan.jpg;;
+20;BRZ;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\SUBARU BRZ.jpg;17;SUBARU;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Subaru.png;;

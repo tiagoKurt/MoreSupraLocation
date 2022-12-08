@@ -23,6 +23,43 @@ public class CadastrarMore implements ICadastroMore{
         nomeArquivoNoDisco = "./src/com/MoreSupra/arquivoDisco/Cadastro.txt";
     }
     
+    public Cadastro buscar(String login, String senha) throws Exception{
+       
+        FileReader fr = new FileReader(nomeArquivoNoDisco);
+        BufferedReader br = new BufferedReader(fr);
+           // ArrayList<Marca> lista = listagem();
+            String linha = "";
+            while((linha = br.readLine()) !=null ){
+                Cadastro objetoCadastro = new Cadastro();
+                String vetorString[] = linha.split(";");
+                objetoCadastro.setLogin(vetorString[0]);
+                objetoCadastro.setSenha(vetorString[1]);
+                if(objetoCadastro.getSenha() == login){
+                br.close();
+                return new Cadastro( vetorString[0],vetorString[1]);
+                }               
+            }
+            return null;           
+    }
+    
+    public void verificarLogin(Cadastro objeto) throws Exception {
+        try {
+            ArrayList<Cadastro> lista = listagemDeCadastro();
+            FileWriter fw =new FileWriter(nomeArquivoNoDisco);
+            BufferedWriter bw =new BufferedWriter(fw);
+            for(int i = 0; i < lista.size();i++){
+                if(objeto.getLogin()== lista.get(i).getSenha()){
+                    bw.write(objeto.toString() + "\n");
+                }
+                else{
+                    bw.write(lista.get(i).toString() + "\n");
+                }
+                
+            }
+            bw.close();
+        } catch (Exception ex) {
+        }
+    }
     
     
     public void Cadastrar(Cadastro objeto) throws Exception {
@@ -46,11 +83,11 @@ public class CadastrarMore implements ICadastroMore{
             BufferedReader br = new BufferedReader(fr);
             String linha = "";
             while ((linha = br.readLine()) != null) {
-                Cadastro objetoMarca = new Cadastro();
+                Cadastro objetoCadastro = new Cadastro();
                 String vetorString[] = linha.split(";");
-                objetoMarca.setLogin(vetorString[0]);
-                objetoMarca.setSenha(vetorString[1]);
-                listaDeCadastro.add(objetoMarca);
+                objetoCadastro.setLogin(vetorString[0]);
+                objetoCadastro.setSenha(vetorString[1]);
+                listaDeCadastro.add(objetoCadastro);
             }
             br.close();
             return listaDeCadastro;
@@ -58,4 +95,14 @@ public class CadastrarMore implements ICadastroMore{
             throw erro;
         }
     }
-}
+    
+    public boolean autenticarUsuario(Cadastro cad) throws Exception {
+            ArrayList<Cadastro> lista = listagemDeCadastro();
+            FileReader fr =new FileReader(nomeArquivoNoDisco);
+            BufferedReader br =new BufferedReader(fr);
+            for(int i = 0; i < lista.size();i++){
+                return true;
+        }
+       return false;
+    }
+}    

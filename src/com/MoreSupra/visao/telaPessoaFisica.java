@@ -66,11 +66,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jTextField2_nomeFisica = new javax.swing.JTextField();
         jTextField3_enderecoFisica = new javax.swing.JTextField();
         jTextField6_emailFIsica = new javax.swing.JTextField();
-        jButton3_buscar = new javax.swing.JButton();
         jButton2_incluir = new javax.swing.JButton();
         jButton1_alterar = new javax.swing.JButton();
-        jLabel22_FotoFisica = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
         jTextField8_IDFisica = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         jFormattedTextField1_Telefone = new javax.swing.JFormattedTextField();
@@ -126,7 +123,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("EMAIL");
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 100, 40));
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 100, 40));
 
         jLabel18.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
@@ -162,19 +159,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
                 jTextField6_emailFIsicaKeyTyped(evt);
             }
         });
-        jPanel3.add(jTextField6_emailFIsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 480, 40));
-
-        jButton3_buscar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jButton3_buscar.setForeground(new java.awt.Color(51, 0, 153));
-        jButton3_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/lupa4.0.png"))); // NOI18N
-        jButton3_buscar.setText("  BUSCAR");
-        jButton3_buscar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jButton3_buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3_buscarActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton3_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 160, 169, -1));
+        jPanel3.add(jTextField6_emailFIsica, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 400, 40));
 
         jButton2_incluir.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_incluir.setForeground(new java.awt.Color(51, 0, 153));
@@ -200,13 +185,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jButton1_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 240, 169, -1));
-
-        jLabel22_FotoFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel3.add(jLabel22_FotoFisica, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 220, 190));
-
-        jLabel25.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
-        jLabel25.setText("FOTO");
-        jPanel3.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 110, -1, -1));
 
         jTextField8_IDFisica.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField8_IDFisica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -262,26 +240,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jButton4_voltar1ActionPerformed
-
-    private void jButton3_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3_buscarActionPerformed
-        // TODO add your handling code here:
-        try {
-            JFileChooser fc = new JFileChooser("./src/com/MoreSupra/imagensClientes");
-            File buscar = new File(".src/com/MoreSupra/imagensClientes");
-            fc.setCurrentDirectory(buscar);
-            fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            fc.showOpenDialog(this);
-            File arquivo = fc.getSelectedFile();
-            String nomeDoArquivo = arquivo.getPath();
-            jLabel22_FotoFisica.setText(nomeDoArquivo);
-            ImageIcon iconLogo = new ImageIcon(nomeDoArquivo);
-            iconLogo.setImage(iconLogo.getImage().getScaledInstance(
-                jLabel22_FotoFisica.getWidth(), jLabel22_FotoFisica.getHeight(), 1));
-        jLabel22_FotoFisica.setIcon(iconLogo);
-        } catch (Exception erro) {
-            JOptionPane.showMessageDialog(this, erro);
-        }
-    }//GEN-LAST:event_jButton3_buscarActionPerformed
 
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         try {
@@ -375,7 +333,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_alterar;
     private javax.swing.JButton jButton2_incluir;
-    private javax.swing.JButton jButton3_buscar;
     private javax.swing.JButton jButton4_voltar1;
     private javax.swing.JFormattedTextField jFormattedTextField1_Telefone;
     private javax.swing.JFormattedTextField jFormattedTextField1_cpf;
@@ -386,8 +343,6 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel22_FotoFisica;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;

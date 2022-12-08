@@ -8,6 +8,7 @@ import com.MoreSupra.modelos.Cadastro;
 import com.MoreSupra.persistencia.CadastrarMore;
 import com.MoreSupra.persistencia.ICadastroMore;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -17,18 +18,33 @@ public class CadastroControle implements ICadastroControle{
     
     ICadastroMore cadastroPersistencia = null;
 
+    
     public CadastroControle() {
         this.cadastroPersistencia = new CadastrarMore();
     }
+    
+    private boolean buscarCadastro(String login, String senha) throws Exception {
+        try {
+            ArrayList<Cadastro> listagem = cadastroPersistencia.listagemDeCadastro();
+            Iterator<Cadastro> lista = listagem.iterator();
+            while (lista.hasNext()) {
+                Cadastro aux = lista.next();
+                if (aux.getLogin().equalsIgnoreCase(login) || aux.getSenha().equalsIgnoreCase(senha)) {
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception erro) {
+            throw erro;
+        }
+    }
+    
+    
+    
 
     private boolean verificarVazio(Cadastro objeto){
         if(objeto.getLogin().equals("") || objeto.getSenha().equals("")) return true;
         return false;
-    }
-    
-    public CadastroControle(Cadastro objeto) throws Exception {
-        if(verificarVazio(objeto)) throw new Exception("Alguns campos não foram preenchidos!");
-        this.cadastroPersistencia = new CadastrarMore();
     }
 
     @Override
@@ -40,5 +56,11 @@ public class CadastroControle implements ICadastroControle{
     public ArrayList<Cadastro> listagemDeCadastro() throws Exception {
        return cadastroPersistencia.listagemDeCadastro();
     }
+
+    @Override
+    public Cadastro buscar(String login, String senha) throws Exception {
+        return cadastroPersistencia.buscar(login, senha);
+    }
+
     
 }

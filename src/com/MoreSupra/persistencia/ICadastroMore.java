@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * @author Pichau
  */
 public interface ICadastroMore {
+    
+    Cadastro buscar(String login, String senha)throws Exception;
     void Cadastrar (Cadastro objeto) throws Exception;
     ArrayList<Cadastro> listagemDeCadastro() throws Exception;
 }

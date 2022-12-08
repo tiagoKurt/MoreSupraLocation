@@ -2,21 +2,31 @@ package com.MoreSupra.visao;
 
 import com.MoreSupra.Controle.CadastroControle;
 import com.MoreSupra.Controle.ICadastroControle;
+import com.MoreSupra.Controle.LoginCadastro;
 import com.MoreSupra.visao.TelaTabelaClientes;
 import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.Dimension;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class TelaLoginGestor extends javax.swing.JFrame {
 
     
     ICadastroControle controle = new CadastroControle();
     
+    private final LoginCadastro autenticador;
+    
+    
      
     public TelaLoginGestor() {
         initComponents();
+        
+        autenticador = new LoginCadastro(this);
+        
+        
         setExtendedState(MAXIMIZED_BOTH);
         jTextField2_Senha.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
         jPasswordField1.setDocument(new limitaCaracteres(20, limitaCaracteres.tipoEntrada.DESCRICAO));
@@ -284,15 +294,16 @@ public class TelaLoginGestor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2_VoltarActionPerformed
 
     private void jButton_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LogarActionPerformed
-        // TODO add your handling code here:
-        if (jTextField2_Login.getText().equalsIgnoreCase("MORESUPRA") && jTextField2_Senha.getText().equalsIgnoreCase("12345") || 
-            jPasswordField1.getText().equalsIgnoreCase("12345")) {
-            TelaPrincipal tabelaClientes = new TelaPrincipal();
-            tabelaClientes.setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Login ou senha incorretos.");
+        try {
+            // TODO add your handling code here:
+            
+        
+            
+            autenticador.autenticar();
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(TelaLoginGestor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_jButton_LogarActionPerformed
 
     private void jButton2_AjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_AjudaActionPerformed
@@ -363,6 +374,32 @@ public class TelaLoginGestor extends javax.swing.JFrame {
             }
         });
     }
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    public void setjPasswordField1(JPasswordField jPasswordField1) {
+        this.jPasswordField1 = jPasswordField1;
+    }
+
+    public JTextField getjTextField2_Login() {
+        return jTextField2_Login;
+    }
+
+    public void setjTextField2_Login(JTextField jTextField2_Login) {
+        this.jTextField2_Login = jTextField2_Login;
+    }
+
+    public JTextField getjTextField2_Senha() {
+        return jTextField2_Senha;
+    }
+
+    public void setjTextField2_Senha(JTextField jTextField2_Senha) {
+        this.jTextField2_Senha = jTextField2_Senha;
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2_Ajuda;
