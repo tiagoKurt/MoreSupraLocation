@@ -256,7 +256,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        TelaLoginGestor telaGestor = new TelaLoginGestor();
+        TelaTabelaClientes telaGestor = new TelaTabelaClientes();
         telaGestor.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem9ActionPerformed

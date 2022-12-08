@@ -1,2 +1,0 @@
-16;SUV;560.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\SUV.jpg;
-17;SEDAN;653.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensCategoria\SEDAN.jpg;

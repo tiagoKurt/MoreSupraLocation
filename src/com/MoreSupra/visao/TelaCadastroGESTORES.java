@@ -379,7 +379,8 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
 
         
         try {
-        if (jTextField2_Login.getText().equalsIgnoreCase(jTextField2_Login.getText())  && jTextField2_Senha.getText().equalsIgnoreCase(jTextField2_Senha1.getText()) ) {
+        if (!jTextField2_Login.getText().isEmpty()  && 
+                jTextField2_Senha.getText().equalsIgnoreCase(jTextField2_Senha1.getText()) ) {
             
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Cadastro.txt");
             arquivo.createNewFile();
@@ -391,7 +392,6 @@ public class TelaCadastroGESTORES extends javax.swing.JFrame {
             jTextField2_Senha1.setText("");
        
         } else {
-            
             jDialog3_cadastroInvalido.setVisible(true);
         }   
         } catch (Exception ex) {

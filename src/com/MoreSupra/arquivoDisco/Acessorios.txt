@@ -1,2 +1,0 @@
-6;HELLO KITTY;10.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Capa volante Hello Kitty.jpg;
-7;KIT NEON;15.0;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensAcessorios\Kit Neon.jpg;

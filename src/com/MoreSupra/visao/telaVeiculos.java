@@ -428,9 +428,7 @@ public class telaVeiculos extends javax.swing.JFrame {
     private void jButton2_incluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_incluirActionPerformed
         // TODO add your handling code here:
         try {
-            SimpleDateFormat formatador = new SimpleDateFormat("y");
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Veiculos.txt");
-            
             arquivo.createNewFile();
             
             if (jComboBox1_combustivel.getSelectedIndex() == 0) {

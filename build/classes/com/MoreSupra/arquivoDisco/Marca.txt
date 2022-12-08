@@ -1,4 +1,2 @@
-1;TOYOTA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Toyta.jpg;
-2;NISSAN;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\nissan.jpg;
-3;HONDA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Honda.png;
-14;SUBARU;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Subaru.png;
+1;NISSAN;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\nissan.jpg;
+2;LEXUS;C:\Users\Aluno\Documents\GitHub\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Lexus.png;
