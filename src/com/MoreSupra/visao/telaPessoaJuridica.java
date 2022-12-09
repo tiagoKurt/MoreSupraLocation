@@ -346,7 +346,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             jTextField9_emailJuri.setText("");
             jTextField8_enderecoJuridica.setText("");
             
-            Timer timer = new Timer(5900, new ActionListener() {
+            Timer timer = new Timer(2900, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog1.setVisible(false);
                     jDialog1.dispose();

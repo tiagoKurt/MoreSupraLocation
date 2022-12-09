@@ -362,7 +362,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             jFormattedTextField1_cpf.setText("");
             jFormattedTextField1_Telefone.setText("");
             
-             Timer timer = new Timer(5900, new ActionListener() {
+             Timer timer = new Timer(2900, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog2.setVisible(false);
                     jDialog2.dispose();

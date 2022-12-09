@@ -1,0 +1,1 @@
+3;DWAD333;32343242423;100.0;250.0;1996;1996;12000;FLEX;SEDAN;DISPONIVEL;2;INTEGRA TYPE R;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\ACURA INTEGRA TYPE R.jpg;1;ACURA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Acura.jpg;;

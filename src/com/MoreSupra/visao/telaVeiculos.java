@@ -389,6 +389,7 @@ public class telaVeiculos extends javax.swing.JFrame {
         getContentPane().add(jComboBox1_AnoModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 160, 40));
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1.setFont(new java.awt.Font("Serif", 3, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -586,7 +587,7 @@ public class telaVeiculos extends javax.swing.JFrame {
             jTextField_quilometragem.setText("");
             jTextField_renavam.setText("");
             
-            Timer timer = new Timer(5900, new ActionListener() {
+            Timer timer = new Timer(2900, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog2_confirmacao.setVisible(false);
                     jDialog2_confirmacao.dispose();
