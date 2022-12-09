@@ -41,7 +41,6 @@ public class MarcaMore implements IMarcaMore {
             FileWriter fw = new FileWriter(nomeArquivoNoDisco, true);
             BufferedWriter bw = new BufferedWriter(fw);
             objeto.setId(GeradorIdentificador.getID());
-            
             bw.write(objeto.toString() + "\n");
             bw.close();
 

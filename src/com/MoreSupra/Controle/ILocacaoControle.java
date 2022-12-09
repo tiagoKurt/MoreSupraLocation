@@ -1,9 +1,10 @@
-package com.MoreSupra.persistencia;
+package com.MoreSupra.Controle;
 
 import com.MoreSupra.modelos.Locacao;
 import java.util.ArrayList;
 
-public interface ILocacaoMore {
+
+public interface ILocacaoControle {
     
     void locar(Locacao objeto) throws Exception;
     void devolver(Locacao objeto) throws Exception;
