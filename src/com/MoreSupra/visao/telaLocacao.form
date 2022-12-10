@@ -82,7 +82,7 @@
                 <Column editable="false" title="VE&#xcd;CULO" type="java.lang.Object"/>
                 <Column editable="false" title="CAT" type="java.lang.Object"/>
                 <Column editable="false" title="R$ DI&#xc1;RIA " type="java.lang.Object"/>
-                <Column editable="false" title="QNT DIAS" type="java.lang.Object"/>
+                <Column editable="false" title="DIAS" type="java.lang.Object"/>
                 <Column editable="false" title="ACESS&#xd3;RIO" type="java.lang.Object"/>
                 <Column editable="false" title="R$ ACES" type="java.lang.Object"/>
                 <Column editable="false" title="RETIRADA" type="java.lang.Object"/>
@@ -119,7 +119,7 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="60" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>

@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -162,7 +163,7 @@ public class telaLocacao extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOME", "VEÍCULO", "CAT", "R$ DIÁRIA ", "QNT DIAS", "ACESSÓRIO", "R$ ACES", "RETIRADA", "ENTREGA", "CAUÇÃO", "TOTAL", "SITUAÇÃO"
+                "ID", "NOME", "VEÍCULO", "CAT", "R$ DIÁRIA ", "DIAS", "ACESSÓRIO", "R$ ACES", "RETIRADA", "ENTREGA", "CAUÇÃO", "TOTAL", "SITUAÇÃO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -183,6 +184,7 @@ public class telaLocacao extends javax.swing.JFrame {
         if (jTable1_saidaGeral.getColumnModel().getColumnCount() > 0) {
             jTable1_saidaGeral.getColumnModel().getColumn(0).setPreferredWidth(30);
             jTable1_saidaGeral.getColumnModel().getColumn(1).setPreferredWidth(150);
+            jTable1_saidaGeral.getColumnModel().getColumn(5).setPreferredWidth(60);
         }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 960, 320));
@@ -628,6 +630,7 @@ public class telaLocacao extends javax.swing.JFrame {
     private void jButton2_lOCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_lOCARActionPerformed
         try {
 
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
             String dataFormatada = formatador.format(data);
@@ -637,8 +640,7 @@ public class telaLocacao extends javax.swing.JFrame {
             
             LocalDate dataAgora = LocalDate.now();
             dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
-            
-           
+            String AgoraFormat = dataAgora.format(formatter);           
                     
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
             arquivo.createNewFile();
@@ -655,7 +657,7 @@ public class telaLocacao extends javax.swing.JFrame {
                     jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
                     Float.parseFloat(jTextField1_precoAcesso.getText()),
                     dataFormatada,
-                    dataAgora.toString(),
+                    AgoraFormat,
                     Float.parseFloat(jTextField1_precoCat.getText()),
                     cauc,
                     total2,
