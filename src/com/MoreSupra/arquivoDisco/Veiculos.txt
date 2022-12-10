@@ -1,1 +1,2 @@
 53;DWADAW;22223;312.0;333.0;1994;1991;3322;FLEX;SUV;DISPONIVEL;9;EVO6;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\EVO6.jpg;1;ACURA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Acura.jpg;;
+74;AAA3333;95416546468;400.0;550.0;1997;1998;3322;FLEX;PICKUP;DISPONIVEL;8;INTEGRA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensModelo\ACURA INTEGRA.jpg;1;ACURA;C:\Users\Pichau\Documents\github\MoreSupraLocation\src\com\MoreSupra\imagensMarca\Acura.jpg;;

@@ -27,9 +27,13 @@ import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -629,6 +633,13 @@ public class telaLocacao extends javax.swing.JFrame {
             String dataFormatada = formatador.format(data);
             
             
+
+            
+            LocalDate dataAgora = LocalDate.now();
+            dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
+            
+           
+                    
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
             arquivo.createNewFile();
 
@@ -638,12 +649,13 @@ public class telaLocacao extends javax.swing.JFrame {
             float cauc = (float) (double) (total * 0.50);
 
             float total2 = (total + cauc);
+            
 
             Locacao loc = new Locacao(0, jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
                     jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
                     Float.parseFloat(jTextField1_precoAcesso.getText()),
                     dataFormatada,
-                    "00/00/2022",
+                    dataAgora.toString(),
                     Float.parseFloat(jTextField1_precoCat.getText()),
                     cauc,
                     total2,
