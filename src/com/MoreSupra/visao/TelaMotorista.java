@@ -401,7 +401,7 @@ public class TelaMotorista extends javax.swing.JFrame {
 
     private void jButton4_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_voltarActionPerformed
         // TODO add your handling code here:
-        TelaPrincipal principal = new TelaPrincipal();
+        telaLocacao principal = new telaLocacao();
         principal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4_voltarActionPerformed
