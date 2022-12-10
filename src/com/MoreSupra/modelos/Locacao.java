@@ -11,13 +11,14 @@ import com.MoreSupra.enumeration.SituacaoLocacao;
 public class Locacao {
     private int id;
     private String nomeMot;
-    private String cnh;
     private String nomeVei;
     private String categoria;
+    private int dias;
+    private float ValorDiaria;
     private String acessorio;
+    private float valorAcessorio;
     private String dataLocacao;
     private String dataDevolucao;
-    private float ValorDiaria;
     private float valorCalcao;
     private float total;
     private String situacaoLocacao;
@@ -25,21 +26,22 @@ public class Locacao {
     
     public Locacao(){}
     
-    public Locacao(int id, String nomeMot, String cnh, String nomeVei, String categoria, String acessorio, String dataLocacao,
-            String dataDevolucao, float ValorDiaria, float valorCalcao, float total, String situacaoLocacao){
+    public Locacao(int id, String nomeMot, String nomeVei, String categoria ,String acessorio, float valorAcessorio, String dataLocacao,
+            String dataDevolucao, float ValorDiaria, float valorCalcao, float total, String situacaoLocacao,int dias){
         
         this.id = id;
         this.nomeMot = nomeMot;
-        this.cnh = cnh;
         this.nomeVei = nomeVei;
         this.categoria = categoria;
         this.acessorio = acessorio;
+        this.valorAcessorio = valorAcessorio;
         this.dataLocacao = dataLocacao;
         this.dataDevolucao = dataDevolucao;
         this.ValorDiaria = ValorDiaria;
         this.valorCalcao = valorCalcao;
         this.total = total;
         this.situacaoLocacao = situacaoLocacao;
+        this.dias = dias;
     }
     public int getId() {
         return id;
@@ -55,14 +57,6 @@ public class Locacao {
 
     public void setNomeMot(String nomeMot) {
         this.nomeMot = nomeMot;
-    }
-
-    public String getCnh() {
-        return cnh;
-    }
-
-    public void setCnh(String cnh) {
-        this.cnh = cnh;
     }
 
     public String getNomeVei() {
@@ -145,10 +139,27 @@ public class Locacao {
         this.modelos = modelos;
     }
 
+    public float getValorAcessorio() {
+        return valorAcessorio;
+    }
+
+    public void setValorAcessorio(float valorAcessorio) {
+        this.valorAcessorio = valorAcessorio;
+    }
+
+    public int getDias() {
+        return dias;
+    }
+
+    public void setDias(int dias) {
+        this.dias = dias;
+    }
+    
+    
     @Override
     public String toString() {
-        return id + ";" + nomeMot + ";" + cnh + ";" + nomeVei + ";" + categoria + ";" + acessorio + ";" + dataLocacao + ";" + dataDevolucao + ";" 
-                + ValorDiaria + ";" + valorCalcao + ";" + total + ";" + situacaoLocacao + ";";
+        return id + ";" + nomeMot + ";" + nomeVei + ";" + categoria + ";" +  ValorDiaria + ";" + dias+ ";" + acessorio + ";" + valorAcessorio + ";" + dataLocacao + ";" + dataDevolucao + ";" 
+                +  valorCalcao + ";" + total + ";" + situacaoLocacao + ";";
     }
 
     

@@ -75,16 +75,17 @@ public class LocacaoMore implements ILocacaoMore{
                 String vetorString[] = linha.split(";");
                 objetoLocation.setId(Integer.parseInt(vetorString[0]));
                 objetoLocation.setNomeMot(vetorString[1]);
-                objetoLocation.setCnh(vetorString[2]);
-                objetoLocation.setNomeVei(vetorString[3]);
-                objetoLocation.setCategoria(vetorString[4]);
-                objetoLocation.setAcessorio(vetorString[5]);
-                objetoLocation.setDataLocacao(vetorString[6]);
-                objetoLocation.setDataDevolucao(vetorString[7]);
-                objetoLocation.setValorDiaria(Float.parseFloat(vetorString[8]));
-                objetoLocation.setValorCalcao(Float.parseFloat(vetorString[9]));
-                objetoLocation.setTotal(Float.parseFloat(vetorString[10]));
-                objetoLocation.setSituacaoLocacao(vetorString[11]);
+                objetoLocation.setNomeVei(vetorString[2]);
+                objetoLocation.setCategoria(vetorString[3]);
+                objetoLocation.setValorDiaria(Float.parseFloat(vetorString[4]));
+                objetoLocation.setDias(Integer.parseInt(vetorString[5]));
+                objetoLocation.setAcessorio(vetorString[6]);
+                objetoLocation.setValorAcessorio(Float.parseFloat(vetorString[7]));
+                objetoLocation.setDataLocacao(vetorString[8]);
+                objetoLocation.setDataDevolucao(vetorString[9]);
+                objetoLocation.setValorCalcao(Float.parseFloat(vetorString[10]));
+                objetoLocation.setTotal(Float.parseFloat(vetorString[11]));
+                objetoLocation.setSituacaoLocacao(vetorString[12]);
                 listaDeLocacao.add(objetoLocation);
             }
             br.close();
