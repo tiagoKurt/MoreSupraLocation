@@ -4,11 +4,19 @@
  */
 package com.MoreSupra.modelos;
 import com.MoreSupra.enumeration.SituacaoLocacao;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
 /**
  *
  * @author Aluno
  */
 public class Locacao {
+    
+    SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+    Date data = new Date();
+    private String dataFormatada = formatador.format(data);
+   
     private int id;
     private String nomeMot;
     private String nomeVei;
@@ -26,7 +34,7 @@ public class Locacao {
     
     public Locacao(){}
     
-    public Locacao(int id, String nomeMot, String nomeVei, String categoria ,String acessorio, float valorAcessorio, String dataLocacao,
+    public Locacao(int id, String nomeMot, String nomeVei, String categoria ,String acessorio, float valorAcessorio, String dataFormatada,
             String dataDevolucao, float ValorDiaria, float valorCalcao, float total, String situacaoLocacao,int dias){
         
         this.id = id;
@@ -35,7 +43,7 @@ public class Locacao {
         this.categoria = categoria;
         this.acessorio = acessorio;
         this.valorAcessorio = valorAcessorio;
-        this.dataLocacao = dataLocacao;
+        this.dataFormatada = dataFormatada;
         this.dataDevolucao = dataDevolucao;
         this.ValorDiaria = ValorDiaria;
         this.valorCalcao = valorCalcao;
@@ -154,13 +162,31 @@ public class Locacao {
     public void setDias(int dias) {
         this.dias = dias;
     }
+
+    public String getDataFormatada() {
+        return dataFormatada;
+    }
+
+    public void setDataFormatada(String dataFormatada) {
+        this.dataFormatada = dataFormatada;
+    }
+    
     
     
     @Override
     public String toString() {
-        return id + ";" + nomeMot + ";" + nomeVei + ";" + categoria + ";" +  ValorDiaria + ";" + dias+ ";" + acessorio + ";" + valorAcessorio + ";" + dataLocacao + ";" + dataDevolucao + ";" 
+        return id + ";" + nomeMot + ";" + nomeVei + ";" + categoria + ";" +  ValorDiaria + ";" + dias+ ";" + acessorio + ";" + valorAcessorio + ";" + 
+                dataFormatada + ";" + dataDevolucao + ";" 
                 +  valorCalcao + ";" + total + ";" + situacaoLocacao + ";";
     }
 
-    
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        Date data = new Date();
+        String dataFormatada = formatador.format(data);
+        
+        System.out.println("Data formatada: " + dataFormatada);
+    }
 }
