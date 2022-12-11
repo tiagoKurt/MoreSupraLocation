@@ -160,7 +160,7 @@ public class telaModelos extends javax.swing.JFrame {
         jDialog1.setUndecorated(true);
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/confirmGif.gif"))); // NOI18N
         jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         jDialog1.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
 
@@ -446,7 +446,7 @@ public class telaModelos extends javax.swing.JFrame {
             jTextField3_url.setText("");
             jTextField1_Identificador.setText("");
             
-            Timer timer = new Timer(2900, new ActionListener() {
+            Timer timer = new Timer(4200, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog1.setVisible(false);
                     jDialog1.dispose();

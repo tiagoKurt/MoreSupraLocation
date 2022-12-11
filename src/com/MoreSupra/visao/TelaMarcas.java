@@ -147,7 +147,7 @@ public class TelaMarcas extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
         jDialog2.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 140));
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/confirmGif.gif"))); // NOI18N
         jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         jDialog2.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
 
@@ -381,7 +381,7 @@ public class TelaMarcas extends javax.swing.JFrame {
             jTextField2_url.setText("");
             imprimirDadosNaGrid(controle.listagemDeMarcas());
             
-            Timer timer = new Timer(2900, new ActionListener() {
+            Timer timer = new Timer(3900, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog2.setVisible(false);
                     jDialog2.dispose();

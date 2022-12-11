@@ -14,7 +14,7 @@
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"/>
+              <Image iconType="3" name="/com/MoreSupra/visao/icons/confirmGif.gif"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
