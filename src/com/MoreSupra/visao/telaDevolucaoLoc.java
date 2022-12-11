@@ -72,7 +72,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
 
                 if(aux.getSituacaoLocacao().equalsIgnoreCase("ANDAMENTO")){
                     locacaoControle.listagemDeLocacao();
-                
+                    
                 //Incluir nova linha na Tabela,saida[0]
                 Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
                     saida[10], saida[11], saida[12]};
@@ -315,22 +315,22 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
                     total2,
                     "DEVOLVIDO", Integer.parseInt(jTextField1_diasCont.getText()));
 
-                     locacaoControle.devolver(loc);
-                     jTextField2_nomeMoto.setText("");
+                      locacaoControle.devolver(loc);
+                      jTextField2_nomeMoto.setText("");
                       jTextField2_modelo.setText("");
                       jTextField1_precoCat.setText("");
                       jTextField1_nomeCAT.setText("");
                       jTextField1_precoAcesso.setText("0");
                       jTextField1_nomeAcess.setText("N/A");
                       jTextField1_diasCont.setText("");
-            
+                      imprimirDados(locacaoControle.listagemDeLocacao());
             
         } catch (IOException ex) {
             Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
             Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else JOptionPane.showMessageDialog(null, "Selecione um Modelo primeiro para alterá-lo.") ;
+        }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
         
     }//GEN-LAST:event_jButton2_DEVOLVERActionPerformed
 

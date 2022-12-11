@@ -101,7 +101,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jDialog1.setUndecorated(true);
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/confirmGif.gif"))); // NOI18N
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         jDialog1.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
 
@@ -346,7 +346,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             jTextField9_emailJuri.setText("");
             jTextField8_enderecoJuridica.setText("");
             
-            Timer timer = new Timer(2900, new ActionListener() {
+            Timer timer = new Timer(3900, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog1.setVisible(false);
                     jDialog1.dispose();

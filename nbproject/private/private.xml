@@ -14,10 +14,13 @@
         <group>
             <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Locacao.txt</file>
             <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/telaLocacao.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/arquivoDisco/Veiculos.txt</file>
+            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/ModelosMore.java</file>
+            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaMarcas.java</file>
+            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/telaDevolucaoLoc.java</file>
             <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/persistencia/LocacaoMore.java</file>
+            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/telaModelos.java</file>
             <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/modelos/Locacao.java</file>
-            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/TelaMotorista.java</file>
+            <file>file:/C:/Users/Pichau/Documents/github/MoreSupraLocation/src/com/MoreSupra/visao/telaPessoaJuridica.java</file>
         </group>
     </open-files>
 </project-private>

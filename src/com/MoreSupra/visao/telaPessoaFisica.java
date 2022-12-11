@@ -107,7 +107,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jDialog2.setUndecorated(true);
         jDialog2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/CADASTROREALIZADO.gif"))); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/confirmGif.gif"))); // NOI18N
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
         jDialog2.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
 
@@ -362,7 +362,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             jFormattedTextField1_cpf.setText("");
             jFormattedTextField1_Telefone.setText("");
             
-             Timer timer = new Timer(2900, new ActionListener() {
+             Timer timer = new Timer(3900, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                     jDialog2.setVisible(false);
                     jDialog2.dispose();

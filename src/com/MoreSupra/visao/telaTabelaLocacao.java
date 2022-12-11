@@ -8,6 +8,8 @@ import ImagensTabela.JTableRenderer;
 import com.MoreSupra.Controle.ILocacaoControle;
 import com.MoreSupra.Controle.LocacaoControle;
 import com.MoreSupra.modelos.Locacao;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
@@ -75,6 +77,60 @@ public class telaTabelaLocacao extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, erro.getMessage());
         }
     }
+    
+    public void procurados(ArrayList<Locacao> listaDeLocacao) {
+        try {
+            DefaultTableModel model = (DefaultTableModel) jTable1_saidaGeral.getModel();
+            JTableRenderer JtableRenderer = new JTableRenderer();
+            jTable1_saidaGeral.getColumnModel().getColumn(13).setCellRenderer(JtableRenderer);
+
+            //Limpa a tabela 
+            model.setNumRows(0);
+            Iterator<Locacao> lista = listaDeLocacao.iterator();
+            while (lista.hasNext()) {
+                String[] saida = new String[13];
+                Locacao aux = lista.next();
+                saida[0] = aux.getId() + "";
+                saida[1] = aux.getNomeMot();
+                saida[2] = aux.getNomeVei() + "";
+                saida[3] = aux.getCategoria();
+                saida[4] = aux.getValorDiaria() + "";
+                saida[5] = aux.getDias() + "";
+                saida[6] = aux.getAcessorio();
+                saida[7] = aux.getValorAcessorio() + "";
+                saida[8] = aux.getDataLocacao();
+                saida[9] = aux.getDataDevolucao();
+                saida[10] = aux.getValorCalcao() + "";
+                saida[11] = aux.getTotal() + "";
+                saida[12] = aux.getSituacaoLocacao();
+
+                if(jComboBox1.getSelectedIndex() == 0){
+                   if(aux.getNomeMot().equalsIgnoreCase(jTextField1.getText())){
+                       locacaoControle.listagemDeLocacao();
+                       Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
+                       saida[10], saida[11], saida[12]};
+                       model.addRow(dados);
+                   }
+                }else if (jComboBox1.getSelectedIndex() == 1){
+                    if(aux.getCategoria().equalsIgnoreCase(jTextField1.getText())){
+                       locacaoControle.listagemDeLocacao();
+                       Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
+                       saida[10], saida[11], saida[12]};
+                       model.addRow(dados);
+                    } 
+                } else if (jComboBox1.getSelectedIndex() == 2){
+                    if(aux.getSituacaoLocacao().equalsIgnoreCase(jTextField1.getText())){
+                       locacaoControle.listagemDeLocacao();
+                       Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
+                       saida[10], saida[11], saida[12]};
+                       model.addRow(dados);
+                    }
+                }
+            }
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(this, erro.getMessage());
+        }
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -84,6 +140,11 @@ public class telaTabelaLocacao extends javax.swing.JFrame {
         jTable1_saidaGeral = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -140,7 +201,7 @@ public class telaTabelaLocacao extends javax.swing.JFrame {
             jTable1_saidaGeral.getColumnModel().getColumn(13).setPreferredWidth(0);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 1140, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 1160, 320));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 190, 130));
@@ -149,6 +210,40 @@ public class telaTabelaLocacao extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("RELAÇÃO DE LOCAÇÕES");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 500, 60));
+
+        jTextField1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 260, 40));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/lupa4.0.png"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 190, 40, 40));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/fechar.png"))); // NOI18N
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 190, 40, 40));
+
+        jLabel2.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("BUSCAR POR:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 140, 160, 30));
+
+        jComboBox1.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NOME", "CATEGORIA", "STATUS" }));
+        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 132, 140, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -167,6 +262,27 @@ public class telaTabelaLocacao extends javax.swing.JFrame {
     private void jTable1_saidaGeralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_saidaGeralMouseClicked
 
     }//GEN-LAST:event_jTable1_saidaGeralMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try {
+            procurados(locacaoControle.listagemDeLocacao());
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(telaTabelaLocacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+            jTextField1.setText("");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        try {
+            imprimirDados(locacaoControle.listagemDeLocacao());
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(telaTabelaLocacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,11 +320,16 @@ public class telaTabelaLocacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4_voltar;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1_saidaGeral;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
