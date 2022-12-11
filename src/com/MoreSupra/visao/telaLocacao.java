@@ -60,14 +60,13 @@ public class telaLocacao extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
 
         jTextField2_modelo.setEnabled(false);
-        jTextField1_cnhMoto.setEnabled(false);
         jTextField2_nomeMoto.setEnabled(false);
         jTextField1_nomeCAT.setEnabled(false);
         jTextField1_precoCat.setEnabled(false);
         jTextField1_precoAcesso.setEnabled(false);
         jTextField1_nomeAcess.setEnabled(false);
 
-        jTextField1_diasCont.setDocument(new limitaCaracteres(5, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        jTextField1_diasCont.setDocument(new limitaCaracteres(4, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
 
         try {
             imprimirVeiculos(veiculoControle.listagemVeiculos());
@@ -104,10 +103,8 @@ public class telaLocacao extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1_saidaGeral = new javax.swing.JTable();
         jButton4_voltar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2_motorista = new javax.swing.JTable();
-        jTextField1_cnhMoto = new javax.swing.JTextField();
         jTextField2_nomeMoto = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -154,20 +151,20 @@ public class telaLocacao extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 50, 460, 60));
 
         jTable1_saidaGeral.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jTable1_saidaGeral.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
+        jTable1_saidaGeral.setFont(new java.awt.Font("Serif", 3, 15)); // NOI18N
         jTable1_saidaGeral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOME", "VEÍCULO", "CAT", "R$ DIÁRIA ", "DIAS", "ACESSÓRIO", "R$ ACES", "RETIRADA", "ENTREGA", "CAUÇÃO", "TOTAL", "SITUAÇÃO"
+                "ID", "NOME", "VEÍCULO", "CAT", "R$ DIÁRIA ", "DIAS", "ACESSÓRIO", "R$ ACES", "RETIRADA", "ENTREGA", "CAUÇÃO", "TOTAL", "SITUAÇÃO", ""
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -184,10 +181,15 @@ public class telaLocacao extends javax.swing.JFrame {
         if (jTable1_saidaGeral.getColumnModel().getColumnCount() > 0) {
             jTable1_saidaGeral.getColumnModel().getColumn(0).setPreferredWidth(30);
             jTable1_saidaGeral.getColumnModel().getColumn(1).setPreferredWidth(150);
-            jTable1_saidaGeral.getColumnModel().getColumn(5).setPreferredWidth(60);
+            jTable1_saidaGeral.getColumnModel().getColumn(4).setPreferredWidth(75);
+            jTable1_saidaGeral.getColumnModel().getColumn(5).setPreferredWidth(50);
+            jTable1_saidaGeral.getColumnModel().getColumn(7).setPreferredWidth(60);
+            jTable1_saidaGeral.getColumnModel().getColumn(8).setPreferredWidth(90);
+            jTable1_saidaGeral.getColumnModel().getColumn(9).setPreferredWidth(90);
+            jTable1_saidaGeral.getColumnModel().getColumn(13).setPreferredWidth(0);
         }
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 960, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 1120, 320));
 
         jButton4_voltar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton4_voltar.setForeground(new java.awt.Color(51, 0, 153));
@@ -201,11 +203,6 @@ public class telaLocacao extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 650, 200, -1));
-
-        jLabel2.setFont(new java.awt.Font("Serif", 3, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("CNH");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 150, 60, 40));
 
         jTable2_motorista.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable2_motorista.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
@@ -245,13 +242,9 @@ public class telaLocacao extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 410, 90));
 
-        jTextField1_cnhMoto.setFont(new java.awt.Font("Serif", 3, 17)); // NOI18N
-        jTextField1_cnhMoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jTextField1_cnhMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 210, 30));
-
         jTextField2_nomeMoto.setFont(new java.awt.Font("Serif", 3, 17)); // NOI18N
         jTextField2_nomeMoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        getContentPane().add(jTextField2_nomeMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 200, 30));
+        getContentPane().add(jTextField2_nomeMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 340, 30));
 
         jLabel5.setFont(new java.awt.Font("Serif", 3, 26)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -261,7 +254,7 @@ public class telaLocacao extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Serif", 3, 20)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("NOME");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 160, 40));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 160, 40));
 
         jTable1_veiculos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jTable1_veiculos.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
@@ -502,7 +495,7 @@ public class telaLocacao extends javax.swing.JFrame {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1_saidaGeral.getModel();
             JTableRenderer JtableRenderer = new JTableRenderer();
-            jTable1_saidaGeral.getColumnModel().getColumn(12).setCellRenderer(JtableRenderer);
+            jTable1_saidaGeral.getColumnModel().getColumn(13).setCellRenderer(JtableRenderer);
 
             //Limpa a tabela 
             model.setNumRows(0);
@@ -632,16 +625,16 @@ public class telaLocacao extends javax.swing.JFrame {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+            
             Date data = new Date();
-            String dataFormatada = formatador.format(data);
-            
-            
-
             
             LocalDate dataAgora = LocalDate.now();
             dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
+            
             String AgoraFormat = dataAgora.format(formatter);           
-                    
+            String dataFormatada = formatador.format(data);
+            
+            
             File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
             arquivo.createNewFile();
 
@@ -661,10 +654,9 @@ public class telaLocacao extends javax.swing.JFrame {
                     Float.parseFloat(jTextField1_precoCat.getText()),
                     cauc,
                     total2,
-                    "LOCADO", Integer.parseInt(jTextField1_diasCont.getText()));
+                    "ANDAMENTO", Integer.parseInt(jTextField1_diasCont.getText()));
 
             locacaoControle.locar(loc);
-
             imprimirDados(locacaoControle.listagemDeLocacao());
             jTextField2_nomeMoto.setText("");
             jTextField2_modelo.setText("");
@@ -673,7 +665,6 @@ public class telaLocacao extends javax.swing.JFrame {
             jTextField1_precoAcesso.setText("0");
             jTextField1_nomeAcess.setText("N/A");
             jTextField1_diasCont.setText("");
-
         } catch (IOException ex) {
             Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
@@ -697,11 +688,10 @@ public class telaLocacao extends javax.swing.JFrame {
 
     private void jButton2_LimparMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_LimparMotoristaActionPerformed
         jTextField2_nomeMoto.setText("");
-        jTextField1_cnhMoto.setText("");
     }//GEN-LAST:event_jButton2_LimparMotoristaActionPerformed
 
     private void jTable2_motoristaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2_motoristaMouseClicked
-        jTextField1_cnhMoto.setText(jTable2_motorista.getValueAt(jTable2_motorista.getSelectedRow(), 2).toString());
+
         jTextField2_nomeMoto.setText(jTable2_motorista.getValueAt(jTable2_motorista.getSelectedRow(), 1).toString());
     }//GEN-LAST:event_jTable2_motoristaMouseClicked
 
@@ -746,7 +736,6 @@ public class telaLocacao extends javax.swing.JFrame {
             jTextField1_precoAcesso.setText("0");
             jTextField1_nomeAcess.setText("N/A");
             jTextField1_diasCont.setText("");
-            jTextField1_cnhMoto.setText("");
     }//GEN-LAST:event_jButton2_LimparCategoria1ActionPerformed
 
     /**
@@ -802,7 +791,6 @@ public class telaLocacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17_dias1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -819,7 +807,6 @@ public class telaLocacao extends javax.swing.JFrame {
     private javax.swing.JTable jTable1_saidaGeral;
     private javax.swing.JTable jTable1_veiculos;
     private javax.swing.JTable jTable2_motorista;
-    private javax.swing.JTextField jTextField1_cnhMoto;
     private javax.swing.JTextField jTextField1_diasCont;
     private javax.swing.JTextField jTextField1_nomeAcess;
     private javax.swing.JTextField jTextField1_nomeCAT;
