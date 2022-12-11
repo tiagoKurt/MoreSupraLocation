@@ -8,6 +8,7 @@ import ImagensTabela.JTableRenderer;
 import com.MoreSupra.Controle.ILocacaoControle;
 import com.MoreSupra.Controle.LocacaoControle;
 import com.MoreSupra.modelos.Locacao;
+import com.MoreSupra.visao.utill.limitaCaracteres;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -38,10 +39,18 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         
+        jTextField1_diasCancelar.setDocument(new limitaCaracteres(4, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        
+        jTextField1_diasCancelar.setVisible(false);
+        jLabel26_diasCancelar.setVisible(false);
         
         jFrame2.setSize(900, 690);
         jFrame2.setResizable(false);
         jFrame2.setLocationRelativeTo(null);
+        
+        jFrame3.setSize(900, 690);
+        jFrame3.setResizable(false);
+        jFrame3.setLocationRelativeTo(null);
         
         jTextField4_diaRetirada.setEnabled(false);
         jTextField5_qntDIas.setEnabled(false);
@@ -56,10 +65,20 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         
         jDialog1.setSize(700, 490);
         jDialog1.setLocationRelativeTo(null);
-        jDialog1.setTitle("cadastroincompleto");
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         jDialog1.setResizable(false);
         
+        jDialog2.setSize(700, 490);
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog2.setResizable(false);
+        
+        jButton1_AnteriorOriginal.setBounds(150, 430, 210, 60);
+        jButton1_AnteriorOriginal.setVisible(false);
+        
+        jLabel26_gif.setVisible(false);
+        jLabel27.setVisible(false);
+        jButton1_naoFiquei.setVisible(false);
         
         try {
             imprimirDados(locacaoControle.listagemDeLocacao());
@@ -158,10 +177,31 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jFrame3 = new javax.swing.JFrame();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel26_gif = new javax.swing.JLabel();
+        jLabel26_gif1 = new javax.swing.JLabel();
+        jButton1_SIM = new javax.swing.JButton();
+        jButton4_NAO = new javax.swing.JButton();
+        jButton1_AnteriorOriginal = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jButton1_naoFiquei = new javax.swing.JButton();
+        jLabel26_diasCancelar = new javax.swing.JLabel();
+        jTextField1_diasCancelar = new javax.swing.JTextField();
+        jButton1_cancelarTOtalMente = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jDialog2 = new javax.swing.JDialog();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1_saidaGeral = new javax.swing.JTable();
         jButton4_voltar = new javax.swing.JButton();
-        jButton2_LimparCategoria1 = new javax.swing.JButton();
+        jButton2_Cancelar = new javax.swing.JButton();
         jButton2_DEVOLVER = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -335,8 +375,8 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jFrame2.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 620, 210, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51), 2));
-        jFrame2.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jFrame2.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 690));
 
         jDialog1.setUndecorated(true);
         jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -366,6 +406,132 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
         jDialog1.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jFrame3.setUndecorated(true);
+        jFrame3.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel20.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setText("CONFIRMAR CANCELAMENTO?");
+        jFrame3.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 600, 60));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jFrame3.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 190, 130));
+
+        jLabel26_gif.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/chorinhoCancelar.gif"))); // NOI18N
+        jLabel26_gif.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 3));
+        jFrame3.getContentPane().add(jLabel26_gif, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 220, 223));
+
+        jLabel26_gif1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/choraoCancel.gif"))); // NOI18N
+        jLabel26_gif1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 3));
+        jFrame3.getContentPane().add(jLabel26_gif1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 220, 223));
+
+        jButton1_SIM.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton1_SIM.setText("SIM");
+        jButton1_SIM.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton1_SIM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1_SIM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_SIMActionPerformed(evt);
+            }
+        });
+        jFrame3.getContentPane().add(jButton1_SIM, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 120, 55));
+
+        jButton4_NAO.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton4_NAO.setText("NÃO");
+        jButton4_NAO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton4_NAO.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4_NAO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4_NAOActionPerformed(evt);
+            }
+        });
+        jFrame3.getContentPane().add(jButton4_NAO, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 120, 55));
+
+        jButton1_AnteriorOriginal.setFont(new java.awt.Font("Serif", 3, 26)); // NOI18N
+        jButton1_AnteriorOriginal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/voltar (1).png"))); // NOI18N
+        jButton1_AnteriorOriginal.setText("   ANTERIOR");
+        jButton1_AnteriorOriginal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton1_AnteriorOriginal.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1_AnteriorOriginal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_AnteriorOriginalActionPerformed(evt);
+            }
+        });
+        jFrame3.getContentPane().add(jButton1_AnteriorOriginal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 210, 55));
+
+        jLabel27.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("POR QUANTOS DIAS FICOU COM O VEÍCULO?");
+        jFrame3.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 180, 670, 60));
+
+        jButton1_naoFiquei.setFont(new java.awt.Font("Serif", 3, 42)); // NOI18N
+        jButton1_naoFiquei.setText("NENHUM");
+        jButton1_naoFiquei.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton1_naoFiquei.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1_naoFiquei.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_naoFiqueiActionPerformed(evt);
+            }
+        });
+        jFrame3.getContentPane().add(jButton1_naoFiquei, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 280, 55));
+
+        jLabel26_diasCancelar.setFont(new java.awt.Font("Serif", 3, 34)); // NOI18N
+        jLabel26_diasCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel26_diasCancelar.setText("DIAS");
+        jFrame3.getContentPane().add(jLabel26_diasCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 90, 50));
+
+        jTextField1_diasCancelar.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jTextField1_diasCancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField1_diasCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_diasCancelarActionPerformed(evt);
+            }
+        });
+        jFrame3.getContentPane().add(jTextField1_diasCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 90, 50));
+
+        jButton1_cancelarTOtalMente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/aprovado (3).png"))); // NOI18N
+        jButton1_cancelarTOtalMente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton1_cancelarTOtalMente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1_cancelarTOtalMente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_cancelarTOtalMenteActionPerformed(evt);
+            }
+        });
+        jFrame3.getContentPane().add(jButton1_cancelarTOtalMente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, 50, 50));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jFrame3.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 690));
+
+        jDialog2.setUndecorated(true);
+        jDialog2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog2.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 140));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/stichChorandoCancelamento.gif"))); // NOI18N
+        jLabel28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
+
+        jLabel29.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("LOCAÇÃO CANCELADA COM SUCESSO :(");
+        jDialog2.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 610, 50));
+
+        jLabel30.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("INFORMAÇÕES ATUALIZADAS FORAM");
+        jDialog2.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 430, 30));
+
+        jLabel31.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("INCLUIDAS NO BANCO DE DADOS");
+        jDialog2.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 370, 40));
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog2.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -422,20 +588,20 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
                 jButton4_voltarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 650, 200, -1));
+        getContentPane().add(jButton4_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 650, 200, -1));
 
-        jButton2_LimparCategoria1.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
-        jButton2_LimparCategoria1.setForeground(new java.awt.Color(51, 0, 153));
-        jButton2_LimparCategoria1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/limpar (1).png"))); // NOI18N
-        jButton2_LimparCategoria1.setText("        LIMPAR ");
-        jButton2_LimparCategoria1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jButton2_LimparCategoria1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2_LimparCategoria1.addActionListener(new java.awt.event.ActionListener() {
+        jButton2_Cancelar.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
+        jButton2_Cancelar.setForeground(new java.awt.Color(51, 0, 153));
+        jButton2_Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/caixacancelar (1).png"))); // NOI18N
+        jButton2_Cancelar.setText("    CANCELAR ");
+        jButton2_Cancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2_Cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2_Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2_LimparCategoria1ActionPerformed(evt);
+                jButton2_CancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_LimparCategoria1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 600, 200, -1));
+        getContentPane().add(jButton2_Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 600, 200, -1));
 
         jButton2_DEVOLVER.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_DEVOLVER.setForeground(new java.awt.Color(51, 0, 153));
@@ -448,7 +614,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
                 jButton2_DEVOLVERActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2_DEVOLVER, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 550, 200, -1));
+        getContentPane().add(jButton2_DEVOLVER, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 550, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -497,9 +663,16 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton4_voltarActionPerformed
 
-    private void jButton2_LimparCategoria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_LimparCategoria1ActionPerformed
-
-    }//GEN-LAST:event_jButton2_LimparCategoria1ActionPerformed
+    private void jButton2_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_CancelarActionPerformed
+        if(jTable1_saidaGeral.getSelectedRow() != -1){   
+        
+        jFrame3.setVisible(true);
+        }else {
+            JOptionPane.showMessageDialog(null, "Selecione uma locação para cancelá-la");
+        }
+        
+        
+    }//GEN-LAST:event_jButton2_CancelarActionPerformed
 
     private void jButton2_DEVOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_DEVOLVERActionPerformed
         if(jTable1_saidaGeral.getSelectedRow() != -1){   
@@ -591,6 +764,171 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton4_NAOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_NAOActionPerformed
+        jFrame3.dispose();
+    }//GEN-LAST:event_jButton4_NAOActionPerformed
+
+    private void jButton1_SIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_SIMActionPerformed
+        jButton4_NAO.setVisible(false);
+        
+        jButton1_AnteriorOriginal.setVisible(true);
+        jButton1_AnteriorOriginal.setBounds(150, 430, 210, 60);
+        
+        jLabel20.setVisible(false);
+        jLabel27.setVisible(true);
+        
+        jLabel26_gif1.setVisible(false);
+        jLabel26_gif.setVisible(true);
+        
+        jButton1_SIM.setVisible(false);
+        
+        jButton1_naoFiquei.setVisible(true);
+        
+        jTextField1_diasCancelar.setVisible(true);
+        jLabel26_diasCancelar.setVisible(true);
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1_SIMActionPerformed
+
+    private void jButton1_AnteriorOriginalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_AnteriorOriginalActionPerformed
+        jButton1_AnteriorOriginal.setVisible(false);
+        jButton4_NAO.setVisible(true);
+        jLabel20.setVisible(true);
+        jLabel26_gif1.setVisible(true);
+        jLabel26_gif.setVisible(false);
+        jLabel27.setVisible(false);
+        jButton1_SIM.setVisible(true);
+        jButton1_naoFiquei.setVisible(false);
+        jTextField1_diasCancelar.setVisible(false);
+        jLabel26_diasCancelar.setVisible(false);
+    }//GEN-LAST:event_jButton1_AnteriorOriginalActionPerformed
+
+    private void jTextField1_diasCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_diasCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_diasCancelarActionPerformed
+
+    private void jButton1_naoFiqueiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_naoFiqueiActionPerformed
+        if(jTable1_saidaGeral.getSelectedRow() != -1){
+        try {
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+            Date data = new Date();
+            String dataFormatada = formatador.format(data);
+            
+            
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+            arquivo.createNewFile();
+
+            
+            
+
+            Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                    Float.parseFloat(jTextField1_precoAcesso.getText()),
+                    dataFormatada,
+                    dataFormatada,
+                    Float.parseFloat(jTextField1_precoCat.getText()),
+                    0,
+                    0,
+                    "CANCELADO", 0);
+
+                      locacaoControle.devolver(loc);
+                      jTextField2_nomeMoto.setText("");
+                      jTextField2_modelo.setText("");
+                      jTextField1_precoCat.setText("");
+                      jTextField1_nomeCAT.setText("");
+                      jTextField1_precoAcesso.setText("0");
+                      jTextField1_nomeAcess.setText("N/A");
+                      jTextField1_diasCont.setText("");
+                      imprimirDados(locacaoControle.listagemDeLocacao());
+                      jFrame3.dispose();
+        
+                      Timer timer = new Timer(4300, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog2.setVisible(false);
+                    jDialog2.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog2.setVisible(true);
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
+    }//GEN-LAST:event_jButton1_naoFiqueiActionPerformed
+
+    private void jButton1_cancelarTOtalMenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_cancelarTOtalMenteActionPerformed
+      
+        
+        if(jTable1_saidaGeral.getSelectedRow() != -1){
+        try {
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Date data = new Date();
+            
+            LocalDate dataAgora = LocalDate.now();
+            dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCancelar.getText()));
+            
+            String AgoraFormat = dataAgora.format(formatter);           
+            String dataFormatada = formatador.format(data);
+            
+            
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+            arquivo.createNewFile();
+
+            float total = ((Float.parseFloat(jTextField1_diasCancelar.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
+                    + Float.parseFloat(jTextField1_precoAcesso.getText()));
+
+            float cauc = (float) (double) (total * 0.50);
+
+            float total2 = (total + cauc);
+            
+            jFrame3.dispose();
+
+            Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                    Float.parseFloat(jTextField1_precoAcesso.getText()),
+                    dataFormatada,
+                    AgoraFormat,
+                    Float.parseFloat(jTextField1_precoCat.getText()),
+                    cauc,
+                    total2,
+                    "CANCELADO", Integer.parseInt(jTextField1_diasCancelar.getText()));
+
+                      locacaoControle.devolver(loc);
+                      jTextField2_nomeMoto.setText("");
+                      jTextField2_modelo.setText("");
+                      jTextField1_precoCat.setText("");
+                      jTextField1_nomeCAT.setText("");
+                      jTextField1_precoAcesso.setText("0");
+                      jTextField1_nomeAcess.setText("N/A");
+                      jTextField1_diasCont.setText("");
+                      imprimirDados(locacaoControle.listagemDeLocacao());
+                      jFrame2.dispose();
+        
+                      Timer timer = new Timer(4100, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog2.setVisible(false);
+                    jDialog2.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog2.setVisible(true);
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
+    }//GEN-LAST:event_jButton1_cancelarTOtalMenteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -627,14 +965,21 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_AnteriorOriginal;
+    private javax.swing.JButton jButton1_SIM;
+    private javax.swing.JButton jButton1_cancelarTOtalMente;
+    private javax.swing.JButton jButton1_naoFiquei;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton2_Cancelar;
     private javax.swing.JButton jButton2_DEVOLVER;
-    private javax.swing.JButton jButton2_LimparCategoria1;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4_NAO;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
+    private javax.swing.JFrame jFrame3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -643,14 +988,27 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel26_diasCancelar;
+    private javax.swing.JLabel jLabel26_gif;
+    private javax.swing.JLabel jLabel26_gif1;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -660,6 +1018,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1_saidaGeral;
     private javax.swing.JTextField jTextField1_diaRetorno;
+    private javax.swing.JTextField jTextField1_diasCancelar;
     private javax.swing.JTextField jTextField1_diasCont;
     private javax.swing.JTextField jTextField1_idDevolution;
     private javax.swing.JTextField jTextField1_nomeAcess;

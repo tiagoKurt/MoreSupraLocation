@@ -548,6 +548,7 @@ public class telaLocacao extends javax.swing.JFrame {
                 saida[3] = aux.getPrecoDeCompra() + "";
                 saida[4] = modeloControle.buscar(aux.getModelo().getId()).getUrl();
 
+                
                 //Incluir nova linha na Tabela
                 Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4]};
                 model.addRow(dados);
