@@ -8,6 +8,7 @@ import com.MoreSupra.modelos.Locacao;
 import com.MoreSupra.persistencia.ILocacaoMore;
 import com.MoreSupra.persistencia.LocacaoMore;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -20,7 +21,7 @@ public class LocacaoControle implements ILocacaoControle{
     public LocacaoControle() {
         this.locacaoPersistencia = new LocacaoMore();
     }
-    
+ 
     
     @Override
     public void locar(Locacao objeto) throws Exception {
@@ -29,7 +30,9 @@ public class LocacaoControle implements ILocacaoControle{
 
     @Override
     public void devolver(Locacao objeto) throws Exception {
+            
         locacaoPersistencia.devolver(objeto);
+        
     }
 
     @Override

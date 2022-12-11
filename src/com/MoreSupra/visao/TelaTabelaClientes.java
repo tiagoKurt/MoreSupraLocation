@@ -54,6 +54,7 @@ public class TelaTabelaClientes extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1_cliente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTable1_cliente.setFont(new java.awt.Font("Serif", 3, 14)); // NOI18N
         jTable1_cliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},

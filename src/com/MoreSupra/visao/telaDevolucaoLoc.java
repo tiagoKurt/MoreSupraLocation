@@ -8,8 +8,16 @@ import ImagensTabela.JTableRenderer;
 import com.MoreSupra.Controle.ILocacaoControle;
 import com.MoreSupra.Controle.LocacaoControle;
 import com.MoreSupra.modelos.Locacao;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,16 +35,12 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
         
-        
-        
         try {
             imprimirDados(locacaoControle.listagemDeLocacao());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-        
-        
-        
+  
     }
 
     
@@ -86,6 +90,17 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        jTextField2_nomeMoto = new javax.swing.JTextField();
+        jTextField1_precoCat = new javax.swing.JTextField();
+        jTextField2_modelo = new javax.swing.JTextField();
+        jTextField1_nomeCAT = new javax.swing.JTextField();
+        jTextField1_diasCont = new javax.swing.JTextField();
+        jTextField1_precoAcesso = new javax.swing.JTextField();
+        jTextField1_nomeAcess = new javax.swing.JTextField();
+        jTextField2_STATUS = new javax.swing.JTextField();
+        jTextField1_idDevolution = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1_saidaGeral = new javax.swing.JTable();
         jButton4_voltar = new javax.swing.JButton();
@@ -94,6 +109,52 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+
+        jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField2_nomeMoto.setFont(new java.awt.Font("Serif", 3, 17)); // NOI18N
+        jTextField2_nomeMoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField2_nomeMoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 340, 30));
+
+        jTextField1_precoCat.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTextField1_precoCat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField1_precoCat, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 190, 40));
+
+        jTextField2_modelo.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTextField2_modelo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField2_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 190, 40));
+
+        jTextField1_nomeCAT.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTextField1_nomeCAT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField1_nomeCAT, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 190, 40));
+
+        jTextField1_diasCont.setFont(new java.awt.Font("Serif", 3, 20)); // NOI18N
+        jTextField1_diasCont.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField1_diasCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 70, 50));
+
+        jTextField1_precoAcesso.setFont(new java.awt.Font("Serif", 3, 17)); // NOI18N
+        jTextField1_precoAcesso.setText("0");
+        jTextField1_precoAcesso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField1_precoAcesso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1_precoAcessoActionPerformed(evt);
+            }
+        });
+        jFrame1.getContentPane().add(jTextField1_precoAcesso, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 340, 200, 40));
+
+        jTextField1_nomeAcess.setFont(new java.awt.Font("Serif", 3, 15)); // NOI18N
+        jTextField1_nomeAcess.setText("N/A");
+        jTextField1_nomeAcess.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField1_nomeAcess, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 270, 200, 40));
+
+        jTextField2_STATUS.setFont(new java.awt.Font("Serif", 3, 17)); // NOI18N
+        jTextField2_STATUS.setText("DEVOLVIDO");
+        jTextField2_STATUS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField2_STATUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 360, 30));
+        jFrame1.getContentPane().add(jTextField1_idDevolution, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 70, 50));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -168,7 +229,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jButton2_DEVOLVER.setFont(new java.awt.Font("Serif", 3, 24)); // NOI18N
         jButton2_DEVOLVER.setForeground(new java.awt.Color(51, 0, 153));
         jButton2_DEVOLVER.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/devolution (1).png"))); // NOI18N
-        jButton2_DEVOLVER.setText("         LOCAR");
+        jButton2_DEVOLVER.setText(" DEVOLUÇÃO");
         jButton2_DEVOLVER.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jButton2_DEVOLVER.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2_DEVOLVER.addActionListener(new java.awt.event.ActionListener() {
@@ -193,7 +254,14 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1_saidaGeralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_saidaGeralMouseClicked
-
+        jTextField1_idDevolution.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 0).toString());
+        jTextField2_nomeMoto.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 1).toString());
+        jTextField2_modelo.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 2).toString());
+        jTextField1_nomeCAT.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 3).toString());
+        jTextField1_precoCat.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 4).toString());
+        jTextField1_diasCont.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 5).toString());
+        jTextField1_nomeAcess.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 6).toString());
+        jTextField1_precoAcesso.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 7).toString());
         
     }//GEN-LAST:event_jTable1_saidaGeralMouseClicked
 
@@ -210,8 +278,65 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2_LimparCategoria1ActionPerformed
 
     private void jButton2_DEVOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_DEVOLVERActionPerformed
+            
+        if(jTable1_saidaGeral.getSelectedRow() != -1){
+        try {
 
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+            
+            Date data = new Date();
+            
+            LocalDate dataAgora = LocalDate.now();
+            dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
+            
+            String AgoraFormat = dataAgora.format(formatter);           
+            String dataFormatada = formatador.format(data);
+            
+            
+            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+            arquivo.createNewFile();
+
+            float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
+                    + Float.parseFloat(jTextField1_precoAcesso.getText()));
+
+            float cauc = (float) (double) (total * 0.50);
+
+            float total2 = (total + cauc);
+            
+
+            Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                    Float.parseFloat(jTextField1_precoAcesso.getText()),
+                    dataFormatada,
+                    AgoraFormat,
+                    Float.parseFloat(jTextField1_precoCat.getText()),
+                    cauc,
+                    total2,
+                    "DEVOLVIDO", Integer.parseInt(jTextField1_diasCont.getText()));
+
+                     locacaoControle.devolver(loc);
+                     jTextField2_nomeMoto.setText("");
+                      jTextField2_modelo.setText("");
+                      jTextField1_precoCat.setText("");
+                      jTextField1_nomeCAT.setText("");
+                      jTextField1_precoAcesso.setText("0");
+                      jTextField1_nomeAcess.setText("N/A");
+                      jTextField1_diasCont.setText("");
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else JOptionPane.showMessageDialog(null, "Selecione um Modelo primeiro para alterá-lo.") ;
+        
     }//GEN-LAST:event_jButton2_DEVOLVERActionPerformed
+
+    private void jTextField1_precoAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_precoAcessoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1_precoAcessoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,10 +377,21 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     private javax.swing.JButton jButton2_DEVOLVER;
     private javax.swing.JButton jButton2_LimparCategoria1;
     private javax.swing.JButton jButton4_voltar;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1_saidaGeral;
+    private javax.swing.JTextField jTextField1_diasCont;
+    private javax.swing.JTextField jTextField1_idDevolution;
+    private javax.swing.JTextField jTextField1_nomeAcess;
+    private javax.swing.JTextField jTextField1_nomeCAT;
+    private javax.swing.JTextField jTextField1_precoAcesso;
+    private javax.swing.JTextField jTextField1_precoCat;
+    private javax.swing.JTextField jTextField2_STATUS;
+    private javax.swing.JTextField jTextField2_modelo;
+    private javax.swing.JTextField jTextField2_nomeMoto;
     // End of variables declaration//GEN-END:variables
 }
