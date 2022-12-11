@@ -821,8 +821,6 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
             arquivo.createNewFile();
 
             
-            
-
             Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
                     jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
                     Float.parseFloat(jTextField1_precoAcesso.getText()),

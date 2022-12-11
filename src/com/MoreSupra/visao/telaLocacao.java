@@ -24,6 +24,8 @@ import com.MoreSupra.modelos.Modelos;
 import com.MoreSupra.modelos.Motorista;
 import com.MoreSupra.modelos.Veiculos;
 import com.MoreSupra.visao.utill.limitaCaracteres;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -39,6 +41,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.Document;
 
@@ -67,6 +70,19 @@ public class telaLocacao extends javax.swing.JFrame {
         jTextField1_nomeAcess.setEnabled(false);
 
         jTextField1_diasCont.setDocument(new limitaCaracteres(4, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
+        
+        
+        jDialog1.setSize(700, 490);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setTitle("cadastroincompleto");
+        jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog1.setResizable(false);
+        
+        jDialog2.setSize(700, 490);
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setTitle("cadastroincompleto");
+        jDialog2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        jDialog2.setResizable(false);
 
         try {
             imprimirVeiculos(veiculoControle.listagemVeiculos());
@@ -98,6 +114,20 @@ public class telaLocacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialog1 = new javax.swing.JDialog();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jDialog2 = new javax.swing.JDialog();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2_Confimar3 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -138,6 +168,71 @@ public class telaLocacao extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jButton2_LimparCategoria1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+
+        jDialog1.setUndecorated(true);
+        jDialog1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/confirmGif.gif"))); // NOI18N
+        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog1.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 220, 190));
+
+        jLabel16.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("LOCAÇÃO REALIZADO COM SUCESSO!!");
+        jDialog1.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 600, 50));
+
+        jLabel21.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setText("E INCLUIDOS NO BANCO");
+        jDialog1.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 270, 50));
+
+        jLabel23.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setText("DADOS FORAM ATUALIZADOS ");
+        jDialog1.getContentPane().add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 340, 50));
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog1.getContentPane().add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 200, 140));
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jDialog2.setUndecorated(true);
+        jDialog2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("CADASTRO NÃO REALIZADO!");
+        jDialog2.getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 500, 50));
+
+        jLabel37.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("VERIFIQUE INFORMAÇÕES INVÁLIDAS OU CAMPOS VAZIOS");
+        jDialog2.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 690, 50));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jDialog2.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, 130));
+
+        jButton2_Confimar3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
+        jButton2_Confimar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jButton2_Confimar3.setText(" OK");
+        jButton2_Confimar3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jButton2_Confimar3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2_Confimar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_Confimar3ActionPerformed(evt);
+            }
+        });
+        jDialog2.getContentPane().add(jButton2_Confimar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 100, -1));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/INITIALDCADASTROINVALIDO.gif"))); // NOI18N
+        jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jDialog2.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 360, 200));
+
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
+        jDialog2.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -623,7 +718,9 @@ public class telaLocacao extends javax.swing.JFrame {
 
     private void jButton2_lOCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_lOCARActionPerformed
         try {
-
+            if(!jTextField1_diasCont.getText().isEmpty() && !jTextField1_nomeCAT.getText().isEmpty() && !jTextField2_nomeMoto.getText().isEmpty()){
+                
+            
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
             
@@ -666,6 +763,22 @@ public class telaLocacao extends javax.swing.JFrame {
             jTextField1_precoAcesso.setText("0");
             jTextField1_nomeAcess.setText("N/A");
             jTextField1_diasCont.setText("");
+            
+            Timer timer = new Timer(3900, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                    jDialog1.setVisible(false);
+                    jDialog1.dispose();
+                }
+             });
+                 timer.setRepeats(false);
+                 timer.start();
+                 jDialog1.setVisible(true);
+            
+            
+            
+            }else{
+                jDialog2.setVisible(true);
+            }
             
         } catch (IOException ex) {
             Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
@@ -740,6 +853,10 @@ public class telaLocacao extends javax.swing.JFrame {
             jTextField1_diasCont.setText("");
     }//GEN-LAST:event_jButton2_LimparCategoria1ActionPerformed
 
+    private void jButton2_Confimar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Confimar3ActionPerformed
+        jDialog2.dispose();
+    }//GEN-LAST:event_jButton2_Confimar3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -778,23 +895,37 @@ public class telaLocacao extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_Devolveer;
+    private javax.swing.JButton jButton2_Confimar3;
     private javax.swing.JButton jButton2_LimparCategoria;
     private javax.swing.JButton jButton2_LimparCategoria1;
     private javax.swing.JButton jButton2_LimparMotorista;
     private javax.swing.JButton jButton2_lOCAR;
     private javax.swing.JButton jButton4_voltar;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel17_dias;
     private javax.swing.JLabel jLabel17_dias1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
