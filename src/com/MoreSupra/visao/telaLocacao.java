@@ -62,6 +62,23 @@ public class telaLocacao extends javax.swing.JFrame {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
 
+        
+        jTextField4_diaRetirada.setEnabled(false);
+            jTextField5_qntDIas.setEnabled(false);
+            jTextField1_diaRetorno.setEnabled(false);
+            jTextField5_ACESSORIOIOO.setEnabled(false);
+            jTextField6_precoacessoriodois.setEnabled(false);
+            jTextField5_VEICULO.setEnabled(false);
+            jTextField6_CATEGORIAAAA.setEnabled(false);
+            jTextField4_ValorDiaria.setEnabled(false);
+            jTextField3_valorPelosDias.setEnabled(false);
+            jTextField2_valorComCaucao.setEnabled(false);
+            jTextField1_valorTotalC.setEnabled(false);
+        
+        jFrame1.setSize(900, 690);
+        jFrame1.setResizable(false);
+        jFrame1.setLocationRelativeTo(null);
+
         jTextField2_modelo.setEnabled(false);
         jTextField2_nomeMoto.setEnabled(false);
         jTextField1_nomeCAT.setEnabled(false);
@@ -128,6 +145,36 @@ public class telaLocacao extends javax.swing.JFrame {
         jButton2_Confimar3 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jFrame1 = new javax.swing.JFrame();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField1_diaRetorno = new javax.swing.JTextField();
+        jTextField3_valorPelosDias = new javax.swing.JTextField();
+        jTextField2_valorComCaucao = new javax.swing.JTextField();
+        jTextField4_diaRetirada = new javax.swing.JTextField();
+        jTextField5_qntDIas = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField1_valorTotalC = new javax.swing.JTextField();
+        jTextField4_ValorDiaria = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField5_VEICULO = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jTextField6_CATEGORIAAAA = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jTextField5_ACESSORIOIOO = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jTextField6_precoacessoriodois = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -233,6 +280,159 @@ public class telaLocacao extends javax.swing.JFrame {
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
         jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 4));
         jDialog2.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 490));
+
+        jFrame1.setUndecorated(true);
+        jFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/arrrrr.png"))); // NOI18N
+        jFrame1.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 190, 130));
+
+        jLabel27.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel27.setText("CONFIRMAR LOCAÇÃO?");
+        jFrame1.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 500, 60));
+
+        jTextField1_diaRetorno.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField1_diaRetorno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField1_diaRetorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 150, 40));
+
+        jTextField3_valorPelosDias.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField3_valorPelosDias.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField3_valorPelosDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, 150, 40));
+
+        jTextField2_valorComCaucao.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField2_valorComCaucao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField2_valorComCaucao, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, 150, 40));
+
+        jTextField4_diaRetirada.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField4_diaRetirada.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField4_diaRetirada, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 150, 40));
+
+        jTextField5_qntDIas.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField5_qntDIas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField5_qntDIas, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 150, 40));
+
+        jLabel28.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel28.setText("DIA DA RETIRADA");
+        jFrame1.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+
+        jLabel29.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("DIA DA DEVOLUÇÃO");
+        jFrame1.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, -1));
+
+        jLabel30.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("QNT DIAS ");
+        jFrame1.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
+
+        jTextField1_valorTotalC.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField1_valorTotalC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField1_valorTotalC, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 150, 40));
+
+        jTextField4_ValorDiaria.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField4_ValorDiaria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jTextField4_ValorDiaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4_ValorDiariaActionPerformed(evt);
+            }
+        });
+        jFrame1.getContentPane().add(jTextField4_ValorDiaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 150, 40));
+
+        jLabel32.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("VALOR + CAUÇÃO");
+        jFrame1.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("VALOR DIÁRIA");
+        jFrame1.getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, -1, -1));
+
+        jLabel34.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("CAUÇÃO");
+        jFrame1.getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 480, -1, -1));
+
+        jLabel35.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("+");
+        jFrame1.getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, -1, -1));
+
+        jTextField5_VEICULO.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTextField5_VEICULO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField5_VEICULO, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 150, 40));
+
+        jLabel38.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("VEÍCULO");
+        jFrame1.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, -1, -1));
+
+        jTextField6_CATEGORIAAAA.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTextField6_CATEGORIAAAA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField6_CATEGORIAAAA, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 150, 40));
+
+        jLabel39.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("CATÉGORIA");
+        jFrame1.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Serif", 3, 26)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/OKICON.png"))); // NOI18N
+        jButton2.setText(" CONFIRMAR");
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jFrame1.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 210, 40));
+
+        jButton3.setFont(new java.awt.Font("Serif", 3, 26)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/voltar (1).png"))); // NOI18N
+        jButton3.setText("       VOLTAR");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jFrame1.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 630, 210, 40));
+
+        jTextField5_ACESSORIOIOO.setFont(new java.awt.Font("Serif", 3, 18)); // NOI18N
+        jTextField5_ACESSORIOIOO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField5_ACESSORIOIOO, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 150, 40));
+
+        jLabel41.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("ACESSÓRIO");
+        jFrame1.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(125, 280, 140, -1));
+
+        jTextField6_precoacessoriodois.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jTextField6_precoacessoriodois.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jFrame1.getContentPane().add(jTextField6_precoacessoriodois, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 150, 40));
+
+        jLabel42.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("R$ ACESSÓRIO");
+        jFrame1.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 170, -1));
+
+        jLabel43.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel43.setText("ACESSÓRIO");
+        jFrame1.getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, -1, -1));
+
+        jLabel44.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
+        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel44.setText("VALOR PELOS DIAS");
+        jFrame1.getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/FADETELA.jpg"))); // NOI18N
+        jLabel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));
+        jFrame1.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 690));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -719,7 +919,8 @@ public class telaLocacao extends javax.swing.JFrame {
     private void jButton2_lOCARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_lOCARActionPerformed
         try {
             if(!jTextField1_diasCont.getText().isEmpty() && !jTextField1_nomeCAT.getText().isEmpty() && !jTextField2_nomeMoto.getText().isEmpty()){
-                
+               
+                jFrame1.setVisible(true);
             
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
             SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
@@ -738,42 +939,26 @@ public class telaLocacao extends javax.swing.JFrame {
 
             float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
                     + Float.parseFloat(jTextField1_precoAcesso.getText()));
+           
+            float totSemAcessorio = (Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText())
+                    );
 
-            float cauc = (float) (double) (total * 0.50);
+            float cauc = (float) (double) (totSemAcessorio * 0.50);
 
             float total2 = (total + cauc);
             
 
-            Locacao loc = new Locacao(0, jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
-                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
-                    Float.parseFloat(jTextField1_precoAcesso.getText()),
-                    dataFormatada,
-                    AgoraFormat,
-                    Float.parseFloat(jTextField1_precoCat.getText()),
-                    cauc,
-                    total2,
-                    "ANDAMENTO", Integer.parseInt(jTextField1_diasCont.getText()));
-
-            locacaoControle.locar(loc);
-            imprimirDados(locacaoControle.listagemDeLocacao());
-            jTextField2_nomeMoto.setText("");
-            jTextField2_modelo.setText("");
-            jTextField1_precoCat.setText("");
-            jTextField1_nomeCAT.setText("");
-            jTextField1_precoAcesso.setText("0");
-            jTextField1_nomeAcess.setText("N/A");
-            jTextField1_diasCont.setText("");
-            
-            Timer timer = new Timer(3900, new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                    jDialog1.setVisible(false);
-                    jDialog1.dispose();
-                }
-             });
-                 timer.setRepeats(false);
-                 timer.start();
-                 jDialog1.setVisible(true);
-            
+            jTextField4_diaRetirada.setText(dataFormatada);
+            jTextField5_qntDIas.setText(jTextField1_diasCont.getText());
+            jTextField1_diaRetorno.setText(AgoraFormat);
+            jTextField5_ACESSORIOIOO.setText(jTextField1_nomeAcess.getText());
+            jTextField6_precoacessoriodois.setText(jTextField1_precoAcesso.getText());
+            jTextField5_VEICULO.setText(jTextField2_modelo.getText());
+            jTextField6_CATEGORIAAAA.setText(jTextField1_nomeCAT.getText());
+            jTextField4_ValorDiaria.setText(jTextField1_precoCat.getText());
+            jTextField3_valorPelosDias.setText(String.valueOf(total));
+            jTextField2_valorComCaucao.setText(String.valueOf(cauc));
+            jTextField1_valorTotalC.setText(String.valueOf(total2));
             
             
             }else{
@@ -782,9 +967,7 @@ public class telaLocacao extends javax.swing.JFrame {
             
         } catch (IOException ex) {
             Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
 
 
     }//GEN-LAST:event_jButton2_lOCARActionPerformed
@@ -857,6 +1040,78 @@ public class telaLocacao extends javax.swing.JFrame {
         jDialog2.dispose();
     }//GEN-LAST:event_jButton2_Confimar3ActionPerformed
 
+    private void jTextField4_ValorDiariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4_ValorDiariaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4_ValorDiariaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            try {
+
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+
+                Date data = new Date();
+
+                LocalDate dataAgora = LocalDate.now();
+                dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
+
+                String AgoraFormat = dataAgora.format(formatter);
+                String dataFormatada = formatador.format(data);
+
+                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+                arquivo.createNewFile();
+
+                float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
+                    + Float.parseFloat(jTextField1_precoAcesso.getText()));
+           
+            float totSemAcessorio = (Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText())
+                    );
+
+            float cauc = (float) (double) (totSemAcessorio * 0.50);
+
+            float total2 = (total + cauc);
+
+                Locacao loc = new Locacao(0, jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                    Float.parseFloat(jTextField1_precoAcesso.getText()),
+                    dataFormatada,
+                    AgoraFormat,
+                    Float.parseFloat(jTextField1_precoCat.getText()),
+                    cauc,
+                    total2,
+                    "ANDAMENTO", Integer.parseInt(jTextField1_diasCont.getText()));
+
+                locacaoControle.locar(loc);
+                jTextField2_nomeMoto.setText("");
+                jTextField2_modelo.setText("");
+                jTextField1_precoCat.setText("");
+                jTextField1_nomeCAT.setText("");
+                jTextField1_precoAcesso.setText("0");
+                jTextField1_nomeAcess.setText("N/A");
+                jTextField1_diasCont.setText("");
+                imprimirDados(locacaoControle.listagemDeLocacao());
+                jFrame1.dispose();
+
+                Timer timer = new Timer(4100, new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        jDialog1.setVisible(false);
+                        jDialog1.dispose();
+                    }
+                });
+                timer.setRepeats(false);
+                timer.start();
+                jDialog1.setVisible(true);
+
+            } catch (Exception ex) {
+                Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jFrame1.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -895,15 +1150,19 @@ public class telaLocacao extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton1_Devolveer;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton2_Confimar3;
     private javax.swing.JButton jButton2_LimparCategoria;
     private javax.swing.JButton jButton2_LimparCategoria1;
     private javax.swing.JButton jButton2_LimparMotorista;
     private javax.swing.JButton jButton2_lOCAR;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4_voltar;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -922,11 +1181,26 @@ public class telaLocacao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -940,12 +1214,23 @@ public class telaLocacao extends javax.swing.JFrame {
     private javax.swing.JTable jTable1_saidaGeral;
     private javax.swing.JTable jTable1_veiculos;
     private javax.swing.JTable jTable2_motorista;
+    private javax.swing.JTextField jTextField1_diaRetorno;
     private javax.swing.JTextField jTextField1_diasCont;
     private javax.swing.JTextField jTextField1_nomeAcess;
     private javax.swing.JTextField jTextField1_nomeCAT;
     private javax.swing.JTextField jTextField1_precoAcesso;
     private javax.swing.JTextField jTextField1_precoCat;
+    private javax.swing.JTextField jTextField1_valorTotalC;
     private javax.swing.JTextField jTextField2_modelo;
     private javax.swing.JTextField jTextField2_nomeMoto;
+    private javax.swing.JTextField jTextField2_valorComCaucao;
+    private javax.swing.JTextField jTextField3_valorPelosDias;
+    private javax.swing.JTextField jTextField4_ValorDiaria;
+    private javax.swing.JTextField jTextField4_diaRetirada;
+    private javax.swing.JTextField jTextField5_ACESSORIOIOO;
+    private javax.swing.JTextField jTextField5_VEICULO;
+    private javax.swing.JTextField jTextField5_qntDIas;
+    private javax.swing.JTextField jTextField6_CATEGORIAAAA;
+    private javax.swing.JTextField jTextField6_precoacessoriodois;
     // End of variables declaration//GEN-END:variables
 }
