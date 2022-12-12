@@ -862,7 +862,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     private void jButton1_cancelarTOtalMenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_cancelarTOtalMenteActionPerformed
       
         
-        if(jTable1_saidaGeral.getSelectedRow() != -1){
+        if(! jTextField1_diasCancelar.getText().isEmpty()){
         try {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -924,7 +924,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
+        }else JOptionPane.showMessageDialog(null, "Quantidade de dias não foram informados") ;
     }//GEN-LAST:event_jButton1_cancelarTOtalMenteActionPerformed
 
     /**
