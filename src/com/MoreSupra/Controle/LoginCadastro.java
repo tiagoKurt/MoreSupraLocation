@@ -15,31 +15,30 @@ import javax.swing.JOptionPane;
  * @author Pichau
  */
 public class LoginCadastro {
-    
+
     private TelaLoginGestor pog;
-    
-    
-    public LoginCadastro(TelaLoginGestor login){
+
+    public LoginCadastro(TelaLoginGestor login) {
         this.pog = pog;
     }
 
     public void autenticar() throws Exception {
-           
+
         String user = pog.getjTextField2_Login().getText();
         String senha = pog.getjTextField2_Senha().getText();
         String senha2 = pog.getjPasswordField1().getText();
 
-             Cadastro cad = new Cadastro(user, senha);
-             CadastrarMore UserCadastro = new CadastrarMore();
-             boolean existe = UserCadastro.autenticarUsuario(cad);
-                
-            if(existe){
+        Cadastro cad = new Cadastro(user, senha);
+        CadastrarMore UserCadastro = new CadastrarMore();
+        boolean existe = UserCadastro.autenticarUsuario(cad);
+
+        if (existe) {
             TelaPrincipal tabelaClientes = new TelaPrincipal();
-            tabelaClientes.setVisible(true);  
+            tabelaClientes.setVisible(true);
             pog.dispose();
-            
-            } else{
-                JOptionPane.showMessageDialog(pog, "invalido");
-            }
+
+        } else {
+            JOptionPane.showMessageDialog(pog, "invalido");
+        }
     }
 }

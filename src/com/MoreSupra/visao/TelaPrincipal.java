@@ -37,7 +37,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem14 = new javax.swing.JMenuItem();
@@ -197,17 +196,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem12);
 
-        jMenuItem13.setFont(new java.awt.Font("Serif", 3, 16)); // NOI18N
-        jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/caixacancelar (1).png"))); // NOI18N
-        jMenuItem13.setText("CANCELAR");
-        jMenuItem13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem13ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem13);
-
         jMenuBar1.add(jMenu4);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/Gestor.png"))); // NOI18N
@@ -344,10 +332,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItem12ActionPerformed
 
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
-
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         telaTabelaLocacao tel = new telaTabelaLocacao();
         tel.setVisible(true);
@@ -404,7 +388,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;

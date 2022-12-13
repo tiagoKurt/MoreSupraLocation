@@ -295,10 +295,7 @@ public class TelaLoginGestor extends javax.swing.JFrame {
 
     private void jButton_LogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_LogarActionPerformed
         try {
-            // TODO add your handling code here:
-            
-        
-            
+            // TODO add your handling code here:            
             autenticador.autenticar();
         } catch (Exception ex) {
             java.util.logging.Logger.getLogger(TelaLoginGestor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
