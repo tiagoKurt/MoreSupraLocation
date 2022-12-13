@@ -198,7 +198,7 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("CADASTRO PESSOA FÍSICA");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 470, 40));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 570, 40));
 
         jLabel14.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));

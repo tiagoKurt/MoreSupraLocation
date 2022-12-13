@@ -185,7 +185,7 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("CADASTRO PESSOA JURÍDICA");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 530, 40));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 20, 580, 40));
 
         jLabel19.setFont(new java.awt.Font("Serif", 3, 30)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));

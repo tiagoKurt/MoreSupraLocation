@@ -396,7 +396,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("AGRADECEMOS PELA PREFERÊNCIA");
-        jDialog1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 430, 30));
+        jDialog1.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 430, 30));
 
         jLabel24.setFont(new java.awt.Font("Serif", 3, 22)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -897,7 +897,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
                     Float.parseFloat(jTextField1_precoCat.getText()),
                     cauc,
                     total2,
-                    "CANCELADO", Integer.parseInt(jTextField1_diasCancelar.getText()));
+                    "DEVOLVIDO", Integer.parseInt(jTextField1_diasCancelar.getText()));
 
                       locacaoControle.devolver(loc);
                       jTextField2_nomeMoto.setText("");
@@ -912,13 +912,13 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         
                       Timer timer = new Timer(4100, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                    jDialog2.setVisible(false);
-                    jDialog2.dispose();
+                    jDialog1.setVisible(false);
+                    jDialog1.dispose();
                 }
              });
                  timer.setRepeats(false);
                  timer.start();
-                 jDialog2.setVisible(true);
+                 jDialog1.setVisible(true);
             
             
         } catch (Exception ex) {

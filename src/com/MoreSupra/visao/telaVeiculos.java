@@ -39,9 +39,9 @@ public class telaVeiculos extends javax.swing.JFrame {
         carregarComboBox();
         jTextField_placa.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PLACA));
         jTextField_renavam.setDocument(new limitaCaracteres(11, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        jTextField_precodeCompra.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
-        jTextField_precoDeVenda.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
-        jTextField_quilometragem.setDocument(new limitaCaracteres(7, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_precodeCompra.setDocument(new limitaCaracteres(4, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_precoDeVenda.setDocument(new limitaCaracteres(4, limitaCaracteres.tipoEntrada.PRECO));
+        jTextField_quilometragem.setDocument(new limitaCaracteres(6, limitaCaracteres.tipoEntrada.PRECO));
         setExtendedState(MAXIMIZED_BOTH);
         jTextField8_idVeiculos.setEnabled(false);
         
@@ -216,7 +216,7 @@ public class telaVeiculos extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Serif", 3, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("CADASTRO DE VEÍCULOS");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 440, 40));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 530, 40));
 
         jTextField8_idVeiculos.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
         jTextField8_idVeiculos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));

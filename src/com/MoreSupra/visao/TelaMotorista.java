@@ -387,7 +387,7 @@ public class TelaMotorista extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("CADASTRO DE MOTORISTAS");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 520, 60));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 610, 60));
 
         jLabel2_ocuparespacoTabela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/MoreSupra/visao/icons/gifTabelaCLIENTES2.gif"))); // NOI18N
         jLabel2_ocuparespacoTabela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153), 3));

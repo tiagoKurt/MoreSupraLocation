@@ -179,7 +179,7 @@ public class TelaMarcas extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Serif", 3, 38)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MANTER MARCAS");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 334, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, 410, -1));
 
         jLabel3.setFont(new java.awt.Font("Serif", 3, 28)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
