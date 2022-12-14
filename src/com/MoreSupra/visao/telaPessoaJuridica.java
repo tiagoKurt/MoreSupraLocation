@@ -332,7 +332,9 @@ public class telaPessoaJuridica extends javax.swing.JFrame {
             
             if(!jTextField12_nomeJuridica.getText().isEmpty() && !jTextField8_enderecoJuridica.getText().isEmpty() && 
                     !jTextField9_emailJuri.getText().isEmpty() && !jTextField11_razaoSocial.getText().isEmpty() &&
-                    !jFormattedTextField1_cnpj.getText().isEmpty() &&!jFormattedTextField1_telefone.getText().isEmpty() ){
+                    !jFormattedTextField1_cnpj.getText().isEmpty() &&!jFormattedTextField1_telefone.getText().isEmpty() &&
+                    ! jFormattedTextField1_telefone.getText().equals("(  )      -    ") && 
+                    !jFormattedTextField1_cnpj.getText().equals("  .   .   /    -  ")){
             
             PessoaJuridica cliente = new PessoaJuridica(0, jFormattedTextField1_cnpj.getText(), jTextField12_nomeJuridica.getText(), 
                     jTextField11_razaoSocial.getText(), jFormattedTextField1_telefone.getText(), jTextField9_emailJuri.getText(), 

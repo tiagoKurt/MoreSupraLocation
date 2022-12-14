@@ -32,26 +32,24 @@ import javax.swing.table.DefaultTableModel;
 public class telaDevolucaoLoc extends javax.swing.JFrame {
 
     ILocacaoControle locacaoControle = new LocacaoControle();
-    
-    
-    
+
     public telaDevolucaoLoc() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        
+
         jTextField1_diasCancelar.setDocument(new limitaCaracteres(4, limitaCaracteres.tipoEntrada.NUMEROINTEIRO));
-        
+
         jTextField1_diasCancelar.setVisible(false);
         jLabel26_diasCancelar.setVisible(false);
-        
+
         jFrame2.setSize(900, 690);
         jFrame2.setResizable(false);
         jFrame2.setLocationRelativeTo(null);
-        
+
         jFrame3.setSize(900, 690);
         jFrame3.setResizable(false);
         jFrame3.setLocationRelativeTo(null);
-        
+
         jTextField4_diaRetirada.setEnabled(false);
         jTextField5_qntDIas.setEnabled(false);
         jTextField1_diaRetorno.setEnabled(false);
@@ -61,34 +59,32 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jTextField3_valorPelosDias.setEnabled(false);
         jTextField2_valorComCaucao.setEnabled(false);
         jTextField1_valorTotalC.setEnabled(false);
-        
-        
+
         jDialog1.setSize(700, 490);
         jDialog1.setLocationRelativeTo(null);
         jDialog1.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         jDialog1.setResizable(false);
-        
+
         jDialog2.setSize(700, 490);
         jDialog2.setLocationRelativeTo(null);
         jDialog2.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         jDialog2.setResizable(false);
-        
+
         jButton1_AnteriorOriginal.setBounds(150, 430, 210, 60);
         jButton1_AnteriorOriginal.setVisible(false);
-        
+
         jLabel26_gif.setVisible(false);
         jLabel27.setVisible(false);
         jButton1_naoFiquei.setVisible(false);
-        
+
         try {
             imprimirDados(locacaoControle.listagemDeLocacao());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
-  
+
     }
 
-    
     public void imprimirDados(ArrayList<Locacao> listaDeLocacao) {
         try {
             DefaultTableModel model = (DefaultTableModel) jTable1_saidaGeral.getModel();
@@ -115,13 +111,13 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
                 saida[11] = aux.getTotal() + "";
                 saida[12] = aux.getSituacaoLocacao();
 
-                if(aux.getSituacaoLocacao().equalsIgnoreCase("ANDAMENTO")){
+                if (aux.getSituacaoLocacao().equalsIgnoreCase("ANDAMENTO")) {
                     locacaoControle.listagemDeLocacao();
-                    
-                //Incluir nova linha na Tabela,saida[0]
-                Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
-                    saida[10], saida[11], saida[12]};
-                model.addRow(dados);
+
+                    //Incluir nova linha na Tabela,saida[0]
+                    Object[] dados = {saida[0], saida[1], saida[2], saida[3], saida[4], saida[5], saida[6], saida[7], saida[8], saida[9],
+                        saida[10], saida[11], saida[12]};
+                    model.addRow(dados);
                 }
             }
         } catch (Exception erro) {
@@ -129,8 +125,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         }
 
     }
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -631,10 +626,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1_saidaGeralMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1_saidaGeralMouseClicked
-        
-        
-        
-        
+
         jTextField1_idDevolution.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 0).toString());
         jTextField2_nomeMoto.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 1).toString());
         jTextField2_modelo.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 2).toString());
@@ -643,8 +635,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jTextField1_diasCont.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 5).toString());
         jTextField1_nomeAcess.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 6).toString());
         jTextField1_precoAcesso.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 7).toString());
-        
-        
+
         jTextField4_diaRetirada.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 8).toString());
         jTextField1_diaRetorno.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 9).toString());
         jTextField5_VEICULO.setText(jTable1_saidaGeral.getValueAt(jTable1_saidaGeral.getSelectedRow(), 2).toString());
@@ -660,31 +651,31 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         TelaPrincipal principal = new TelaPrincipal();
         principal.setVisible(true);
         this.dispose();
-        
+
     }//GEN-LAST:event_jButton4_voltarActionPerformed
 
     private void jButton2_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_CancelarActionPerformed
-        if(jTable1_saidaGeral.getSelectedRow() != -1){   
-        
-        jFrame3.setVisible(true);
-        }else {
+        if (jTable1_saidaGeral.getSelectedRow() != -1) {
+
+            jFrame3.setVisible(true);
+        } else {
             JOptionPane.showMessageDialog(null, "Selecione uma locação para cancelá-la");
         }
-        
-        
+
+
     }//GEN-LAST:event_jButton2_CancelarActionPerformed
 
     private void jButton2_DEVOLVERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_DEVOLVERActionPerformed
-        if(jTable1_saidaGeral.getSelectedRow() != -1){   
-        
-        float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
+        if (jTable1_saidaGeral.getSelectedRow() != -1) {
+
+            float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
                     + Float.parseFloat(jTextField1_precoAcesso.getText()));
-        jTextField3_valorPelosDias.setText(String.valueOf(total));
-        jFrame2.setVisible(true);
-        }else {
+            jTextField3_valorPelosDias.setText(String.valueOf(total));
+            jFrame2.setVisible(true);
+        } else {
             JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la");
         }
-        
+
     }//GEN-LAST:event_jButton2_DEVOLVERActionPerformed
 
     private void jTextField1_precoAcessoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_precoAcessoActionPerformed
@@ -700,68 +691,66 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(jTable1_saidaGeral.getSelectedRow() != -1){
-        try {
+        if (jTable1_saidaGeral.getSelectedRow() != -1) {
+            try {
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-            
-            Date data = new Date();
-            
-            LocalDate dataAgora = LocalDate.now();
-            dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
-            
-            String AgoraFormat = dataAgora.format(formatter);           
-            String dataFormatada = formatador.format(data);
-            
-            
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
-            arquivo.createNewFile();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 
-            float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
-                    + Float.parseFloat(jTextField1_precoAcesso.getText()));
+                Date data = new Date();
 
-            float cauc = (float) (double) (total * 0.50);
+                LocalDate dataAgora = LocalDate.now();
+                dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCont.getText()));
 
-            float total2 = (total + cauc);
-            
+                String AgoraFormat = dataAgora.format(formatter);
+                String dataFormatada = formatador.format(data);
 
-            Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
-                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
-                    Float.parseFloat(jTextField1_precoAcesso.getText()),
-                    dataFormatada,
-                    AgoraFormat,
-                    Float.parseFloat(jTextField1_precoCat.getText()),
-                    cauc,
-                    total2,
-                    "DEVOLVIDO", Integer.parseInt(jTextField1_diasCont.getText()));
+                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+                arquivo.createNewFile();
 
-                      locacaoControle.devolver(loc);
-                      jTextField2_nomeMoto.setText("");
-                      jTextField2_modelo.setText("");
-                      jTextField1_precoCat.setText("");
-                      jTextField1_nomeCAT.setText("");
-                      jTextField1_precoAcesso.setText("0");
-                      jTextField1_nomeAcess.setText("N/A");
-                      jTextField1_diasCont.setText("");
-                      imprimirDados(locacaoControle.listagemDeLocacao());
-                      jFrame2.dispose();
-        
-                      Timer timer = new Timer(4100, new ActionListener() {
+                float total = ((Float.parseFloat(jTextField1_diasCont.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
+                        + Float.parseFloat(jTextField1_precoAcesso.getText()));
+
+                float cauc = (float) (double) (total * 0.50);
+
+                float total2 = (total + cauc);
+
+                Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                        jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                        Float.parseFloat(jTextField1_precoAcesso.getText()),
+                        dataFormatada,
+                        AgoraFormat,
+                        Float.parseFloat(jTextField1_precoCat.getText()),
+                        cauc,
+                        total2,
+                        "DEVOLVIDO", Integer.parseInt(jTextField1_diasCont.getText()));
+
+                locacaoControle.devolver(loc);
+                jTextField2_nomeMoto.setText("");
+                jTextField2_modelo.setText("");
+                jTextField1_precoCat.setText("");
+                jTextField1_nomeCAT.setText("");
+                jTextField1_precoAcesso.setText("0");
+                jTextField1_nomeAcess.setText("N/A");
+                jTextField1_diasCont.setText("");
+                imprimirDados(locacaoControle.listagemDeLocacao());
+                jFrame2.dispose();
+
+                Timer timer = new Timer(4100, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                    jDialog1.setVisible(false);
-                    jDialog1.dispose();
-                }
-             });
-                 timer.setRepeats(false);
-                 timer.start();
-                 jDialog1.setVisible(true);
-            
-            
-        } catch (Exception ex) {
-            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+                        jDialog1.setVisible(false);
+                        jDialog1.dispose();
+                    }
+                });
+                timer.setRepeats(false);
+                timer.start();
+                jDialog1.setVisible(true);
+
+            } catch (Exception ex) {
+                Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
+        } else
+            JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4_NAOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_NAOActionPerformed
@@ -770,26 +759,24 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
 
     private void jButton1_SIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_SIMActionPerformed
         jButton4_NAO.setVisible(false);
-        
+
         jButton1_AnteriorOriginal.setVisible(true);
         jButton1_AnteriorOriginal.setBounds(150, 430, 210, 60);
-        
+
         jLabel20.setVisible(false);
         jLabel27.setVisible(true);
-        
+
         jLabel26_gif1.setVisible(false);
         jLabel26_gif.setVisible(true);
-        
+
         jButton1_SIM.setVisible(false);
-        
+
         jButton1_naoFiquei.setVisible(true);
-        
+
         jTextField1_diasCancelar.setVisible(true);
         jLabel26_diasCancelar.setVisible(true);
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton1_SIMActionPerformed
 
     private void jButton1_AnteriorOriginalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_AnteriorOriginalActionPerformed
@@ -803,6 +790,7 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
         jButton1_naoFiquei.setVisible(false);
         jTextField1_diasCancelar.setVisible(false);
         jLabel26_diasCancelar.setVisible(false);
+        jTextField1_diasCancelar.setText("");
     }//GEN-LAST:event_jButton1_AnteriorOriginalActionPerformed
 
     private void jTextField1_diasCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1_diasCancelarActionPerformed
@@ -810,121 +798,139 @@ public class telaDevolucaoLoc extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1_diasCancelarActionPerformed
 
     private void jButton1_naoFiqueiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_naoFiqueiActionPerformed
-        if(jTable1_saidaGeral.getSelectedRow() != -1){
-        try {
-            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-            Date data = new Date();
-            String dataFormatada = formatador.format(data);
-            
-            
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
-            arquivo.createNewFile();
 
-            
-            Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
-                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
-                    Float.parseFloat(jTextField1_precoAcesso.getText()),
-                    dataFormatada,
-                    dataFormatada,
-                    Float.parseFloat(jTextField1_precoCat.getText()),
-                    0,
-                    0,
-                    "CANCELADO", 0);
+        if (jTable1_saidaGeral.getSelectedRow() != -1) {
+            try {
+                SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+                Date data = new Date();
+                String dataFormatada = formatador.format(data);
 
-                      locacaoControle.devolver(loc);
-                      jTextField2_nomeMoto.setText("");
-                      jTextField2_modelo.setText("");
-                      jTextField1_precoCat.setText("");
-                      jTextField1_nomeCAT.setText("");
-                      jTextField1_precoAcesso.setText("0");
-                      jTextField1_nomeAcess.setText("N/A");
-                      jTextField1_diasCont.setText("");
-                      imprimirDados(locacaoControle.listagemDeLocacao());
-                      jFrame3.dispose();
-        
-                      Timer timer = new Timer(4300, new ActionListener() {
+                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+                arquivo.createNewFile();
+
+                Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                        jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                        Float.parseFloat(jTextField1_precoAcesso.getText()),
+                        dataFormatada,
+                        dataFormatada,
+                        Float.parseFloat(jTextField1_precoCat.getText()),
+                        0,
+                        0,
+                        "CANCELADO", 0);
+
+                locacaoControle.devolver(loc);
+                jTextField2_nomeMoto.setText("");
+                jTextField2_modelo.setText("");
+                jTextField1_precoCat.setText("");
+                jTextField1_nomeCAT.setText("");
+                jTextField1_precoAcesso.setText("0");
+                jTextField1_nomeAcess.setText("N/A");
+                jTextField1_diasCont.setText("");
+                imprimirDados(locacaoControle.listagemDeLocacao());
+                jFrame3.dispose();
+                jButton1_AnteriorOriginal.setVisible(false);
+                jButton4_NAO.setVisible(true);
+                jLabel20.setVisible(true);
+                jLabel26_gif1.setVisible(true);
+                jLabel26_gif.setVisible(false);
+                jLabel27.setVisible(false);
+                jButton1_SIM.setVisible(true);
+                jButton1_naoFiquei.setVisible(false);
+                jTextField1_diasCancelar.setVisible(false);
+                jLabel26_diasCancelar.setVisible(false);
+
+                Timer timer = new Timer(4300, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                    jDialog2.setVisible(false);
-                    jDialog2.dispose();
-                }
-             });
-                 timer.setRepeats(false);
-                 timer.start();
-                 jDialog2.setVisible(true);
-            
-            
-        } catch (Exception ex) {
-            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+                        jDialog2.setVisible(false);
+                        jDialog2.dispose();
+                    }
+                });
+                timer.setRepeats(false);
+                timer.start();
+                jDialog2.setVisible(true);
+
+            } catch (Exception ex) {
+                Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la") ;
+        } else
+            JOptionPane.showMessageDialog(null, "Selecione uma locação para devolvê-la");
     }//GEN-LAST:event_jButton1_naoFiqueiActionPerformed
 
     private void jButton1_cancelarTOtalMenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_cancelarTOtalMenteActionPerformed
-      
-        
-        if(! jTextField1_diasCancelar.getText().isEmpty()){
-        try {
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-            
-            Date data = new Date();
-            
-            LocalDate dataAgora = LocalDate.now();
-            dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCancelar.getText()));
-            
-            String AgoraFormat = dataAgora.format(formatter);           
-            String dataFormatada = formatador.format(data);
-            
-            
-            File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
-            arquivo.createNewFile();
+        if (!jTextField1_diasCancelar.getText().isEmpty()) {
+            try {
 
-            float total = ((Float.parseFloat(jTextField1_diasCancelar.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
-                    + Float.parseFloat(jTextField1_precoAcesso.getText()));
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
 
-            float cauc = (float) (double) (total * 0.50);
+                Date data = new Date();
 
-            float total2 = (total + cauc);
-            
-            jFrame3.dispose();
+                LocalDate dataAgora = LocalDate.now();
+                dataAgora = dataAgora.plusDays(Long.parseLong(jTextField1_diasCancelar.getText()));
 
-            Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
-                    jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
-                    Float.parseFloat(jTextField1_precoAcesso.getText()),
-                    dataFormatada,
-                    AgoraFormat,
-                    Float.parseFloat(jTextField1_precoCat.getText()),
-                    cauc,
-                    total2,
-                    "DEVOLVIDO", Integer.parseInt(jTextField1_diasCancelar.getText()));
+                String AgoraFormat = dataAgora.format(formatter);
+                String dataFormatada = formatador.format(data);
 
-                      locacaoControle.devolver(loc);
-                      jTextField2_nomeMoto.setText("");
-                      jTextField2_modelo.setText("");
-                      jTextField1_precoCat.setText("");
-                      jTextField1_nomeCAT.setText("");
-                      jTextField1_precoAcesso.setText("0");
-                      jTextField1_nomeAcess.setText("N/A");
-                      jTextField1_diasCont.setText("");
-                      imprimirDados(locacaoControle.listagemDeLocacao());
-                      jFrame2.dispose();
-        
-                      Timer timer = new Timer(4100, new ActionListener() {
+                File arquivo = new File("./src/com/MoreSupra/arquivoDisco/Locacao.txt");
+                arquivo.createNewFile();
+
+                float total = ((Float.parseFloat(jTextField1_diasCancelar.getText()) * Float.parseFloat(jTextField1_precoCat.getText()))
+                        + Float.parseFloat(jTextField1_precoAcesso.getText()));
+
+                float cauc = (float) (double) (total * 0.50);
+
+                float total2 = (total + cauc);
+
+                jFrame3.dispose();
+
+                Locacao loc = new Locacao(Integer.parseInt(jTextField1_idDevolution.getText()), jTextField2_nomeMoto.getText(), jTextField2_modelo.getText(),
+                        jTextField1_nomeCAT.getText(), jTextField1_nomeAcess.getText(),
+                        Float.parseFloat(jTextField1_precoAcesso.getText()),
+                        dataFormatada,
+                        AgoraFormat,
+                        Float.parseFloat(jTextField1_precoCat.getText()),
+                        cauc,
+                        total2,
+                        "DEVOLVIDO", Integer.parseInt(jTextField1_diasCancelar.getText()));
+
+                locacaoControle.devolver(loc);
+                jTextField2_nomeMoto.setText("");
+                jTextField2_modelo.setText("");
+                jTextField1_precoCat.setText("");
+                jTextField1_nomeCAT.setText("");
+                jTextField1_precoAcesso.setText("0");
+                jTextField1_nomeAcess.setText("N/A");
+                jTextField1_diasCont.setText("");
+                imprimirDados(locacaoControle.listagemDeLocacao());
+                jFrame2.dispose();
+                jButton1_AnteriorOriginal.setVisible(false);
+                jButton4_NAO.setVisible(true);
+                jLabel20.setVisible(true);
+                jLabel26_gif1.setVisible(true);
+                jLabel26_gif.setVisible(false);
+                jLabel27.setVisible(false);
+                jButton1_SIM.setVisible(true);
+                jButton1_naoFiquei.setVisible(false);
+                jTextField1_diasCancelar.setVisible(false);
+                jLabel26_diasCancelar.setVisible(false);
+                jTextField1_diasCancelar.setText("");
+
+                Timer timer = new Timer(4100, new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                    jDialog1.setVisible(false);
-                    jDialog1.dispose();
-                }
-             });
-                 timer.setRepeats(false);
-                 timer.start();
-                 jDialog1.setVisible(true);
-            
-            
-        } catch (Exception ex) {
-            Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
+                        jDialog1.setVisible(false);
+                        jDialog1.dispose();
+                    }
+                });
+                timer.setRepeats(false);
+                timer.start();
+                jDialog1.setVisible(true);
+
+            } catch (Exception ex) {
+                Logger.getLogger(telaLocacao.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else JOptionPane.showMessageDialog(null, "Quantidade de dias não foram informados") ;
+        } else
+            JOptionPane.showMessageDialog(null, "Quantidade de dias não foram informados");
     }//GEN-LAST:event_jButton1_cancelarTOtalMenteActionPerformed
 
     /**

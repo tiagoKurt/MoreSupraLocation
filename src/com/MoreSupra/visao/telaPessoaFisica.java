@@ -308,6 +308,11 @@ public class telaPessoaFisica extends javax.swing.JFrame {
         }
         jFormattedTextField1_cpf.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jFormattedTextField1_cpf.setPreferredSize(new java.awt.Dimension(64, 27));
+        jFormattedTextField1_cpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1_cpfActionPerformed(evt);
+            }
+        });
         jPanel3.add(jFormattedTextField1_cpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 350, 40));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 3, 14)); // NOI18N
@@ -344,7 +349,8 @@ public class telaPessoaFisica extends javax.swing.JFrame {
             
             if(!jTextField2_nomeFisica.getText().isEmpty() && !jTextField3_enderecoFisica.getText().isEmpty() && 
                     !jTextField6_emailFIsica.getText().isEmpty() && !jFormattedTextField1_cpf.getText().isEmpty() &&
-                    !jTextField1_identidade.getText().isEmpty() &&!jFormattedTextField1_Telefone.getText().isEmpty() ){
+                    !jTextField1_identidade.getText().isEmpty() &&!jFormattedTextField1_Telefone.getText().isEmpty() &&
+                    !jFormattedTextField1_cpf.getText().equals("   .   .   -  ") && ! jFormattedTextField1_Telefone.getText().equals("(  )      -    ")){
             
             
             PessoaFisica cliente = new PessoaFisica(0, jFormattedTextField1_cpf.getText(), jTextField2_nomeFisica.getText(), 
@@ -413,6 +419,10 @@ public class telaPessoaFisica extends javax.swing.JFrame {
     private void jButton2_Confimar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Confimar3ActionPerformed
         jDialog1.dispose();
     }//GEN-LAST:event_jButton2_Confimar3ActionPerformed
+
+    private void jFormattedTextField1_cpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1_cpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1_cpfActionPerformed
 
     /**
      * @param args the command line arguments

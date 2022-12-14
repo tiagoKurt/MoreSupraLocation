@@ -853,7 +853,7 @@ public class telaLocacao extends javax.swing.JFrame {
         
         try {
             if(!jTextField1_diasCont.getText().isEmpty() && !jTextField1_nomeCAT.getText().isEmpty() && !jTextField2_nomeMoto.getText().isEmpty() 
-                    ){
+                    && !jTextField1_diasCont.getText().equals(0)){
                 jFrame1.setVisible(true);
             
             
